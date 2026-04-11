@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blitz - Sword Coast Campaign Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a2e;color:#e0d8c0;font-family:'Press Start 2P',monospace;overflow:hidden;height:100vh;width:100vw}
+.app{display:flex;height:100vh;width:100vw}
+
+/* SIDEBAR */
+.sidebar{width:300px;min-width:300px;background:#0f0f23;border-right:4px solid #4a3728;display:flex;flex-direction:column;z-index:10}
+.sidebar-title{text-align:center;padding:12px 8px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid #4a3728}
+.sidebar-title h1{font-size:20px;color:#ffd700;text-shadow:2px 2px 0 #8b6914,0 0 10px rgba(255,215,0,.5);letter-spacing:4px}
+.sidebar-title .subtitle{font-size:7px;color:#8b7355;margin-top:5px;letter-spacing:2px}
+
+/* SEARCH */
+.search-bar{padding:8px;background:#0a0a1e;border-bottom:3px solid #4a3728;position:relative}
+.search-wrap{display:flex;gap:4px}
+.search-input{flex:1;background:#1a1a2e;border:2px solid #2a2a4e;color:#e0d8c0;font-family:'Press Start 2P',monospace;font-size:7px;padding:7px 8px;border-radius:3px;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:#ffd700}
+.search-input::placeholder{color:#4a4a6e}
+.search-btn{background:#2a1a0e;border:2px solid #4a3728;color:#ffd700;font-family:'Press Start 2P',monospace;font-size:8px;padding:6px 10px;cursor:pointer;border-radius:3px;transition:all .2s}
+.search-btn:hover{border-color:#ffd700;background:#3a2a1e}
+.suggestions{position:absolute;left:8px;right:8px;top:100%;background:#0f0f23;border:2px solid #4a3728;border-top:none;border-radius:0 0 4px 4px;z-index:20;display:none;max-height:200px;overflow-y:auto}
+.suggestions.active{display:block}
+.suggestion-item{padding:7px 10px;font-size:6px;color:#c0b898;cursor:pointer;border-bottom:1px solid #1a1a2e;display:flex;align-items:center;gap:6px;transition:all .15s}
+.suggestion-item:hover{background:#1a1a38;color:#ffd700}
+.suggestion-item .s-type{font-size:5px;color:#6a6a8e;min-width:40px}
+.search-results{display:none}
+.search-results.active{display:block}
+.search-results-header{display:flex;justify-content:space-between;align-items:center;padding:4px 0 8px;border-bottom:2px solid #2a2a4e;margin-bottom:8px}
+.search-results-header h3{font-size:7px;color:#8b7355}
+.sr-close{font-size:8px;color:#6a6a8e;cursor:pointer;background:none;border:1px solid #2a2a4e;padding:2px 6px;font-family:'Press Start 2P',monospace;border-radius:2px}
+.sr-close:hover{color:#ffd700;border-color:#ffd700}
+.sr-item{padding:8px;margin-bottom:4px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #ffd700;cursor:pointer;transition:all .15s;font-size:7px;display:flex;align-items:center;gap:8px}
+.sr-item:hover{border-color:#ffd700;background:#1a1a38;color:#ffd700}
+.sr-item .sr-type{font-size:5px;color:#8b7355;min-width:36px;text-transform:uppercase}
+
+/* TABS */
+.tab-bar{display:flex;background:#0a0a1e;border-bottom:3px solid #4a3728}
+.tab-btn{flex:1;padding:9px 4px;font-family:'Press Start 2P',monospace;font-size:7px;color:#6a6a8e;background:transparent;border:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;text-align:center}
+.tab-btn:hover{color:#c0b898;background:#1a1a2e}
+.tab-btn.active{color:#ffd700;border-bottom-color:#ffd700;background:#1a1a2e}
+.tab-content{flex:1;overflow-y:auto;padding:8px}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* CHARACTER CARDS */
+.character-card{display:flex;align-items:center;gap:10px;padding:10px 8px;margin-bottom:6px;background:#1a1a2e;border:2px solid #2a2a4e;border-radius:4px;cursor:pointer;transition:all .2s}
+.character-card:hover{border-color:#ffd700;background:#1e1e3a;transform:translateX(4px)}
+.portrait{width:48px;height:48px;min-width:48px;image-rendering:pixelated;border:2px solid #4a3728;background:#2a2a4e}
+.portrait canvas{width:48px;height:48px;image-rendering:pixelated}
+.char-info{display:flex;flex-direction:column;gap:3px;overflow:hidden}
+.char-name{font-size:8px;color:#ffd700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.char-class{font-size:6px;color:#8b7355}
+.char-species{font-size:6px;color:#6a6a8e}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:20px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#2a2a4e}
+.session-block{margin-bottom:12px}
+.session-header{font-size:8px;color:#ffd700;padding:6px 8px;background:#1a1a2e;border:2px solid #4a3728;border-radius:4px;position:relative;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+.session-header:hover{border-color:#ffd700;background:#2a1a0e}
+.session-header::before{content:'';position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:10px;height:10px;background:#ffd700;border:2px solid #8b6914;border-radius:2px}
+.session-header .session-label{font-size:6px;color:#8b7355;display:block;margin-bottom:2px}
+.session-header .toggle-icon{font-size:8px;color:#8b7355;transition:transform .2s;margin-left:auto;min-width:12px}
+.session-block.collapsed .toggle-icon{transform:rotate(-90deg)}
+.session-block.collapsed .session-events{display:none}
+.session-events{margin-top:6px}
+.timeline-event{margin:4px 0;padding:8px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #6a4a2a;cursor:pointer;transition:all .2s;font-size:7px;color:#c0b898;line-height:1.6}
+.timeline-event:hover{border-color:#ffd700;background:#1a1a38}
+.timeline-event .te-title{color:#e0c878;margin-bottom:2px;font-size:7px}
+
+/* POPUPS - shared */
+.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:99}
+.overlay.active{display:block}
+.popup-close{font-size:14px;color:#8b7355;cursor:pointer;background:none;border:2px solid #4a3728;padding:4px 8px;font-family:'Press Start 2P',monospace;transition:all .2s}
+.popup-close:hover{color:#ffd700;border-color:#ffd700}
+
+/* LOCATION POPUP */
+.location-popup,.char-detail-popup,.tl-detail{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#0f0f23;border:4px solid #4a3728;border-radius:4px;z-index:100;overflow-y:auto;box-shadow:0 0 40px rgba(0,0,0,.8)}
+.location-popup.active,.char-detail-popup.active,.tl-detail.active{display:block}
+.location-popup{width:500px;max-height:80vh}
+.char-detail-popup{width:420px;max-height:70vh}
+.tl-detail{width:520px;max-height:80vh}
+
+.popup-header,.char-detail-header,.tl-detail-header{padding:14px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid #4a3728;display:flex;justify-content:space-between;align-items:center}
+.popup-header h2,.tl-detail-header h2{font-size:12px;color:#ffd700;text-shadow:2px 2px 0 #8b6914}
+.popup-summary{padding:14px;font-size:8px;line-height:1.8;color:#c0b898;border-bottom:2px solid #2a2a4e}
+.event-list{padding:8px 14px 14px}
+.event-list h3{font-size:8px;color:#8b7355;margin-bottom:10px;padding-bottom:4px;border-bottom:1px solid #2a2a4e}
+.event-item{padding:8px;margin-bottom:6px;background:#1a1a2e;border:2px solid #2a2a4e;border-left:4px solid #ffd700;cursor:pointer;transition:all .2s}
+.event-item:hover{border-color:#ffd700;background:#1e1e3a}
+.event-item .event-title{font-size:7px;color:#ffd700;margin-bottom:4px}
+.event-item .event-preview{font-size:6px;color:#6a6a8e;line-height:1.6}
+.event-detail{display:none;padding:10px;margin-top:6px;background:#0a0a1e;border:1px solid #2a2a4e;font-size:7px;color:#c0b898;line-height:1.8}
+.event-detail.active{display:block}
+
+/* CHAR DETAIL */
+.char-detail-header{gap:14px;justify-content:flex-start}
+.char-detail-portrait{width:64px;height:64px;min-width:64px;image-rendering:pixelated;border:3px solid #ffd700}
+.char-detail-portrait canvas{width:64px;height:64px;image-rendering:pixelated}
+.char-detail-info h2{font-size:11px;color:#ffd700;text-shadow:2px 2px 0 #8b6914}
+.char-detail-info .detail-class{font-size:8px;color:#c0b898;margin-top:4px}
+.char-detail-info .detail-species{font-size:7px;color:#6a6a8e;margin-top:2px}
+.char-detail-body{padding:14px;font-size:7px;line-height:1.8;color:#c0b898}
+.char-detail-body .stat-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #2a2a4e}
+.char-detail-body .stat-label{color:#8b7355}
+.char-detail-body .stat-value{color:#ffd700}
+.char-detail-body .backstory{margin-top:12px;padding-top:12px;border-top:2px solid #2a2a4e}
+.char-detail-body .backstory h3{font-size:8px;color:#8b7355;margin-bottom:8px}
+
+/* TIMELINE DETAIL */
+.tl-detail-body{padding:14px}
+.tl-detail-body .recap{font-size:7px;line-height:1.8;color:#c0b898;margin-bottom:14px}
+.ref-section{margin-top:10px}
+.ref-section h4{font-size:7px;color:#8b7355;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #2a2a4e}
+.ref-list{list-style:none}
+.ref-list li{padding:5px 8px;margin-bottom:3px;font-size:7px;cursor:pointer;border:1px solid transparent;border-radius:3px;transition:all .15s;display:flex;align-items:center;gap:6px}
+.ref-list li:hover{border-color:#ffd700;background:#1a1a38;color:#ffd700}
+.ref-list li .ref-icon{font-size:6px;min-width:12px}
+.ref-list li.place-ref .ref-icon{color:#ff6b35}
+.ref-list li.npc-ref .ref-icon{color:#6ab4ff}
+
+/* MAP */
+.map-container{flex:1;position:relative;overflow:hidden;background:#071828}
+.map-viewport{width:100%;height:100%;position:relative;overflow:hidden;cursor:grab}
+.map-viewport:active{cursor:grabbing}
+.map-canvas{position:absolute;transform-origin:0 0}
+.map-svg{width:1800px;height:1200px}
+
+/* MARKERS */
+.location-marker{position:absolute;cursor:pointer;z-index:5;transition:transform .2s}
+.location-marker:hover{transform:scale(1.3);z-index:6}
+.location-marker.highlighted .marker-dot{background:#fff;border-color:#ffd700;box-shadow:0 0 20px #ffd700,0 0 40px rgba(255,215,0,.5)}
+.marker-dot{width:18px;height:18px;background:#ffd700;border:3px solid #8b6914;border-radius:2px;animation:pulse 2.5s ease-in-out infinite}
+.marker-visited .marker-dot{background:#ff6b35;border-color:#a0421f}
+@keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.4)}50%{box-shadow:0 0 12px rgba(255,215,0,.7)}}
+.marker-label{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:6px;color:#ffd700;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 2px 4px rgba(0,0,0,.8);white-space:nowrap;pointer-events:none}
+
+.map-title{position:absolute;top:16px;right:16px;z-index:8;text-align:right}
+.map-title .map-subtitle{font-size:8px;color:#8b7355;letter-spacing:3px}
+.zoom-controls{position:absolute;bottom:16px;right:16px;z-index:8;display:flex;flex-direction:column;gap:4px}
+.zoom-btn{width:32px;height:32px;background:#0f0f23;border:2px solid #4a3728;color:#ffd700;font-family:'Press Start 2P',monospace;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.zoom-btn:hover{border-color:#ffd700;background:#1a1a2e}
+.legend{position:absolute;bottom:16px;left:16px;z-index:8;background:rgba(15,15,35,.9);border:2px solid #4a3728;padding:8px}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:3px;font-size:6px}
+.legend-dot{width:10px;height:10px;border:2px solid;border-radius:2px}
+.legend-dot.visited{background:#ff6b35;border-color:#a0421f}
+.legend-dot.known{background:#ffd700;border-color:#8b6914}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0f0f23}::-webkit-scrollbar-thumb{background:#4a3728;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <div class="sidebar-title"><h1>THE BLITZ</h1><div class="subtitle">TYRANNY OF DRAGONS</div></div>
+    <div class="search-bar">
+      <div class="search-wrap">
+        <input class="search-input" id="searchInput" type="text" placeholder="S&#246;k plats, namn...">
+        <button class="search-btn" id="searchBtn">&#x1F50D;</button>
+      </div>
+      <div class="suggestions" id="suggestions"></div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="adventurers">&#196;VENTYRARE</button>
+      <button class="tab-btn" data-tab="history">HISTORIK</button>
+    </div>
+    <div class="tab-content">
+      <div class="tab-panel active" id="tab-adventurers"></div>
+      <div class="tab-panel" id="tab-history"></div>
+      <div class="tab-panel" id="tab-search"></div>
+    </div>
+  </div>
+  <div class="map-container">
+    <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
+    <div class="map-viewport" id="mapViewport">
+      <div class="map-canvas" id="mapCanvas">
+        <svg class="map-svg" id="mapSvg" viewBox="0 0 1800 1200"></svg>
+      </div>
+    </div>
+    <div class="zoom-controls">
+      <button class="zoom-btn" onclick="zoomIn()">+</button>
+      <button class="zoom-btn" onclick="zoomOut()">-</button>
+      <button class="zoom-btn" onclick="resetView()" style="font-size:8px">R</button>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot visited"></div><span>Bes&#246;kta platser</span></div>
+      <div class="legend-item"><div class="legend-dot known"></div><span>K&#228;nda platser</span></div>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="location-popup" id="locationPopup">
+  <div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div>
+  <div class="popup-summary" id="popupSummary"></div>
+  <div class="event-list" id="popupEvents"><h3>H&#196;NDELSER</h3></div>
+</div>
+<div class="char-detail-popup" id="charDetailPopup">
+  <div class="char-detail-header">
+    <div class="char-detail-portrait" id="charDetailPortrait"></div>
+    <div class="char-detail-info"><h2 id="charDetailName"></h2><div class="detail-class" id="charDetailClass"></div><div class="detail-species" id="charDetailSpecies"></div></div>
+    <button class="popup-close" onclick="closePopup()" style="margin-left:auto">X</button>
+  </div>
+  <div class="char-detail-body" id="charDetailBody"></div>
+</div>
+<div class="tl-detail" id="tlDetail">
+  <div class="tl-detail-header"><h2 id="tlDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div>
+  <div class="tl-detail-body" id="tlDetailBody"></div>
+</div>
+
+<script>
+// ============ DATA ============
+const characters = [
+  { id:'haldan', name:'Haldan Askvandrare', class:'Ranger 3', subclass:'Monster Slayer', species:'Variant Human', org:'Emerald Enclave', age:56, gender:'Male',
+    appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},
+    backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven. Mekaniska fingrar och ärr på huvudet från drakstriden.'},
+  { id:'theron', name:'Theron Goldlight', class:'Paladin 3', subclass:'Oath of the Watchers', species:'Dragonborn (Gold)', org:'Order of the Gauntlet', gender:'Male',
+    appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},
+    backstory:'Lämnades som spädbarn vid Greenests portar av Haldan efter att hans klan utplånades av den blå draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Rank 2 (Marachal) i Order of the Gauntlet. Vapenbroder med Oweyn.'},
+  { id:'oweyn', name:'Oweyn Howell', class:'Fighter 3', subclass:'Battle Master', species:'Custom Lineage', org:'Order of the Gauntlet', gender:'Male',
+    appearance:{skin:'',eyes:'',hair:''},
+    backstory:'Från Greenest, åkte till Baldur\'s Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Therons förmyndarskap. Har klarat sina prov och är nu Rank 1 (Cheval). Vapenbroder med Theron. Unarmed fighting specialist.'},
+  { id:'gothmog', name:'Gothmog', class:'Fighter 3', subclass:'Rune Knight', species:'Half-Orc', org:'', age:23, gender:'Male',
+    appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},
+    backstory:'Född i Greenest men försvann som barn in i Barovia. Överlevde genom att anpassa sig – blev soldat i Valakii. En natt vägrade han utnyttja en familj och insåg vem han blivit. Flydde, fann runor ristade i sin hud. The Vistani tog ett minne från honom som betalning för att släppa ut honom. Hittades av Cedric nära Greenest.'},
+  { id:'cedric', name:'Cedric Vael', class:'Wizard 3', subclass:'School of Divination', species:'Variant Human', org:'', age:56, gender:'Male',
+    appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},
+    backstory:'Född i Greenest. Hans far Steve byggde en vagn åt honom – "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma utanför Greenest. Har en Codex-Golem. Återvänder regelbundet till Greenest.'}
+];
+
+const locations = [
+  { id:'greenest', name:'Greenest', x:920, y:780, visited:true,
+    summary:'Hemstad för alla medlemmar i The Blitz. En liten, stillsam stad i Greenfields där gruppen formades och växte samman.',
+    events:[
+      {title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'En kylig höstkväll återvände Cedric till Greenest med Gothmog. Han sökte upp Oweyn och Theron på tavernan. Under året som följde tog de små uppdrag och växte samman till "The Blitz".'},
+      {title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna av hans klan, förstörd av draken Verustraz. Han lämnade barnet vid Greenests portar och återvände till skuggorna.'},
+      {title:'Gothmog återvänder från Barovia',preview:'Dimman slets upp...',detail:'Cedric stod vid sin vagn när dimman bröt upp och Gothmog kastades ut ur Barovia. Cedric stängde revan med magi och erbjöd honom trygghet.'},
+      {title:'Therons tid som stadsvakt',preview:'Theron tränade sitt Watcher\'s Eye...',detail:'Under sina unga år arbetade Theron som stadsvakt. Tystnaden kring hans ursprung drev honom ut i världen.'},
+      {title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp som son till snickaren Steve som byggde honom "Kunskapens Vagn" – ett rullande bibliotek.'},
+      {title:'Haldans barndom',preview:'Stadsmyllret kändes trångt...',detail:'Haldan föddes i Greenest men sökte sig till skogarna där han fann Emerald Enclave.'}
+    ]},
+  { id:'baldursgate', name:"Baldur's Gate", x:690, y:540, visited:true,
+    summary:'Den stora handelsstaden. Här sökte Oweyn äventyr och rekryterades av Order of the Gauntlet.',
+    events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn lämnade Greenest och rekryterades av Order of the Gauntlet som squire under Theron.'}]},
+  { id:'elturel', name:'Elturel', x:850, y:680, visited:false,
+    summary:'Stad känd för sin eviga sol. Högkvarter för Order of the Gauntlet.',
+    events:[{title:'Order of the Gauntlet',preview:'Riddarordens högkvarter...',detail:'Theron har stigit till Rank 2 (Marachal) och Oweyn är fullvärdig medlem Rank 1 (Cheval).'}]},
+  { id:'waterdeep', name:'Waterdeep', x:580, y:320, visited:false, summary:'Juvelen i Sword Coast. Den största staden i regionen.', events:[]},
+  { id:'neverwinter', name:'Neverwinter', x:480, y:180, visited:false, summary:'Den skyddade staden som aldrig fryser.', events:[]},
+  { id:'beregost', name:'Beregost', x:710, y:620, visited:false, summary:'Mindre stad längs kustvägen.', events:[]},
+  { id:'candlekeep', name:'Candlekeep', x:630, y:670, visited:false, summary:'Det legendariska biblioteksfortet.', events:[]},
+  { id:'nashkel', name:'Nashkel', x:760, y:690, visited:false, summary:'Liten stad känd för sina gruvor.', events:[]},
+  { id:'daggerford', name:'Daggerford', x:610, y:430, visited:false, summary:'Befäst stad vid Delimbiyr-floden.', events:[]},
+  { id:'boareskyr', name:'Boareskyr Bridge', x:830, y:720, visited:false, summary:'Viktig bro, strategisk punkt.', events:[]},
+  { id:'luskan', name:'Luskan', x:460, y:120, visited:false, summary:'Den laglösa pirat- och handelsstaden i norr.', events:[]},
+  { id:'phandalin', name:'Phandalin', x:540, y:240, visited:false, summary:'Liten gruvstad nära Sword Mountains.', events:[]},
+  { id:'leilon', name:'Leilon', x:510, y:270, visited:false, summary:'Återerövrad stad vid kusten.', events:[]},
+  { id:'triboar', name:'Triboar', x:680, y:260, visited:false, summary:'Viktig korsning för handelsrutter.', events:[]},
+];
+
+const npcs = [
+  {name:'Verustraz / Pyotr', desc:'Blå drake som förstörde Therons klan. Vandrar bland dödliga som Pyotr.'},
+  {name:'Steve', desc:'Cedrics far, snickare i Greenest. Byggde Kunskapens Vagn.'},
+  {name:'Bahamut', desc:'Rättvisans fader, Therons guddom.'},
+  {name:'The Vistani', desc:'Mystiskt resandefolk i Barovia. Tog ett minne från Gothmog som betalning.'},
+  {name:'Kasmo', desc:'Medlem av Dorians skuggorganisation. Reste med Giant Slayers.'},
+  {name:'Erylor Swiftshadow', desc:'Dorians far, känd tjuv i Greenest.'},
+];
+
+const sessions = [
+  { id:0, label:'SESSION 0', title:'Ursprunget – The Blitz formas',
+    events:[
+      { title:'Haldans drakjakt',
+        recap:'Haldan Askvandrare, tränad av Emerald Enclave, spårade en blå drake som terroriserade regionen. Han kom för sent för att rädda Therons klan men hittade ett spädbarn i askan – Theron Goldlight. Han bar barnet till Greenest.',
+        places:['greenest'], npcs:['Verustraz / Pyotr','Baby-Theron'] },
+      { title:'Theron växer upp i Greenest',
+        recap:'Theron växte upp i Greenest utan att veta sitt ursprung. Han arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Till slut fann han hopp i Bahamut och gick med i Order of the Gauntlet.',
+        places:['greenest','elturel'], npcs:['Bahamut'] },
+      { title:'Oweyn söker äventyr',
+        recap:'Oweyn Howell lämnade Greenest och reste till Baldur\'s Gate för att söka äventyr. Där rekryterades han av Order of the Gauntlet och placerades som squire under Therons förmyndarskap.',
+        places:['greenest','baldursgate'], npcs:[] },
+      { title:'Cedrics resor',
+        recap:'Cedric Vael fick sin "Kunskapens Vagn" av sin far Steve och började resa mellan riken. Han studerade magi som ett levande språk.',
+        places:['greenest'], npcs:['Steve'] },
+      { title:'Gothmog flyr Barovia',
+        recap:'Gothmog försvann från Greenest som barn in i Barovia. Efter år av lidande fann han The Vistani som tog ett minne som betalning. Cedric fann honom utanför Greenest och stängde revan i dimman med magi.',
+        places:['greenest'], npcs:['The Vistani'] },
+      { title:'The Blitz formas',
+        recap:'Cedric återvände till Greenest med Gothmog. Han sökte upp Oweyn och Theron på tavernan. Under månader och år tog gruppen uppdrag tillsammans – från små jobb till att jaga troll och rensa ruiner. De blev kända som "The Blitz".',
+        places:['greenest'], npcs:[] }
+    ]
+  }
+];
+
+// ============ PIXEL PORTRAITS ============
+function drawPortrait(canvas, charId) {
+  const ctx = canvas.getContext('2d'); canvas.width=16; canvas.height=16; ctx.imageSmoothingEnabled=false;
+  const P = {
+    haldan:()=>{ctx.fillStyle='#dbb89a';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#5c3a1e';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#c4766e';ctx.fillRect(5,2,1,2);ctx.fillRect(7,1,2,1);ctx.fillStyle='#c9a882';ctx.fillRect(5,2,6,1);ctx.fillStyle='#8a8a8a';ctx.fillRect(12,11,2,2);ctx.fillStyle='#5a3a1a';ctx.fillRect(4,10,8,5);ctx.fillStyle='#4a2a0a';ctx.fillRect(5,10,6,1);ctx.fillStyle='#2a5a2a';ctx.fillRect(3,10,1,5);ctx.fillRect(12,10,1,5);ctx.fillStyle='#6b4a2a';ctx.fillRect(13,4,1,8);ctx.fillStyle='#aaa';ctx.fillRect(14,5,1,6);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1)},
+    theron:()=>{ctx.fillStyle='#d4a830';ctx.fillRect(4,2,8,8);ctx.fillRect(5,1,6,1);ctx.fillStyle='#c89a20';ctx.fillRect(6,7,4,2);ctx.fillStyle='#ff2020';ctx.fillRect(5,4,2,2);ctx.fillRect(9,4,2,2);ctx.fillStyle='#cc0000';ctx.fillRect(6,4,1,1);ctx.fillRect(10,4,1,1);ctx.fillStyle='#b82020';ctx.fillRect(4,0,2,2);ctx.fillRect(10,0,2,2);ctx.fillStyle='#7a7a8a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#6a6a7a';ctx.fillRect(4,11,8,1);ctx.fillRect(4,13,8,1);ctx.fillStyle='#4a4a5a';ctx.fillRect(1,10,2,4);ctx.fillStyle='#ffd700';ctx.fillRect(1,11,2,2);ctx.fillRect(7,10,2,1);ctx.fillStyle='#a07818';ctx.fillRect(7,8,1,1);ctx.fillRect(8,8,1,1)},
+    oweyn:()=>{ctx.fillStyle='#dbb89a';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#4a2a0a';ctx.fillRect(4,1,8,3);ctx.fillRect(3,2,1,3);ctx.fillRect(12,2,1,3);ctx.fillStyle='#3a5a3a';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1);ctx.fillStyle='#7a7a8a';ctx.fillRect(4,10,8,5);ctx.fillStyle='#6a6a7a';ctx.fillRect(5,11,6,1);ctx.fillRect(5,13,6,1);ctx.fillStyle='#dbb89a';ctx.fillRect(3,12,1,2);ctx.fillRect(12,12,1,2);ctx.fillStyle='#5a5a6a';ctx.fillRect(13,6,2,7);ctx.fillStyle='#8a8a9a';ctx.fillRect(13,5,3,2)},
+    gothmog:()=>{ctx.fillStyle='#7a8a7a';ctx.fillRect(4,2,8,8);ctx.fillRect(3,4,10,5);ctx.fillStyle='#6a7a6a';ctx.fillRect(5,1,6,2);ctx.fillStyle='#ff8a00';ctx.fillRect(5,4,2,2);ctx.fillRect(9,4,2,2);ctx.fillStyle='#cc6600';ctx.fillRect(6,4,1,1);ctx.fillRect(10,4,1,1);ctx.fillStyle='#e0d8c0';ctx.fillRect(5,8,1,2);ctx.fillRect(10,8,1,2);ctx.fillStyle='#5a9aba';ctx.fillRect(5,2,1,1);ctx.fillRect(8,1,1,1);ctx.fillRect(10,2,1,1);ctx.fillStyle='#5a5a6a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#4a4a5a';ctx.fillRect(4,11,8,1);ctx.fillRect(4,13,8,1);ctx.fillStyle='#ff6a30';ctx.fillRect(6,12,1,1);ctx.fillRect(9,12,1,1);ctx.fillStyle='#5a4a3a';ctx.fillRect(14,2,1,12);ctx.fillStyle='#8a8a9a';ctx.fillRect(13,2,3,3)},
+    cedric:()=>{ctx.fillStyle='#e8ceb0';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#9a9a9a';ctx.fillRect(4,1,8,3);ctx.fillRect(3,2,1,4);ctx.fillRect(12,2,1,4);ctx.fillStyle='#4488cc';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1);ctx.fillStyle='#2a3a6a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#3a4a7a';ctx.fillRect(5,10,6,1);ctx.fillStyle='#6b4a2a';ctx.fillRect(1,4,1,11);ctx.fillStyle='#8ab8ff';ctx.fillRect(0,3,3,2);ctx.fillStyle='#6a2a1a';ctx.fillRect(12,11,2,3);ctx.fillStyle='#e0d8c0';ctx.fillRect(12,12,2,1)}
+  };
+  if(P[charId]) P[charId]();
+}
+
+// ============ MAP ============
+function drawMap(){
+  document.getElementById('mapSvg').innerHTML=`
+  <defs>
+    <pattern id="waves" width="24" height="12" patternUnits="userSpaceOnUse"><path d="M0 6Q6 2 12 6Q18 10 24 6" stroke="#0e2e50" stroke-width="1" fill="none" opacity=".5"/></pattern>
+    <pattern id="waves2" width="36" height="8" patternUnits="userSpaceOnUse" patternTransform="translate(10,4)"><path d="M0 4Q9 0 18 4Q27 8 36 4" stroke="#0c2844" stroke-width=".7" fill="none" opacity=".35"/></pattern>
+    <pattern id="trees" width="10" height="10" patternUnits="userSpaceOnUse"><polygon points="5,1 1,7 9,7" fill="#0e5a14" opacity=".9"/><rect x="4" y="7" width="2" height="3" fill="#2a1808" opacity=".6"/></pattern>
+    <pattern id="trees2" width="14" height="14" patternUnits="userSpaceOnUse"><polygon points="7,0 1,10 13,10" fill="#0c5010" opacity=".85"/><rect x="6" y="10" width="2" height="4" fill="#241408" opacity=".5"/></pattern>
+    <pattern id="mtns" width="20" height="16" patternUnits="userSpaceOnUse"><polygon points="10,0 0,16 20,16" fill="#6e6478" opacity=".9"/><polygon points="10,0 6,6 14,6" fill="#908898" opacity=".7"/><polygon points="10,0 8,3 12,3" fill="#c0b8cc" opacity=".5"/></pattern>
+    <linearGradient id="landGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4a7e48"/><stop offset="50%" stop-color="#468044"/><stop offset="100%" stop-color="#427c40"/></linearGradient>
+    <linearGradient id="coastGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3a5a"/><stop offset="100%" stop-color="#0e2848"/></linearGradient>
+    <radialGradient id="seaDepth" cx=".3" cy=".5"><stop offset="0%" stop-color="#061420"/><stop offset="100%" stop-color="#0a1e3a"/></radialGradient>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#seaDepth)"/>
+  <rect width="1800" height="1200" fill="url(#waves)"/>
+  <rect width="1800" height="1200" fill="url(#waves2)"/>
+  <!-- Shallow water -->
+  <path d="M395 50Q400 100 390 150Q380 200 400 260Q415 310 400 360Q440 410 460 470Q480 510 510 550Q540 610 560 660Q530 640 520 700Q540 750 520 800Q510 850 500 920Q460 1000 430 1100L410 1200 370 1200 370 0Z" fill="url(#coastGrad)" opacity=".45"/>
+  <!-- LAND -->
+  <path d="M400 0L520 0 540 30 570 50 590 20 700 0 1800 0 1800 1200 400 1200 420 1100 450 1020 480 960 510 900 525 850 515 790 530 740 555 690 565 650 545 610 555 570 535 530 515 490 490 460 475 430 465 390 445 340 425 290 415 240 405 190 395 140 398 80 400 40Z" fill="url(#landGrad)"/>
+  <!-- Terrain variation -->
+  <path d="M500 0L580 0 560 50 540 30 520 0Z" fill="#406840" opacity=".25"/>
+  <ellipse cx="750" cy="400" rx="120" ry="80" fill="#2e502e" opacity=".15"/>
+  <ellipse cx="1000" cy="300" rx="200" ry="100" fill="#284e28" opacity=".1"/>
+  <!-- Greenfields lighter -->
+  <ellipse cx="920" cy="790" rx="110" ry="60" fill="#60a060" opacity=".2"/>
+  <!-- Sandy coast -->
+  <ellipse cx="450" cy="470" rx="15" ry="8" fill="#5a5030" opacity=".25" transform="rotate(-20,450,470)"/>
+  <ellipse cx="530" cy="610" rx="12" ry="6" fill="#5a5030" opacity=".25" transform="rotate(-15,530,610)"/>
+  <!-- FOREST dark underlay -->
+  <ellipse cx="620" cy="160" rx="92" ry="57" fill="#0a2a0a" opacity=".5"/>
+  <ellipse cx="740" cy="300" rx="72" ry="47" fill="#0a2a0a" opacity=".5"/>
+  <ellipse cx="650" cy="440" rx="57" ry="37" fill="#0a2a0a" opacity=".45"/>
+  <ellipse cx="900" cy="420" rx="112" ry="67" fill="#0a2a0a" opacity=".5"/>
+  <ellipse cx="860" cy="590" rx="82" ry="47" fill="#0a2a0a" opacity=".45"/>
+  <ellipse cx="950" cy="740" rx="92" ry="47" fill="#0a2a0a" opacity=".45"/>
+  <ellipse cx="1150" cy="350" rx="82" ry="52" fill="#0a2a0a" opacity=".45"/>
+  <ellipse cx="1300" cy="250" rx="62" ry="37" fill="#0a2a0a" opacity=".4"/>
+  <ellipse cx="1400" cy="400" rx="72" ry="42" fill="#0a2a0a" opacity=".4"/>
+  <!-- FORESTS -->
+  <ellipse cx="620" cy="160" rx="90" ry="55" fill="url(#trees)"/>
+  <ellipse cx="740" cy="300" rx="70" ry="45" fill="url(#trees)"/>
+  <ellipse cx="650" cy="440" rx="55" ry="35" fill="url(#trees2)"/>
+  <ellipse cx="900" cy="420" rx="110" ry="65" fill="url(#trees)"/>
+  <ellipse cx="860" cy="590" rx="80" ry="45" fill="url(#trees2)"/>
+  <ellipse cx="950" cy="740" rx="90" ry="45" fill="url(#trees)"/>
+  <ellipse cx="1150" cy="350" rx="80" ry="50" fill="url(#trees)"/>
+  <ellipse cx="1300" cy="250" rx="60" ry="35" fill="url(#trees2)"/>
+  <ellipse cx="1400" cy="400" rx="70" ry="40" fill="url(#trees)"/>
+  <!-- MOUNTAIN dark underlay -->
+  <rect x="678" y="48" width="454" height="74" fill="#1a1a2e" opacity=".4" rx="8"/>
+  <rect x="598" y="78" width="104" height="44" fill="#1a1a2e" opacity=".35" rx="5"/>
+  <ellipse cx="540" cy="220" rx="42" ry="27" fill="#1a1a2e" opacity=".35"/>
+  <rect x="1018" y="488" width="284" height="94" fill="#1a1a2e" opacity=".4" rx="10"/>
+  <rect x="1098" y="578" width="234" height="74" fill="#1a1a2e" opacity=".35" rx="8"/>
+  <ellipse cx="900" cy="690" rx="82" ry="22" fill="#1a1a2e" opacity=".3"/>
+  <!-- MOUNTAINS -->
+  <rect x="680" y="50" width="450" height="70" fill="url(#mtns)" rx="8"/>
+  <rect x="600" y="80" width="100" height="40" fill="url(#mtns)" rx="5"/>
+  <ellipse cx="540" cy="220" rx="40" ry="25" fill="url(#mtns)"/>
+  <rect x="1020" y="490" width="280" height="90" fill="url(#mtns)" rx="10"/>
+  <rect x="1100" y="580" width="230" height="70" fill="url(#mtns)" rx="8"/>
+  <ellipse cx="900" cy="690" rx="80" ry="20" fill="url(#mtns)"/>
+  <ellipse cx="1050" cy="700" rx="50" ry="15" fill="url(#mtns)" opacity=".6"/>
+  <!-- RIVERS -->
+  <path d="M605 420Q620 450 612 500Q595 545 605 590" stroke="#3090d0" stroke-width="3.5" fill="none" opacity=".85"/>
+  <path d="M608 590Q615 610 625 630" stroke="#3090d0" stroke-width="2.5" fill="none" opacity=".75"/>
+  <path d="M855 345Q870 395 862 445Q845 495 855 545" stroke="#3090d0" stroke-width="3" fill="none" opacity=".8"/>
+  <path d="M755 645Q775 675 805 695Q835 710 855 720" stroke="#3090d0" stroke-width="2.5" fill="none" opacity=".75"/>
+  <path d="M620 280Q640 310 650 350Q660 380 650 420" stroke="#3090d0" stroke-width="2.5" fill="none" opacity=".7"/>
+  <path d="M580 320Q575 340 570 360" stroke="#3090d0" stroke-width="2" fill="none" opacity=".65"/>
+  <!-- ROADS -->
+  <!-- Trade Way south -->
+  <path d="M580 325Q590 360 600 400Q615 440 635 480Q660 520 685 545Q710 580 725 620Q745 650 770 690Q800 720 840 750Q870 765 920 780" stroke="#c8a850" stroke-width="3" fill="none" stroke-dasharray="8 4" opacity=".8"/>
+  <!-- High Road north -->
+  <path d="M580 325Q565 290 545 255Q530 225 510 200Q495 175 480 150Q470 130 465 120" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="8 4" opacity=".75"/>
+  <!-- Neverwinter to Luskan -->
+  <path d="M480 180Q475 160 470 140Q465 130 460 120" stroke="#b89840" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+  <!-- Road to Elturel -->
+  <path d="M920 780Q905 755 885 730Q865 710 850 690" stroke="#b89840" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+  <!-- Waterdeep to Daggerford -->
+  <path d="M580 325Q595 370 610 430" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".75"/>
+  <!-- Daggerford to BG -->
+  <path d="M610 430Q630 460 650 490Q670 515 690 540" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".75"/>
+  <!-- BG to Beregost -->
+  <path d="M690 540Q695 560 700 580Q705 600 710 620" stroke="#b89840" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+  <!-- Beregost to Nashkel -->
+  <path d="M710 620Q720 640 735 660Q750 675 760 690" stroke="#b89840" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+  <!-- BG to Candlekeep (west) -->
+  <path d="M690 540Q670 570 655 600Q645 630 635 660Q632 665 630 670" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".65"/>
+  <!-- Waterdeep east to Triboar -->
+  <path d="M580 325Q610 310 640 295Q660 280 680 265" stroke="#b89840" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+  <!-- Triboar to Phandalin (west) -->
+  <path d="M680 260Q640 255 600 250Q570 245 540 240" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".65"/>
+  <!-- Neverwinter to Phandalin -->
+  <path d="M480 180Q500 200 515 215Q525 225 540 240" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".65"/>
+  <!-- Leilon road -->
+  <path d="M480 180Q490 210 500 240Q505 255 510 270" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
+  <!-- Boareskyr to Elturel -->
+  <path d="M830 720Q835 710 840 700Q845 690 850 680" stroke="#a88838" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity=".6"/>
+  <!-- Nashkel to Boareskyr -->
+  <path d="M760 690Q780 700 800 710Q815 715 830 720" stroke="#a88838" stroke-width="1.5" fill="none" stroke-dasharray="4 3" opacity=".6"/>
+
+  <!-- Coast rocks -->
+  <circle cx="425" cy="280" r="4" fill="#3a3a4a" opacity=".35"/>
+  <circle cx="445" cy="360" r="3" fill="#3a3a4a" opacity=".25"/>
+  <circle cx="485" cy="480" r="5" fill="#3a3a4a" opacity=".3"/>
+  <circle cx="515" cy="560" r="3" fill="#3a3a4a" opacity=".25"/>
+  <circle cx="530" cy="640" r="4" fill="#3a3a4a" opacity=".3"/>
+
+  <!-- Compass -->
+  <g transform="translate(160,160)">
+    <circle r="38" fill="#0a0a1e" stroke="#4a3728" stroke-width="2.5" opacity=".9"/>
+    <circle r="32" fill="none" stroke="#2a2a4e" stroke-width="1"/>
+    <polygon points="0,-28 5,-8 -5,-8" fill="#ffd700"/><polygon points="0,28 5,8 -5,8" fill="#4a3728"/>
+    <polygon points="-28,0 -8,5 -8,-5" fill="#4a3728"/><polygon points="28,0 8,5 8,-5" fill="#4a3728"/>
+    <line x1="-20" y1="-20" x2="20" y2="20" stroke="#2a2a3e" stroke-width=".5"/><line x1="20" y1="-20" x2="-20" y2="20" stroke="#2a2a3e" stroke-width=".5"/>
+    <text x="0" y="-40" text-anchor="middle" fill="#ffd700" font-family="'Press Start 2P'" font-size="8">N</text>
+    <text x="0" y="48" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">S</text>
+    <text x="40" y="4" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">E</text>
+    <text x="-40" y="4" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">W</text>
+  </g>
+  <!-- Labels -->
+  <text x="180" y="420" fill="#0e3050" font-family="'Press Start 2P'" font-size="11" opacity=".3" transform="rotate(-25,180,420)" letter-spacing="4">SEA OF SWORDS</text>
+  <text x="250" y="750" fill="#0c2844" font-family="'Press Start 2P'" font-size="7" opacity=".2" letter-spacing="3">TRACKLESS SEA</text>
+  <text x="780" y="90" fill="#5a5a6e" font-family="'Press Start 2P'" font-size="6" opacity=".3" letter-spacing="2">SPINE OF THE WORLD</text>
+  <text x="1060" y="555" fill="#4a4a5e" font-family="'Press Start 2P'" font-size="6" opacity=".25" letter-spacing="2">SUNSET MTNS</text>
+  <text x="860" y="860" fill="#3a6a3a" font-family="'Press Start 2P'" font-size="7" opacity=".3" letter-spacing="2">GREENFIELDS</text>
+  <text x="880" y="460" fill="#2a5a2a" font-family="'Press Start 2P'" font-size="5" opacity=".25">REACHING WOODS</text>
+  <text x="530" y="235" fill="#4a4a5e" font-family="'Press Start 2P'" font-size="5" opacity=".25">SWORD MTNS</text>
+  <text x="1150" y="380" fill="#2a5a2a" font-family="'Press Start 2P'" font-size="5" opacity=".2">WOOD OF SHARP TEETH</text>
+  <defs><pattern id="grid" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="none" stroke="#000" stroke-width=".08" opacity=".05"/></pattern></defs>
+  <rect width="1800" height="1200" fill="url(#grid)"/>`;
+}
+
+// ============ RENDER ============
+function renderCharacters(){
+  const list=document.getElementById('tab-adventurers'); list.innerHTML='';
+  characters.forEach(c=>{
+    const card=document.createElement('div');card.className='character-card';card.onclick=()=>showCharacterDetail(c);
+    const pd=document.createElement('div');pd.className='portrait';const cv=document.createElement('canvas');pd.appendChild(cv);drawPortrait(cv,c.id);card.appendChild(pd);
+    const info=document.createElement('div');info.className='char-info';
+    info.innerHTML=`<div class="char-name">${c.name}</div><div class="char-class">${c.class} (${c.subclass})</div><div class="char-species">${c.species}</div>`;
+    card.appendChild(info);list.appendChild(card);
+  });
+}
+
+function renderTimeline(){
+  const panel=document.getElementById('tab-history'); panel.innerHTML='';
+  const tl=document.createElement('div');tl.className='timeline';
+  sessions.forEach(s=>{
+    const block=document.createElement('div');block.className='session-block';
+    const hdr=document.createElement('div');hdr.className='session-header';
+    hdr.innerHTML=`<div><span class="session-label">${s.label}</span>${s.title}</div><span class="toggle-icon">▼</span>`;
+    hdr.onclick=()=>block.classList.toggle('collapsed');
+    block.appendChild(hdr);
+    const evWrap=document.createElement('div');evWrap.className='session-events';
+    s.events.forEach(ev=>{
+      const item=document.createElement('div');item.className='timeline-event';
+      item.innerHTML=`<div class="te-title">${ev.title}</div>`;
+      item.onclick=e=>{e.stopPropagation();showTimelineDetail(ev)};
+      evWrap.appendChild(item);
+    });
+    block.appendChild(evWrap);tl.appendChild(block);
+  });
+  panel.appendChild(tl);
+}
+
+function renderMarkers(){
+  const canvas=document.getElementById('mapCanvas');
+  canvas.querySelectorAll('.location-marker').forEach(m=>m.remove());
+  locations.forEach(loc=>{
+    const m=document.createElement('div');m.className=`location-marker ${loc.visited?'marker-visited':''}`;m.id='marker-'+loc.id;
+    m.style.left=loc.x+'px';m.style.top=loc.y+'px';
+    m.onclick=e=>{e.stopPropagation();showLocation(loc)};
+    m.innerHTML=`<div class="marker-label">${loc.name}</div><div class="marker-dot"></div>`;
+    canvas.appendChild(m);
+  });
+}
+
+// ============ TABS ============
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+    // Hide search results panel
+    document.getElementById('tab-search').classList.remove('active');
+  });
+});
+
+// ============ SEARCH ============
+function buildSearchIndex(){
+  const idx=[];
+  locations.forEach(l=>{idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id})});
+  characters.forEach(c=>{idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)})});
+  npcs.forEach(n=>{idx.push({type:'NPC',name:n.name,desc:n.desc})});
+  sessions.forEach(s=>{
+    s.events.forEach(ev=>{idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})});
+  });
+  return idx;
+}
+const searchIndex=buildSearchIndex();
+
+function normalize(s){return s.toLowerCase().replace(/[åä]/g,'a').replace(/[ö]/g,'o').replace(/[éè]/g,'e')}
+
+function doSearch(q){
+  if(!q.trim()) return [];
+  const nq=normalize(q);
+  return searchIndex.filter(item=>{
+    const nn=normalize(item.name);
+    if(nn.includes(nq)) return true;
+    if(item.desc && normalize(item.desc).includes(nq)) return true;
+    return false;
+  });
+}
+
+const searchInput=document.getElementById('searchInput');
+const suggestionsEl=document.getElementById('suggestions');
+
+searchInput.addEventListener('input',()=>{
+  const q=searchInput.value;
+  if(q.length<2){suggestionsEl.classList.remove('active');suggestionsEl.innerHTML='';return}
+  const results=doSearch(q).slice(0,8);
+  if(!results.length){suggestionsEl.classList.remove('active');return}
+  suggestionsEl.innerHTML='';
+  results.forEach(r=>{
+    const item=document.createElement('div');item.className='suggestion-item';
+    item.innerHTML=`<span class="s-type">${r.type}</span>${r.name}`;
+    item.onclick=()=>{
+      suggestionsEl.classList.remove('active');searchInput.value=r.name;
+      if(r.action) r.action();
+      else if(r.locId) showLocation(locations.find(l=>l.id===r.locId));
+    };
+    suggestionsEl.appendChild(item);
+  });
+  suggestionsEl.classList.add('active');
+});
+
+searchInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();executeSearch()}});
+document.getElementById('searchBtn').addEventListener('click',executeSearch);
+document.addEventListener('click',e=>{if(!e.target.closest('.search-bar'))suggestionsEl.classList.remove('active')});
+
+function executeSearch(){
+  suggestionsEl.classList.remove('active');
+  const q=searchInput.value;
+  if(!q.trim())return;
+  const results=doSearch(q);
+  // Show results in a tab panel
+  const panel=document.getElementById('tab-search');
+  panel.innerHTML='';
+  const sr=document.createElement('div');sr.className='search-results active';
+  sr.innerHTML=`<div class="search-results-header"><h3>Resultat: "${q}" (${results.length})</h3><button class="sr-close" onclick="closeSearchResults()">X</button></div>`;
+  if(!results.length){sr.innerHTML+='<div style="font-size:7px;color:#6a6a8e;padding:8px">Inga resultat hittades.</div>'}
+  else results.forEach(r=>{
+    const item=document.createElement('div');item.className='sr-item';
+    item.innerHTML=`<span class="sr-type">${r.type}</span>${r.name}`;
+    item.onclick=()=>{
+      if(r.action) r.action();
+      else if(r.locId) showLocation(locations.find(l=>l.id===r.locId));
+      if(r.locId){highlightMarker(r.locId);setTimeout(()=>unhighlightMarker(r.locId),3000)}
+      if(r.places&&r.places.length){r.places.forEach(p=>{highlightMarker(p);setTimeout(()=>unhighlightMarker(p),3000)})}
+    };
+    sr.appendChild(item);
+  });
+  panel.innerHTML='';panel.appendChild(sr);
+  // Switch to search results tab
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  panel.classList.add('active');
+}
+
+function closeSearchResults(){
+  document.getElementById('tab-search').classList.remove('active');
+  document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');
+  document.getElementById('tab-adventurers').classList.add('active');
+  searchInput.value='';
+}
+
+// ============ POPUPS ============
+function showLocation(loc){
+  document.getElementById('popupTitle').textContent=loc.name;
+  document.getElementById('popupSummary').textContent=loc.summary;
+  const ec=document.getElementById('popupEvents');ec.innerHTML='<h3>HÄNDELSER</h3>';
+  if(!loc.events.length)ec.innerHTML+='<div style="font-size:7px;color:#6a6a8e;padding:8px">Inga händelser registrerade ännu.</div>';
+  else loc.events.forEach((ev,i)=>{
+    const item=document.createElement('div');item.className='event-item';
+    item.innerHTML=`<div class="event-title">${ev.title}</div><div class="event-preview">${ev.preview}</div><div class="event-detail" id="ed_${loc.id}_${i}">${ev.detail}</div>`;
+    item.onclick=()=>document.getElementById(`ed_${loc.id}_${i}`).classList.toggle('active');
+    ec.appendChild(item);
+  });
+  document.getElementById('overlay').classList.add('active');document.getElementById('locationPopup').classList.add('active');
+}
+function showCharacterDetail(c){
+  document.getElementById('charDetailName').textContent=c.name;
+  document.getElementById('charDetailClass').textContent=`${c.class} – ${c.subclass}`;
+  document.getElementById('charDetailSpecies').textContent=c.species;
+  const pd=document.getElementById('charDetailPortrait');pd.innerHTML='';const cv=document.createElement('canvas');pd.appendChild(cv);drawPortrait(cv,c.id);
+  const body=document.getElementById('charDetailBody');body.innerHTML='';
+  const stats=[];
+  if(c.age)stats.push({l:'Ålder',v:c.age});if(c.gender)stats.push({l:'Kön',v:c.gender});
+  if(c.org)stats.push({l:'Organisation',v:c.org});
+  if(c.appearance.skin)stats.push({l:'Hy',v:c.appearance.skin});if(c.appearance.eyes)stats.push({l:'Ögon',v:c.appearance.eyes});if(c.appearance.hair)stats.push({l:'Hår',v:c.appearance.hair});
+  stats.forEach(s=>body.innerHTML+=`<div class="stat-row"><span class="stat-label">${s.l}</span><span class="stat-value">${s.v}</span></div>`);
+  body.innerHTML+=`<div class="backstory"><h3>BAKGRUND</h3><p>${c.backstory}</p></div>`;
+  document.getElementById('overlay').classList.add('active');document.getElementById('charDetailPopup').classList.add('active');
+}
+function showTimelineDetail(ev){
+  document.getElementById('tlDetailTitle').textContent=ev.title;
+  const body=document.getElementById('tlDetailBody');
+  body.innerHTML=`<div class="recap">${ev.recap}</div>`;
+  if(ev.places.length){
+    let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';
+    ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" data-place="${pid}" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});
+    h+='</ul></div>';body.innerHTML+=h;
+  }
+  if(ev.npcs&&ev.npcs.length){
+    let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';
+    ev.npcs.forEach(npc=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${npc}</li>`);
+    h+='</ul></div>';body.innerHTML+=h;
+  }
+  document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active');
+}
+function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
+function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
+function closePopup(){
+  document.getElementById('overlay').classList.remove('active');
+  ['locationPopup','charDetailPopup','tlDetail'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'));
+}
+
+// ============ PAN & ZOOM ============
+let scale=.75,panX=-150,panY=-50,isDragging=false,dragSX,dragSY;
+function updateTransform(){document.getElementById('mapCanvas').style.transform=`translate(${panX}px,${panY}px) scale(${scale})`}
+const vp=document.getElementById('mapViewport');
+vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
+window.addEventListener('mousemove',e=>{if(!isDragging)return;panX=e.clientX-dragSX;panY=e.clientY-dragSY;updateTransform()});
+window.addEventListener('mouseup',()=>isDragging=false);
+vp.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.3,Math.min(2,scale+(e.deltaY>0?-.1:.1)));updateTransform()});
+function zoomIn(){scale=Math.min(2,scale+.15);updateTransform()}
+function zoomOut(){scale=Math.max(.3,scale-.15);updateTransform()}
+function resetView(){scale=.75;panX=-150;panY=-50;updateTransform()}
+
+// ============ INIT ============
+drawMap();renderCharacters();renderTimeline();renderMarkers();updateTransform();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
+</script>
+</body>
+</html>
