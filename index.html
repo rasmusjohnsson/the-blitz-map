@@ -2,139 +2,184 @@
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Blitz - Sword Coast Campaign Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>The Blitz - Sword Coast</title>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a1a2e;color:#e0d8c0;font-family:'Press Start 2P',monospace;overflow:hidden;height:100vh;width:100vw}
-.app{display:flex;height:100vh;width:100vw}
-.sidebar{width:380px;min-width:380px;background:#0f0f23;border-right:4px solid #4a3728;display:flex;flex-direction:column;z-index:10}
-.sidebar-title{text-align:center;padding:14px 10px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid #4a3728}
-.sidebar-title h1{font-size:22px;color:#ffd700;text-shadow:2px 2px 0 #8b6914,0 0 10px rgba(255,215,0,.5);letter-spacing:4px}
-.sidebar-title .subtitle{font-size:8px;color:#8b7355;margin-top:6px;letter-spacing:2px}
-.search-bar{padding:10px;background:#0a0a1e;border-bottom:3px solid #4a3728;position:relative}
-.search-wrap{display:flex;gap:4px}
-.search-input{flex:1;background:#1a1a2e;border:2px solid #2a2a4e;color:#e0d8c0;font-family:'Press Start 2P',monospace;font-size:8px;padding:9px 10px;border-radius:3px;outline:none;transition:border-color .2s}
-.search-input:focus{border-color:#ffd700}
+:root{--font:'Silkscreen',cursive;--bg:#0f0f23;--bg2:#1a1a2e;--border:#4a3728;--gold:#ffd700;--text:#e0d8c0;--muted:#8b7355;--dim:#6a6a8e;--dark:#0a0a1e}
+body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hidden;height:100vh;height:100dvh;width:100vw}
+.app{display:flex;height:100vh;height:100dvh;width:100vw}
+
+/* SIDEBAR */
+.sidebar{width:400px;min-width:400px;background:var(--bg);border-right:4px solid var(--border);display:flex;flex-direction:column;z-index:10}
+.sidebar-title{text-align:center;padding:16px 12px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border)}
+.sidebar-title h1{font-size:24px;color:var(--gold);text-shadow:2px 2px 0 #8b6914,0 0 10px rgba(255,215,0,.5);letter-spacing:4px}
+.sidebar-title .subtitle{font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:2px}
+.search-bar{padding:10px 12px;background:var(--dark);border-bottom:3px solid var(--border);position:relative}
+.search-wrap{display:flex;gap:6px}
+.search-input{flex:1;background:var(--bg2);border:2px solid #2a2a4e;color:var(--text);font-family:var(--font);font-size:11px;padding:10px 12px;border-radius:4px;outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--gold)}
 .search-input::placeholder{color:#4a4a6e}
-.search-btn{background:#2a1a0e;border:2px solid #4a3728;color:#ffd700;font-family:'Press Start 2P',monospace;font-size:10px;padding:8px 12px;cursor:pointer;border-radius:3px;transition:all .2s}
-.search-btn:hover{border-color:#ffd700;background:#3a2a1e}
-.suggestions{position:absolute;left:10px;right:10px;top:100%;background:#0f0f23;border:2px solid #4a3728;border-top:none;border-radius:0 0 4px 4px;z-index:20;display:none;max-height:220px;overflow-y:auto}
+.search-btn{background:#2a1a0e;border:2px solid var(--border);color:var(--gold);font-family:var(--font);font-size:12px;padding:8px 14px;cursor:pointer;border-radius:4px;transition:all .2s}
+.search-btn:hover{border-color:var(--gold)}
+.suggestions{position:absolute;left:12px;right:12px;top:100%;background:var(--bg);border:2px solid var(--border);border-top:none;border-radius:0 0 4px 4px;z-index:20;display:none;max-height:240px;overflow-y:auto}
 .suggestions.active{display:block}
-.suggestion-item{padding:8px 12px;font-size:7px;color:#c0b898;cursor:pointer;border-bottom:1px solid #1a1a2e;display:flex;align-items:center;gap:8px;transition:all .15s}
-.suggestion-item:hover{background:#1a1a38;color:#ffd700}
-.suggestion-item .s-type{font-size:6px;color:#6a6a8e;min-width:44px}
-.search-results{display:none}.search-results.active{display:block}
-.search-results-header{display:flex;justify-content:space-between;align-items:center;padding:6px 0 10px;border-bottom:2px solid #2a2a4e;margin-bottom:10px}
-.search-results-header h3{font-size:8px;color:#8b7355}
-.sr-close{font-size:9px;color:#6a6a8e;cursor:pointer;background:none;border:1px solid #2a2a4e;padding:3px 8px;font-family:'Press Start 2P',monospace;border-radius:2px}
-.sr-close:hover{color:#ffd700;border-color:#ffd700}
-.sr-item{padding:10px;margin-bottom:5px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #ffd700;cursor:pointer;transition:all .15s;font-size:8px;display:flex;align-items:center;gap:10px}
-.sr-item:hover{border-color:#ffd700;background:#1a1a38;color:#ffd700}
-.sr-item .sr-type{font-size:6px;color:#8b7355;min-width:40px;text-transform:uppercase}
-.tab-bar{display:flex;background:#0a0a1e;border-bottom:3px solid #4a3728}
-.tab-btn{flex:1;padding:10px 4px;font-family:'Press Start 2P',monospace;font-size:7px;color:#6a6a8e;background:transparent;border:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;text-align:center}
-.tab-btn:hover{color:#c0b898;background:#1a1a2e}
-.tab-btn.active{color:#ffd700;border-bottom-color:#ffd700;background:#1a1a2e}
-.tab-content{flex:1;overflow-y:auto;padding:10px}
+.suggestion-item{padding:10px 14px;font-size:11px;color:#c0b898;cursor:pointer;border-bottom:1px solid var(--bg2);display:flex;align-items:center;gap:10px;transition:all .15s}
+.suggestion-item:hover{background:#1a1a38;color:var(--gold)}
+.suggestion-item .s-type{font-size:9px;color:var(--dim);min-width:50px}
+.tab-bar{display:flex;background:var(--dark);border-bottom:3px solid var(--border)}
+.tab-btn{flex:1;padding:11px 4px;font-family:var(--font);font-size:10px;color:var(--dim);background:transparent;border:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;text-align:center}
+.tab-btn:hover{color:#c0b898;background:var(--bg2)}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:var(--bg2)}
+.tab-content{flex:1;overflow-y:auto;padding:12px}
 .tab-panel{display:none}.tab-panel.active{display:block}
-.character-card{display:flex;align-items:center;gap:12px;padding:12px 10px;margin-bottom:8px;background:#1a1a2e;border:2px solid #2a2a4e;border-radius:4px;cursor:pointer;transition:all .2s}
-.character-card:hover{border-color:#ffd700;background:#1e1e3a;transform:translateX(4px)}
-.portrait{width:56px;height:56px;min-width:56px;image-rendering:pixelated;border:2px solid #4a3728;background:#2a2a4e}
-.portrait canvas{width:56px;height:56px;image-rendering:pixelated}
-.char-info{display:flex;flex-direction:column;gap:4px;overflow:hidden}
-.char-name{font-size:9px;color:#ffd700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.char-class{font-size:7px;color:#8b7355}
-.char-species{font-size:7px;color:#6a6a8e}
-.npc-card{display:flex;align-items:center;gap:12px;padding:12px 10px;margin-bottom:8px;background:#1a1a2e;border:2px solid #2a2a4e;border-radius:4px;cursor:pointer;transition:all .2s}
+
+/* CARDS */
+.character-card,.npc-card{display:flex;align-items:center;gap:14px;padding:14px 12px;margin-bottom:10px;background:var(--bg2);border:2px solid #2a2a4e;border-radius:6px;cursor:pointer;transition:all .2s}
+.character-card:hover{border-color:var(--gold);background:#1e1e3a;transform:translateX(4px)}
 .npc-card:hover{border-color:#6ab4ff;background:#1e1e3a;transform:translateX(4px)}
-.npc-icon{width:40px;height:40px;min-width:40px;border:2px solid #4a3728;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;background:#1a1a2e}
-.npc-info{display:flex;flex-direction:column;gap:4px;overflow:hidden}
-.npc-name{font-size:9px;color:#6ab4ff}
-.npc-role{font-size:7px;color:#8b7355}
-.npc-status{font-size:6px;padding:2px 6px;border-radius:2px;display:inline-block;margin-top:2px}
+.portrait{width:56px;height:56px;min-width:56px;image-rendering:pixelated;border:2px solid var(--border);background:#2a2a4e;border-radius:4px}
+.portrait canvas{width:56px;height:56px;image-rendering:pixelated}
+.char-info,.npc-info{display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.char-name{font-size:12px;color:var(--gold)}
+.char-class{font-size:10px;color:var(--muted)}
+.char-species{font-size:9px;color:var(--dim)}
+.npc-icon{width:44px;height:44px;min-width:44px;border:2px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px;background:var(--bg2)}
+.npc-name{font-size:12px;color:#6ab4ff}
+.npc-role{font-size:10px;color:var(--muted)}
+.npc-status{font-size:9px;padding:3px 8px;border-radius:3px;display:inline-block;margin-top:3px}
 .npc-status.friendly{background:#1a3a1a;color:#4ae04a;border:1px solid #2a6a2a}
 .npc-status.hostile{background:#3a1a1a;color:#e04a4a;border:1px solid #6a2a2a}
 .npc-status.neutral{background:#2a2a1a;color:#c0b060;border:1px solid #5a5a2a}
 .npc-status.unknown{background:#1a1a2a;color:#8080a0;border:1px solid #3a3a5a}
-.empty-state{font-size:8px;color:#4a4a6e;padding:20px;text-align:center;line-height:2}
-.timeline{position:relative;padding-left:22px}
-.timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:#2a2a4e}
+.empty-state{font-size:11px;color:#4a4a6e;padding:24px;text-align:center;line-height:2}
+.sr-item{padding:12px;margin-bottom:6px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid var(--gold);cursor:pointer;transition:all .15s;font-size:11px;display:flex;align-items:center;gap:10px}
+.sr-item:hover{border-color:var(--gold);background:#1a1a38;color:var(--gold)}
+.sr-item .sr-type{font-size:8px;color:var(--muted);min-width:44px;text-transform:uppercase}
+.search-results{display:none}.search-results.active{display:block}
+.search-results-header{display:flex;justify-content:space-between;align-items:center;padding:6px 0 10px;border-bottom:2px solid #2a2a4e;margin-bottom:10px}
+.search-results-header h3{font-size:11px;color:var(--muted)}
+.sr-close{font-size:10px;color:var(--dim);cursor:pointer;background:none;border:1px solid #2a2a4e;padding:4px 10px;font-family:var(--font);border-radius:3px}.sr-close:hover{color:var(--gold);border-color:var(--gold)}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:#2a2a4e}
 .session-block{margin-bottom:14px}
-.session-header{font-size:9px;color:#ffd700;padding:8px 10px;background:#1a1a2e;border:2px solid #4a3728;border-radius:4px;position:relative;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
-.session-header:hover{border-color:#ffd700;background:#2a1a0e}
-.session-header::before{content:'';position:absolute;left:-18px;top:50%;transform:translateY(-50%);width:12px;height:12px;background:#ffd700;border:2px solid #8b6914;border-radius:2px}
-.session-header .session-label{font-size:7px;color:#8b7355;display:block;margin-bottom:3px}
-.session-header .toggle-icon{font-size:9px;color:#8b7355;transition:transform .2s;margin-left:auto;min-width:14px}
+.session-header{font-size:11px;color:var(--gold);padding:10px 12px;background:var(--bg2);border:2px solid var(--border);border-radius:6px;position:relative;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
+.session-header:hover{border-color:var(--gold);background:#2a1a0e}
+.session-header::before{content:'';position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:12px;height:12px;background:var(--gold);border:2px solid #8b6914;border-radius:2px}
+.session-header .session-label{font-size:9px;color:var(--muted);display:block;margin-bottom:3px}
+.session-header .toggle-icon{font-size:10px;color:var(--muted);transition:transform .2s;margin-left:auto}
 .session-block.collapsed .toggle-icon{transform:rotate(-90deg)}
 .session-block.collapsed .session-events{display:none}
 .session-events{margin-top:8px}
-.timeline-event{margin:5px 0;padding:10px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #6a4a2a;cursor:pointer;transition:all .2s;font-size:8px;color:#c0b898;line-height:1.6}
-.timeline-event:hover{border-color:#ffd700;background:#1a1a38}
-.timeline-event .te-title{color:#e0c878;font-size:8px}
-.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:99}.overlay.active{display:block}
-.popup-close{font-size:14px;color:#8b7355;cursor:pointer;background:none;border:2px solid #4a3728;padding:4px 8px;font-family:'Press Start 2P',monospace;transition:all .2s}.popup-close:hover{color:#ffd700;border-color:#ffd700}
-.location-popup,.char-detail-popup,.tl-detail,.npc-detail-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#0f0f23;border:4px solid #4a3728;border-radius:4px;z-index:100;overflow-y:auto;box-shadow:0 0 40px rgba(0,0,0,.8)}
+.timeline-event{margin:5px 0;padding:10px 12px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #6a4a2a;cursor:pointer;transition:all .2s;font-size:10px;color:#c0b898;line-height:1.6}
+.timeline-event:hover{border-color:var(--gold);background:#1a1a38}
+.timeline-event .te-title{color:#e0c878;font-size:10px}
+
+/* POPUPS */
+.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);z-index:99}.overlay.active{display:block}
+.popup-close{font-size:16px;color:var(--muted);cursor:pointer;background:none;border:2px solid var(--border);padding:5px 10px;font-family:var(--font);transition:all .2s;border-radius:4px}.popup-close:hover{color:var(--gold);border-color:var(--gold)}
+.location-popup,.char-detail-popup,.tl-detail,.npc-detail-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg);border:4px solid var(--border);border-radius:6px;z-index:100;overflow-y:auto;box-shadow:0 0 60px rgba(0,0,0,.8)}
 .location-popup.active,.char-detail-popup.active,.tl-detail.active,.npc-detail-popup.active{display:block}
-.location-popup{width:520px;max-height:80vh}.char-detail-popup{width:480px;max-height:80vh}.tl-detail{width:520px;max-height:80vh}.npc-detail-popup{width:480px;max-height:75vh}
-.popup-header,.tl-detail-header,.npc-detail-header{padding:16px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid #4a3728;display:flex;justify-content:space-between;align-items:center}
-.popup-header h2,.tl-detail-header h2,.npc-detail-header h2{font-size:12px;color:#ffd700;text-shadow:2px 2px 0 #8b6914}
-.popup-summary{padding:16px;font-size:9px;line-height:1.8;color:#c0b898;border-bottom:2px solid #2a2a4e}
-.event-list{padding:10px 16px 16px}
-.event-list h3{font-size:9px;color:#8b7355;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2a2a4e}
-.event-item{padding:10px;margin-bottom:8px;background:#1a1a2e;border:2px solid #2a2a4e;border-left:4px solid #ffd700;cursor:pointer;transition:all .2s}
-.event-item:hover{border-color:#ffd700;background:#1e1e3a}
-.event-item .event-title{font-size:8px;color:#ffd700;margin-bottom:4px}
-.event-item .event-preview{font-size:7px;color:#6a6a8e;line-height:1.6}
-.event-detail{display:none;padding:10px;margin-top:8px;background:#0a0a1e;border:1px solid #2a2a4e;font-size:8px;color:#c0b898;line-height:1.8}.event-detail.active{display:block}
-.char-detail-header{padding:16px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid #4a3728;display:flex;gap:16px;align-items:center}
-.char-detail-portrait{width:72px;height:72px;min-width:72px;image-rendering:pixelated;border:3px solid #ffd700}
-.char-detail-portrait canvas{width:72px;height:72px;image-rendering:pixelated}
-.char-detail-info h2{font-size:12px;color:#ffd700;text-shadow:2px 2px 0 #8b6914}
-.char-detail-info .detail-class{font-size:9px;color:#c0b898;margin-top:5px}
-.char-detail-info .detail-species{font-size:8px;color:#6a6a8e;margin-top:3px}
-.char-detail-body{padding:16px;font-size:8px;line-height:1.8;color:#c0b898}
-.char-detail-body .stat-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2a2a4e}
-.char-detail-body .stat-label{color:#8b7355}.char-detail-body .stat-value{color:#ffd700}
-.char-detail-body .backstory,.char-detail-body .personal-events{margin-top:14px;padding-top:14px;border-top:2px solid #2a2a4e}
-.char-detail-body .backstory h3,.char-detail-body .personal-events h3{font-size:9px;color:#8b7355;margin-bottom:10px}
-.pe-item{padding:8px;margin-bottom:5px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #6a4a8a;font-size:7px;color:#c0b898;line-height:1.6}
-.pe-item .pe-label{color:#b090d0;font-size:7px;margin-bottom:2px}
-.npc-detail-body{padding:16px;font-size:8px;line-height:1.8;color:#c0b898}
-.npc-detail-body .npc-events{padding-top:14px;border-top:2px solid #2a2a4e}
-.npc-detail-body .npc-events h3{font-size:9px;color:#8b7355;margin-bottom:10px}
-.tl-detail-body{padding:16px}
-.tl-detail-body .recap{font-size:8px;line-height:1.8;color:#c0b898;margin-bottom:14px}
-.ref-section{margin-top:12px}
-.ref-section h4{font-size:8px;color:#8b7355;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #2a2a4e}
+.location-popup{width:580px;max-height:85vh}
+.char-detail-popup{width:560px;max-height:85vh}
+.tl-detail{width:580px;max-height:85vh}
+.npc-detail-popup{width:540px;max-height:80vh}
+.popup-header,.tl-detail-header,.npc-detail-header{padding:18px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.popup-header h2,.tl-detail-header h2,.npc-detail-header h2{font-size:14px;color:var(--gold);text-shadow:2px 2px 0 #8b6914}
+.popup-summary{padding:18px;font-size:12px;line-height:1.9;color:#c0b898;border-bottom:2px solid #2a2a4e}
+.event-list{padding:12px 18px 18px}
+.event-list h3{font-size:12px;color:var(--muted);margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid #2a2a4e}
+.event-item{padding:12px;margin-bottom:10px;background:var(--bg2);border:2px solid #2a2a4e;border-left:4px solid var(--gold);cursor:pointer;transition:all .2s;border-radius:4px}
+.event-item:hover{border-color:var(--gold);background:#1e1e3a}
+.event-item .event-title{font-size:11px;color:var(--gold);margin-bottom:4px}
+.event-item .event-preview{font-size:10px;color:var(--dim);line-height:1.6}
+.event-detail{display:none;padding:12px;margin-top:8px;background:var(--dark);border:1px solid #2a2a4e;font-size:11px;color:#c0b898;line-height:1.9;border-radius:4px}.event-detail.active{display:block}
+
+/* CHAR DETAIL */
+.char-detail-header{padding:18px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border);display:flex;gap:18px;align-items:center}
+.char-detail-portrait{width:80px;height:80px;min-width:80px;image-rendering:pixelated;border:3px solid var(--gold);border-radius:6px}
+.char-detail-portrait canvas{width:80px;height:80px;image-rendering:pixelated}
+.char-detail-info h2{font-size:14px;color:var(--gold);text-shadow:2px 2px 0 #8b6914}
+.char-detail-info .detail-class{font-size:11px;color:#c0b898;margin-top:5px}
+.char-detail-info .detail-species{font-size:10px;color:var(--dim);margin-top:3px}
+.char-detail-body{padding:18px;font-size:11px;line-height:1.9;color:#c0b898}
+.char-detail-body .stat-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #2a2a4e;font-size:11px}
+.char-detail-body .stat-label{color:var(--muted)}.char-detail-body .stat-value{color:var(--gold)}
+.section-toggle{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:10px 0;margin-top:14px;border-top:2px solid #2a2a4e}
+.section-toggle h3{font-size:12px;color:var(--muted)}
+.section-toggle .tog-icon{font-size:10px;color:var(--muted);transition:transform .2s}
+.section-toggle.collapsed .tog-icon{transform:rotate(-90deg)}
+.section-body{overflow:hidden;transition:max-height .3s ease}
+.section-body.collapsed{max-height:0!important;padding:0!important;overflow:hidden}
+.section-body p{font-size:11px;line-height:1.9;padding:8px 0}
+.personal-events{margin-top:14px;padding-top:14px;border-top:2px solid #2a2a4e}
+.personal-events h3{font-size:12px;color:var(--muted);margin-bottom:10px}
+.pe-item{padding:10px 12px;margin-bottom:6px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #6a4a8a;font-size:10px;color:#c0b898;line-height:1.7;border-radius:4px}
+.pe-item .pe-label{color:#b090d0;font-size:10px;margin-bottom:3px;font-weight:700}
+
+/* NPC/TL DETAIL */
+.npc-detail-body{padding:18px;font-size:11px;line-height:1.9;color:#c0b898}
+.npc-detail-body .npc-events{padding-top:14px;margin-top:14px;border-top:2px solid #2a2a4e}
+.npc-detail-body .npc-events h3{font-size:12px;color:var(--muted);margin-bottom:10px}
+.tl-detail-body{padding:18px}
+.tl-detail-body .recap{font-size:11px;line-height:1.9;color:#c0b898;margin-bottom:14px}
+.ref-section{margin-top:14px}
+.ref-section h4{font-size:11px;color:var(--muted);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #2a2a4e}
 .ref-list{list-style:none}
-.ref-list li{padding:6px 10px;margin-bottom:4px;font-size:8px;cursor:pointer;border:1px solid transparent;border-radius:3px;transition:all .15s;display:flex;align-items:center;gap:8px}
-.ref-list li:hover{border-color:#ffd700;background:#1a1a38;color:#ffd700}
-.ref-list li .ref-icon{font-size:7px;min-width:14px}
+.ref-list li{padding:8px 12px;margin-bottom:5px;font-size:11px;cursor:pointer;border:1px solid transparent;border-radius:4px;transition:all .15s;display:flex;align-items:center;gap:10px}
+.ref-list li:hover{border-color:var(--gold);background:#1a1a38;color:var(--gold)}
+.ref-list li .ref-icon{font-size:9px;min-width:14px}
 .ref-list li.place-ref .ref-icon{color:#ff6b35}
 .ref-list li.npc-ref .ref-icon{color:#6ab4ff}
+
+/* MAP */
 .map-container{flex:1;position:relative;overflow:hidden;background:#071828}
-.map-viewport{width:100%;height:100%;position:relative;overflow:hidden;cursor:grab}.map-viewport:active{cursor:grabbing}
+.map-viewport{width:100%;height:100%;position:relative;overflow:hidden;cursor:grab;touch-action:none}.map-viewport:active{cursor:grabbing}
 .map-canvas{position:absolute;transform-origin:0 0}
-.map-svg{width:1800px;height:1400px}
+.map-svg{width:2000px;height:1600px}
 .location-marker{position:absolute;cursor:pointer;z-index:5;transition:transform .2s}
 .location-marker:hover{transform:scale(1.3);z-index:6}
-.location-marker.highlighted .marker-dot{background:#fff;border-color:#ffd700;box-shadow:0 0 20px #ffd700,0 0 40px rgba(255,215,0,.5)}
-.marker-dot{width:18px;height:18px;background:#ffd700;border:3px solid #8b6914;border-radius:2px;animation:pulse 2.5s ease-in-out infinite}
+.location-marker.highlighted .marker-dot{background:#fff;border-color:var(--gold);box-shadow:0 0 20px var(--gold),0 0 40px rgba(255,215,0,.5)}
+.marker-dot{width:20px;height:20px;background:var(--gold);border:3px solid #8b6914;border-radius:3px;animation:pulse 2.5s ease-in-out infinite}
 .marker-visited .marker-dot{background:#ff6b35;border-color:#a0421f}
-@keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.4)}50%{box-shadow:0 0 12px rgba(255,215,0,.7)}}
-.marker-label{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:7px;color:#ffd700;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 2px 4px rgba(0,0,0,.8);white-space:nowrap;pointer-events:none}
-.map-title{position:absolute;top:16px;right:16px;z-index:8;text-align:right}
-.map-title .map-subtitle{font-size:9px;color:#8b7355;letter-spacing:3px}
+@keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.4)}50%{box-shadow:0 0 14px rgba(255,215,0,.7)}}
+.marker-label{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--gold);text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 2px 6px rgba(0,0,0,.9);white-space:nowrap;pointer-events:none}
+.map-title{position:absolute;top:16px;right:16px;z-index:8}
+.map-title .map-subtitle{font-size:10px;color:var(--muted);letter-spacing:3px}
 .zoom-controls{position:absolute;bottom:16px;right:16px;z-index:8;display:flex;flex-direction:column;gap:4px}
-.zoom-btn{width:34px;height:34px;background:#0f0f23;border:2px solid #4a3728;color:#ffd700;font-family:'Press Start 2P',monospace;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.zoom-btn:hover{border-color:#ffd700;background:#1a1a2e}
-.legend{position:absolute;bottom:16px;left:16px;z-index:8;background:rgba(15,15,35,.9);border:2px solid #4a3728;padding:10px}
-.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:7px}
-.legend-dot{width:12px;height:12px;border:2px solid;border-radius:2px}
-.legend-dot.visited{background:#ff6b35;border-color:#a0421f}.legend-dot.known{background:#ffd700;border-color:#8b6914}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0f0f23}::-webkit-scrollbar-thumb{background:#4a3728;border-radius:2px}
+.zoom-btn{width:38px;height:38px;background:var(--bg);border:2px solid var(--border);color:var(--gold);font-family:var(--font);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;border-radius:4px}
+.zoom-btn:hover{border-color:var(--gold);background:var(--bg2)}
+.legend{position:absolute;bottom:16px;left:16px;z-index:8;background:rgba(15,15,35,.92);border:2px solid var(--border);padding:10px 12px;border-radius:4px}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:9px}
+.legend-dot{width:12px;height:12px;border:2px solid;border-radius:3px}
+.legend-dot.visited{background:#ff6b35;border-color:#a0421f}.legend-dot.known{background:var(--gold);border-color:#8b6914}
+
+/* MOBILE */
+@media(max-width:900px){
+  .app{flex-direction:column}
+  .sidebar{width:100%;min-width:unset;height:55vh;border-right:none;border-bottom:4px solid var(--border)}
+  .map-container{height:45vh}
+  .sidebar-title{padding:10px 8px}
+  .sidebar-title h1{font-size:18px}
+  .location-popup,.char-detail-popup,.tl-detail,.npc-detail-popup{width:95vw;max-height:80vh;top:50%;left:50%}
+  .marker-label{font-size:7px}
+  .legend{bottom:8px;left:8px;padding:6px 8px}
+  .zoom-controls{bottom:8px;right:8px}
+  .zoom-btn{width:34px;height:34px;font-size:14px}
+}
+@media(max-width:500px){
+  .sidebar{height:50vh}
+  .map-container{height:50vh}
+  .sidebar-title h1{font-size:16px;letter-spacing:2px}
+  .tab-btn{font-size:8px;padding:8px 2px}
+  .character-card,.npc-card{padding:10px 8px;gap:10px}
+  .char-name,.npc-name{font-size:11px}
+  .popup-header h2,.tl-detail-header h2,.npc-detail-header h2{font-size:12px}
+}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 </style>
 </head>
 <body>
@@ -142,22 +187,13 @@ body{background:#1a1a2e;color:#e0d8c0;font-family:'Press Start 2P',monospace;ove
   <div class="sidebar">
     <div class="sidebar-title"><h1>THE BLITZ</h1><div class="subtitle">TYRANNY OF DRAGONS</div></div>
     <div class="search-bar"><div class="search-wrap"><input class="search-input" id="searchInput" type="text" placeholder="Sök plats, namn..."><button class="search-btn" id="searchBtn">&#x1F50D;</button></div><div class="suggestions" id="suggestions"></div></div>
-    <div class="tab-bar">
-      <button class="tab-btn active" data-tab="adventurers">ÄVENTYRARE</button>
-      <button class="tab-btn" data-tab="history">HISTORIK</button>
-      <button class="tab-btn" data-tab="npcs">NPC:er</button>
-    </div>
-    <div class="tab-content">
-      <div class="tab-panel active" id="tab-adventurers"></div>
-      <div class="tab-panel" id="tab-history"></div>
-      <div class="tab-panel" id="tab-npcs"></div>
-      <div class="tab-panel" id="tab-search"></div>
-    </div>
+    <div class="tab-bar"><button class="tab-btn active" data-tab="adventurers">ÄVENTYRARE</button><button class="tab-btn" data-tab="history">HISTORIK</button><button class="tab-btn" data-tab="npcs">NPC:er</button></div>
+    <div class="tab-content"><div class="tab-panel active" id="tab-adventurers"></div><div class="tab-panel" id="tab-history"></div><div class="tab-panel" id="tab-npcs"></div><div class="tab-panel" id="tab-search"></div></div>
   </div>
   <div class="map-container">
     <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
-    <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"><svg class="map-svg" id="mapSvg" viewBox="0 0 1800 1400"></svg></div></div>
-    <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:8px">R</button></div>
+    <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"><svg class="map-svg" id="mapSvg" viewBox="0 0 2000 1600"></svg></div></div>
+    <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:9px">R</button></div>
     <div class="legend"><div class="legend-item"><div class="legend-dot visited"></div><span>Besökta platser</span></div><div class="legend-item"><div class="legend-dot known"></div><span>Kända platser</span></div></div>
   </div>
 </div>
@@ -168,125 +204,172 @@ body{background:#1a1a2e;color:#e0d8c0;font-family:'Press Start 2P',monospace;ove
 <div class="npc-detail-popup" id="npcDetailPopup"><div class="npc-detail-header"><h2 id="npcDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="npc-detail-body" id="npcDetailBody"></div></div>
 <script>
 const characters=[
-{id:'haldan',name:'Haldan Askvandrare',class:'Ranger',subclass:'Monster Slayer',species:'Variant Human',org:'Emerald Enclave',age:56,gender:'Male',appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.',personalEvents:[{label:'Drakjakt',text:'Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr.'},{label:'Räddade Theron',text:'Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest.'},{label:'Emerald Enclave',text:'Rekryterades och tränades som monsterjägare och hemlig lönnmördare.'},{label:'Mötte Cedric',text:'Korsade vägar med Cedric – de fann gemensamt intresse i kunskap om monster.'},{label:'Vaktare i skuggorna',text:'Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar.'}]},
-{id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn av Haldan.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
-{id:'oweyn',name:'Oweyn Howell',class:'Fighter',subclass:'Battle Master',species:'Custom Lineage',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'',eyes:'',hair:''},backstory:'Från Greenest, åkte till Baldur\'s Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov och är nu fullvärdig medlem. Vapenbroder med Theron.',personalEvents:[{label:'Lämnade Greenest',text:'Reste till Baldur\'s Gate för att söka äventyr.'},{label:'Rekryterad som squire',text:'Placerades under Therons förmyndarskap i Order of the Gauntlet.'},{label:'Klarade proven',text:'Efter lång kamp klarade han alla prov som krävdes.'},{label:'Fullvärdig riddare',text:'Uppsteg till fullvärdig medlem – vapenbroder med Theron.'},{label:'Unarmed fighting',text:'Specialiserade sig i obeväpnad stridsteknik.'}]},
-{id:'gothmog',name:'Gothmog',class:'Fighter',subclass:'Rune Knight',species:'Half-Orc',org:'',age:23,gender:'Male',appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},backstory:'Född i Greenest men försvann som barn in i Barovia. Överlevde som soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.',personalEvents:[{label:'Försvann till Barovia',text:'Som barn svalde dimman honom och han hamnade i det mörka Barovia.'},{label:'Soldat i Valakii',text:'Blev soldat – utnyttjades för sitt skrämmande utseende.'},{label:'Vände om',text:'Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde.'},{label:'Runorna',text:'Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli.'},{label:'The Vistani – ett minne som pris',text:'Betalade med ett dyrbart minne för att fly Barovia.'}]},
-{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog utanför Greenest.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker – en varelse av kunskap.'},{label:'Resande magiker',text:'Spenderade år med att resa och studera magi som ett levande språk.'},{label:'Samlade gruppen',text:'Sökte upp gamla vänner i Greenest och introducerade Gothmog. Början på The Blitz.'}]}
+{id:'haldan',name:'Haldan Askvandrare',class:'Ranger',subclass:'Monster Slayer',species:'Variant Human',org:'Emerald Enclave',age:56,gender:'Male',appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.',personalEvents:[{label:'Drakjakt',text:'Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr.'},{label:'Räddade Theron',text:'Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest.'},{label:'Emerald Enclave',text:'Rekryterades och tränades som monsterjägare och hemlig lönnmördare.'},{label:'Mötte Cedric',text:'Korsade vägar med Cedric – gemensamt intresse i kunskap om monster.'},{label:'Vaktare i skuggorna',text:'Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar.'}]},
+{id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
+{id:'oweyn',name:'Oweyn Howell',class:'Fighter',subclass:'Battle Master',species:'Custom Lineage',org:'Order of the Gauntlet',gender:'Male',appearance:{},backstory:'Från Greenest, åkte till Baldur\'s Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.',personalEvents:[{label:'Lämnade Greenest',text:'Reste till Baldur\'s Gate för att söka äventyr.'},{label:'Rekryterad som squire',text:'Placerades under Therons förmyndarskap i Order of the Gauntlet.'},{label:'Klarade proven',text:'Klarade alla prov som krävdes efter lång kamp.'},{label:'Fullvärdig riddare',text:'Uppsteg till fullvärdig medlem – vapenbroder med Theron.'},{label:'Unarmed fighting',text:'Specialiserade sig i obeväpnad stridsteknik.'}]},
+{id:'gothmog',name:'Gothmog',class:'Fighter',subclass:'Rune Knight',species:'Half-Orc',org:'',age:23,gender:'Male',appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},backstory:'Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.',personalEvents:[{label:'Försvann till Barovia',text:'Som barn svalde dimman honom och han hamnade i Barovia.'},{label:'Soldat i Valakii',text:'Blev soldat – utnyttjades för sitt skrämmande utseende.'},{label:'Vände om',text:'Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde.'},{label:'Runorna',text:'Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli.'},{label:'The Vistani',text:'Betalade med ett dyrbart minne för att fly Barovia.'}]},
+{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker.'},{label:'Resande magiker',text:'Reste och studerade magi som ett levande språk.'},{label:'Samlade gruppen',text:'Introducerade Gothmog i Greenest. Början på The Blitz.'}]}
 ];
+// Geography based on official map. Coast runs N-S. Luskan top-left, Greenest far SE.
+// Using 2000x1600 canvas. Coast at ~x400. Inland stretches to x1600+.
 const locations=[
-{id:'greenest',name:'Greenest',x:1200,y:920,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna av hans klan och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde honom Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Stadsmyllret kändes trångt...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]},
-{id:'baldursgate',name:"Baldur's Gate",x:580,y:740,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
-{id:'elturel',name:'Elturel',x:860,y:720,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarordens högkvarter...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
-{id:'waterdeep',name:'Waterdeep',x:520,y:380,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
-{id:'neverwinter',name:'Neverwinter',x:440,y:200,visited:false,summary:'Staden som aldrig fryser.',events:[]},
-{id:'beregost',name:'Beregost',x:600,y:830,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
-{id:'candlekeep',name:'Candlekeep',x:510,y:870,visited:false,summary:'Legendariskt biblioteksfort vid kusten.',events:[]},
-{id:'nashkel',name:'Nashkel',x:650,y:890,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
-{id:'daggerford',name:'Daggerford',x:530,y:530,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
-{id:'boareskyr',name:'Boareskyr Bridge',x:760,y:790,visited:false,summary:'Viktig bro över floden Chionthar.',events:[]},
-{id:'luskan',name:'Luskan',x:410,y:100,visited:false,summary:'Laglös piratstad längst i norr.',events:[]},
-{id:'phandalin',name:'Phandalin',x:560,y:260,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
-{id:'leilon',name:'Leilon',x:470,y:290,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
-{id:'triboar',name:'Triboar',x:680,y:340,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]}
+{id:'luskan',name:'Luskan',x:520,y:160,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
+{id:'neverwinter',name:'Neverwinter',x:530,y:300,visited:false,summary:'Staden som aldrig fryser.',events:[]},
+{id:'leilon',name:'Leilon',x:560,y:430,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
+{id:'phandalin',name:'Phandalin',x:680,y:380,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
+{id:'waterdeep',name:'Waterdeep',x:620,y:560,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
+{id:'triboar',name:'Triboar',x:800,y:480,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
+{id:'daggerford',name:'Daggerford',x:600,y:720,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
+{id:'baldursgate',name:"Baldur's Gate",x:640,y:980,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
+{id:'candlekeep',name:'Candlekeep',x:560,y:1080,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
+{id:'beregost',name:'Beregost',x:680,y:1060,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
+{id:'nashkel',name:'Nashkel',x:740,y:1120,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
+{id:'elturel',name:'Elturel',x:960,y:960,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
+{id:'boareskyr',name:'Boareskyr Bridge',x:860,y:1020,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
+{id:'greenest',name:'Greenest',x:1200,y:1120,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
 ];
 const npcsData=[];
 const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – The Blitz formas',events:[
 {title:'Haldans drakjakt',recap:'Haldan spårade en blå drake. Kom för sent för att rädda Therons klan men hittade baby-Theron i askan.',places:['greenest'],npcs:['Verustraz / Pyotr']},
-{title:'Theron växer upp i Greenest',recap:'Theron blev stadsvakt, fann Bahamut och gick med i Order of the Gauntlet.',places:['greenest','elturel'],npcs:[]},
-{title:'Oweyn söker äventyr',recap:'Oweyn reste till Baldur\'s Gate och rekryterades av Order of the Gauntlet under Theron.',places:['greenest','baldursgate'],npcs:[]},
+{title:'Theron växer upp',recap:'Theron blev stadsvakt, fann Bahamut och gick med i Order of the Gauntlet.',places:['greenest','elturel'],npcs:[]},
+{title:'Oweyn söker äventyr',recap:'Oweyn reste till Baldur\'s Gate och rekryterades av Order of the Gauntlet.',places:['greenest','baldursgate'],npcs:[]},
 {title:'Cedrics resor',recap:'Cedric fick "Kunskapens Vagn" av sin far Steve och reste mellan riken.',places:['greenest'],npcs:['Steve']},
 {title:'Gothmog flyr Barovia',recap:'Gothmog försvann som barn in i Barovia. The Vistani tog ett minne som betalning. Cedric räddade honom.',places:['greenest'],npcs:['The Vistani']},
 {title:'The Blitz formas',recap:'Cedric återvände med Gothmog. Gruppen växte samman till "The Blitz".',places:['greenest'],npcs:[]}
 ]}];
-function drawPortrait(canvas,id){const ctx=canvas.getContext('2d');canvas.width=16;canvas.height=16;ctx.imageSmoothingEnabled=false;const P={
-haldan:()=>{ctx.fillStyle='#dbb89a';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#5c3a1e';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#c4766e';ctx.fillRect(5,2,1,2);ctx.fillRect(7,1,2,1);ctx.fillStyle='#c9a882';ctx.fillRect(5,2,6,1);ctx.fillStyle='#8a8a8a';ctx.fillRect(12,11,2,2);ctx.fillStyle='#5a3a1a';ctx.fillRect(4,10,8,5);ctx.fillStyle='#2a5a2a';ctx.fillRect(3,10,1,5);ctx.fillRect(12,10,1,5);ctx.fillStyle='#6b4a2a';ctx.fillRect(13,4,1,8);ctx.fillStyle='#aaa';ctx.fillRect(14,5,1,6);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1)},
-theron:()=>{ctx.fillStyle='#d4a830';ctx.fillRect(4,2,8,8);ctx.fillRect(5,1,6,1);ctx.fillStyle='#c89a20';ctx.fillRect(6,7,4,2);ctx.fillStyle='#ff2020';ctx.fillRect(5,4,2,2);ctx.fillRect(9,4,2,2);ctx.fillStyle='#cc0000';ctx.fillRect(6,4,1,1);ctx.fillRect(10,4,1,1);ctx.fillStyle='#b82020';ctx.fillRect(4,0,2,2);ctx.fillRect(10,0,2,2);ctx.fillStyle='#7a7a8a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#6a6a7a';ctx.fillRect(4,11,8,1);ctx.fillRect(4,13,8,1);ctx.fillStyle='#ffd700';ctx.fillRect(7,10,2,1);ctx.fillStyle='#a07818';ctx.fillRect(7,8,1,1);ctx.fillRect(8,8,1,1)},
-oweyn:()=>{ctx.fillStyle='#dbb89a';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#4a2a0a';ctx.fillRect(4,1,8,3);ctx.fillRect(3,2,1,3);ctx.fillRect(12,2,1,3);ctx.fillStyle='#3a5a3a';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1);ctx.fillStyle='#7a7a8a';ctx.fillRect(4,10,8,5);ctx.fillStyle='#dbb89a';ctx.fillRect(3,12,1,2);ctx.fillRect(12,12,1,2);ctx.fillStyle='#5a5a6a';ctx.fillRect(13,6,2,7);ctx.fillStyle='#8a8a9a';ctx.fillRect(13,5,3,2)},
-gothmog:()=>{ctx.fillStyle='#7a8a7a';ctx.fillRect(4,2,8,8);ctx.fillRect(3,4,10,5);ctx.fillStyle='#6a7a6a';ctx.fillRect(5,1,6,2);ctx.fillStyle='#ff8a00';ctx.fillRect(5,4,2,2);ctx.fillRect(9,4,2,2);ctx.fillStyle='#e0d8c0';ctx.fillRect(5,8,1,2);ctx.fillRect(10,8,1,2);ctx.fillStyle='#5a9aba';ctx.fillRect(5,2,1,1);ctx.fillRect(8,1,1,1);ctx.fillRect(10,2,1,1);ctx.fillStyle='#5a5a6a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#ff6a30';ctx.fillRect(6,12,1,1);ctx.fillRect(9,12,1,1);ctx.fillStyle='#5a4a3a';ctx.fillRect(14,2,1,12);ctx.fillStyle='#8a8a9a';ctx.fillRect(13,2,3,3)},
-cedric:()=>{ctx.fillStyle='#e8ceb0';ctx.fillRect(5,3,6,7);ctx.fillRect(4,5,8,4);ctx.fillStyle='#9a9a9a';ctx.fillRect(4,1,8,3);ctx.fillRect(3,2,1,4);ctx.fillRect(12,2,1,4);ctx.fillStyle='#4488cc';ctx.fillRect(6,5,2,2);ctx.fillRect(9,5,2,2);ctx.fillStyle='#fff';ctx.fillRect(6,5,1,1);ctx.fillRect(9,5,1,1);ctx.fillStyle='#a0756a';ctx.fillRect(7,8,2,1);ctx.fillStyle='#2a3a6a';ctx.fillRect(3,10,10,5);ctx.fillStyle='#6b4a2a';ctx.fillRect(1,4,1,11);ctx.fillStyle='#8ab8ff';ctx.fillRect(0,3,3,2);ctx.fillStyle='#6a2a1a';ctx.fillRect(12,11,2,3);ctx.fillStyle='#e0d8c0';ctx.fillRect(12,12,2,1)}
+
+function drawPortrait(cv,id){const c=cv.getContext('2d');cv.width=16;cv.height=16;c.imageSmoothingEnabled=false;const P={
+haldan:()=>{c.fillStyle='#dbb89a';c.fillRect(5,3,6,7);c.fillRect(4,5,8,4);c.fillStyle='#5c3a1e';c.fillRect(6,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#fff';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#c4766e';c.fillRect(5,2,1,2);c.fillRect(7,1,2,1);c.fillStyle='#c9a882';c.fillRect(5,2,6,1);c.fillStyle='#8a8a8a';c.fillRect(12,11,2,2);c.fillStyle='#5a3a1a';c.fillRect(4,10,8,5);c.fillStyle='#2a5a2a';c.fillRect(3,10,1,5);c.fillRect(12,10,1,5);c.fillStyle='#6b4a2a';c.fillRect(13,4,1,8);c.fillStyle='#aaa';c.fillRect(14,5,1,6);c.fillStyle='#a0756a';c.fillRect(7,8,2,1)},
+theron:()=>{c.fillStyle='#d4a830';c.fillRect(4,2,8,8);c.fillRect(5,1,6,1);c.fillStyle='#c89a20';c.fillRect(6,7,4,2);c.fillStyle='#ff2020';c.fillRect(5,4,2,2);c.fillRect(9,4,2,2);c.fillStyle='#cc0000';c.fillRect(6,4,1,1);c.fillRect(10,4,1,1);c.fillStyle='#b82020';c.fillRect(4,0,2,2);c.fillRect(10,0,2,2);c.fillStyle='#7a7a8a';c.fillRect(3,10,10,5);c.fillStyle='#ffd700';c.fillRect(7,10,2,1);c.fillStyle='#a07818';c.fillRect(7,8,1,1);c.fillRect(8,8,1,1)},
+oweyn:()=>{c.fillStyle='#dbb89a';c.fillRect(5,3,6,7);c.fillRect(4,5,8,4);c.fillStyle='#4a2a0a';c.fillRect(4,1,8,3);c.fillRect(3,2,1,3);c.fillRect(12,2,1,3);c.fillStyle='#3a5a3a';c.fillRect(6,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#fff';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#a0756a';c.fillRect(7,8,2,1);c.fillStyle='#7a7a8a';c.fillRect(4,10,8,5);c.fillStyle='#dbb89a';c.fillRect(3,12,1,2);c.fillRect(12,12,1,2);c.fillStyle='#5a5a6a';c.fillRect(13,6,2,7);c.fillStyle='#8a8a9a';c.fillRect(13,5,3,2)},
+gothmog:()=>{c.fillStyle='#7a8a7a';c.fillRect(4,2,8,8);c.fillRect(3,4,10,5);c.fillStyle='#6a7a6a';c.fillRect(5,1,6,2);c.fillStyle='#ff8a00';c.fillRect(5,4,2,2);c.fillRect(9,4,2,2);c.fillStyle='#e0d8c0';c.fillRect(5,8,1,2);c.fillRect(10,8,1,2);c.fillStyle='#5a9aba';c.fillRect(5,2,1,1);c.fillRect(8,1,1,1);c.fillRect(10,2,1,1);c.fillStyle='#5a5a6a';c.fillRect(3,10,10,5);c.fillStyle='#ff6a30';c.fillRect(6,12,1,1);c.fillRect(9,12,1,1);c.fillStyle='#5a4a3a';c.fillRect(14,2,1,12);c.fillStyle='#8a8a9a';c.fillRect(13,2,3,3)},
+cedric:()=>{c.fillStyle='#e8ceb0';c.fillRect(5,3,6,7);c.fillRect(4,5,8,4);c.fillStyle='#9a9a9a';c.fillRect(4,1,8,3);c.fillRect(3,2,1,4);c.fillRect(12,2,1,4);c.fillStyle='#4488cc';c.fillRect(6,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#fff';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#a0756a';c.fillRect(7,8,2,1);c.fillStyle='#2a3a6a';c.fillRect(3,10,10,5);c.fillStyle='#6b4a2a';c.fillRect(1,4,1,11);c.fillStyle='#8ab8ff';c.fillRect(0,3,3,2);c.fillStyle='#6a2a1a';c.fillRect(12,11,2,3);c.fillStyle='#e0d8c0';c.fillRect(12,12,2,1)}
 };if(P[id])P[id]()}
+
 function drawMap(){document.getElementById('mapSvg').innerHTML=`
 <defs>
-<pattern id="w" width="24" height="12" patternUnits="userSpaceOnUse"><path d="M0 6Q6 2 12 6Q18 10 24 6" stroke="#0e2e50" stroke-width="1" fill="none" opacity=".5"/></pattern>
-<pattern id="t" width="10" height="10" patternUnits="userSpaceOnUse"><polygon points="5,1 1,7 9,7" fill="#0e5a14" opacity=".9"/><rect x="4" y="7" width="2" height="3" fill="#2a1808" opacity=".6"/></pattern>
-<pattern id="t2" width="14" height="14" patternUnits="userSpaceOnUse"><polygon points="7,0 1,10 13,10" fill="#0c5010" opacity=".85"/><rect x="6" y="10" width="2" height="4" fill="#241408" opacity=".5"/></pattern>
-<pattern id="m" width="20" height="16" patternUnits="userSpaceOnUse"><polygon points="10,0 0,16 20,16" fill="#6e6478" opacity=".9"/><polygon points="10,0 6,6 14,6" fill="#908898" opacity=".7"/><polygon points="10,0 8,3 12,3" fill="#c0b8cc" opacity=".5"/></pattern>
-<linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4a8048"/><stop offset="100%" stop-color="#428040"/></linearGradient>
-<radialGradient id="sd" cx=".3" cy=".5"><stop offset="0%" stop-color="#061420"/><stop offset="100%" stop-color="#0a1e3a"/></radialGradient>
+<pattern id="w" width="28" height="14" patternUnits="userSpaceOnUse"><path d="M0 7Q7 2 14 7Q21 12 28 7" stroke="#1a4a70" stroke-width="1.2" fill="none" opacity=".4"/></pattern>
+<pattern id="t" width="10" height="10" patternUnits="userSpaceOnUse"><polygon points="5,1 1,7 9,7" fill="#0a5510" opacity=".95"/><rect x="4" y="7" width="2" height="3" fill="#2a1808" opacity=".6"/></pattern>
+<pattern id="t2" width="8" height="8" patternUnits="userSpaceOnUse"><polygon points="4,0 0,6 8,6" fill="#085010" opacity=".9"/><rect x="3" y="6" width="2" height="2" fill="#1e1008" opacity=".5"/></pattern>
+<pattern id="m" width="18" height="14" patternUnits="userSpaceOnUse"><polygon points="9,0 0,14 18,14" fill="#7a7088" opacity=".9"/><polygon points="9,0 5,5 13,5" fill="#9a90a8" opacity=".7"/><polygon points="9,0 7,3 11,3" fill="#c8c0d8" opacity=".5"/></pattern>
+<linearGradient id="lg" x1="0" y1="0" x2=".8" y2="1"><stop offset="0%" stop-color="#508a4e"/><stop offset="100%" stop-color="#488a44"/></linearGradient>
+<radialGradient id="sd" cx=".25" cy=".4"><stop offset="0%" stop-color="#041018"/><stop offset="100%" stop-color="#0a1e3a"/></radialGradient>
 </defs>
-<rect width="1800" height="1400" fill="url(#sd)"/><rect width="1800" height="1400" fill="url(#w)"/>
-<path d="M350 0Q360 80 340 160Q330 220 350 300Q360 350 340 400Q350 450 370 520Q390 580 410 640Q430 700 440 750Q450 800 430 860Q420 920 440 1000Q460 1080 440 1150L420 1400 300 1400 300 0Z" fill="#0e2848" opacity=".45"/>
-<path d="M360 0L500 0 520 20 550 40 580 10 700 0 1800 0 1800 1400 440 1400 450 1300 470 1200 460 1100 440 1000 430 920 440 860 450 800 445 750 430 700 410 640 390 580 370 520 345 450 340 400 350 320 355 260 340 200 335 140 345 80 355 40 360 0Z" fill="url(#lg)"/>
-<ellipse cx="1100" cy="920" rx="160" ry="80" fill="#58a058" opacity=".15"/>
-<ellipse cx="600" cy="180" rx="80" ry="50" fill="#0a2a0a" opacity=".5"/><ellipse cx="600" cy="180" rx="78" ry="48" fill="url(#t)"/>
-<ellipse cx="750" cy="360" rx="70" ry="45" fill="#0a2a0a" opacity=".45"/><ellipse cx="750" cy="360" rx="68" ry="43" fill="url(#t2)"/>
-<ellipse cx="900" cy="500" rx="100" ry="60" fill="#0a2a0a" opacity=".5"/><ellipse cx="900" cy="500" rx="98" ry="58" fill="url(#t)"/>
-<ellipse cx="1100" cy="400" rx="90" ry="55" fill="#0a2a0a" opacity=".45"/><ellipse cx="1100" cy="400" rx="88" ry="53" fill="url(#t)"/>
-<ellipse cx="850" cy="700" rx="70" ry="40" fill="#0a2a0a" opacity=".4"/><ellipse cx="850" cy="700" rx="68" ry="38" fill="url(#t2)"/>
-<ellipse cx="1050" cy="800" rx="80" ry="45" fill="#0a2a0a" opacity=".4"/><ellipse cx="1050" cy="800" rx="78" ry="43" fill="url(#t)"/>
-<ellipse cx="1300" cy="600" rx="60" ry="35" fill="#0a2a0a" opacity=".35"/><ellipse cx="1300" cy="600" rx="58" ry="33" fill="url(#t2)"/>
-<rect x="648" y="48" width="504" height="74" fill="#1a1a2e" opacity=".4" rx="8"/><rect x="650" y="50" width="500" height="70" fill="url(#m)" rx="8"/>
-<ellipse cx="530" cy="250" rx="42" ry="27" fill="#1a1a2e" opacity=".35"/><ellipse cx="530" cy="250" rx="40" ry="25" fill="url(#m)"/>
-<rect x="1048" y="548" width="304" height="90" fill="#1a1a2e" opacity=".4" rx="10"/><rect x="1050" y="550" width="300" height="85" fill="url(#m)" rx="10"/>
-<ellipse cx="720" cy="880" rx="82" ry="22" fill="#1a1a2e" opacity=".3"/><ellipse cx="720" cy="880" rx="80" ry="20" fill="url(#m)"/>
-<path d="M580 740Q620 735 680 730Q740 725 800 720Q860 718 900 720" stroke="#3090d0" stroke-width="4" fill="none" opacity=".85"/>
-<path d="M900 720Q950 722 1000 730Q1060 740 1100 750" stroke="#3090d0" stroke-width="3" fill="none" opacity=".7"/>
-<path d="M520 380Q515 400 510 430Q508 450 510 480" stroke="#3090d0" stroke-width="3" fill="none" opacity=".75"/>
-<path d="M650 340Q660 370 655 400" stroke="#3090d0" stroke-width="2" fill="none" opacity=".6"/>
-<path d="M520 380Q525 420 530 470Q535 500 540 530Q560 600 575 670Q580 700 582 740" stroke="#c8a850" stroke-width="3" fill="none" stroke-dasharray="8 4" opacity=".8"/>
-<path d="M520 380Q500 340 480 300Q460 250 445 210Q442 200 440 190" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="8 4" opacity=".75"/>
-<path d="M440 200Q430 160 420 120Q415 110 410 100" stroke="#c8a850" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
-<path d="M582 740Q600 780 610 830Q620 850 630 870" stroke="#c8a850" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
-<path d="M630 870Q650 880 680 890Q700 895 720 890" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".65"/>
-<path d="M582 740Q630 740 700 732Q760 728 810 726" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".75"/>
-<path d="M810 726Q840 730 860 740Q900 760 960 800Q1020 840 1080 870Q1140 900 1200 920" stroke="#c8a850" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".7"/>
-<path d="M520 380Q560 370 600 360Q640 350 680 340" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".65"/>
-<path d="M440 200Q480 230 510 250Q530 260 560 260" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
-<path d="M440 200Q450 250 465 290Q470 295 470 300" stroke="#a88838" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
-<path d="M582 740Q560 780 540 820Q520 850 510 870" stroke="#a88838" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".6"/>
-<g transform="translate(160,160)"><circle r="38" fill="#0a0a1e" stroke="#4a3728" stroke-width="2.5" opacity=".9"/><polygon points="0,-28 5,-8 -5,-8" fill="#ffd700"/><polygon points="0,28 5,8 -5,8" fill="#4a3728"/><polygon points="-28,0 -8,5 -8,-5" fill="#4a3728"/><polygon points="28,0 8,5 8,-5" fill="#4a3728"/><text x="0" y="-40" text-anchor="middle" fill="#ffd700" font-family="'Press Start 2P'" font-size="8">N</text><text x="0" y="48" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">S</text><text x="40" y="4" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">E</text><text x="-40" y="4" text-anchor="middle" fill="#4a3728" font-family="'Press Start 2P'" font-size="6">W</text></g>
-<text x="120" y="500" fill="#0e3050" font-family="'Press Start 2P'" font-size="11" opacity=".3" transform="rotate(-25,120,500)" letter-spacing="4">SEA OF SWORDS</text>
-<text x="750" y="85" fill="#6a6a7e" font-family="'Press Start 2P'" font-size="6" opacity=".35" letter-spacing="2">SPINE OF THE WORLD</text>
-<text x="1100" y="620" fill="#5a5a6e" font-family="'Press Start 2P'" font-size="6" opacity=".3" letter-spacing="2">SUNSET MOUNTAINS</text>
-<text x="1050" y="960" fill="#3a7a3a" font-family="'Press Start 2P'" font-size="7" opacity=".3" letter-spacing="2">GREENFIELDS</text>
-<text x="510" y="265" fill="#5a5a6e" font-family="'Press Start 2P'" font-size="5" opacity=".3">SWORD MTNS</text>
-<text x="680" y="900" fill="#5a5a6e" font-family="'Press Start 2P'" font-size="5" opacity=".25">CLOUD PEAKS</text>`}
+<rect width="2000" height="1600" fill="url(#sd)"/><rect width="2000" height="1600" fill="url(#w)"/>
+<!-- Coast shallow water -->
+<path d="M420 0Q440 100 420 200Q400 300 430 400Q440 480 420 560Q440 640 460 720Q480 800 500 880Q510 940 500 1000Q490 1060 510 1140Q530 1220 510 1300L500 1600 350 1600 350 0Z" fill="#0e2848" opacity=".4"/>
+<!-- MAIN LAND -->
+<path d="M430 0L600 0 640 30 680 50 720 10 850 0 2000 0 2000 1600 510 1600 520 1500 540 1400 530 1300 510 1200 500 1100 510 1000 520 940 510 880 490 800 470 720 450 640 440 560 450 480 440 400 440 340 430 280 420 220 425 160 430 100 430 50Z" fill="url(#lg)"/>
+<!-- Greenfields lighter area -->
+<ellipse cx="1200" cy="1120" rx="200" ry="100" fill="#60a860" opacity=".12"/>
+<!-- Fields of the Dead -->
+<ellipse cx="820" cy="1050" rx="120" ry="60" fill="#6a8a50" opacity=".1"/>
+<!-- Forest underlays + forests -->
+<ellipse cx="720" cy="260" rx="80" ry="50" fill="#062008" opacity=".5"/><ellipse cx="720" cy="260" rx="78" ry="48" fill="url(#t)"/>
+<ellipse cx="600" cy="460" rx="50" ry="35" fill="#062008" opacity=".45"/><ellipse cx="600" cy="460" rx="48" ry="33" fill="url(#t2)"/>
+<ellipse cx="900" cy="550" rx="110" ry="65" fill="#062008" opacity=".5"/><ellipse cx="900" cy="550" rx="108" ry="63" fill="url(#t)"/>
+<ellipse cx="1100" cy="480" rx="90" ry="55" fill="#062008" opacity=".45"/><ellipse cx="1100" cy="480" rx="88" ry="53" fill="url(#t)"/>
+<ellipse cx="800" cy="800" rx="70" ry="40" fill="#062008" opacity=".4"/><ellipse cx="800" cy="800" rx="68" ry="38" fill="url(#t2)"/>
+<ellipse cx="1050" cy="900" rx="80" ry="45" fill="#062008" opacity=".4"/><ellipse cx="1050" cy="900" rx="78" ry="43" fill="url(#t)"/>
+<ellipse cx="1350" cy="700" rx="65" ry="38" fill="#062008" opacity=".35"/><ellipse cx="1350" cy="700" rx="63" ry="36" fill="url(#t2)"/>
+<!-- Mountain underlays + mountains -->
+<rect x="698" y="68" width="550" height="80" fill="#1a1a30" opacity=".4" rx="8"/><rect x="700" y="70" width="548" height="76" fill="url(#m)" rx="8"/>
+<ellipse cx="640" cy="360" rx="50" ry="30" fill="#1a1a30" opacity=".35"/><ellipse cx="640" cy="360" rx="48" ry="28" fill="url(#m)"/>
+<rect x="1100" y="680" width="280" height="80" fill="#1a1a30" opacity=".4" rx="10"/><rect x="1102" y="682" width="276" height="76" fill="url(#m)" rx="10"/>
+<ellipse cx="780" cy="1120" rx="90" ry="22" fill="#1a1a30" opacity=".3"/><ellipse cx="780" cy="1120" rx="88" ry="20" fill="url(#m)"/>
+<!-- Rivers - Chionthar from BG east to Elturel and beyond -->
+<path d="M640 980Q700 975 780 980Q840 985 900 975Q940 968 960 960" stroke="#3090d0" stroke-width="4.5" fill="none" opacity=".85"/>
+<path d="M960 960Q1020 950 1080 955Q1140 960 1200 970" stroke="#3090d0" stroke-width="3.5" fill="none" opacity=".7"/>
+<!-- Delimbiyr River near Daggerford -->
+<path d="M600 720Q590 680 585 640Q582 600 586 570" stroke="#3090d0" stroke-width="3" fill="none" opacity=".7"/>
+<!-- Dessarin River -->
+<path d="M780 480Q790 420 785 360Q780 300 785 260" stroke="#3090d0" stroke-width="2.5" fill="none" opacity=".6"/>
+<!-- ROADS -->
+<!-- Trade Way: Waterdeep south to BG -->
+<path d="M620 560Q615 600 610 660Q605 690 600 720Q610 780 620 840Q630 900 635 940Q638 960 640 980" stroke="#d0b060" stroke-width="3" fill="none" stroke-dasharray="8 4" opacity=".8"/>
+<!-- High Road: Waterdeep north -->
+<path d="M620 560Q600 520 580 480Q565 450 560 430Q550 380 540 340Q535 320 530 300" stroke="#d0b060" stroke-width="2.5" fill="none" stroke-dasharray="8 4" opacity=".75"/>
+<!-- Luskan-Neverwinter -->
+<path d="M530 300Q528 260 525 220Q522 190 520 160" stroke="#d0b060" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
+<!-- BG south to Beregost/Candlekeep area -->
+<path d="M640 980Q650 1010 660 1040Q670 1050 680 1060" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
+<path d="M680 1060Q700 1080 720 1100Q730 1110 740 1120" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
+<!-- BG to Candlekeep (coast road) -->
+<path d="M640 980Q610 1010 580 1040Q570 1060 560 1080" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".55"/>
+<!-- Uldoon Trail: Boareskyr east to Greenest -->
+<path d="M860 1020Q920 1040 980 1060Q1040 1080 1100 1100Q1150 1110 1200 1120" stroke="#d0b060" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".7"/>
+<!-- BG east along river to Elturel -->
+<path d="M640 980Q700 978 760 985Q820 990 860 1000Q860 1010 860 1020" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
+<path d="M860 1020Q880 1010 900 1000Q930 985 960 960" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
+<!-- Waterdeep east to Triboar -->
+<path d="M620 560Q660 545 700 530Q740 515 780 500Q790 490 800 480" stroke="#b09040" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
+<!-- Phandalin roads -->
+<path d="M530 300Q560 320 590 340Q620 355 650 370Q665 375 680 380" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".55"/>
+<path d="M560 430Q590 420 620 400Q640 390 660 385Q670 382 680 380" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".5"/>
+<!-- Compass -->
+<g transform="translate(180,1420)"><circle r="42" fill="#0a0a1e" stroke="#4a3728" stroke-width="3" opacity=".9"/><polygon points="0,-32 5,-10 -5,-10" fill="#ffd700"/><polygon points="0,32 5,10 -5,10" fill="#4a3728"/><polygon points="-32,0 -10,5 -10,-5" fill="#4a3728"/><polygon points="32,0 10,5 10,-5" fill="#4a3728"/><text x="0" y="-44" text-anchor="middle" fill="#ffd700" font-family="Silkscreen" font-size="10">N</text><text x="0" y="52" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">S</text><text x="44" y="4" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">E</text><text x="-44" y="4" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">W</text></g>
+<!-- Labels -->
+<text x="150" y="600" fill="#1a5a80" font-family="Silkscreen" font-size="13" opacity=".25" transform="rotate(-20,150,600)" letter-spacing="5">SEA OF SWORDS</text>
+<text x="800" y="100" fill="#7a7a90" font-family="Silkscreen" font-size="8" opacity=".3" letter-spacing="3">SPINE OF THE WORLD</text>
+<text x="1140" y="750" fill="#6a6a80" font-family="Silkscreen" font-size="7" opacity=".25" letter-spacing="2">SUNSET MOUNTAINS</text>
+<text x="1100" y="1170" fill="#4a8a4a" font-family="Silkscreen" font-size="9" opacity=".25" letter-spacing="3">GREENFIELDS</text>
+<text x="610" y="375" fill="#6a6a80" font-family="Silkscreen" font-size="6" opacity=".25">SWORD MTNS</text>
+<text x="730" y="1145" fill="#6a6a80" font-family="Silkscreen" font-size="6" opacity=".2">CLOUD PEAKS</text>
+<text x="780" y="1070" fill="#5a7a4a" font-family="Silkscreen" font-size="6" opacity=".2">FIELDS OF THE DEAD</text>`}
+
+// ===== RENDER =====
 function renderCharacters(){const l=document.getElementById('tab-adventurers');l.innerHTML='';characters.forEach(c=>{const d=document.createElement('div');d.className='character-card';d.onclick=()=>showCharacterDetail(c);const p=document.createElement('div');p.className='portrait';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,c.id);d.appendChild(p);const i=document.createElement('div');i.className='char-info';i.innerHTML=`<div class="char-name">${c.name}</div><div class="char-class">${c.subclass}</div><div class="char-species">${c.species}</div>`;d.appendChild(i);l.appendChild(d)})}
-function renderNPCs(){const p=document.getElementById('tab-npcs');p.innerHTML='';if(!npcsData.length){p.innerHTML='<div class="empty-state">Inga NPC:er påträffade ännu.<br><br>NPC:er dyker upp här efter varje session.</div>';return}npcsData.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';ic.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='neutral'?'😐':'❓';c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};i.innerHTML=`<div class="npc-name">${n.name}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
+function renderNPCs(){const p=document.getElementById('tab-npcs');p.innerHTML='';if(!npcsData.length){p.innerHTML='<div class="empty-state">Inga NPC:er påträffade ännu.<br><br>NPC:er dyker upp här efter varje session.</div>';return}npcsData.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';ic.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':'😐';c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};i.innerHTML=`<div class="npc-name">${n.name}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
 function renderTimeline(){const p=document.getElementById('tab-history');p.innerHTML='';const tl=document.createElement('div');tl.className='timeline';sessions.forEach(s=>{const b=document.createElement('div');b.className='session-block';const h=document.createElement('div');h.className='session-header';h.innerHTML=`<div><span class="session-label">${s.label}</span>${s.title}</div><span class="toggle-icon">▼</span>`;h.onclick=()=>b.classList.toggle('collapsed');b.appendChild(h);const w=document.createElement('div');w.className='session-events';s.events.forEach(ev=>{const it=document.createElement('div');it.className='timeline-event';it.innerHTML=`<div class="te-title">${ev.title}</div>`;it.onclick=e=>{e.stopPropagation();showTimelineDetail(ev)};w.appendChild(it)});b.appendChild(w);tl.appendChild(b)});p.appendChild(tl)}
 function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
+
+// ===== TABS =====
 document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active')})});
+
+// ===== SEARCH =====
 function buildSearchIndex(){const idx=[];locations.forEach(l=>idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id}));characters.forEach(c=>idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)}));npcsData.forEach(n=>idx.push({type:'NPC',name:n.name,desc:n.desc,action:()=>showNPCDetail(n)}));sessions.forEach(s=>s.events.forEach(ev=>idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})));return idx}
 let searchIndex=buildSearchIndex();
-function normalize(s){return s.toLowerCase().replace(/[åä]/g,'a').replace(/[ö]/g,'o').replace(/[éè]/g,'e')}
+function normalize(s){return s.toLowerCase().replace(/[åä]/g,'a').replace(/[ö]/g,'o')}
 function doSearch(q){if(!q.trim())return[];const n=normalize(q);return searchIndex.filter(i=>normalize(i.name).includes(n)||(i.desc&&normalize(i.desc).includes(n)))}
-const searchInput=document.getElementById('searchInput'),suggestionsEl=document.getElementById('suggestions');
-searchInput.addEventListener('input',()=>{const q=searchInput.value;if(q.length<2){suggestionsEl.classList.remove('active');return}const r=doSearch(q).slice(0,8);if(!r.length){suggestionsEl.classList.remove('active');return}suggestionsEl.innerHTML='';r.forEach(i=>{const d=document.createElement('div');d.className='suggestion-item';d.innerHTML=`<span class="s-type">${i.type}</span>${i.name}`;d.onclick=()=>{suggestionsEl.classList.remove('active');searchInput.value=i.name;if(i.action)i.action()};suggestionsEl.appendChild(d)});suggestionsEl.classList.add('active')});
-searchInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();executeSearch()}});
+const sI=document.getElementById('searchInput'),sE=document.getElementById('suggestions');
+sI.addEventListener('input',()=>{const q=sI.value;if(q.length<2){sE.classList.remove('active');return}const r=doSearch(q).slice(0,8);if(!r.length){sE.classList.remove('active');return}sE.innerHTML='';r.forEach(i=>{const d=document.createElement('div');d.className='suggestion-item';d.innerHTML=`<span class="s-type">${i.type}</span>${i.name}`;d.onclick=()=>{sE.classList.remove('active');sI.value=i.name;if(i.action)i.action()};sE.appendChild(d)});sE.classList.add('active')});
+sI.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();executeSearch()}});
 document.getElementById('searchBtn').addEventListener('click',executeSearch);
-document.addEventListener('click',e=>{if(!e.target.closest('.search-bar'))suggestionsEl.classList.remove('active')});
-function executeSearch(){suggestionsEl.classList.remove('active');const q=searchInput.value;if(!q.trim())return;const r=doSearch(q);const p=document.getElementById('tab-search');p.innerHTML='';const s=document.createElement('div');s.className='search-results active';s.innerHTML=`<div class="search-results-header"><h3>"${q}" (${r.length})</h3><button class="sr-close" onclick="closeSearchResults()">X</button></div>`;if(!r.length)s.innerHTML+='<div style="font-size:8px;color:#6a6a8e;padding:10px">Inga resultat.</div>';else r.forEach(i=>{const d=document.createElement('div');d.className='sr-item';d.innerHTML=`<span class="sr-type">${i.type}</span>${i.name}`;d.onclick=()=>{if(i.action)i.action();if(i.locId){highlightMarker(i.locId);setTimeout(()=>unhighlightMarker(i.locId),3000)}if(i.places)i.places.forEach(x=>{highlightMarker(x);setTimeout(()=>unhighlightMarker(x),3000)})};s.appendChild(d)});p.appendChild(s);document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));p.classList.add('active')}
-function closeSearchResults(){document.getElementById('tab-search').classList.remove('active');document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');searchInput.value=''}
-function showLocation(l){document.getElementById('popupTitle').textContent=l.name;document.getElementById('popupSummary').textContent=l.summary;const e=document.getElementById('popupEvents');e.innerHTML='<h3>HÄNDELSER</h3>';if(!l.events.length)e.innerHTML+='<div style="font-size:8px;color:#6a6a8e;padding:10px">Inga händelser ännu.</div>';else l.events.forEach((ev,i)=>{const d=document.createElement('div');d.className='event-item';d.innerHTML=`<div class="event-title">${ev.title}</div><div class="event-preview">${ev.preview}</div><div class="event-detail" id="ed_${l.id}_${i}">${ev.detail}</div>`;d.onclick=()=>document.getElementById(`ed_${l.id}_${i}`).classList.toggle('active');e.appendChild(d)});document.getElementById('overlay').classList.add('active');document.getElementById('locationPopup').classList.add('active')}
-function showCharacterDetail(c){document.getElementById('charDetailName').textContent=c.name;document.getElementById('charDetailClass').textContent=c.subclass;document.getElementById('charDetailSpecies').textContent=c.species;const p=document.getElementById('charDetailPortrait');p.innerHTML='';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,c.id);const b=document.getElementById('charDetailBody');b.innerHTML='';const st=[];if(c.age)st.push({l:'Ålder',v:c.age});if(c.gender)st.push({l:'Kön',v:c.gender});if(c.org)st.push({l:'Organisation',v:c.org});if(c.appearance.skin)st.push({l:'Hy',v:c.appearance.skin});if(c.appearance.eyes)st.push({l:'Ögon',v:c.appearance.eyes});if(c.appearance.hair)st.push({l:'Hår',v:c.appearance.hair});st.forEach(s=>b.innerHTML+=`<div class="stat-row"><span class="stat-label">${s.l}</span><span class="stat-value">${s.v}</span></div>`);b.innerHTML+=`<div class="backstory"><h3>BAKGRUND</h3><p>${c.backstory}</p></div>`;if(c.personalEvents&&c.personalEvents.length){let h='<div class="personal-events"><h3>SENASTE HÄNDELSER</h3>';c.personalEvents.slice(0,5).forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('charDetailPopup').classList.add('active')}
-function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div class="npc-desc"><span class="npc-status ${n.status}" style="margin-bottom:8px">${sl[n.status]}</span><p style="margin-top:10px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3><div style="font-size:8px;color:#6a6a8e;padding:10px">Inga direkta interaktioner ännu.</div></div>';document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
+document.addEventListener('click',e=>{if(!e.target.closest('.search-bar'))sE.classList.remove('active')});
+function executeSearch(){sE.classList.remove('active');const q=sI.value;if(!q.trim())return;const r=doSearch(q);const p=document.getElementById('tab-search');p.innerHTML='';const s=document.createElement('div');s.className='search-results active';s.innerHTML=`<div class="search-results-header"><h3>"${q}" (${r.length})</h3><button class="sr-close" onclick="closeSearchResults()">X</button></div>`;if(!r.length)s.innerHTML+='<div class="empty-state">Inga resultat.</div>';else r.forEach(i=>{const d=document.createElement('div');d.className='sr-item';d.innerHTML=`<span class="sr-type">${i.type}</span>${i.name}`;d.onclick=()=>{if(i.action)i.action();if(i.locId){highlightMarker(i.locId);setTimeout(()=>unhighlightMarker(i.locId),3000)}if(i.places)i.places.forEach(x=>{highlightMarker(x);setTimeout(()=>unhighlightMarker(x),3000)})};s.appendChild(d)});p.appendChild(s);document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));p.classList.add('active')}
+function closeSearchResults(){document.getElementById('tab-search').classList.remove('active');document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');sI.value=''}
+
+// ===== POPUPS =====
+function showLocation(l){document.getElementById('popupTitle').textContent=l.name;document.getElementById('popupSummary').textContent=l.summary;const e=document.getElementById('popupEvents');e.innerHTML='<h3>HÄNDELSER</h3>';if(!l.events.length)e.innerHTML+='<div class="empty-state">Inga händelser ännu.</div>';else l.events.forEach((ev,i)=>{const d=document.createElement('div');d.className='event-item';d.innerHTML=`<div class="event-title">${ev.title}</div><div class="event-preview">${ev.preview}</div><div class="event-detail" id="ed_${l.id}_${i}">${ev.detail}</div>`;d.onclick=()=>document.getElementById(`ed_${l.id}_${i}`).classList.toggle('active');e.appendChild(d)});document.getElementById('overlay').classList.add('active');document.getElementById('locationPopup').classList.add('active')}
+function showCharacterDetail(ch){document.getElementById('charDetailName').textContent=ch.name;document.getElementById('charDetailClass').textContent=ch.subclass;document.getElementById('charDetailSpecies').textContent=ch.species;const p=document.getElementById('charDetailPortrait');p.innerHTML='';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,ch.id);const b=document.getElementById('charDetailBody');b.innerHTML='';const st=[];if(ch.age)st.push({l:'Ålder',v:ch.age});if(ch.gender)st.push({l:'Kön',v:ch.gender});if(ch.org)st.push({l:'Organisation',v:ch.org});if(ch.appearance.skin)st.push({l:'Hy',v:ch.appearance.skin});if(ch.appearance.eyes)st.push({l:'Ögon',v:ch.appearance.eyes});if(ch.appearance.hair)st.push({l:'Hår',v:ch.appearance.hair});st.forEach(s=>b.innerHTML+=`<div class="stat-row"><span class="stat-label">${s.l}</span><span class="stat-value">${s.v}</span></div>`);
+// Collapsible backstory
+b.innerHTML+=`<div class="section-toggle collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('collapsed')"><h3>BAKGRUND</h3><span class="tog-icon">▼</span></div><div class="section-body collapsed" style="max-height:600px"><p>${ch.backstory}</p></div>`;
+if(ch.personalEvents&&ch.personalEvents.length){let h='<div class="personal-events"><h3>SENASTE HÄNDELSER</h3>';ch.personalEvents.slice(0,5).forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('charDetailPopup').classList.add('active')}
+function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');b.innerHTML=`<div class="recap">${ev.recap}</div>`;if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
 function closePopup(){document.getElementById('overlay').classList.remove('active');['locationPopup','charDetailPopup','tlDetail','npcDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'))}
+
+// ===== PAN & ZOOM (mouse + touch) =====
 let scale=1,panX=0,panY=0,isDragging=false,dragSX,dragSY;
 function updateTransform(){document.getElementById('mapCanvas').style.transform=`translate(${panX}px,${panY}px) scale(${scale})`}
 const vp=document.getElementById('mapViewport');
 vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
 window.addEventListener('mousemove',e=>{if(!isDragging)return;panX=e.clientX-dragSX;panY=e.clientY-dragSY;updateTransform()});
 window.addEventListener('mouseup',()=>isDragging=false);
-vp.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.3,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));updateTransform()});
+vp.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.3,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));updateTransform()},{passive:false});
+// Touch support
+let lastTouchDist=0,lastTouchX=0,lastTouchY=0,touchDragging=false;
+vp.addEventListener('touchstart',e=>{if(e.touches.length===1){touchDragging=true;lastTouchX=e.touches[0].clientX-panX;lastTouchY=e.touches[0].clientY-panY}if(e.touches.length===2){touchDragging=false;lastTouchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)}},{passive:true});
+vp.addEventListener('touchmove',e=>{if(e.touches.length===1&&touchDragging){panX=e.touches[0].clientX-lastTouchX;panY=e.touches[0].clientY-lastTouchY;updateTransform()}if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(lastTouchDist){const delta=(d-lastTouchDist)*.005;scale=Math.max(.3,Math.min(2.5,scale+delta))}lastTouchDist=d;updateTransform()}},{passive:true});
+vp.addEventListener('touchend',()=>{touchDragging=false;lastTouchDist=0});
 function zoomIn(){scale=Math.min(2.5,scale+.15);updateTransform()}
 function zoomOut(){scale=Math.max(.3,scale-.15);updateTransform()}
 function resetView(){centerOnVisited()}
-function centerOnVisited(){const v=locations.filter(l=>l.visited);if(!v.length)return;let x1=Infinity,x2=-Infinity,y1=Infinity,y2=-Infinity;v.forEach(l=>{if(l.x<x1)x1=l.x;if(l.x>x2)x2=l.x;if(l.y<y1)y1=l.y;if(l.y>y2)y2=l.y});const pad=200;x1-=pad;x2+=pad;y1-=pad;y2+=pad;const cx=(x1+x2)/2,cy=(y1+y2)/2;const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;scale=Math.min(vw/(x2-x1),vh/(y2-y1),1.5);scale=Math.max(.5,Math.min(1.5,scale));panX=vw/2-cx*scale;panY=vh/2-cy*scale;updateTransform()}
-drawMap();renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,100);
+function centerOnVisited(){const v=locations.filter(l=>l.visited);if(!v.length)return;let x1=Infinity,x2=-Infinity,y1=Infinity,y2=-Infinity;v.forEach(l=>{if(l.x<x1)x1=l.x;if(l.x>x2)x2=l.x;if(l.y<y1)y1=l.y;if(l.y>y2)y2=l.y});const pad=250;x1-=pad;x2+=pad;y1-=pad;y2+=pad;const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;scale=Math.min(vw/(x2-x1),vh/(y2-y1),1.4);scale=Math.max(.4,Math.min(1.4,scale));panX=vw/2-((x1+x2)/2)*scale;panY=vh/2-((y1+y2)/2)*scale;updateTransform()}
+
+drawMap();renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,150);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
 </script>
 </body>
