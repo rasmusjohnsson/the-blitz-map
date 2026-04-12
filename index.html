@@ -138,8 +138,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 /* MAP */
 .map-container{flex:1;position:relative;overflow:hidden;background:#071828}
 .map-viewport{width:100%;height:100%;position:relative;overflow:hidden;cursor:grab;touch-action:none}.map-viewport:active{cursor:grabbing}
-.map-canvas{position:absolute;transform-origin:0 0}
-.map-svg{width:2000px;height:1600px}
+.map-canvas{position:absolute;transform-origin:0 0;width:2576px;height:1664px;background:url('map.jpg') no-repeat;background-size:100% 100%;image-rendering:pixelated}
 .location-marker{position:absolute;cursor:pointer;z-index:5;transition:transform .2s}
 .location-marker:hover{transform:scale(1.3);z-index:6}
 .location-marker.highlighted .marker-dot{background:#fff;border-color:var(--gold);box-shadow:0 0 20px var(--gold),0 0 40px rgba(255,215,0,.5)}
@@ -192,7 +191,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
   </div>
   <div class="map-container">
     <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
-    <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"><svg class="map-svg" id="mapSvg" viewBox="0 0 2000 1600"></svg></div></div>
+    <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"></div></div>
     <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:9px">R</button></div>
     <div class="legend"><div class="legend-item"><div class="legend-dot visited"></div><span>Besökta platser</span></div><div class="legend-item"><div class="legend-dot known"></div><span>Kända platser</span></div></div>
   </div>
@@ -212,21 +211,22 @@ const characters=[
 ];
 // Geography based on official map. Coast runs N-S. Luskan top-left, Greenest far SE.
 // Using 2000x1600 canvas. Coast at ~x400. Inland stretches to x1600+.
+// Coordinates calibrated to map.jpg (2576x1664)
 const locations=[
-{id:'luskan',name:'Luskan',x:520,y:160,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
-{id:'neverwinter',name:'Neverwinter',x:530,y:300,visited:false,summary:'Staden som aldrig fryser.',events:[]},
-{id:'leilon',name:'Leilon',x:560,y:430,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
-{id:'phandalin',name:'Phandalin',x:680,y:380,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
-{id:'waterdeep',name:'Waterdeep',x:620,y:560,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
-{id:'triboar',name:'Triboar',x:800,y:480,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
-{id:'daggerford',name:'Daggerford',x:600,y:720,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
-{id:'baldursgate',name:"Baldur's Gate",x:640,y:980,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
-{id:'candlekeep',name:'Candlekeep',x:560,y:1080,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
-{id:'beregost',name:'Beregost',x:680,y:1060,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
-{id:'nashkel',name:'Nashkel',x:740,y:1120,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
-{id:'elturel',name:'Elturel',x:960,y:960,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
-{id:'boareskyr',name:'Boareskyr Bridge',x:860,y:1020,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
-{id:'greenest',name:'Greenest',x:1200,y:1120,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
+{id:'luskan',name:'Luskan',x:850,y:115,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
+{id:'neverwinter',name:'Neverwinter',x:890,y:230,visited:false,summary:'Staden som aldrig fryser.',events:[]},
+{id:'leilon',name:'Leilon',x:920,y:380,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
+{id:'phandalin',name:'Phandalin',x:1060,y:345,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
+{id:'waterdeep',name:'Waterdeep',x:1020,y:510,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
+{id:'triboar',name:'Triboar',x:1200,y:435,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
+{id:'daggerford',name:'Daggerford',x:970,y:660,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
+{id:'baldursgate',name:"Baldur's Gate",x:1000,y:900,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
+{id:'candlekeep',name:'Candlekeep',x:935,y:975,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
+{id:'beregost',name:'Beregost',x:1060,y:965,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
+{id:'nashkel',name:'Nashkel',x:1090,y:1030,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
+{id:'elturel',name:'Elturel',x:1310,y:890,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
+{id:'boareskyr',name:'Boareskyr Bridge',x:1185,y:945,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
+{id:'greenest',name:'Greenest',x:1490,y:1060,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
 ];
 const npcsData=[];
 const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – The Blitz formas',events:[
@@ -246,76 +246,7 @@ gothmog:()=>{c.fillStyle='#7a8a7a';c.fillRect(4,2,8,8);c.fillRect(3,4,10,5);c.fi
 cedric:()=>{c.fillStyle='#e8ceb0';c.fillRect(5,3,6,7);c.fillRect(4,5,8,4);c.fillStyle='#9a9a9a';c.fillRect(4,1,8,3);c.fillRect(3,2,1,4);c.fillRect(12,2,1,4);c.fillStyle='#4488cc';c.fillRect(6,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#fff';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#a0756a';c.fillRect(7,8,2,1);c.fillStyle='#2a3a6a';c.fillRect(3,10,10,5);c.fillStyle='#6b4a2a';c.fillRect(1,4,1,11);c.fillStyle='#8ab8ff';c.fillRect(0,3,3,2);c.fillStyle='#6a2a1a';c.fillRect(12,11,2,3);c.fillStyle='#e0d8c0';c.fillRect(12,12,2,1)}
 };if(P[id])P[id]()}
 
-function drawMap(){document.getElementById('mapSvg').innerHTML=`
-<defs>
-<pattern id="w" width="28" height="14" patternUnits="userSpaceOnUse"><path d="M0 7Q7 2 14 7Q21 12 28 7" stroke="#1a4a70" stroke-width="1.2" fill="none" opacity=".4"/></pattern>
-<pattern id="t" width="10" height="10" patternUnits="userSpaceOnUse"><polygon points="5,1 1,7 9,7" fill="#0a5510" opacity=".95"/><rect x="4" y="7" width="2" height="3" fill="#2a1808" opacity=".6"/></pattern>
-<pattern id="t2" width="8" height="8" patternUnits="userSpaceOnUse"><polygon points="4,0 0,6 8,6" fill="#085010" opacity=".9"/><rect x="3" y="6" width="2" height="2" fill="#1e1008" opacity=".5"/></pattern>
-<pattern id="m" width="18" height="14" patternUnits="userSpaceOnUse"><polygon points="9,0 0,14 18,14" fill="#7a7088" opacity=".9"/><polygon points="9,0 5,5 13,5" fill="#9a90a8" opacity=".7"/><polygon points="9,0 7,3 11,3" fill="#c8c0d8" opacity=".5"/></pattern>
-<linearGradient id="lg" x1="0" y1="0" x2=".8" y2="1"><stop offset="0%" stop-color="#508a4e"/><stop offset="100%" stop-color="#488a44"/></linearGradient>
-<radialGradient id="sd" cx=".25" cy=".4"><stop offset="0%" stop-color="#041018"/><stop offset="100%" stop-color="#0a1e3a"/></radialGradient>
-</defs>
-<rect width="2000" height="1600" fill="url(#sd)"/><rect width="2000" height="1600" fill="url(#w)"/>
-<!-- Coast shallow water -->
-<path d="M420 0Q440 100 420 200Q400 300 430 400Q440 480 420 560Q440 640 460 720Q480 800 500 880Q510 940 500 1000Q490 1060 510 1140Q530 1220 510 1300L500 1600 350 1600 350 0Z" fill="#0e2848" opacity=".4"/>
-<!-- MAIN LAND -->
-<path d="M430 0L600 0 640 30 680 50 720 10 850 0 2000 0 2000 1600 510 1600 520 1500 540 1400 530 1300 510 1200 500 1100 510 1000 520 940 510 880 490 800 470 720 450 640 440 560 450 480 440 400 440 340 430 280 420 220 425 160 430 100 430 50Z" fill="url(#lg)"/>
-<!-- Greenfields lighter area -->
-<ellipse cx="1200" cy="1120" rx="200" ry="100" fill="#60a860" opacity=".12"/>
-<!-- Fields of the Dead -->
-<ellipse cx="820" cy="1050" rx="120" ry="60" fill="#6a8a50" opacity=".1"/>
-<!-- Forest underlays + forests -->
-<ellipse cx="720" cy="260" rx="80" ry="50" fill="#062008" opacity=".5"/><ellipse cx="720" cy="260" rx="78" ry="48" fill="url(#t)"/>
-<ellipse cx="600" cy="460" rx="50" ry="35" fill="#062008" opacity=".45"/><ellipse cx="600" cy="460" rx="48" ry="33" fill="url(#t2)"/>
-<ellipse cx="900" cy="550" rx="110" ry="65" fill="#062008" opacity=".5"/><ellipse cx="900" cy="550" rx="108" ry="63" fill="url(#t)"/>
-<ellipse cx="1100" cy="480" rx="90" ry="55" fill="#062008" opacity=".45"/><ellipse cx="1100" cy="480" rx="88" ry="53" fill="url(#t)"/>
-<ellipse cx="800" cy="800" rx="70" ry="40" fill="#062008" opacity=".4"/><ellipse cx="800" cy="800" rx="68" ry="38" fill="url(#t2)"/>
-<ellipse cx="1050" cy="900" rx="80" ry="45" fill="#062008" opacity=".4"/><ellipse cx="1050" cy="900" rx="78" ry="43" fill="url(#t)"/>
-<ellipse cx="1350" cy="700" rx="65" ry="38" fill="#062008" opacity=".35"/><ellipse cx="1350" cy="700" rx="63" ry="36" fill="url(#t2)"/>
-<!-- Mountain underlays + mountains -->
-<rect x="698" y="68" width="550" height="80" fill="#1a1a30" opacity=".4" rx="8"/><rect x="700" y="70" width="548" height="76" fill="url(#m)" rx="8"/>
-<ellipse cx="640" cy="360" rx="50" ry="30" fill="#1a1a30" opacity=".35"/><ellipse cx="640" cy="360" rx="48" ry="28" fill="url(#m)"/>
-<rect x="1100" y="680" width="280" height="80" fill="#1a1a30" opacity=".4" rx="10"/><rect x="1102" y="682" width="276" height="76" fill="url(#m)" rx="10"/>
-<ellipse cx="780" cy="1120" rx="90" ry="22" fill="#1a1a30" opacity=".3"/><ellipse cx="780" cy="1120" rx="88" ry="20" fill="url(#m)"/>
-<!-- Rivers - Chionthar from BG east to Elturel and beyond -->
-<path d="M640 980Q700 975 780 980Q840 985 900 975Q940 968 960 960" stroke="#3090d0" stroke-width="4.5" fill="none" opacity=".85"/>
-<path d="M960 960Q1020 950 1080 955Q1140 960 1200 970" stroke="#3090d0" stroke-width="3.5" fill="none" opacity=".7"/>
-<!-- Delimbiyr River near Daggerford -->
-<path d="M600 720Q590 680 585 640Q582 600 586 570" stroke="#3090d0" stroke-width="3" fill="none" opacity=".7"/>
-<!-- Dessarin River -->
-<path d="M780 480Q790 420 785 360Q780 300 785 260" stroke="#3090d0" stroke-width="2.5" fill="none" opacity=".6"/>
-<!-- ROADS -->
-<!-- Trade Way: Waterdeep south to BG -->
-<path d="M620 560Q615 600 610 660Q605 690 600 720Q610 780 620 840Q630 900 635 940Q638 960 640 980" stroke="#d0b060" stroke-width="3" fill="none" stroke-dasharray="8 4" opacity=".8"/>
-<!-- High Road: Waterdeep north -->
-<path d="M620 560Q600 520 580 480Q565 450 560 430Q550 380 540 340Q535 320 530 300" stroke="#d0b060" stroke-width="2.5" fill="none" stroke-dasharray="8 4" opacity=".75"/>
-<!-- Luskan-Neverwinter -->
-<path d="M530 300Q528 260 525 220Q522 190 520 160" stroke="#d0b060" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".7"/>
-<!-- BG south to Beregost/Candlekeep area -->
-<path d="M640 980Q650 1010 660 1040Q670 1050 680 1060" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
-<path d="M680 1060Q700 1080 720 1100Q730 1110 740 1120" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
-<!-- BG to Candlekeep (coast road) -->
-<path d="M640 980Q610 1010 580 1040Q570 1060 560 1080" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".55"/>
-<!-- Uldoon Trail: Boareskyr east to Greenest -->
-<path d="M860 1020Q920 1040 980 1060Q1040 1080 1100 1100Q1150 1110 1200 1120" stroke="#d0b060" stroke-width="2.5" fill="none" stroke-dasharray="7 3" opacity=".7"/>
-<!-- BG east along river to Elturel -->
-<path d="M640 980Q700 978 760 985Q820 990 860 1000Q860 1010 860 1020" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
-<path d="M860 1020Q880 1010 900 1000Q930 985 960 960" stroke="#c0a050" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity=".65"/>
-<!-- Waterdeep east to Triboar -->
-<path d="M620 560Q660 545 700 530Q740 515 780 500Q790 490 800 480" stroke="#b09040" stroke-width="2" fill="none" stroke-dasharray="5 4" opacity=".6"/>
-<!-- Phandalin roads -->
-<path d="M530 300Q560 320 590 340Q620 355 650 370Q665 375 680 380" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".55"/>
-<path d="M560 430Q590 420 620 400Q640 390 660 385Q670 382 680 380" stroke="#b09040" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".5"/>
-<!-- Compass -->
-<g transform="translate(180,1420)"><circle r="42" fill="#0a0a1e" stroke="#4a3728" stroke-width="3" opacity=".9"/><polygon points="0,-32 5,-10 -5,-10" fill="#ffd700"/><polygon points="0,32 5,10 -5,10" fill="#4a3728"/><polygon points="-32,0 -10,5 -10,-5" fill="#4a3728"/><polygon points="32,0 10,5 10,-5" fill="#4a3728"/><text x="0" y="-44" text-anchor="middle" fill="#ffd700" font-family="Silkscreen" font-size="10">N</text><text x="0" y="52" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">S</text><text x="44" y="4" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">E</text><text x="-44" y="4" text-anchor="middle" fill="#4a3728" font-family="Silkscreen" font-size="8">W</text></g>
-<!-- Labels -->
-<text x="150" y="600" fill="#1a5a80" font-family="Silkscreen" font-size="13" opacity=".25" transform="rotate(-20,150,600)" letter-spacing="5">SEA OF SWORDS</text>
-<text x="800" y="100" fill="#7a7a90" font-family="Silkscreen" font-size="8" opacity=".3" letter-spacing="3">SPINE OF THE WORLD</text>
-<text x="1140" y="750" fill="#6a6a80" font-family="Silkscreen" font-size="7" opacity=".25" letter-spacing="2">SUNSET MOUNTAINS</text>
-<text x="1100" y="1170" fill="#4a8a4a" font-family="Silkscreen" font-size="9" opacity=".25" letter-spacing="3">GREENFIELDS</text>
-<text x="610" y="375" fill="#6a6a80" font-family="Silkscreen" font-size="6" opacity=".25">SWORD MTNS</text>
-<text x="730" y="1145" fill="#6a6a80" font-family="Silkscreen" font-size="6" opacity=".2">CLOUD PEAKS</text>
-<text x="780" y="1070" fill="#5a7a4a" font-family="Silkscreen" font-size="6" opacity=".2">FIELDS OF THE DEAD</text>`}
+// Map is now a background image (map.jpg) on .map-canvas via CSS
 
 // ===== RENDER =====
 function renderCharacters(){const l=document.getElementById('tab-adventurers');l.innerHTML='';characters.forEach(c=>{const d=document.createElement('div');d.className='character-card';d.onclick=()=>showCharacterDetail(c);const p=document.createElement('div');p.className='portrait';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,c.id);d.appendChild(p);const i=document.createElement('div');i.className='char-info';i.innerHTML=`<div class="char-name">${c.name}</div><div class="char-class">${c.subclass}</div><div class="char-species">${c.species}</div>`;d.appendChild(i);l.appendChild(d)})}
@@ -370,7 +301,7 @@ function zoomOut(){scale=Math.max(.3,scale-.15);updateTransform()}
 function resetView(){centerOnVisited()}
 function centerOnVisited(){const v=locations.filter(l=>l.visited);if(!v.length)return;let x1=Infinity,x2=-Infinity,y1=Infinity,y2=-Infinity;v.forEach(l=>{if(l.x<x1)x1=l.x;if(l.x>x2)x2=l.x;if(l.y<y1)y1=l.y;if(l.y>y2)y2=l.y});const pad=250;x1-=pad;x2+=pad;y1-=pad;y2+=pad;const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;scale=Math.min(vw/(x2-x1),vh/(y2-y1),1.4);scale=Math.max(.4,Math.min(1.4,scale));panX=vw/2-((x1+x2)/2)*scale;panY=vh/2-((y1+y2)/2)*scale;updateTransform()}
 
-drawMap();renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,150);
+renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,150);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();sE.classList.remove('active')}});
 </script>
 </body>
