@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--font:'Silkscreen',cursive;--bg:#0f0f23;--bg2:#1a1a2e;--border:#4a3728;--gold:#ffd700;--text:#e0d8c0;--muted:#8b7355;--dim:#6a6a8e;--dark:#0a0a1e}
+:root{--font:'Silkscreen','Courier New',monospace;--bg:#0f0f23;--bg2:#1a1a2e;--border:#4a3728;--gold:#ffd700;--text:#e0d8c0;--muted:#8b7355;--dim:#6a6a8e;--dark:#0a0a1e}
 body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hidden;height:100vh;height:100dvh;width:100vw}
 .app{display:flex;height:100vh;height:100dvh;width:100vw}
 
@@ -330,13 +330,14 @@ document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=
 function buildSearchIndex(){const idx=[];locations.forEach(l=>idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id}));characters.forEach(c=>idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)}));npcsData.forEach(n=>idx.push({type:'NPC',name:n.name,desc:n.desc,action:()=>showNPCDetail(n)}));sessions.forEach(s=>s.events.forEach(ev=>idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})));return idx}
 let searchIndex=buildSearchIndex();
 function normalize(s){return s.toLowerCase().replace(/[åä]/g,'a').replace(/[ö]/g,'o')}
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 function doSearch(q){if(!q.trim())return[];const n=normalize(q);return searchIndex.filter(i=>normalize(i.name).includes(n)||(i.desc&&normalize(i.desc).includes(n)))}
 const sI=document.getElementById('searchInput'),sE=document.getElementById('suggestions');
 sI.addEventListener('input',()=>{const q=sI.value;if(q.length<2){sE.classList.remove('active');return}const r=doSearch(q).slice(0,8);if(!r.length){sE.classList.remove('active');return}sE.innerHTML='';r.forEach(i=>{const d=document.createElement('div');d.className='suggestion-item';d.innerHTML=`<span class="s-type">${i.type}</span>${i.name}`;d.onclick=()=>{sE.classList.remove('active');sI.value=i.name;if(i.action)i.action()};sE.appendChild(d)});sE.classList.add('active')});
 sI.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();executeSearch()}});
 document.getElementById('searchBtn').addEventListener('click',executeSearch);
 document.addEventListener('click',e=>{if(!e.target.closest('.search-bar'))sE.classList.remove('active')});
-function executeSearch(){sE.classList.remove('active');const q=sI.value;if(!q.trim())return;const r=doSearch(q);const p=document.getElementById('tab-search');p.innerHTML='';const s=document.createElement('div');s.className='search-results active';s.innerHTML=`<div class="search-results-header"><h3>"${q}" (${r.length})</h3><button class="sr-close" onclick="closeSearchResults()">X</button></div>`;if(!r.length)s.innerHTML+='<div class="empty-state">Inga resultat.</div>';else r.forEach(i=>{const d=document.createElement('div');d.className='sr-item';d.innerHTML=`<span class="sr-type">${i.type}</span>${i.name}`;d.onclick=()=>{if(i.action)i.action();if(i.locId){highlightMarker(i.locId);setTimeout(()=>unhighlightMarker(i.locId),3000)}if(i.places)i.places.forEach(x=>{highlightMarker(x);setTimeout(()=>unhighlightMarker(x),3000)})};s.appendChild(d)});p.appendChild(s);document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));p.classList.add('active')}
+function executeSearch(){sE.classList.remove('active');const q=sI.value;if(!q.trim())return;const r=doSearch(q);const p=document.getElementById('tab-search');p.innerHTML='';const s=document.createElement('div');s.className='search-results active';s.innerHTML=`<div class="search-results-header"><h3>"${esc(q)}" (${r.length})</h3><button class="sr-close" onclick="closeSearchResults()">X</button></div>`;if(!r.length)s.innerHTML+='<div class="empty-state">Inga resultat.</div>';else r.forEach(i=>{const d=document.createElement('div');d.className='sr-item';d.innerHTML=`<span class="sr-type">${i.type}</span>${i.name}`;d.onclick=()=>{if(i.action)i.action();if(i.locId){highlightMarker(i.locId);setTimeout(()=>unhighlightMarker(i.locId),3000)}if(i.places)i.places.forEach(x=>{highlightMarker(x);setTimeout(()=>unhighlightMarker(x),3000)})};s.appendChild(d)});p.appendChild(s);document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));p.classList.add('active')}
 function closeSearchResults(){document.getElementById('tab-search').classList.remove('active');document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');sI.value=''}
 
 // ===== POPUPS =====
@@ -358,7 +359,7 @@ const vp=document.getElementById('mapViewport');
 vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
 window.addEventListener('mousemove',e=>{if(!isDragging)return;panX=e.clientX-dragSX;panY=e.clientY-dragSY;updateTransform()});
 window.addEventListener('mouseup',()=>isDragging=false);
-vp.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.3,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));updateTransform()},{passive:false});
+vp.addEventListener('wheel',e=>{e.preventDefault();const rect=vp.getBoundingClientRect();const mx=e.clientX-rect.left;const my=e.clientY-rect.top;const oldScale=scale;scale=Math.max(.3,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));panX=mx-(mx-panX)*(scale/oldScale);panY=my-(my-panY)*(scale/oldScale);updateTransform()},{passive:false});
 // Touch support
 let lastTouchDist=0,lastTouchX=0,lastTouchY=0,touchDragging=false;
 vp.addEventListener('touchstart',e=>{if(e.touches.length===1){touchDragging=true;lastTouchX=e.touches[0].clientX-panX;lastTouchY=e.touches[0].clientY-panY}if(e.touches.length===2){touchDragging=false;lastTouchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)}},{passive:true});
@@ -370,7 +371,7 @@ function resetView(){centerOnVisited()}
 function centerOnVisited(){const v=locations.filter(l=>l.visited);if(!v.length)return;let x1=Infinity,x2=-Infinity,y1=Infinity,y2=-Infinity;v.forEach(l=>{if(l.x<x1)x1=l.x;if(l.x>x2)x2=l.x;if(l.y<y1)y1=l.y;if(l.y>y2)y2=l.y});const pad=250;x1-=pad;x2+=pad;y1-=pad;y2+=pad;const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;scale=Math.min(vw/(x2-x1),vh/(y2-y1),1.4);scale=Math.max(.4,Math.min(1.4,scale));panX=vw/2-((x1+x2)/2)*scale;panY=vh/2-((y1+y2)/2)*scale;updateTransform()}
 
 drawMap();renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,150);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePopup()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();sE.classList.remove('active')}});
 </script>
 </body>
 </html>
