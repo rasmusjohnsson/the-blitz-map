@@ -212,21 +212,24 @@ const characters=[
 // Geography based on official map. Coast runs N-S. Luskan top-left, Greenest far SE.
 // Using 2000x1600 canvas. Coast at ~x400. Inland stretches to x1600+.
 // Coordinates calibrated to map.jpg (2576x1664)
+// Coast runs at ~x:1150-1250. Land is to the RIGHT of the coast.
+// Top of map ~y:30 (border), bottom ~y:1635
+// Luskan is at the top of the coast, Greenest far SE inland
 const locations=[
-{id:'luskan',name:'Luskan',x:850,y:115,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
-{id:'neverwinter',name:'Neverwinter',x:890,y:230,visited:false,summary:'Staden som aldrig fryser.',events:[]},
-{id:'leilon',name:'Leilon',x:920,y:380,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
-{id:'phandalin',name:'Phandalin',x:1060,y:345,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
-{id:'waterdeep',name:'Waterdeep',x:1020,y:510,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
-{id:'triboar',name:'Triboar',x:1200,y:435,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
-{id:'daggerford',name:'Daggerford',x:970,y:660,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
-{id:'baldursgate',name:"Baldur's Gate",x:1000,y:900,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
-{id:'candlekeep',name:'Candlekeep',x:935,y:975,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
-{id:'beregost',name:'Beregost',x:1060,y:965,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
-{id:'nashkel',name:'Nashkel',x:1090,y:1030,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
-{id:'elturel',name:'Elturel',x:1310,y:890,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
-{id:'boareskyr',name:'Boareskyr Bridge',x:1185,y:945,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
-{id:'greenest',name:'Greenest',x:1490,y:1060,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
+{id:'luskan',name:'Luskan',x:1170,y:120,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
+{id:'neverwinter',name:'Neverwinter',x:1200,y:240,visited:false,summary:'Staden som aldrig fryser.',events:[]},
+{id:'leilon',name:'Leilon',x:1220,y:400,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
+{id:'phandalin',name:'Phandalin',x:1340,y:360,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
+{id:'waterdeep',name:'Waterdeep',x:1310,y:530,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
+{id:'triboar',name:'Triboar',x:1500,y:440,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
+{id:'daggerford',name:'Daggerford',x:1260,y:700,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
+{id:'baldursgate',name:"Baldur's Gate",x:1300,y:950,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
+{id:'candlekeep',name:'Candlekeep',x:1210,y:1050,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
+{id:'beregost',name:'Beregost',x:1360,y:1040,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
+{id:'nashkel',name:'Nashkel',x:1400,y:1110,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
+{id:'elturel',name:'Elturel',x:1620,y:930,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
+{id:'boareskyr',name:'Boareskyr Bridge',x:1500,y:1010,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
+{id:'greenest',name:'Greenest',x:1820,y:1130,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
 ];
 const npcsData=[];
 const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – The Blitz formas',events:[
@@ -290,18 +293,36 @@ const vp=document.getElementById('mapViewport');
 vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
 window.addEventListener('mousemove',e=>{if(!isDragging)return;panX=e.clientX-dragSX;panY=e.clientY-dragSY;updateTransform()});
 window.addEventListener('mouseup',()=>isDragging=false);
-vp.addEventListener('wheel',e=>{e.preventDefault();const rect=vp.getBoundingClientRect();const mx=e.clientX-rect.left;const my=e.clientY-rect.top;const oldScale=scale;scale=Math.max(.3,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));panX=mx-(mx-panX)*(scale/oldScale);panY=my-(my-panY)*(scale/oldScale);updateTransform()},{passive:false});
+vp.addEventListener('wheel',e=>{e.preventDefault();const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;const cx=vw/2,cy=vh/2;const oldScale=scale;scale=Math.max(.2,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));panX=cx-(cx-panX)*(scale/oldScale);panY=cy-(cy-panY)*(scale/oldScale);updateTransform()},{passive:false});
 // Touch support
 let lastTouchDist=0,lastTouchX=0,lastTouchY=0,touchDragging=false;
 vp.addEventListener('touchstart',e=>{if(e.touches.length===1){touchDragging=true;lastTouchX=e.touches[0].clientX-panX;lastTouchY=e.touches[0].clientY-panY}if(e.touches.length===2){touchDragging=false;lastTouchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY)}},{passive:true});
 vp.addEventListener('touchmove',e=>{if(e.touches.length===1&&touchDragging){panX=e.touches[0].clientX-lastTouchX;panY=e.touches[0].clientY-lastTouchY;updateTransform()}if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(lastTouchDist){const delta=(d-lastTouchDist)*.005;scale=Math.max(.3,Math.min(2.5,scale+delta))}lastTouchDist=d;updateTransform()}},{passive:true});
 vp.addEventListener('touchend',()=>{touchDragging=false;lastTouchDist=0});
-function zoomIn(){scale=Math.min(2.5,scale+.15);updateTransform()}
-function zoomOut(){scale=Math.max(.3,scale-.15);updateTransform()}
-function resetView(){centerOnVisited()}
-function centerOnVisited(){const v=locations.filter(l=>l.visited);if(!v.length)return;let x1=Infinity,x2=-Infinity,y1=Infinity,y2=-Infinity;v.forEach(l=>{if(l.x<x1)x1=l.x;if(l.x>x2)x2=l.x;if(l.y<y1)y1=l.y;if(l.y>y2)y2=l.y});const pad=250;x1-=pad;x2+=pad;y1-=pad;y2+=pad;const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;scale=Math.min(vw/(x2-x1),vh/(y2-y1),1.4);scale=Math.max(.4,Math.min(1.4,scale));panX=vw/2-((x1+x2)/2)*scale;panY=vh/2-((y1+y2)/2)*scale;updateTransform()}
+const MAP_W=2576,MAP_H=1664;
+function zoomAroundCenter(newScale){
+  const ma=document.querySelector('.map-container');
+  const vw=ma.clientWidth,vh=ma.clientHeight;
+  const cx=vw/2,cy=vh/2;
+  const oldScale=scale;
+  scale=Math.max(.2,Math.min(2.5,newScale));
+  panX=cx-(cx-panX)*(scale/oldScale);
+  panY=cy-(cy-panY)*(scale/oldScale);
+  updateTransform();
+}
+function zoomIn(){zoomAroundCenter(scale+.15)}
+function zoomOut(){zoomAroundCenter(scale-.15)}
+function resetView(){fitMapToView()}
+function fitMapToView(){
+  const ma=document.querySelector('.map-container');
+  const vw=ma.clientWidth,vh=ma.clientHeight;
+  scale=Math.min(vw/MAP_W,vh/MAP_H);
+  panX=(vw-MAP_W*scale)/2;
+  panY=(vh-MAP_H*scale)/2;
+  updateTransform();
+}
 
-renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(centerOnVisited,150);
+renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(fitMapToView,150);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();sE.classList.remove('active')}});
 </script>
 </body>
