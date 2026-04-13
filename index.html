@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>The Blitz - Sword Coast</title>
+<title>Gråstensväktarna - Sword Coast</title>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +14,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 /* SIDEBAR */
 .sidebar{width:400px;min-width:400px;background:var(--bg);border-right:4px solid var(--border);display:flex;flex-direction:column;z-index:10}
 .sidebar-title{text-align:center;padding:16px 12px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border)}
-.sidebar-title h1{font-size:24px;color:var(--gold);text-shadow:2px 2px 0 #8b6914,0 0 10px rgba(255,215,0,.5);letter-spacing:4px}
+.sidebar-title h1{font-size:16px;color:var(--gold);text-shadow:2px 2px 0 #8b6914,0 0 10px rgba(255,215,0,.5);letter-spacing:2px}
 .sidebar-title .subtitle{font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:2px}
 .search-bar{padding:10px 12px;background:var(--dark);border-bottom:3px solid var(--border);position:relative}
 .search-wrap{display:flex;gap:6px}
@@ -81,13 +81,17 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 /* POPUPS */
 .overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75);z-index:99}.overlay.active{display:block}
 .popup-close{font-size:16px;color:var(--muted);cursor:pointer;background:none;border:2px solid var(--border);padding:5px 10px;font-family:var(--font);transition:all .2s;border-radius:4px}.popup-close:hover{color:var(--gold);border-color:var(--gold)}
-.location-popup,.char-detail-popup,.tl-detail,.npc-detail-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg);border:4px solid var(--border);border-radius:6px;z-index:100;overflow-y:auto;box-shadow:0 0 60px rgba(0,0,0,.8)}
-.location-popup.active,.char-detail-popup.active,.tl-detail.active,.npc-detail-popup.active{display:block}
-.location-popup{width:580px;max-height:85vh}
+.char-detail-popup,.tl-detail,.npc-detail-popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg);border:4px solid var(--border);border-radius:6px;z-index:100;overflow-y:auto;box-shadow:0 0 60px rgba(0,0,0,.8)}
+.char-detail-popup.active,.tl-detail.active,.npc-detail-popup.active{display:block}
+/* Location popup: fixed position near marker on screen */
+.location-popup{display:none;position:fixed;background:var(--bg);border:3px solid var(--border);border-radius:6px;z-index:20;overflow-y:auto;box-shadow:0 4px 30px rgba(0,0,0,.7)}
+.location-popup.active{display:block}
+.location-popup{width:380px;max-width:calc(100vw - 16px);max-height:450px;overscroll-behavior:contain}
 .char-detail-popup{width:560px;max-height:85vh}
 .tl-detail{width:580px;max-height:85vh}
 .npc-detail-popup{width:540px;max-height:80vh}
 .popup-header,.tl-detail-header,.npc-detail-header{padding:18px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.location-popup .popup-header{position:sticky;top:0;z-index:2}
 .popup-header h2,.tl-detail-header h2,.npc-detail-header h2{font-size:14px;color:var(--gold);text-shadow:2px 2px 0 #8b6914}
 .popup-summary{padding:18px;font-size:12px;line-height:1.9;color:#c0b898;border-bottom:2px solid #2a2a4e}
 .event-list{padding:12px 18px 18px}
@@ -97,6 +101,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .event-item .event-title{font-size:11px;color:var(--gold);margin-bottom:4px}
 .event-item .event-preview{font-size:10px;color:var(--dim);line-height:1.6}
 .event-detail{display:none;padding:12px;margin-top:8px;background:var(--dark);border:1px solid #2a2a4e;font-size:11px;color:#c0b898;line-height:1.9;border-radius:4px}.event-detail.active{display:block}
+.event-session{font-size:8px;color:var(--dim);margin-top:4px;cursor:pointer;transition:color .15s}.event-session:hover{color:var(--gold)}
 
 /* CHAR DETAIL */
 .char-detail-header{padding:18px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:4px solid var(--border);display:flex;gap:18px;align-items:center}
@@ -143,7 +148,8 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .location-marker:hover{transform:scale(1.3);z-index:6}
 .location-marker.highlighted .marker-dot{background:#fff;border-color:var(--gold);box-shadow:0 0 20px var(--gold),0 0 40px rgba(255,215,0,.5)}
 .marker-dot{width:20px;height:20px;background:var(--gold);border:3px solid #8b6914;border-radius:3px;animation:pulse 2.5s ease-in-out infinite}
-.marker-visited .marker-dot{background:#ff6b35;border-color:#a0421f}
+.marker-visited .marker-dot{background:#ff6b35;border-color:#a0421f;width:26px;height:26px;border-width:4px}
+.marker-visited .marker-label{font-size:11px;font-weight:700}
 @keyframes pulse{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.4)}50%{box-shadow:0 0 14px rgba(255,215,0,.7)}}
 .marker-label{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--gold);text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 2px 6px rgba(0,0,0,.9);white-space:nowrap;pointer-events:none}
 .map-title{position:absolute;top:16px;right:16px;z-index:8}
@@ -184,7 +190,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 <body>
 <div class="app">
   <div class="sidebar">
-    <div class="sidebar-title"><h1>THE BLITZ</h1><div class="subtitle">TYRANNY OF DRAGONS</div></div>
+    <div class="sidebar-title"><h1>GRÅSTENSVÄKTARNA</h1><div class="subtitle">TYRANNY OF DRAGONS</div></div>
     <div class="search-bar"><div class="search-wrap"><input class="search-input" id="searchInput" type="text" placeholder="Sök plats, namn..."><button class="search-btn" id="searchBtn">&#x1F50D;</button></div><div class="suggestions" id="suggestions"></div></div>
     <div class="tab-bar"><button class="tab-btn active" data-tab="adventurers">ÄVENTYRARE</button><button class="tab-btn" data-tab="history">HISTORIK</button><button class="tab-btn" data-tab="npcs">NPC:er</button></div>
     <div class="tab-content"><div class="tab-panel active" id="tab-adventurers"></div><div class="tab-panel" id="tab-history"></div><div class="tab-panel" id="tab-npcs"></div><div class="tab-panel" id="tab-search"></div></div>
@@ -192,12 +198,12 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
   <div class="map-container">
     <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
     <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"></div></div>
+    <div class="location-popup" id="locationPopup"><div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="popup-summary" id="popupSummary"></div><div class="event-list" id="popupEvents"></div></div>
     <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:9px">R</button></div>
     <div class="legend"><div class="legend-item"><div class="legend-dot visited"></div><span>Besökta platser</span></div><div class="legend-item"><div class="legend-dot known"></div><span>Kända platser</span></div></div>
   </div>
 </div>
 <div class="overlay" id="overlay" onclick="closePopup()"></div>
-<div class="location-popup" id="locationPopup"><div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="popup-summary" id="popupSummary"></div><div class="event-list" id="popupEvents"></div></div>
 <div class="char-detail-popup" id="charDetailPopup"><div class="char-detail-header"><div class="char-detail-portrait" id="charDetailPortrait"></div><div class="char-detail-info"><h2 id="charDetailName"></h2><div class="detail-class" id="charDetailClass"></div><div class="detail-species" id="charDetailSpecies"></div></div><button class="popup-close" onclick="closePopup()" style="margin-left:auto">X</button></div><div class="char-detail-body" id="charDetailBody"></div></div>
 <div class="tl-detail" id="tlDetail"><div class="tl-detail-header"><h2 id="tlDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="tl-detail-body" id="tlDetailBody"></div></div>
 <div class="npc-detail-popup" id="npcDetailPopup"><div class="npc-detail-header"><h2 id="npcDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="npc-detail-body" id="npcDetailBody"></div></div>
@@ -207,38 +213,37 @@ const characters=[
 {id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
 {id:'oweyn',name:'Oweyn Howell',class:'Fighter',subclass:'Battle Master',species:'Custom Lineage',org:'Order of the Gauntlet',gender:'Male',appearance:{},backstory:'Från Greenest, åkte till Baldur\'s Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.',personalEvents:[{label:'Lämnade Greenest',text:'Reste till Baldur\'s Gate för att söka äventyr.'},{label:'Rekryterad som squire',text:'Placerades under Therons förmyndarskap i Order of the Gauntlet.'},{label:'Klarade proven',text:'Klarade alla prov som krävdes efter lång kamp.'},{label:'Fullvärdig riddare',text:'Uppsteg till fullvärdig medlem – vapenbroder med Theron.'},{label:'Unarmed fighting',text:'Specialiserade sig i obeväpnad stridsteknik.'}]},
 {id:'gothmog',name:'Gothmog',class:'Fighter',subclass:'Rune Knight',species:'Half-Orc',org:'',age:23,gender:'Male',appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},backstory:'Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.',personalEvents:[{label:'Försvann till Barovia',text:'Som barn svalde dimman honom och han hamnade i Barovia.'},{label:'Soldat i Valakii',text:'Blev soldat – utnyttjades för sitt skrämmande utseende.'},{label:'Vände om',text:'Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde.'},{label:'Runorna',text:'Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli.'},{label:'The Vistani',text:'Betalade med ett dyrbart minne för att fly Barovia.'}]},
-{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker.'},{label:'Resande magiker',text:'Reste och studerade magi som ett levande språk.'},{label:'Samlade gruppen',text:'Introducerade Gothmog i Greenest. Början på The Blitz.'}]}
+{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker.'},{label:'Resande magiker',text:'Reste och studerade magi som ett levande språk.'},{label:'Samlade gruppen',text:'Introducerade Gothmog i Greenest. Början på Gråstensväktarna.'}]}
 ];
 // Geography based on official map. Coast runs N-S. Luskan top-left, Greenest far SE.
 // Using 2000x1600 canvas. Coast at ~x400. Inland stretches to x1600+.
-// Coordinates calibrated to map.jpg (2576x1664)
-// Coast runs at ~x:1150-1250. Land is to the RIGHT of the coast.
-// Top of map ~y:30 (border), bottom ~y:1635
-// Luskan is at the top of the coast, Greenest far SE inland
+// Coordinates calibrated to map.jpg (2576x1664).
+// Greenest confirmed at ~x:1620 y:1300 (the red dot from reference).
+// All other cities placed relative to Greenest using official WotC map proportions.
 const locations=[
-{id:'luskan',name:'Luskan',x:1170,y:120,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
-{id:'neverwinter',name:'Neverwinter',x:1200,y:240,visited:false,summary:'Staden som aldrig fryser.',events:[]},
-{id:'leilon',name:'Leilon',x:1220,y:400,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
-{id:'phandalin',name:'Phandalin',x:1340,y:360,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
-{id:'waterdeep',name:'Waterdeep',x:1310,y:530,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
-{id:'triboar',name:'Triboar',x:1500,y:440,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
-{id:'daggerford',name:'Daggerford',x:1260,y:700,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
-{id:'baldursgate',name:"Baldur's Gate",x:1300,y:950,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.'}]},
-{id:'candlekeep',name:'Candlekeep',x:1210,y:1050,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
-{id:'beregost',name:'Beregost',x:1360,y:1040,visited:false,summary:'Stad längs Trade Way söder om Baldur\'s Gate.',events:[]},
-{id:'nashkel',name:'Nashkel',x:1400,y:1110,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
-{id:'elturel',name:'Elturel',x:1620,y:930,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.'}]},
-{id:'boareskyr',name:'Boareskyr Bridge',x:1500,y:1010,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
-{id:'greenest',name:'Greenest',x:1820,y:1130,visited:true,summary:'Hemstad för The Blitz. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'The Blitz formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "The Blitz".'},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.'},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.'},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.'},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.'}]}
+{id:'luskan',name:'Luskan',x:1002,y:234,visited:false,summary:'Laglös piratstad längst i norr vid kusten.',events:[]},
+{id:'neverwinter',name:'Neverwinter',x:1036,y:351,visited:false,summary:'Staden som aldrig fryser.',events:[]},
+{id:'leilon',name:'Leilon',x:1074,y:455,visited:false,summary:'Kuststad söder om Neverwinter.',events:[]},
+{id:'phandalin',name:'Phandalin',x:1100,y:426,visited:false,summary:'Gruvstad nära Sword Mountains.',events:[]},
+{id:'waterdeep',name:'Waterdeep',x:1200,y:648,visited:false,summary:'Juvelen i Sword Coast vid foten av Mount Waterdeep.',events:[]},
+{id:'triboar',name:'Triboar',x:1207,y:378,visited:false,summary:'Handelskorsning öster om Waterdeep.',events:[]},
+{id:'daggerford',name:'Daggerford',x:1247,y:676,visited:false,summary:'Befäst stad vid Delimbiyr-floden.',events:[]},
+{id:'baldursgate',name:"Baldur's Gate",x:1340,y:1082,visited:true,summary:'Stor handelsstad vid Chionthar-flodens mynning.',events:[{title:'Oweyn rekryteras',preview:'En ung man sökte äventyr...',detail:'Oweyn rekryterades av Order of the Gauntlet som squire under Theron.',session:0}]},
+{id:'candlekeep',name:'Candlekeep',x:1313,y:1209,visited:false,summary:'Legendariskt biblioteksfort vid kusten söder om Baldur\'s Gate.',events:[]},
+{id:'beregost',name:'Beregost',x:1345,y:1232,visited:false,summary:'Stad längs Coast Way söder om Baldur\'s Gate.',events:[]},
+{id:'nashkel',name:'Nashkel',x:1431,y:1304,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
+{id:'elturel',name:'Elturel',x:1537,y:1047,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.',session:0}]},
+{id:'boareskyr',name:'Boareskyr Bridge',x:1524,y:930,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
+{id:'greenest',name:'Greenest',x:1608,y:1246,visited:true,summary:'Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'Gråstensväktarna formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "Gråstensväktarna".',session:0},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.',session:0},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.',session:0},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.',session:0},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.',session:0}]}
 ];
 const npcsData=[];
-const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – The Blitz formas',events:[
+const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – Gråstensväktarna formas',events:[
 {title:'Haldans drakjakt',recap:'Haldan spårade en blå drake. Kom för sent för att rädda Therons klan men hittade baby-Theron i askan.',places:['greenest'],npcs:['Verustraz / Pyotr']},
 {title:'Theron växer upp',recap:'Theron blev stadsvakt, fann Bahamut och gick med i Order of the Gauntlet.',places:['greenest','elturel'],npcs:[]},
 {title:'Oweyn söker äventyr',recap:'Oweyn reste till Baldur\'s Gate och rekryterades av Order of the Gauntlet.',places:['greenest','baldursgate'],npcs:[]},
 {title:'Cedrics resor',recap:'Cedric fick "Kunskapens Vagn" av sin far Steve och reste mellan riken.',places:['greenest'],npcs:['Steve']},
 {title:'Gothmog flyr Barovia',recap:'Gothmog försvann som barn in i Barovia. The Vistani tog ett minne som betalning. Cedric räddade honom.',places:['greenest'],npcs:['The Vistani']},
-{title:'The Blitz formas',recap:'Cedric återvände med Gothmog. Gruppen växte samman till "The Blitz".',places:['greenest'],npcs:[]}
+{title:'Gråstensväktarna formas',recap:'Cedric återvände med Gothmog. Gruppen växte samman till "Gråstensväktarna".',places:['greenest'],npcs:[]}
 ]}];
 
 function drawPortrait(cv,id){const c=cv.getContext('2d');cv.width=16;cv.height=16;c.imageSmoothingEnabled=false;const P={
@@ -275,22 +280,91 @@ function executeSearch(){sE.classList.remove('active');const q=sI.value;if(!q.tr
 function closeSearchResults(){document.getElementById('tab-search').classList.remove('active');document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');sI.value=''}
 
 // ===== POPUPS =====
-function showLocation(l){document.getElementById('popupTitle').textContent=l.name;document.getElementById('popupSummary').textContent=l.summary;const e=document.getElementById('popupEvents');e.innerHTML='<h3>HÄNDELSER</h3>';if(!l.events.length)e.innerHTML+='<div class="empty-state">Inga händelser ännu.</div>';else l.events.forEach((ev,i)=>{const d=document.createElement('div');d.className='event-item';d.innerHTML=`<div class="event-title">${ev.title}</div><div class="event-preview">${ev.preview}</div><div class="event-detail" id="ed_${l.id}_${i}">${ev.detail}</div>`;d.onclick=()=>document.getElementById(`ed_${l.id}_${i}`).classList.toggle('active');e.appendChild(d)});document.getElementById('overlay').classList.add('active');document.getElementById('locationPopup').classList.add('active')}
-function showCharacterDetail(ch){document.getElementById('charDetailName').textContent=ch.name;document.getElementById('charDetailClass').textContent=ch.subclass;document.getElementById('charDetailSpecies').textContent=ch.species;const p=document.getElementById('charDetailPortrait');p.innerHTML='';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,ch.id);const b=document.getElementById('charDetailBody');b.innerHTML='';const st=[];if(ch.age)st.push({l:'Ålder',v:ch.age});if(ch.gender)st.push({l:'Kön',v:ch.gender});if(ch.org)st.push({l:'Organisation',v:ch.org});if(ch.appearance.skin)st.push({l:'Hy',v:ch.appearance.skin});if(ch.appearance.eyes)st.push({l:'Ögon',v:ch.appearance.eyes});if(ch.appearance.hair)st.push({l:'Hår',v:ch.appearance.hair});st.forEach(s=>b.innerHTML+=`<div class="stat-row"><span class="stat-label">${s.l}</span><span class="stat-value">${s.v}</span></div>`);
-// Collapsible backstory
-b.innerHTML+=`<div class="section-toggle collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('collapsed')"><h3>BAKGRUND</h3><span class="tog-icon">▼</span></div><div class="section-body collapsed" style="max-height:600px"><p>${ch.backstory}</p></div>`;
-if(ch.personalEvents&&ch.personalEvents.length){let h='<div class="personal-events"><h3>SENASTE HÄNDELSER</h3>';ch.personalEvents.slice(0,5).forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('charDetailPopup').classList.add('active')}
-function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED THE BLITZ</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
+function findEventSession(evTitle){for(const s of sessions){if(s.events.find(e=>e.title===evTitle))return s}return null}
+function openSessionTab(sessionId){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.tab-btn[data-tab="history"]').classList.add('active');
+  document.getElementById('tab-history').classList.add('active');
+  const blocks=document.querySelectorAll('.session-block');
+  blocks.forEach(b=>{b.classList.add('collapsed')});
+  if(blocks[sessionId]){blocks[sessionId].classList.remove('collapsed');blocks[sessionId].scrollIntoView({behavior:'smooth'})}
+}
+function showLocation(l){
+  closePopup();
+  const popup=document.getElementById('locationPopup');
+  document.getElementById('popupTitle').textContent=l.name;
+  document.getElementById('popupSummary').textContent=l.summary;
+  const e=document.getElementById('popupEvents');
+  e.innerHTML='<h3>HÄNDELSER</h3>';
+  if(!l.events.length) e.innerHTML+='<div class="empty-state">Inga händelser ännu.</div>';
+  else l.events.forEach((ev,i)=>{
+    const sess=ev.session!==undefined?sessions.find(s=>s.id===ev.session):null;
+    const sessLabel=sess?`<div class="event-session" onclick="event.stopPropagation();openSessionTab(${sess.id})">📜 ${sess.label}</div>`:'';
+    const d=document.createElement('div');d.className='event-item';
+    d.innerHTML=`<div class="event-title">${ev.title}</div>${sessLabel}<div class="event-preview">${ev.preview}</div><div class="event-detail" id="ed_${l.id}_${i}">${ev.detail}</div>`;
+    d.onclick=()=>document.getElementById(`ed_${l.id}_${i}`).classList.toggle('active');
+    e.appendChild(d);
+  });
+  // Position in screen-space near the marker
+  const ma=document.querySelector('.map-container');
+  const maRect=ma.getBoundingClientRect();
+  const sx=l.x*scale+panX+maRect.left+15;
+  const sy=l.y*scale+panY+maRect.top;
+  const popW=380,popH=450;
+  let px=sx+20, py=sy-popH/2;
+  // Keep within screen
+  if(px+popW>window.innerWidth-8) px=sx-popW-20;
+  if(px<8) px=8;
+  if(py<8) py=8;
+  if(py+popH>window.innerHeight-8) py=window.innerHeight-popH-8;
+  popup.style.left=px+'px';
+  popup.style.top=py+'px';
+  popup.style.transform='';
+  popup.classList.add('active');
+  // Highlight marker
+  const m=document.getElementById('marker-'+l.id);if(m)m.classList.add('highlighted');
+}
+function showCharacterDetail(ch){
+  document.getElementById('charDetailName').textContent=ch.name;
+  document.getElementById('charDetailClass').textContent=ch.subclass;
+  document.getElementById('charDetailSpecies').textContent=ch.species;
+  const p=document.getElementById('charDetailPortrait');p.innerHTML='';
+  const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,ch.id);
+  const b=document.getElementById('charDetailBody');b.innerHTML='';
+  // Collapsible stats
+  const st=[];
+  if(ch.age)st.push({l:'Ålder',v:ch.age});if(ch.gender)st.push({l:'Kön',v:ch.gender});
+  if(ch.org)st.push({l:'Organisation',v:ch.org});
+  if(ch.appearance.skin)st.push({l:'Hy',v:ch.appearance.skin});
+  if(ch.appearance.eyes)st.push({l:'Ögon',v:ch.appearance.eyes});
+  if(ch.appearance.hair)st.push({l:'Hår',v:ch.appearance.hair});
+  if(st.length){
+    let statsHtml='';st.forEach(s=>statsHtml+=`<div class="stat-row"><span class="stat-label">${s.l}</span><span class="stat-value">${s.v}</span></div>`);
+    b.innerHTML+=`<div class="section-toggle collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('collapsed')"><h3>DETALJER</h3><span class="tog-icon">▼</span></div><div class="section-body collapsed" style="max-height:400px">${statsHtml}</div>`;
+  }
+  // Collapsible backstory
+  b.innerHTML+=`<div class="section-toggle collapsed" onclick="this.classList.toggle('collapsed');this.nextElementSibling.classList.toggle('collapsed')"><h3>BAKGRUND</h3><span class="tog-icon">▼</span></div><div class="section-body collapsed" style="max-height:600px"><p>${ch.backstory}</p></div>`;
+  // Personal events (always visible)
+  if(ch.personalEvents&&ch.personalEvents.length){
+    let h='<div class="personal-events"><h3>SENASTE HÄNDELSER</h3>';
+    ch.personalEvents.slice(0,5).forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});
+    h+='</div>';b.innerHTML+=h;
+  }
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('charDetailPopup').classList.add('active');
+}
+function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');b.innerHTML=`<div class="recap">${ev.recap}</div>`;if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
-function closePopup(){document.getElementById('overlay').classList.remove('active');['locationPopup','charDetailPopup','tlDetail','npcDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'))}
+function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'))}
 
 // ===== PAN & ZOOM (mouse + touch) =====
 let scale=1,panX=0,panY=0,isDragging=false,dragSX,dragSY;
 function updateTransform(){document.getElementById('mapCanvas').style.transform=`translate(${panX}px,${panY}px) scale(${scale})`}
 const vp=document.getElementById('mapViewport');
-vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
+vp.addEventListener('mousedown',e=>{if(e.target.closest('.location-marker'))return;if(!e.target.closest('.location-popup'))closePopup();isDragging=true;dragSX=e.clientX-panX;dragSY=e.clientY-panY});
 window.addEventListener('mousemove',e=>{if(!isDragging)return;panX=e.clientX-dragSX;panY=e.clientY-dragSY;updateTransform()});
 window.addEventListener('mouseup',()=>isDragging=false);
 vp.addEventListener('wheel',e=>{e.preventDefault();const ma=document.querySelector('.map-container');const vw=ma.clientWidth,vh=ma.clientHeight;const cx=vw/2,cy=vh/2;const oldScale=scale;scale=Math.max(.2,Math.min(2.5,scale+(e.deltaY>0?-.1:.1)));panX=cx-(cx-panX)*(scale/oldScale);panY=cy-(cy-panY)*(scale/oldScale);updateTransform()},{passive:false});
@@ -322,6 +396,24 @@ function fitMapToView(){
   updateTransform();
 }
 
+document.getElementById('locationPopup').addEventListener('wheel',e=>e.stopPropagation(),{passive:false});
+document.getElementById('locationPopup').addEventListener('mousedown',e=>e.stopPropagation());
+document.getElementById('locationPopup').addEventListener('touchstart',e=>e.stopPropagation());
+document.getElementById('locationPopup').addEventListener('touchmove',e=>e.stopPropagation());
+// Calibration: click empty map area to see coordinates (desktop only)
+document.getElementById('mapCanvas').addEventListener('click',function(e){
+  if(e.target.closest('.location-marker')||e.target.closest('.location-popup'))return;
+  if(window.innerWidth<=900)return; // hide on mobile
+  const rect=this.getBoundingClientRect();
+  const x=Math.round((e.clientX-rect.left)/scale);
+  const y=Math.round((e.clientY-rect.top)/scale);
+  const box=document.createElement('div');
+  box.style.cssText='position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#0f0f23;border:2px solid #ffd700;color:#ffd700;padding:12px 20px;font-family:var(--font);font-size:14px;z-index:999;border-radius:6px;cursor:pointer';
+  box.textContent='x:'+x+',y:'+y;
+  box.onclick=()=>{navigator.clipboard.writeText('x:'+x+',y:'+y);box.textContent='Kopierat!';setTimeout(()=>box.remove(),800)};
+  document.body.appendChild(box);
+  setTimeout(()=>box.remove(),5000);
+});
 renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(fitMapToView,150);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();sE.classList.remove('active')}});
 </script>
