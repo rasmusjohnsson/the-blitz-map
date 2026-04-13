@@ -157,6 +157,29 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .zoom-controls{position:absolute;bottom:16px;right:16px;z-index:8;display:flex;flex-direction:column;gap:4px}
 .zoom-btn{width:38px;height:38px;background:var(--bg);border:2px solid var(--border);color:var(--gold);font-family:var(--font);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;border-radius:4px}
 .zoom-btn:hover{border-color:var(--gold);background:var(--bg2)}
+.session-filter{position:absolute;top:16px;left:16px;z-index:8}
+.session-filter select{background:rgba(15,15,35,.92);border:2px solid var(--border);color:var(--gold);font-family:var(--font);font-size:10px;padding:8px 12px;border-radius:4px;cursor:pointer;outline:none}
+.session-filter select:hover,.session-filter select:focus{border-color:var(--gold)}
+.session-filter select option{background:var(--bg);color:var(--text)}
+.location-marker.session-dimmed{opacity:.15;pointer-events:none;filter:grayscale(1);transition:opacity .3s,filter .3s}
+.location-marker.session-dimmed .marker-label{display:none}
+.location-marker.npc-glow .marker-dot{background:#6ab4ff;border-color:#3a8adf;box-shadow:0 0 20px #6ab4ff,0 0 40px rgba(106,180,255,.5)}
+.recap-bar{padding:8px 12px;background:var(--dark);border-bottom:2px solid var(--border)}
+.recap-btn{width:100%;padding:10px;font-family:var(--font);font-size:11px;color:var(--bg);background:linear-gradient(180deg,#ffd700,#c8a800);border:2px solid #8b6914;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:1px}
+.recap-btn:hover{background:linear-gradient(180deg,#ffe44d,#dab800);box-shadow:0 0 15px rgba(255,215,0,.4)}
+.recap-btn.active{background:linear-gradient(180deg,#c8a800,#a08600);box-shadow:inset 0 2px 4px rgba(0,0,0,.3)}
+.recap-header{padding:14px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:3px solid var(--border);border-radius:6px 6px 0 0;margin-bottom:12px}
+.recap-header h2{font-size:13px;color:var(--gold);text-shadow:2px 2px 0 #8b6914}
+.recap-header .recap-label{font-size:9px;color:var(--muted);margin-bottom:4px}
+.recap-event{padding:10px 12px;margin-bottom:8px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid var(--gold);font-size:10px;color:#c0b898;line-height:1.7;border-radius:4px}
+.recap-event .recap-event-title{color:#e0c878;font-size:11px;margin-bottom:4px}
+.recap-section{margin-top:14px;padding-top:10px;border-top:2px solid #2a2a4e}
+.recap-section h3{font-size:11px;color:var(--muted);margin-bottom:8px}
+.recap-tag{display:inline-block;padding:4px 10px;margin:3px 4px 3px 0;font-size:9px;border-radius:3px;cursor:pointer;transition:all .15s;font-family:var(--font)}
+.recap-tag.place-tag{background:#1a1a0e;color:#ff6b35;border:1px solid #6a3a1a}
+.recap-tag.place-tag:hover{border-color:#ff6b35;background:#2a1a0e}
+.recap-tag.npc-tag{background:#0e1a2a;color:#6ab4ff;border:1px solid #1a3a6a}
+.recap-tag.npc-tag:hover{border-color:#6ab4ff;background:#0e2a4a}
 .legend{position:absolute;bottom:16px;left:16px;z-index:8;background:rgba(15,15,35,.92);border:2px solid var(--border);padding:10px 12px;border-radius:4px}
 .legend-item{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:9px}
 .legend-dot{width:12px;height:12px;border:2px solid;border-radius:3px}
@@ -171,6 +194,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
   .sidebar-title h1{font-size:18px}
   .location-popup,.char-detail-popup,.tl-detail,.npc-detail-popup{width:95vw;max-height:80vh;top:50%;left:50%}
   .marker-label{font-size:7px}
+  .session-filter select{font-size:8px;padding:6px 8px;max-width:150px}
   .legend{bottom:8px;left:8px;padding:6px 8px}
   .zoom-controls{bottom:8px;right:8px}
   .zoom-btn{width:34px;height:34px;font-size:14px}
@@ -192,11 +216,13 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
   <div class="sidebar">
     <div class="sidebar-title"><h1>GRÅSTENSVÄKTARNA</h1><div class="subtitle">TYRANNY OF DRAGONS</div></div>
     <div class="search-bar"><div class="search-wrap"><input class="search-input" id="searchInput" type="text" placeholder="Sök plats, namn..."><button class="search-btn" id="searchBtn">&#x1F50D;</button></div><div class="suggestions" id="suggestions"></div></div>
+    <div class="recap-bar"><button class="recap-btn" id="recapBtn">📜 RECAP</button></div>
     <div class="tab-bar"><button class="tab-btn active" data-tab="adventurers">ÄVENTYRARE</button><button class="tab-btn" data-tab="history">HISTORIK</button><button class="tab-btn" data-tab="npcs">NPC:er</button></div>
-    <div class="tab-content"><div class="tab-panel active" id="tab-adventurers"></div><div class="tab-panel" id="tab-history"></div><div class="tab-panel" id="tab-npcs"></div><div class="tab-panel" id="tab-search"></div></div>
+    <div class="tab-content"><div class="tab-panel active" id="tab-adventurers"></div><div class="tab-panel" id="tab-history"></div><div class="tab-panel" id="tab-npcs"></div><div class="tab-panel" id="tab-search"></div><div class="tab-panel" id="tab-recap"></div></div>
   </div>
   <div class="map-container">
     <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
+    <div class="session-filter"><select id="sessionFilter"></select></div>
     <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"></div></div>
     <div class="location-popup" id="locationPopup"><div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="popup-summary" id="popupSummary"></div><div class="event-list" id="popupEvents"></div></div>
     <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:9px">R</button></div>
@@ -208,6 +234,70 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 <div class="tl-detail" id="tlDetail"><div class="tl-detail-header"><h2 id="tlDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="tl-detail-body" id="tlDetailBody"></div></div>
 <div class="npc-detail-popup" id="npcDetailPopup"><div class="npc-detail-header"><h2 id="npcDetailTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="npc-detail-body" id="npcDetailBody"></div></div>
 <script>
+/*
+===================================================================
+  GRÅSTENSVÄKTARNA – DATA SCHEMA & SESSION WORKFLOW
+===================================================================
+
+WORKFLOW FÖR ATT LÄGGA TILL EN NY SESSION:
+1. Klistra in session-transkribering till Claude
+2. Claude genererar: session-objekt, nya platser, nya NPCs, uppdateringar till befintliga platser
+3. För nya platser: använd kalibreringsverktyget (klicka på tom yta på kartan → koordinater)
+4. Skicka koordinaterna till Claude
+5. Claude producerar färdig kod att klistra in
+
+SESSION SCHEMA:
+{
+  id: number,               // Sekventiellt: 0, 1, 2...
+  label: 'SESSION N',       // T.ex. 'SESSION 1'
+  title: 'Kort titel',      // Svenska, beskrivande
+  events: [{
+    title: string,           // Händelsens namn
+    recap: string,           // Sammanfattning av vad som hände
+    places: ['locationId'],  // Array av location.id-strängar
+    npcs: ['NPC Namn']       // Array av NPC-namn (måste matcha npcsData[].name exakt)
+  }]
+}
+
+LOCATION SCHEMA (ny plats):
+{
+  id: 'kebab-case',          // Unikt ID, t.ex. 'castle-naerytar'
+  name: 'Visningsnamn',
+  x: number,                 // Pixelkoordinat på map.jpg (2576x1664) – använd kalibreringsverktyget!
+  y: number,
+  visited: true/false,
+  summary: 'Kort beskrivning av platsen.',
+  events: [{
+    title: string,
+    preview: 'Kort förhandsgranskning...',
+    detail: 'Fullständig beskrivning av händelsen.',
+    session: number           // Matchar sessions[].id
+  }]
+}
+
+NPC SCHEMA:
+{
+  name: string,              // Måste matcha sessions[].events[].npcs exakt
+  status: 'friendly'|'hostile'|'neutral'|'unknown',
+  role: 'Kort rollbeskrivning',
+  desc: 'Längre beskrivning av NPCn.',
+  events: [{                 // Interaktioner med Gråstensväktarna
+    label: 'Kort rubrik',
+    text: 'Beskrivning av interaktionen.'
+  }]
+}
+
+BEFINTLIG PLATS – UPPDATERING:
+- Pusha ny event till locations[].events med session: N
+- Sätt visited: true om gruppen besökt platsen
+
+KORSREFERENSER:
+- session.events[].places måste använda location.id-värden
+- session.events[].npcs måste matcha npcsData[].name exakt
+- Varje refererad NPC/plats måste finnas i respektive array
+===================================================================
+*/
+const DATA_VERSION='1.0';
 const characters=[
 {id:'haldan',name:'Haldan Askvandrare',class:'Ranger',subclass:'Monster Slayer',species:'Variant Human',org:'Emerald Enclave',age:56,gender:'Male',appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.',personalEvents:[{label:'Drakjakt',text:'Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr.'},{label:'Räddade Theron',text:'Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest.'},{label:'Emerald Enclave',text:'Rekryterades och tränades som monsterjägare och hemlig lönnmördare.'},{label:'Mötte Cedric',text:'Korsade vägar med Cedric – gemensamt intresse i kunskap om monster.'},{label:'Vaktare i skuggorna',text:'Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar.'}]},
 {id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
@@ -263,7 +353,7 @@ function renderTimeline(){const p=document.getElementById('tab-history');p.inner
 function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
 
 // ===== TABS =====
-document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active')})});
+document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{if(recapActive)exitRecapMode();document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active')})});
 
 // ===== SEARCH =====
 function buildSearchIndex(){const idx=[];locations.forEach(l=>idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id}));characters.forEach(c=>idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)}));npcsData.forEach(n=>idx.push({type:'NPC',name:n.name,desc:n.desc,action:()=>showNPCDetail(n)}));sessions.forEach(s=>s.events.forEach(ev=>idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})));return idx}
@@ -354,11 +444,11 @@ function showCharacterDetail(ch){
   document.getElementById('overlay').classList.add('active');
   document.getElementById('charDetailPopup').classList.add('active');
 }
-function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
+function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${n.desc}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${e.text}</div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');b.innerHTML=`<div class="recap">${ev.recap}</div>`;if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
-function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'))}
+function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'));document.querySelectorAll('.location-marker.npc-glow').forEach(m=>m.classList.remove('npc-glow'))}
 
 // ===== PAN & ZOOM (mouse + touch) =====
 let scale=1,panX=0,panY=0,isDragging=false,dragSX,dragSY;
@@ -414,8 +504,26 @@ document.getElementById('mapCanvas').addEventListener('click',function(e){
   document.body.appendChild(box);
   setTimeout(()=>box.remove(),5000);
 });
-renderCharacters();renderNPCs();renderTimeline();renderMarkers();setTimeout(fitMapToView,150);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();sE.classList.remove('active')}});
+// Session filter
+let currentSessionFilter='all';
+function populateSessionFilter(){const sel=document.getElementById('sessionFilter');sel.innerHTML='<option value="all">Alla sessioner</option>';sessions.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.label+': '+s.title;sel.appendChild(o)});sel.addEventListener('change',function(){filterMapBySession(this.value)})}
+function filterMapBySession(val){currentSessionFilter=val;if(val==='all'){document.querySelectorAll('.location-marker').forEach(m=>m.classList.remove('session-dimmed'));return}const s=sessions.find(x=>x.id===parseInt(val));if(!s)return;const placeSet=new Set();s.events.forEach(ev=>ev.places.forEach(p=>placeSet.add(p)));locations.forEach(l=>{const m=document.getElementById('marker-'+l.id);if(!m)return;if(placeSet.has(l.id))m.classList.remove('session-dimmed');else m.classList.add('session-dimmed')})}
+
+// NPC-to-place utility
+function getNpcPlaces(npcName){const ps=new Set();sessions.forEach(s=>{s.events.forEach(ev=>{if(ev.npcs&&ev.npcs.some(n=>n.toLowerCase()===npcName.toLowerCase()))ev.places.forEach(p=>ps.add(p))})});return[...ps]}
+function highlightMarkerNpc(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('npc-glow')}
+function unhighlightMarkerNpc(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('npc-glow')}
+
+// Recap mode
+let recapActive=false,recapHighlightedPlaces=[];
+function toggleRecapMode(){if(recapActive){exitRecapMode();return}recapActive=true;document.getElementById('recapBtn').classList.add('active');document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-recap').classList.add('active');const last=sessions[sessions.length-1];renderRecap(last);const ps=new Set();last.events.forEach(ev=>ev.places.forEach(p=>ps.add(p)));recapHighlightedPlaces=[...ps];recapHighlightedPlaces.forEach(id=>highlightMarker(id));document.getElementById('sessionFilter').value=last.id;filterMapBySession(last.id)}
+function exitRecapMode(){recapActive=false;document.getElementById('recapBtn').classList.remove('active');recapHighlightedPlaces.forEach(id=>unhighlightMarker(id));recapHighlightedPlaces=[];document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');document.getElementById('tab-recap').classList.remove('active');document.getElementById('sessionFilter').value='all';filterMapBySession('all')}
+function renderRecap(s){const p=document.getElementById('tab-recap');let h=`<div class="recap-header"><div class="recap-label">${s.label}</div><h2>${s.title}</h2></div>`;s.events.forEach(ev=>{h+=`<div class="recap-event"><div class="recap-event-title">${ev.title}</div>${ev.recap}</div>`});const placeIds=new Set();s.events.forEach(ev=>ev.places.forEach(x=>placeIds.add(x)));if(placeIds.size){h+='<div class="recap-section"><h3>PLATSER</h3>';placeIds.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<span class="recap-tag place-tag" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="showLocation(locations.find(l=>l.id==='${pid}'))">${loc.name}</span>`});h+='</div>'}const npcNames=new Set();s.events.forEach(ev=>{if(ev.npcs)ev.npcs.forEach(n=>npcNames.add(n))});if(npcNames.size){h+='<div class="recap-section"><h3>NPCs</h3>';npcNames.forEach(name=>{const npc=npcsData.find(n=>n.name===name);if(npc)h+=`<span class="recap-tag npc-tag" onclick="showNPCDetail(npcsData.find(n=>n.name==='${name.replace(/'/g,"\\'")}'))">${name}</span>`;else h+=`<span class="recap-tag npc-tag" style="cursor:default">${name}</span>`});h+='</div>'}p.innerHTML=h}
+
+renderCharacters();renderNPCs();renderTimeline();renderMarkers();populateSessionFilter();
+document.getElementById('recapBtn').addEventListener('click',toggleRecapMode);
+setTimeout(fitMapToView,150);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(recapActive)exitRecapMode();closePopup();sE.classList.remove('active')}});
 </script>
 </body>
 </html>
