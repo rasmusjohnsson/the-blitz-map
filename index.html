@@ -100,7 +100,19 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .event-item:hover{border-color:var(--gold);background:#1e1e3a}
 .event-item .event-title{font-size:11px;color:var(--gold);margin-bottom:4px}
 .event-item .event-preview{font-size:10px;color:var(--dim);line-height:1.6}
-.event-detail{display:none;padding:12px;margin-top:8px;background:var(--dark);border:1px solid #2a2a4e;font-size:11px;color:#c0b898;line-height:1.9;border-radius:4px}.event-detail.active{display:block}
+.event-detail{display:none;padding:12px;margin-top:8px;background:var(--dark);border:1px solid #2a2a4e;font-size:11px;color:#c0b898;line-height:1.9;border-radius:4px;white-space:pre-line}.event-detail.active{display:block}
+.desc-list{padding:12px 18px 4px}
+.desc-list h3{font-size:12px;color:var(--muted);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #2a2a4e}
+.desc-section{padding:0;margin-bottom:8px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid #8aaaff;border-radius:4px;overflow:hidden}
+.desc-section .desc-title{font-size:10px;color:#8aaaff;letter-spacing:.5px;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .15s}
+.desc-section .desc-title:hover{background:#1a1a38}
+.desc-section .desc-title .desc-tog{font-size:9px;color:#6a8acc;transition:transform .2s}
+.desc-section.collapsed .desc-title .desc-tog{transform:rotate(-90deg)}
+.desc-section ul{list-style:none;padding:0 12px 10px;margin:0}
+.desc-section.collapsed ul{display:none}
+.desc-section li{font-size:10px;color:#c0b898;padding:3px 0 3px 14px;line-height:1.6;position:relative}
+.desc-section li::before{content:'▸';position:absolute;left:0;color:#8aaaff}
+.desc-section li strong{color:#e0c878;font-weight:400}
 .event-session{font-size:8px;color:var(--dim);margin-top:4px;cursor:pointer;transition:color .15s}.event-session:hover{color:var(--gold)}
 
 /* CHAR DETAIL */
@@ -224,7 +236,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
     <div class="map-title"><div class="map-subtitle">SWORD COAST</div></div>
     <div class="session-filter"><select id="sessionFilter"></select></div>
     <div class="map-viewport" id="mapViewport"><div class="map-canvas" id="mapCanvas"></div></div>
-    <div class="location-popup" id="locationPopup"><div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="popup-summary" id="popupSummary"></div><div class="event-list" id="popupEvents"></div></div>
+    <div class="location-popup" id="locationPopup"><div class="popup-header"><h2 id="popupTitle"></h2><button class="popup-close" onclick="closePopup()">X</button></div><div class="popup-summary" id="popupSummary"></div><div class="desc-list" id="popupDescriptions"></div><div class="event-list" id="popupEvents"></div></div>
     <div class="zoom-controls"><button class="zoom-btn" onclick="zoomIn()">+</button><button class="zoom-btn" onclick="zoomOut()">-</button><button class="zoom-btn" onclick="resetView()" style="font-size:9px">R</button></div>
     <div class="legend"><div class="legend-item"><div class="legend-dot visited"></div><span>Besökta platser</span></div><div class="legend-item"><div class="legend-dot known"></div><span>Kända platser</span></div></div>
   </div>
@@ -267,7 +279,14 @@ LOCATION SCHEMA (ny plats):
   y: number,
   visited: true/false,
   summary: 'Kort beskrivning av platsen.',
-  events: [{
+  descriptions: [{           // VALFRITT: Platsbeskrivning (baser, dungeons, fort etc)
+    title: 'RUBRIK I VERSALER',
+    items: [                 // Korta snabblästa rader, stöder <strong>
+      '<strong>Etikett:</strong> Beskrivning',
+      'Enkel rad utan etikett'
+    ]
+  }],
+  events: [{                 // Specifika händelser som skett på platsen
     title: string,
     preview: 'Kort förhandsgranskning...',
     detail: 'Fullständig beskrivning av händelsen.',
@@ -299,11 +318,11 @@ KORSREFERENSER:
 */
 const DATA_VERSION='1.0';
 const characters=[
-{id:'haldan',name:'Haldan Askvandrare',class:'Ranger',subclass:'Monster Slayer',species:'Variant Human',org:'Emerald Enclave',age:56,gender:'Male',appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.',personalEvents:[{label:'Drakjakt',text:'Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr.'},{label:'Räddade Theron',text:'Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest.'},{label:'Emerald Enclave',text:'Rekryterades och tränades som monsterjägare och hemlig lönnmördare.'},{label:'Mötte Cedric',text:'Korsade vägar med Cedric – gemensamt intresse i kunskap om monster.'},{label:'Vaktare i skuggorna',text:'Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar.'}]},
-{id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
+{id:'haldan',name:'Haldan Askvandrare',class:'Ranger',subclass:'Monster Slayer',species:'Variant Human',org:'Emerald Enclave',age:56,gender:'Male',appearance:{skin:'Blek',eyes:'Bruna',hair:'Rakad'},backstory:'Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.',personalEvents:[{label:'Greenest brinner (S1)',text:'Steg ur bäcken när Cedrics vagn välte och mötte upp gruppen i natten. Sköt pilar från Gothmogs axlar medan gruppen eskorterade Swift-familjen till keepet under en blå drakes blixt.'},{label:'Drakjakt',text:'Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr.'},{label:'Räddade Theron',text:'Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest.'},{label:'Emerald Enclave',text:'Rekryterades och tränades som monsterjägare och hemlig lönnmördare.'},{label:'Mötte Cedric',text:'Korsade vägar med Cedric – gemensamt intresse i kunskap om monster.'},{label:'Vaktare i skuggorna',text:'Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar.'}]},
+{id:'theron',name:'Theron Goldlight',class:'Paladin',subclass:'Oath of the Watchers',species:'Dragonborn (Gold)',org:'Order of the Gauntlet',gender:'Male',appearance:{skin:'Guld',eyes:'Röda',hair:'Röd'},backstory:'Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher\'s Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.',personalEvents:[{label:'Försvaret av Greenest (S1)',text:'Kallade samman Gråstensväktarna när ryktena om brända byar nådde hans öron. Höll ställningen mot raiders och skyddade Swift-familjen tills gruppen nådde Greenest Keep. Svor ny ed inför Nighthill och Escobert.'},{label:'Överlevde folkmordet',text:'Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn.'},{label:'Stadsvakt i Greenest',text:'Arbetade som stadsvakt och utvecklade sitt Watcher\'s Eye.'},{label:'Fann Bahamut',text:'I sin förtvivlan fann han hopp i rättvisans fader Bahamut.'},{label:'Order of the Gauntlet',text:'Gick med i riddarorden och steg i graderna.'},{label:'Mentor åt Oweyn',text:'Tog Oweyn under sitt förmyndarskap som squire.'}]},
 {id:'oweyn',name:'Oweyn Howell',class:'Fighter',subclass:'Battle Master',species:'Custom Lineage',org:'Order of the Gauntlet',gender:'Male',appearance:{},backstory:'Från Greenest, åkte till Baldur\'s Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.',personalEvents:[{label:'Lämnade Greenest',text:'Reste till Baldur\'s Gate för att söka äventyr.'},{label:'Rekryterad som squire',text:'Placerades under Therons förmyndarskap i Order of the Gauntlet.'},{label:'Klarade proven',text:'Klarade alla prov som krävdes efter lång kamp.'},{label:'Fullvärdig riddare',text:'Uppsteg till fullvärdig medlem – vapenbroder med Theron.'},{label:'Unarmed fighting',text:'Specialiserade sig i obeväpnad stridsteknik.'}]},
-{id:'gothmog',name:'Gothmog',class:'Fighter',subclass:'Rune Knight',species:'Half-Orc',org:'',age:23,gender:'Male',appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},backstory:'Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.',personalEvents:[{label:'Försvann till Barovia',text:'Som barn svalde dimman honom och han hamnade i Barovia.'},{label:'Soldat i Valakii',text:'Blev soldat – utnyttjades för sitt skrämmande utseende.'},{label:'Vände om',text:'Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde.'},{label:'Runorna',text:'Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli.'},{label:'The Vistani',text:'Betalade med ett dyrbart minne för att fly Barovia.'}]},
-{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker.'},{label:'Resande magiker',text:'Reste och studerade magi som ett levande språk.'},{label:'Samlade gruppen',text:'Introducerade Gothmog i Greenest. Början på Gråstensväktarna.'}]}
+{id:'gothmog',name:'Gothmog',class:'Fighter',subclass:'Rune Knight',species:'Half-Orc',org:'',age:23,gender:'Male',appearance:{skin:'Grå',eyes:'Orange',hair:'Kal'},backstory:'Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.',personalEvents:[{label:'Jättens framfart (S1)',text:'Åberopade sin Rune Knight-magi och växte till Huge creature under slaget om Greenest. Bar Haldan på axlarna genom rök och lågor och skyddade Swift-familjen med sin halberd tills de nådde keepet.'},{label:'Försvann till Barovia',text:'Som barn svalde dimman honom och han hamnade i Barovia.'},{label:'Soldat i Valakii',text:'Blev soldat – utnyttjades för sitt skrämmande utseende.'},{label:'Vände om',text:'Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde.'},{label:'Runorna',text:'Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli.'},{label:'The Vistani',text:'Betalade med ett dyrbart minne för att fly Barovia.'}]},
+{id:'cedric',name:'Cedric Vael',class:'Wizard',subclass:'School of Divination',species:'Variant Human',org:'',age:56,gender:'Male',appearance:{skin:'Ljus',eyes:'Blå',hair:'Grå'},backstory:'Född i Greenest. Hans far Steve byggde "Kunskapens Vagn" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.',personalEvents:[{label:'Vagnen välter (S1)',text:'Kom rullande in mot Greenest i full fart när bäcken kastade vagnen över ända. Tog sig ut ur strömmen tillsammans med Gothmog och sprang i förväg mot keepet för att varsko om de flyende.'},{label:'Kunskapens Vagn',text:'Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem.'},{label:'Räddade Gothmog',text:'Stängde revan i dimman med magi och räddade Gothmog.'},{label:'Codex-Golemen',text:'Skapade en golem ur sin vagns böcker.'},{label:'Resande magiker',text:'Reste och studerade magi som ett levande språk.'},{label:'Samlade gruppen',text:'Introducerade Gothmog i Greenest. Början på Gråstensväktarna.'}]}
 ];
 // Geography based on official map. Coast runs N-S. Luskan top-left, Greenest far SE.
 // Using 2000x1600 canvas. Coast at ~x400. Inland stretches to x1600+.
@@ -324,9 +343,45 @@ const locations=[
 {id:'nashkel',name:'Nashkel',x:1431,y:1304,visited:false,summary:'Stad nära Cloud Peaks, känd för sina gruvor.',events:[]},
 {id:'elturel',name:'Elturel',x:1537,y:1047,visited:false,summary:'Stad vid floden Chionthar, känd för sin eviga sol Companion.',events:[{title:'Order of the Gauntlet',preview:'Riddarorden har stark närvaro...',detail:'Theron och Oweyns riddarorden har stark närvaro här.',session:0}]},
 {id:'boareskyr',name:'Boareskyr Bridge',x:1524,y:930,visited:false,summary:'Viktig bro över Chionthar.',events:[]},
-{id:'greenest',name:'Greenest',x:1608,y:1246,visited:true,summary:'Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail.',events:[{title:'Gråstensväktarna formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "Gråstensväktarna".',session:0},{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.',session:0},{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.',session:0},{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.',session:0},{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.',session:0}]}
+{id:'greenest',name:'Greenest',x:1608,y:1246,visited:true,summary:'Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail. Attackerad av raiders och en blå drake under Session 1.',events:[
+{title:'Keepets herrar',preview:'Nighthill och Escobert ber om hjälp...',detail:'Innanför keepets murar möttes gruppen av guvernör Tarbaw Nighthill och kastellan Escobert the Red. De vädjade om hjälp att rädda fler bybor genom en hemlig tunnel under keepet.',session:1},
+{title:'Drakens vrede',preview:'En blå drake sveper över Greenest...',detail:'Ur natthimlen sveper en väldig blå drake ner över gruppen. En vass blixt skjuter ur dess käftar och träffar dem med full kraft. Svårt skadade men obrutna tar de sig innanför Greenest Keeps murar.',session:1},
+{title:'Familjens räddning',preview:'Gothmog växer till en jätte...',detail:'Banditerna faller för Therons svärd, Haldans pilar och Gothmogs hugg. Gothmog åberopar sin Rune Knight-magi och växer till Huge creature. Med Haldan på axlarna som skjuter pil efter pil marscherar gruppen i formation mot Greenest Keep. Cedric springer i förväg för att varsko.',session:1},
+{title:'Greenest i lågor',preview:'Byn brinner, skrik i natten...',detail:'Svart rök väller mot stjärnhimlen. Byn brinner, skrik genljuder genom natten. Längre fram kämpar Theron mot ett följe av raiders medan han försöker skydda en skräckslagen familj – Linan och Cuth Swift med sina två barn.',session:1},
+{title:'Möte vid bäcken',preview:'Vagnen välter och Haldan träder fram...',detail:'Cedric och Gothmog rullar in på Kunskapens Vagn. När hjulen tar sig över bäcken strax utanför byn välter vagnen och kastar dem i strömmen. Ur vassen reser sig Haldan – tyst som en skugga, med båge spänd.',session:1},
+{title:'Therons kallelse',preview:'Bud om brända gårdar...',detail:'Theron skickar brådskande bud till var och en av Gråstensväktarna. Ryktena viskar om brända gårdar och plundrade byar i Greenfields – han fruktar att samma mörker snart ska falla över hans hemby.',session:1},
+{title:'Gråstensväktarna formas',preview:'Cedric återvände med Gothmog...',detail:'Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till "Gråstensväktarna".',session:0},
+{title:'Theron lämnas vid portarna',preview:'Ett spädbarn vid stadsportarna...',detail:'Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.',session:0},
+{title:'Gothmog återvänder',preview:'Dimman slets upp...',detail:'Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.',session:0},
+{title:'Cedrics uppväxt',preview:'En pojke som föredrog böcker...',detail:'Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.',session:0},
+{title:'Haldans barndom',preview:'Sökte sig till skogarna...',detail:'Haldan sökte sig till skogarna och fann Emerald Enclave.',session:0}
+]},
+{id:'askhallan',name:'Askhålan',x:1620,y:1199,visited:true,summary:'Gråstensväktarnas hemliga bas i granskogen utanför Greenest. En oansenlig jägarstuga som döljer en uthuggen anläggning djupt inne i det grå berget.',descriptions:[
+{title:'STRUKTUR & RUM',items:[
+'<strong>Läget:</strong> Oansenlig jägarstuga som smälter in i granskogen',
+'<strong>Eldstadsrummet:</strong> Basens hjärta – massivt ekbord med Sword Coast-kartor, doft av tallkåda',
+'<strong>Privata kammare:</strong> Anpassningsbara rum för varje medlem',
+'<strong>Skattkammaren:</strong> Frostnupet kvartsvalv – bevarar pergament och alkemiska ingredienser',
+'<strong>Rävpassagen:</strong> Klaustrofobisk flyktgång som slutar bakom ett vattenfall'
+]},
+{title:'SPECIALREGLER',items:[
+'<strong>Välplanerat:</strong> 1h kartstudie i Eldstadsrummet → alla får 1d6 Planerings-tärning (initiativ eller Survival, varar 24h)',
+'<strong>Gråstensväktarnas Härd:</strong> Downtime Activities (Crafting, Research) på halva tiden'
+]},
+{title:'FÖRSVAR & FÄLLOR',items:[
+'<strong>Vildvuxen Snärja</strong> (ingången): Entangle DC 13 för objudna gäster + tyst klocka varnar inomhus',
+'<strong>Skifferdörren</strong> (inre porten): AC 18, 50 HP, DT 10 – öppnas bara via dolt handtag i eldstaden',
+'<strong>Rävfällan</strong> (i passagen): Galler faller + Pungent Skunk Oil → Poisoned 1h + Disadvantage Stealth 24h'
+]}
+],events:[]}
 ];
-const npcsData=[];
+const npcsData=[
+{name:'Tarbaw Nighthill',status:'friendly',role:'Guvernör av Greenest',desc:'Greenests äldre och väderbitne guvernör. Satt i belägring i Greenest Keep när draken och raiders attackerade byn. Bad Gråstensväktarna om hjälp att rädda bybor genom en hemlig tunnel.',events:[{label:'Belägringen av Greenest',text:'Vädjade om Gråstensväktarnas hjälp att rädda civila genom keepets hemliga tunnel.'}]},
+{name:'Escobert the Red',status:'friendly',role:'Kastellan – Greenest Keep',desc:'En rödskäggig dvärg och Nighthills högra hand. Ansvarig för keepets försvar och känner varje dold passage under murarna.',events:[{label:'Belägringen av Greenest',text:'Stod vid Nighthills sida när Gråstensväktarna anlände genomblöta av blod och brandrök.'}]},
+{name:'Linan & Cuth Swift',status:'friendly',role:'Bybor – familj i Greenest',desc:'En ung familj från Greenest med två barn. Fann sig omringade av raiders i natten innan Gråstensväktarna kastade sig in i striden och skyddade dem hela vägen till keepet.',events:[{label:'Räddade ur elden',text:'Escorterade av Gothmog i Huge form med Haldan på axlarna till Greenest Keep.'}]},
+{name:'Blå drake över Greenest',status:'hostile',role:'Attackerande drake',desc:'En väldig blå drake som svepte ner över Greenest under attacken. Sköt en blixt som svårt skadade gruppen innan de nådde keepets skydd. Dess band till Verustraz är oklart.',events:[{label:'Attacken på Greenest',text:'Lät en blixt slå ner över gruppen när de flydde mot Greenest Keep.'}]},
+{name:'Raiders',status:'hostile',role:'Plundrare – Cult of the Dragon?',desc:'Banditer och kultister som härjade Greenest under drakattacken. Dödade bybor, brände hus och plundrade. Flera föll för Gråstensväktarnas klingor.',events:[{label:'Slakten i Greenest',text:'Besegrades av Theron, Haldan och Gothmog medan de försökte slakta en familj.'}]}
+];
 const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – Gråstensväktarna formas',events:[
 {title:'Haldans drakjakt',recap:'Haldan spårade en blå drake. Kom för sent för att rädda Therons klan men hittade baby-Theron i askan.',places:['greenest'],npcs:['Verustraz / Pyotr']},
 {title:'Theron växer upp',recap:'Theron blev stadsvakt, fann Bahamut och gick med i Order of the Gauntlet.',places:['greenest','elturel'],npcs:[]},
@@ -334,6 +389,14 @@ const sessions=[{id:0,label:'SESSION 0',title:'Ursprunget – Gråstensväktarna
 {title:'Cedrics resor',recap:'Cedric fick "Kunskapens Vagn" av sin far Steve och reste mellan riken.',places:['greenest'],npcs:['Steve']},
 {title:'Gothmog flyr Barovia',recap:'Gothmog försvann som barn in i Barovia. The Vistani tog ett minne som betalning. Cedric räddade honom.',places:['greenest'],npcs:['The Vistani']},
 {title:'Gråstensväktarna formas',recap:'Cedric återvände med Gothmog. Gruppen växte samman till "Gråstensväktarna".',places:['greenest'],npcs:[]}
+]},
+{id:1,label:'SESSION 1',title:'Greenest brinner',events:[
+{title:'Therons kallelse',recap:'Theron skickar brådskande bud till var och en av Gråstensväktarna att söka sig till Greenest. Ryktena viskar om brända gårdar och plundrade byar i Greenfields – Theron fruktar att samma mörker snart ska falla över hans hemby.',places:['greenest','askhallan'],npcs:[]},
+{title:'Möte vid bäcken',recap:'Cedric och Gothmog rullar in på Kunskapens Vagn i rasande fart. När hjulen tar sig över bäcken strax utanför byn välter vagnen och kastar dem båda i strömmen. Ur vassen reser sig en gestalt – Haldan, tyst som en skugga, med båge spänd.',places:['greenest'],npcs:[]},
+{title:'Greenest i lågor',recap:'Över trädtopparna väller svart rök mot stjärnhimlen. Byn brinner, skrik genljuder genom natten. Längre fram kämpar Theron mot ett helt följe av raiders medan han försöker skydda en skräckslagen familj – en man, en kvinna och deras två barn.',places:['greenest'],npcs:['Linan & Cuth Swift']},
+{title:'Familjens räddning',recap:'Gråstensväktarna stormar fram. Banditerna faller för Therons svärd, Haldans pilar och Gothmogs hugg. Gothmog åberopar sin Rune Knight-magi och växer till Huge creature. Med Haldan uppknatt på hans axlar – pilar vinande genom röken – marscherar gruppen i formation mot Greenest Keep. Cedric springer i förväg för att varsko.',places:['greenest'],npcs:['Raiders','Linan & Cuth Swift']},
+{title:'Drakens vrede',recap:'Plötsligt förmörkas himlen. Ur natten sveper en väldig skugga – en blå drake. En vass blixt skjuter ur dess käftar och söker sin väg ner mot gruppen. De skadas svårt, men med sista kraften tar de sig innanför keepets murar.',places:['greenest'],npcs:['Blå drake över Greenest']},
+{title:'Keepets herrar',recap:'Innanför murarna möts de av guvernör Tarbaw Nighthill, Greenests härskare, och hans kastellan Escobert the Red – en rödskäggig dvärg med hammaren vid bältet. De ber Gråstensväktarna om hjälp: en hemlig tunnel under keepet kan användas för att rädda fler bybor ut från det brinnande Greenest.',places:['greenest'],npcs:['Tarbaw Nighthill','Escobert the Red']}
 ]}];
 
 function drawPortrait(cv,id){const c=cv.getContext('2d');cv.width=16;cv.height=16;c.imageSmoothingEnabled=false;const P={
@@ -385,6 +448,17 @@ function showLocation(l){
   const popup=document.getElementById('locationPopup');
   document.getElementById('popupTitle').textContent=l.name;
   document.getElementById('popupSummary').textContent=l.summary;
+  // Descriptions section
+  const dc=document.getElementById('popupDescriptions');
+  if(l.descriptions&&l.descriptions.length){
+    let dh='<h3>PLATSBESKRIVNING</h3>';
+    l.descriptions.forEach(d=>{
+      const items=d.items.map(i=>`<li>${i}</li>`).join('');
+      dh+=`<div class="desc-section collapsed" onclick="this.classList.toggle('collapsed')"><div class="desc-title">${d.title}<span class="desc-tog">▼</span></div><ul>${items}</ul></div>`;
+    });
+    dc.innerHTML=dh;
+    dc.style.display='block';
+  }else{dc.innerHTML='';dc.style.display='none'}
   const e=document.getElementById('popupEvents');
   e.innerHTML='<h3>HÄNDELSER</h3>';
   if(!l.events.length) e.innerHTML+='<div class="empty-state">Inga händelser ännu.</div>';
