@@ -1,0 +1,384 @@
+[
+  {
+    "id": "luskan",
+    "name": "Luskan",
+    "x": 1002,
+    "y": 234,
+    "visited": false,
+    "summary": "Laglös piratstad längst i norr vid kusten.",
+    "events": []
+  },
+  {
+    "id": "neverwinter",
+    "name": "Neverwinter",
+    "x": 1036,
+    "y": 351,
+    "visited": false,
+    "summary": "Staden som aldrig fryser.",
+    "events": []
+  },
+  {
+    "id": "leilon",
+    "name": "Leilon",
+    "x": 1074,
+    "y": 455,
+    "visited": false,
+    "summary": "Kuststad söder om Neverwinter.",
+    "events": []
+  },
+  {
+    "id": "phandalin",
+    "name": "Phandalin",
+    "x": 1100,
+    "y": 426,
+    "visited": false,
+    "summary": "Gruvstad nära Sword Mountains.",
+    "events": []
+  },
+  {
+    "id": "waterdeep",
+    "name": "Waterdeep",
+    "x": 1200,
+    "y": 648,
+    "visited": false,
+    "summary": "Juvelen i Sword Coast vid foten av Mount Waterdeep.",
+    "events": []
+  },
+  {
+    "id": "triboar",
+    "name": "Triboar",
+    "x": 1207,
+    "y": 378,
+    "visited": false,
+    "summary": "Handelskorsning öster om Waterdeep.",
+    "events": []
+  },
+  {
+    "id": "daggerford",
+    "name": "Daggerford",
+    "x": 1247,
+    "y": 676,
+    "visited": false,
+    "summary": "Befäst stad vid Delimbiyr-floden.",
+    "events": []
+  },
+  {
+    "id": "baldursgate",
+    "name": "Baldur's Gate",
+    "x": 1340,
+    "y": 1082,
+    "visited": true,
+    "summary": "Stor handelsstad vid Chionthar-flodens mynning.",
+    "events": [
+      {
+        "title": "Oweyn rekryteras",
+        "preview": "En ung man sökte äventyr...",
+        "detail": "Oweyn rekryterades av Order of the Gauntlet som squire under Theron.",
+        "session": 0
+      }
+    ]
+  },
+  {
+    "id": "candlekeep",
+    "name": "Candlekeep",
+    "x": 1313,
+    "y": 1209,
+    "visited": false,
+    "summary": "Legendariskt biblioteksfort vid kusten söder om Baldur's Gate.",
+    "events": []
+  },
+  {
+    "id": "beregost",
+    "name": "Beregost",
+    "x": 1345,
+    "y": 1232,
+    "visited": false,
+    "summary": "Stad längs Coast Way söder om Baldur's Gate.",
+    "events": []
+  },
+  {
+    "id": "nashkel",
+    "name": "Nashkel",
+    "x": 1431,
+    "y": 1304,
+    "visited": false,
+    "summary": "Stad nära Cloud Peaks, känd för sina gruvor.",
+    "events": []
+  },
+  {
+    "id": "elturel",
+    "name": "Elturel",
+    "x": 1537,
+    "y": 1047,
+    "visited": false,
+    "summary": "Stad vid floden Chionthar, känd för sin eviga sol Companion.",
+    "events": [
+      {
+        "title": "Order of the Gauntlet",
+        "preview": "Riddarorden har stark närvaro...",
+        "detail": "Theron och Oweyns riddarorden har stark närvaro här.",
+        "session": 0
+      }
+    ]
+  },
+  {
+    "id": "boareskyr",
+    "name": "Boareskyr Bridge",
+    "x": 1524,
+    "y": 930,
+    "visited": false,
+    "summary": "Viktig bro över Chionthar.",
+    "events": []
+  },
+  {
+    "id": "greenest",
+    "name": "Greenest",
+    "x": 1608,
+    "y": 1246,
+    "visited": true,
+    "summary": "Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail som drabbats av drakeld och kult under Gråstensväktarnas första kampanj. Chaunteas tempel ligger i stadens hjärta.",
+    "events": [
+      {
+        "title": "Tillbaka i ravinen",
+        "preview": "Sextio själar räddade...",
+        "detail": "Med Oweyn bärandes på den sista sårade sökte sig Gråstensväktarna åter ner i bäckravinens skydd. Sextio själar räddade, kultens befälhavare aska – men kriget om Greenests överlevnad har bara börjat.",
+        "session": 2
+      },
+      {
+        "title": "Dragonclaws fall",
+        "preview": "Rankor och flammor i mittgången...",
+        "detail": "I templets mittgång stormade Dragonclaw – en bjässe i drakhuvad rustning – fram för att slakta de gömda. Haldan kallade fram skogens uråldriga rankor som snärjde honom mot stengolvet. Cedric beseglade hans öde i en explosion av flammor.",
+        "session": 2
+      },
+      {
+        "title": "Återförenade i helgedomen",
+        "preview": "Oweyn har stått ensam som skydd...",
+        "detail": "Bakom dörren stod Oweyn, omgiven av sextio darrande själar. Han hade stått ensam som skydd mellan dem och kulten i timmar. Gråstensväktarna förenades åter och fördelade sig: bakdörren, mittgången, byborna.",
+        "session": 2
+      },
+      {
+        "title": "Bakdörren håller",
+        "preview": "Cedrics dolkvirvel mejar ner kulten...",
+        "detail": "Theron stormade in i striden med Haldans pilar singlandes över sina axlar. Cedric släppte loss en virvelvind av magiska dolkar som mejade ner alla vid bakdörren. Theron bankade på templets dörr och bad om att bli insläppt – Oweyn svarade.",
+        "session": 2
+      },
+      {
+        "title": "Belägringen av Chaunteas tempel",
+        "preview": "Sextio själar väntar på slakt...",
+        "detail": "Vid Chaunteas tempel kastade kobolder och kultister facklor mot bakdörren, medan en bjässe smällde tunga slag mot huvudporten. Innanför trängdes sextio skräckslagna bybor – och Oweyn ensam mellan dem och kulten.",
+        "session": 2
+      },
+      {
+        "title": "Skuggor i ravinen",
+        "preview": "Haldan känner fienden först...",
+        "detail": "Tunneln mynnade ut vid bäcken. Gruppen rörde sig som vatten genom mörkret mot Chaunteas tempel. En fientlig patrull närmade sig – men Haldan, tystnaden själv, kände deras lukt först. De smög förbi, oupptäckta.",
+        "session": 2
+      },
+      {
+        "title": "Nyckeln till mörkret",
+        "preview": "Stenporten gnisslar upp...",
+        "detail": "Guvernör Nighthill och kastellan Escobert överlämnade nyckeln till keepets hemliga tunnel. Stenporten gnisslade upp och Gråstensväktarna steg ner i den fuktiga gången, ut i nattens skugga.",
+        "session": 2
+      },
+      {
+        "title": "Keepets herrar",
+        "preview": "Nighthill och Escobert ber om hjälp...",
+        "detail": "Innanför keepets murar möttes gruppen av guvernör Tarbaw Nighthill och kastellan Escobert the Red. De vädjade om hjälp att rädda fler bybor genom en hemlig tunnel under keepet.",
+        "session": 1
+      },
+      {
+        "title": "Drakens vrede",
+        "preview": "En blå drake sveper över Greenest...",
+        "detail": "Ur natthimlen sveper en väldig blå drake ner över gruppen. En vass blixt skjuter ur dess käftar och träffar dem med full kraft. Svårt skadade men obrutna tar de sig innanför Greenest Keeps murar.",
+        "session": 1
+      },
+      {
+        "title": "Familjens räddning",
+        "preview": "Gothmog växer till en jätte...",
+        "detail": "Banditerna faller för Therons svärd, Haldans pilar och Gothmogs hugg. Gothmog åberopar sin Rune Knight-magi och växer till Huge creature. Med Haldan på axlarna som skjuter pil efter pil marscherar gruppen i formation mot Greenest Keep. Cedric springer i förväg för att varsko.",
+        "session": 1
+      },
+      {
+        "title": "Greenest i lågor",
+        "preview": "Byn brinner, skrik i natten...",
+        "detail": "Svart rök väller mot stjärnhimlen. Byn brinner, skrik genljuder genom natten. Längre fram kämpar Theron mot ett följe av raiders medan han försöker skydda en skräckslagen familj – Linan och Cuth Swift med sina två barn.",
+        "session": 1
+      },
+      {
+        "title": "Möte vid bäcken",
+        "preview": "Vagnen välter och Haldan träder fram...",
+        "detail": "Cedric och Gothmog rullar in på Kunskapens Vagn. När hjulen tar sig över bäcken strax utanför byn välter vagnen och kastar dem i strömmen. Ur vassen reser sig Haldan – tyst som en skugga, med båge spänd.",
+        "session": 1
+      },
+      {
+        "title": "Therons kallelse",
+        "preview": "Bud om brända gårdar...",
+        "detail": "Theron skickar brådskande bud till var och en av Gråstensväktarna. Ryktena viskar om brända gårdar och plundrade byar i Greenfields – han fruktar att samma mörker snart ska falla över hans hemby.",
+        "session": 1
+      },
+      {
+        "title": "Gråstensväktarna formas",
+        "preview": "Cedric återvände med Gothmog...",
+        "detail": "Cedric återvände med Gothmog. De sökte upp Oweyn och Theron. Under månader växte de samman till \"Gråstensväktarna\".",
+        "session": 0
+      },
+      {
+        "title": "Theron lämnas vid portarna",
+        "preview": "Ett spädbarn vid stadsportarna...",
+        "detail": "Haldan bar baby-Theron från ruinerna och lämnade barnet vid portarna.",
+        "session": 0
+      },
+      {
+        "title": "Gothmog återvänder",
+        "preview": "Dimman slets upp...",
+        "detail": "Cedric stängde revan med magi när Gothmog kastades ut ur Barovia.",
+        "session": 0
+      },
+      {
+        "title": "Cedrics uppväxt",
+        "preview": "En pojke som föredrog böcker...",
+        "detail": "Cedric växte upp med snickaren Steve som byggde Kunskapens Vagn.",
+        "session": 0
+      },
+      {
+        "title": "Haldans barndom",
+        "preview": "Sökte sig till skogarna...",
+        "detail": "Haldan sökte sig till skogarna och fann Emerald Enclave.",
+        "session": 0
+      }
+    ]
+  },
+  {
+    "id": "askhallan",
+    "name": "Askhålan",
+    "x": 1620,
+    "y": 1199,
+    "visited": true,
+    "summary": "Gråstensväktarnas hemliga bas i granskogen utanför Greenest. En oansenlig jägarstuga som döljer en uthuggen anläggning djupt inne i det grå berget.",
+    "interiorView": {
+      "image": "askhalan.jpg",
+      "viewBox": "0 0 1208 864",
+      "rooms": [
+        {
+          "id": "stugan",
+          "name": "Stugan",
+          "polygon": "1015,335 1180,335 1180,510 1015,510",
+          "desc": "Oansenlig jägarstuga som smälter in i granskogen utanför Greenest. Stugans enkla yttre döljer den verkliga basen i berget bakom. Utanför stugan ligger den Vildvuxna Snärjans zon.",
+          "effects": [
+            "Kamouflage – döljer berget för utomstående",
+            "Vildvuxen Snärja (ingång): Entangle DC 13 för objudna gäster",
+            "Tyst varningsklocka kopplad till snärjan",
+            "Skifferdörren (inre porten): AC 18, 50 HP, DT 10",
+            "Skifferdörrens dolda handtag finns i stugans eldstad"
+          ]
+        },
+        {
+          "id": "eldstad",
+          "name": "Eldstadsrummet",
+          "polygon": "380,290 880,290 880,540 380,540",
+          "desc": "Basens hjärta. Den naturliga skorstenen håller luften frisk men fylld med doft av tallkåda och rök. Massivt ekbord med kartor över Sword Coast. Skifferdörrens dolda handtag finns gömt i eldstaden.",
+          "effects": [
+            "Välplanerat: 1h kartstudie ger alla 1d6 Planerings-tärning (initiativ eller Survival, varar 24h)",
+            "Gråstensväktarnas Härd: Crafting & Research på halva tiden tack vare basens organisation"
+          ]
+        },
+        {
+          "id": "skatt",
+          "name": "Skattkammaren",
+          "polygon": "175,535 460,535 460,775 175,775",
+          "desc": "Frostnupet kvartsvalv där väggarna glittrar av naturlig kvarts. Kylan bevarar gamla pergament och förhindrar förruttnelse av alkemiska ingredienser. Här samlas också det guld och de skatter Gråstensväktarna har förvärvat.",
+          "effects": [
+            "Bevarar pergament i obegränsad tid",
+            "Förhindrar förruttnelse av alkemiska ingredienser",
+            "Kall, torr luft året runt",
+            "Gruppens skatter förvaras här"
+          ]
+        },
+        {
+          "id": "rav",
+          "name": "Rävpassagen",
+          "polygon": "5,5 175,5 175,540 5,540",
+          "desc": "Klaustrofobisk gång som kräver att man går på ett led. Slutar bakom ett vattenfall som tvättar bort alla spår efter flyende äventyrare. Leder utifrån in till Eldstadsrummet.",
+          "effects": [
+            "Hemlig in- och utgång – tvättar bort spår vid vattenfallet",
+            "Rävfällan: dold tryckplatta + Pungent Skunk Oil + galler",
+            "Inkräktare: Poisoned 1h, Disadvantage Stealth 24h"
+          ]
+        },
+        {
+          "id": "haldan_room",
+          "name": "Haldans kammare",
+          "owner": "haldan",
+          "number": 1,
+          "polygon": "525,30 670,30 670,135 525,135",
+          "desc": "Karg och välordnad. Pilskaft i prydliga buntar längs väggen, mekaniska verktyg på ett litet bord, kartor över skogarna kring Greenfields. På väggen ett älghuvud som troféminne. Doften av barr och olja.",
+          "effects": []
+        },
+        {
+          "id": "theron_room",
+          "name": "Therons kammare",
+          "owner": "theron",
+          "number": 2,
+          "polygon": "725,40 880,40 880,200 725,200",
+          "desc": "Litet altare till Bahamut i hörnet. Rund paladinsköld med kors-emblem. En röd banér med drakemblem. Hjälm och rustningsdelar uppställda.",
+          "effects": []
+        },
+        {
+          "id": "cedric_room",
+          "name": "Cedrics kammare",
+          "owner": "cedric",
+          "number": 3,
+          "polygon": "525,150 670,150 670,275 525,275",
+          "desc": "Hyllor fyllda av böcker, stapelvis pergament och skrifter. Ett skrivbord med bläckhorn, fjäderpenna och en uppslagen bok. Codex-Golemen står tyst i hörnet.",
+          "effects": []
+        },
+        {
+          "id": "oweyn_room",
+          "name": "Oweyns kammare",
+          "owner": "oweyn",
+          "number": 4,
+          "polygon": "543,593 724,593 724,684 543,684",
+          "desc": "Träningsdocka av läder och en hängande sandsäck. Inga vapen på väggarna – bara en handduk och en flaska olja för knogarna.",
+          "effects": []
+        },
+        {
+          "id": "gothmog_room",
+          "name": "Gothmogs kammare",
+          "owner": "gothmog",
+          "number": 5,
+          "polygon": "543,684 784,684 784,835 543,835",
+          "desc": "Runor i sten ristade på väggarna som löften. Halberden lutad mot hörnet, alltid greppbar. Ett stenslab som arbetsbord, en gammal päls på golvet.",
+          "effects": []
+        }
+      ]
+    },
+    "descriptions": [
+      {
+        "title": "STRUKTUR & RUM",
+        "items": [
+          "<strong>Läget:</strong> Oansenlig jägarstuga som smälter in i granskogen",
+          "<strong>Eldstadsrummet:</strong> Basens hjärta – massivt ekbord med Sword Coast-kartor, doft av tallkåda",
+          "<strong>Privata kammare:</strong> Anpassningsbara rum för varje medlem",
+          "<strong>Skattkammaren:</strong> Frostnupet kvartsvalv – bevarar pergament och alkemiska ingredienser",
+          "<strong>Rävpassagen:</strong> Klaustrofobisk flyktgång som slutar bakom ett vattenfall"
+        ]
+      },
+      {
+        "title": "SPECIALREGLER",
+        "items": [
+          "<strong>Välplanerat:</strong> 1h kartstudie i Eldstadsrummet → alla får 1d6 Planerings-tärning (initiativ eller Survival, varar 24h)",
+          "<strong>Gråstensväktarnas Härd:</strong> Downtime Activities (Crafting, Research) på halva tiden"
+        ]
+      },
+      {
+        "title": "FÖRSVAR & FÄLLOR",
+        "items": [
+          "<strong>Vildvuxen Snärja</strong> (ingången): Entangle DC 13 för objudna gäster + tyst klocka varnar inomhus",
+          "<strong>Skifferdörren</strong> (inre porten): AC 18, 50 HP, DT 10 – öppnas bara via dolt handtag i eldstaden",
+          "<strong>Rävfällan</strong> (i passagen): Galler faller + Pungent Skunk Oil → Poisoned 1h + Disadvantage Stealth 24h"
+        ]
+      }
+    ],
+    "events": []
+  }
+]

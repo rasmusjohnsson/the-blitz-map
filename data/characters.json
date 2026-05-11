@@ -1,0 +1,231 @@
+[
+  {
+    "id": "haldan",
+    "name": "Haldan Askvandrare",
+    "class": "Ranger",
+    "subclass": "Monster Slayer",
+    "species": "Variant Human",
+    "org": "Emerald Enclave",
+    "age": 56,
+    "gender": "Male",
+    "appearance": {
+      "skin": "Blek",
+      "eyes": "Bruna",
+      "hair": "Rakad"
+    },
+    "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
+    "personalEvents": [
+      {
+        "label": "Tystnadens öga",
+        "text": "Kände fiendepatrullernas lukt i ravinen innan de märkte oss. Vid Chaunteas tempel kallade jag fram skogens rankor som snärjde Dragonclaw mot stengolvet – och såg honom brinna i Cedrics flammor. Mina mekaniska fingrar värker, men mitt sikte har aldrig varit säkrare.",
+        "session": 2
+      },
+      {
+        "label": "Greenest brinner",
+        "text": "Steg ur bäcken när Cedrics vagn välte och mötte upp gruppen i natten. Sköt pilar från Gothmogs axlar medan gruppen eskorterade Swift-familjen till keepet under en blå drakes blixt.",
+        "session": 1
+      },
+      {
+        "label": "Drakjakt",
+        "text": "Förlorade hela sitt team i striden mot en drake. Fick mekaniska fingrar och djupa ärr."
+      },
+      {
+        "label": "Räddade Theron",
+        "text": "Hittade baby-Theron i askan av hans förstörda klan och bar honom till Greenest."
+      },
+      {
+        "label": "Emerald Enclave",
+        "text": "Rekryterades och tränades som monsterjägare och hemlig lönnmördare."
+      },
+      {
+        "label": "Mötte Cedric",
+        "text": "Korsade vägar med Cedric – gemensamt intresse i kunskap om monster."
+      },
+      {
+        "label": "Vaktare i skuggorna",
+        "text": "Har vaktat Theron på avstånd sedan han lämnade honom vid Greenests portar."
+      }
+    ]
+  },
+  {
+    "id": "theron",
+    "name": "Theron Goldlight",
+    "class": "Paladin",
+    "subclass": "Oath of the Watchers",
+    "species": "Dragonborn (Gold)",
+    "org": "Order of the Gauntlet",
+    "gender": "Male",
+    "appearance": {
+      "skin": "Guld",
+      "eyes": "Röda",
+      "hair": "Röd"
+    },
+    "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
+    "personalEvents": [
+      {
+        "label": "Klingan vid templet",
+        "text": "Stormade in genom bakdörren först av alla, Haldan tätt i hans följe. Vid huvudgången bad han om att bli insläppt – och Oweyns röst svarade från andra sidan dörren. Höll bakdörren, höll mittgången, vakade över sextio räddade själar.",
+        "session": 2
+      },
+      {
+        "label": "Försvaret av Greenest",
+        "text": "Kallade samman Gråstensväktarna när ryktena om brända byar nådde hans öron. Höll ställningen mot raiders och skyddade Swift-familjen tills gruppen nådde Greenest Keep. Svor ny ed inför Nighthill och Escobert.",
+        "session": 1
+      },
+      {
+        "label": "Överlevde folkmordet",
+        "text": "Hela hans klan utplånades av draken Verustraz. Räddades som spädbarn."
+      },
+      {
+        "label": "Stadsvakt i Greenest",
+        "text": "Arbetade som stadsvakt och utvecklade sitt Watcher's Eye."
+      },
+      {
+        "label": "Fann Bahamut",
+        "text": "I sin förtvivlan fann han hopp i rättvisans fader Bahamut."
+      },
+      {
+        "label": "Order of the Gauntlet",
+        "text": "Gick med i riddarorden och steg i graderna."
+      },
+      {
+        "label": "Mentor åt Oweyn",
+        "text": "Tog Oweyn under sitt förmyndarskap som squire."
+      }
+    ]
+  },
+  {
+    "id": "oweyn",
+    "name": "Oweyn Howell",
+    "class": "Fighter",
+    "subclass": "Battle Master",
+    "species": "Custom Lineage",
+    "org": "Order of the Gauntlet",
+    "gender": "Male",
+    "appearance": {},
+    "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
+    "personalEvents": [
+      {
+        "label": "Beskyddaren i Chaunteas tempel",
+        "text": "Stod ensam med sextio bybor inne i templet medan kobolder och kultister belägrade dörrarna i timmar. När Theron bankade på huvudporten öppnade han för gruppen. När striden var över bar han ut den sista sårade på sina axlar.",
+        "session": 2
+      },
+      {
+        "label": "Lämnade Greenest",
+        "text": "Reste till Baldur's Gate för att söka äventyr."
+      },
+      {
+        "label": "Rekryterad som squire",
+        "text": "Placerades under Therons förmyndarskap i Order of the Gauntlet."
+      },
+      {
+        "label": "Klarade proven",
+        "text": "Klarade alla prov som krävdes efter lång kamp."
+      },
+      {
+        "label": "Fullvärdig riddare",
+        "text": "Uppsteg till fullvärdig medlem – vapenbroder med Theron."
+      },
+      {
+        "label": "Unarmed fighting",
+        "text": "Specialiserade sig i obeväpnad stridsteknik."
+      }
+    ]
+  },
+  {
+    "id": "gothmog",
+    "name": "Gothmog",
+    "class": "Fighter",
+    "subclass": "Rune Knight",
+    "species": "Half-Orc",
+    "org": "",
+    "age": 23,
+    "gender": "Male",
+    "appearance": {
+      "skin": "Grå",
+      "eyes": "Orange",
+      "hair": "Kal"
+    },
+    "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
+    "personalEvents": [
+      {
+        "label": "Skuggor i ravinen",
+        "text": "Smög med gruppen genom keepets hemliga tunnel, tillbaka till bäckens skuggor. Stod vakt vid templets bakdörr när striden härjade och bar med sig de räddade tillbaka in i ravinens skydd när allt var över.",
+        "session": 2
+      },
+      {
+        "label": "Jättens framfart",
+        "text": "Åberopade sin Rune Knight-magi och växte till Huge creature under slaget om Greenest. Bar Haldan på axlarna genom rök och lågor och skyddade Swift-familjen med sin halberd tills de nådde keepet.",
+        "session": 1
+      },
+      {
+        "label": "Försvann till Barovia",
+        "text": "Som barn svalde dimman honom och han hamnade i Barovia."
+      },
+      {
+        "label": "Soldat i Valakii",
+        "text": "Blev soldat – utnyttjades för sitt skrämmande utseende."
+      },
+      {
+        "label": "Vände om",
+        "text": "Vägrade utnyttja en gömd familj. Insåg att han ville göra ondska, inte behövde."
+      },
+      {
+        "label": "Runorna",
+        "text": "Fann uråldriga runor och ristade dem i sin hud – löften om vem han vägrar bli."
+      },
+      {
+        "label": "The Vistani",
+        "text": "Betalade med ett dyrbart minne för att fly Barovia."
+      }
+    ]
+  },
+  {
+    "id": "cedric",
+    "name": "Cedric Vael",
+    "class": "Wizard",
+    "subclass": "School of Divination",
+    "species": "Variant Human",
+    "org": "",
+    "age": 56,
+    "gender": "Male",
+    "appearance": {
+      "skin": "Ljus",
+      "eyes": "Blå",
+      "hair": "Grå"
+    },
+    "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
+    "personalEvents": [
+      {
+        "label": "Dolkarnas virvelvind",
+        "text": "Släppte loss en virvelvind av magiska klingor över koboldernas patrull vid templets bakdörr. När Dragonclaw stod fångad i Haldans rankor lät han kultens befälhavare besegla sitt öde i en eldsvepa.",
+        "session": 2
+      },
+      {
+        "label": "Vagnen välter",
+        "text": "Kom rullande in mot Greenest i full fart när bäcken kastade vagnen över ända. Tog sig ut ur strömmen tillsammans med Gothmog och sprang i förväg mot keepet för att varsko om de flyende.",
+        "session": 1
+      },
+      {
+        "label": "Kunskapens Vagn",
+        "text": "Fick vagnen av sin far Steve – ett rullande bibliotek och hans hem."
+      },
+      {
+        "label": "Räddade Gothmog",
+        "text": "Stängde revan i dimman med magi och räddade Gothmog."
+      },
+      {
+        "label": "Codex-Golemen",
+        "text": "Skapade en golem ur sin vagns böcker."
+      },
+      {
+        "label": "Resande magiker",
+        "text": "Reste och studerade magi som ett levande språk."
+      },
+      {
+        "label": "Samlade gruppen",
+        "text": "Introducerade Gothmog i Greenest. Början på Gråstensväktarna."
+      }
+    ]
+  }
+]

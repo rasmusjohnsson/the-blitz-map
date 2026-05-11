@@ -1,0 +1,119 @@
+[
+  {
+    "id": "nighthill",
+    "name": "Tarbaw Nighthill",
+    "aliases": ["Nighthill"],
+    "status": "friendly",
+    "role": "Guvernör av Greenest",
+    "desc": "Greenests äldre och väderbitne guvernör. Satt i belägring i Greenest Keep när draken och raiders attackerade byn. Bad Gråstensväktarna om hjälp att rädda bybor genom en hemlig tunnel.",
+    "events": [
+      {
+        "label": "Belägringen av Greenest",
+        "text": "Vädjade om Gråstensväktarnas hjälp att rädda civila genom keepets hemliga tunnel.",
+        "session": 1
+      },
+      {
+        "label": "Nyckeln till mörkret",
+        "text": "Räckte över nyckeln till keepets hemliga tunnel och pekade ut vägen mot Chaunteas tempel där bybor sökt skydd.",
+        "session": 2
+      }
+    ]
+  },
+  {
+    "id": "escobert",
+    "name": "Escobert the Red",
+    "aliases": ["Escobert"],
+    "status": "friendly",
+    "role": "Kastellan – Greenest Keep",
+    "desc": "En rödskäggig dvärg och Nighthills högra hand. Ansvarig för keepets försvar och känner varje dold passage under murarna.",
+    "events": [
+      {
+        "label": "Belägringen av Greenest",
+        "text": "Stod vid Nighthills sida när Gråstensväktarna anlände genomblöta av blod och brandrök.",
+        "session": 1
+      },
+      {
+        "label": "Tunnelns vägvisare",
+        "text": "Visade vägen till tunnelns mynning vid bäcken och stängde porten bakom Gråstensväktarna när de gav sig ut i natten.",
+        "session": 2
+      }
+    ]
+  },
+  {
+    "id": "swift",
+    "name": "Linan & Cuth Swift",
+    "aliases": ["Linan", "Cuth", "Swift-familjen"],
+    "status": "friendly",
+    "role": "Bybor – familj i Greenest",
+    "desc": "En ung familj från Greenest med två barn. Fann sig omringade av raiders i natten innan Gråstensväktarna kastade sig in i striden och skyddade dem hela vägen till keepet.",
+    "events": [
+      {
+        "label": "Räddade ur elden",
+        "text": "Escorterade av Gothmog i Huge form med Haldan på axlarna till Greenest Keep.",
+        "session": 1
+      }
+    ]
+  },
+  {
+    "id": "bluedragon",
+    "name": "Blå drake över Greenest",
+    "aliases": ["Blå drake"],
+    "status": "hostile",
+    "role": "Attackerande drake",
+    "desc": "En väldig blå drake som svepte ner över Greenest under attacken. Sköt en blixt som svårt skadade gruppen innan de nådde keepets skydd. Dess band till Verustraz är oklart.",
+    "events": [
+      {
+        "label": "Attacken på Greenest",
+        "text": "Lät en blixt slå ner över gruppen när de flydde mot Greenest Keep.",
+        "session": 1
+      }
+    ]
+  },
+  {
+    "id": "raiders",
+    "name": "Raiders",
+    "status": "hostile",
+    "role": "Plundrare – Cult of the Dragon",
+    "desc": "Banditer och kultister som härjar Greenfields under drakattacken. Bär koboldhäger som muskelstöd och drakemblem på rustningen. Plundrar, bränner och slaktar i kultens tjänst.",
+    "events": [
+      {
+        "label": "Slakten i Greenest",
+        "text": "Besegrades av Theron, Haldan och Gothmog medan de försökte slakta Swift-familjen.",
+        "session": 1
+      },
+      {
+        "label": "Belägringen av Chaunteas tempel",
+        "text": "Försökte storma templet där sextio bybor sökt skydd. Föll för Cedrics dolkvirvel vid bakdörren och Therons klinga på mittgången.",
+        "session": 2
+      }
+    ]
+  },
+  {
+    "id": "kobolder",
+    "name": "Kobolder",
+    "status": "hostile",
+    "role": "Drakkultens fotsoldater",
+    "desc": "Små skälvande reptilvarelser med gula blanka ögon och drakemblem på sina lappade rustningar. Strömmar i flockar genom Greenfields i kultens tjänst – hänsynslösa, men föga intelligenta.",
+    "events": [
+      {
+        "label": "Belägringen av templet",
+        "text": "Kastade facklor mot Chaunteas tempels bakdörr och föll snabbt för Gråstensväktarnas klingor.",
+        "session": 2
+      }
+    ]
+  },
+  {
+    "id": "dragonclaw",
+    "name": "Dragonclaw",
+    "status": "hostile",
+    "role": "Drakkultens befälhavare",
+    "desc": "En bjässe i drakhuvad rustning som ledde slakten av Greenest. Stark, blodtörstig och hängiven kulten. Hans dödsskri ekar fortfarande mellan templets pelare.",
+    "events": [
+      {
+        "label": "Templets mittgång",
+        "text": "Snärjdes av Haldans rankor och brann ihjäl i Cedrics flammor inne i Chaunteas tempel.",
+        "session": 2
+      }
+    ]
+  }
+]
