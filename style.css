@@ -259,6 +259,9 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .recap-header{padding:14px;background:linear-gradient(180deg,#2a1a0e,#1a0f06);border-bottom:3px solid var(--border);border-radius:6px 6px 0 0;margin-bottom:12px}
 .recap-header h2{font-size:13px;color:var(--gold);text-shadow:2px 2px 0 #8b6914}
 .recap-header .recap-label{font-size:9px;color:var(--muted);margin-bottom:4px}
+.recap-session-select{margin-top:10px;width:100%;background:var(--bg2);border:2px solid var(--border);color:var(--gold);font-family:var(--font);font-size:10px;padding:7px 10px;border-radius:4px;cursor:pointer;outline:none;transition:border-color .15s}
+.recap-session-select:hover,.recap-session-select:focus{border-color:var(--gold)}
+.recap-session-select option{background:var(--bg);color:var(--text)}
 .recap-event{padding:10px 12px;margin-bottom:8px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid var(--gold);font-size:10px;color:#c0b898;line-height:1.7;border-radius:4px}
 .recap-event .recap-event-title{color:#e0c878;font-size:11px;margin-bottom:4px}
 .recap-section{margin-top:14px;padding-top:10px;border-top:2px solid #2a2a4e}
@@ -313,3 +316,28 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
   .popup-header h2,.tl-detail-header h2,.npc-detail-header h2{font-size:12px}
 }
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+/* ===== Tidslinjevy (horisontell strip) ===== */
+.tl-strip{position:relative;padding:18px 12px 14px;margin-bottom:12px;background:rgba(255,215,0,.04);border:1px solid var(--border);border-radius:6px}
+.tl-strip-line{position:absolute;left:24px;right:24px;top:50%;height:2px;background:linear-gradient(90deg,transparent,#8b6914,#ffd700,#8b6914,transparent);opacity:.6;z-index:0}
+.tl-strip-dots{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;gap:6px}
+.tl-strip-node{flex:1;display:flex;flex-direction:column;align-items:center;cursor:pointer;text-align:center;transition:transform .15s;min-width:0}
+.tl-strip-node:hover{transform:translateY(-2px)}
+.tl-strip-dot{width:12px;height:12px;border-radius:50%;background:#1a1a2e;border:2px solid #ffd700;box-shadow:0 0 6px rgba(255,215,0,.5);margin-bottom:4px}
+.tl-strip-node:hover .tl-strip-dot,.tl-strip-node.active .tl-strip-dot{background:#ffd700;box-shadow:0 0 12px #ffd700}
+.tl-strip-label{font-family:var(--font);font-size:8px;color:#ffd700;letter-spacing:1px}
+.tl-strip-date{font-family:var(--font);font-size:7px;color:#a08858;margin-top:2px;line-height:1.1}
+/* ===== Sessionsdatum + senast-uppdaterad-badge ===== */
+.session-date{display:inline-block;margin-left:8px;font-family:var(--font);font-size:7px;color:#a08858;background:rgba(160,136,88,.12);padding:2px 6px;border-radius:3px;letter-spacing:.5px;vertical-align:middle}
+.recap-date{font-family:var(--font);font-size:9px;color:#a08858;margin:4px 0 8px;letter-spacing:1px}
+.updated-badge{display:inline-block;margin-left:6px;font-family:var(--font);font-size:7px;background:rgba(160,136,88,.2);color:#c4a868;padding:1px 5px;border-radius:3px;letter-spacing:.5px;vertical-align:middle;border:1px solid rgba(160,136,88,.4)}
+.updated-badge.fresh{background:rgba(255,215,0,.18);color:#ffd700;border-color:rgba(255,215,0,.5);box-shadow:0 0 6px rgba(255,215,0,.25);animation:pulseFresh 2.4s ease-in-out infinite}
+@keyframes pulseFresh{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.2)}50%{box-shadow:0 0 10px rgba(255,215,0,.45)}}
+/* ===== Interior open button (Greenest mini-karta) ===== */
+.interior-open-btn{display:block;width:100%;margin:10px 0 4px;padding:10px 14px;background:linear-gradient(180deg,#3a2a5a,#1f1538);color:#ffd700;border:2px solid #ffd700;border-radius:5px;font-family:var(--font);font-size:9px;letter-spacing:1.5px;cursor:pointer;transition:all .15s;text-align:center}
+.interior-open-btn:hover{background:linear-gradient(180deg,#4a3a6a,#2a2048);box-shadow:0 0 14px rgba(255,215,0,.4);transform:translateY(-1px)}
+.interior-open-btn:active{transform:translateY(0)}
+@media(max-width:900px){
+  .tl-strip-label{font-size:7px}
+  .tl-strip-date{font-size:6px}
+  .session-date{font-size:6px}
+}

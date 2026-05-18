@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.0.0';
+const APP_VERSION='2.1.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -119,8 +119,49 @@ if(currentSessionFilter!=='all'){
   }
 }
 if(!displayNpcs.length){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='Inga NPC:er påträffade i denna session.';p.appendChild(empty);return}
-displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};i.innerHTML=`<div class="npc-name">${n.name}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
-function renderTimeline(){const p=document.getElementById('tab-history');p.innerHTML='';const tl=document.createElement('div');tl.className='timeline';sessions.forEach(s=>{const b=document.createElement('div');b.className='session-block';const h=document.createElement('div');h.className='session-header';h.innerHTML=`<div><span class="session-label">${s.label}</span>${s.title}</div><span class="toggle-icon">▼</span>`;h.onclick=()=>b.classList.toggle('collapsed');b.appendChild(h);const w=document.createElement('div');w.className='session-events';s.events.forEach(ev=>{const it=document.createElement('div');it.className='timeline-event';it.innerHTML=`<div class="te-title">${ev.title}</div>`;it.onclick=e=>{e.stopPropagation();showTimelineDetail(ev)};w.appendChild(it)});b.appendChild(w);tl.appendChild(b)});p.appendChild(tl)}
+const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
+displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
+function formatSessionDate(d){if(!d)return'';try{const dt=new Date(d);const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];return dt.getDate()+' '+m[dt.getMonth()]+' '+dt.getFullYear();}catch(e){return d}}
+function renderTimeline(){
+  const p=document.getElementById('tab-history');p.innerHTML='';
+  // Horisontell tidslinje över sessioner
+  const strip=document.createElement('div');strip.className='tl-strip';
+  let stripHtml='<div class="tl-strip-line"></div><div class="tl-strip-dots">';
+  sessions.forEach((s,i)=>{
+    const dateStr=formatSessionDate(s.date);
+    stripHtml+=`<div class="tl-strip-node" data-sid="${s.id}" onclick="scrollToSession(${s.id})"><div class="tl-strip-dot"></div><div class="tl-strip-label">${s.label.replace('SESSION ','S')}</div><div class="tl-strip-date">${dateStr}</div></div>`;
+  });
+  stripHtml+='</div>';
+  strip.innerHTML=stripHtml;
+  p.appendChild(strip);
+  const tl=document.createElement('div');tl.className='timeline';
+  sessions.forEach(s=>{
+    const b=document.createElement('div');b.className='session-block collapsed';b.id='session-block-'+s.id;
+    const h=document.createElement('div');h.className='session-header';
+    const dateChip=s.date?`<span class="session-date">${formatSessionDate(s.date)}</span>`:'';
+    h.innerHTML=`<div><span class="session-label">${s.label}</span>${s.title}${dateChip}</div><span class="toggle-icon">▼</span>`;
+    h.onclick=()=>b.classList.toggle('collapsed');
+    b.appendChild(h);
+    const w=document.createElement('div');w.className='session-events';
+    s.events.forEach(ev=>{const it=document.createElement('div');it.className='timeline-event';it.innerHTML=`<div class="te-title">${ev.title}</div>`;it.onclick=e=>{e.stopPropagation();showTimelineDetail(ev)};w.appendChild(it)});
+    b.appendChild(w);
+    tl.appendChild(b);
+  });
+  // Senaste sessionen expanderad
+  const last=tl.querySelector('.session-block:last-child');if(last)last.classList.remove('collapsed');
+  p.appendChild(tl);
+}
+function scrollToSession(sid){
+  const blocks=document.querySelectorAll('.session-block');
+  blocks.forEach(b=>b.classList.add('collapsed'));
+  const target=document.getElementById('session-block-'+sid);
+  if(target){target.classList.remove('collapsed');target.scrollIntoView({behavior:'smooth',block:'start'})}
+  document.querySelectorAll('.tl-strip-node').forEach(n=>n.classList.remove('active'));
+  const node=document.querySelector('.tl-strip-node[data-sid="'+sid+'"]');
+  if(node)node.classList.add('active');
+}
+// Senast-uppdaterad: hämta högsta session-id i events-arrayen
+function getLatestSession(events){if(!events||!events.length)return null;let max=-1;events.forEach(e=>{if(typeof e.session==='number'&&e.session>max)max=e.session});return max<0?null:max}
 function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
 
 // ===== TABS =====
@@ -153,11 +194,13 @@ function openSessionTab(sessionId){
 }
 function showInteriorView(loc){
   closePopup();
+  currentInteriorLocId=loc.id;
   const view=document.getElementById('interiorView');
   const svg=document.getElementById('interiorSvg');
   const inv=loc.interiorView;
   svg.setAttribute('viewBox',inv.viewBox||'0 0 1208 864');
   document.getElementById('interiorTitle').textContent=loc.name.toUpperCase();
+  const ltx=document.getElementById('interiorLoaderText');if(ltx)ltx.textContent='LADDAR '+loc.name.toUpperCase()+'...';
   let html='';
   if(inv.image){
     html+='<image href="'+inv.image+'" x="0" y="0" width="1208" height="864" preserveAspectRatio="xMidYMid meet"/>';
@@ -207,10 +250,11 @@ function showInteriorView(loc){
   };
 }
 
+let currentInteriorLocId=null;
 function selectInteriorRoom(el,roomId){
   document.querySelectorAll('.interior-room.selected').forEach(r=>r.classList.remove('selected'));
   el.classList.add('selected');
-  const loc=locations.find(l=>l.interiorView);
+  const loc=locations.find(l=>l.id===currentInteriorLocId)||locations.find(l=>l.interiorView);
   const room=loc.interiorView.rooms.find(r=>r.id===roomId);
   if(!room)return;
   let html=`<div class="interior-room-title">${room.icon?room.icon+' ':''}${room.name}</div>`;
@@ -250,11 +294,17 @@ function getEventNpcs(ev){
   return[...names];
 }
 function showLocation(l){
-  if(l.interiorView){showInteriorView(l);return}
+  // Auto-open interior unless openMode is "button" (then show normal popup with a button)
+  if(l.interiorView&&l.interiorView.openMode!=='button'){showInteriorView(l);return}
   closePopup();
   const popup=document.getElementById('locationPopup');
   document.getElementById('popupTitle').textContent=l.name;
-  document.getElementById('popupSummary').innerHTML=linkifyFactions(l.summary);
+  let summaryHtml=linkifyFactions(l.summary);
+  if(l.interiorView&&l.interiorView.openMode==='button'){
+    const lbl=l.interiorView.buttonLabel||'🗺️ VISA DETALJKARTA';
+    summaryHtml+=`<button class="interior-open-btn" onclick="event.stopPropagation();showInteriorView(locations.find(x=>x.id==='${l.id}'))">${lbl}</button>`;
+  }
+  document.getElementById('popupSummary').innerHTML=summaryHtml;
   // Descriptions section
   const dc=document.getElementById('popupDescriptions');
   if(l.descriptions&&l.descriptions.length){
@@ -461,7 +511,33 @@ function unhighlightMarkerNpc(id){const m=document.getElementById('marker-'+id);
 let recapActive=false,recapHighlightedPlaces=[];
 function toggleRecapMode(){if(recapActive){exitRecapMode();return}recapActive=true;document.getElementById('recapBtn').classList.add('active');document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-recap').classList.add('active');const last=sessions[sessions.length-1];renderRecap(last);const ps=new Set();last.events.forEach(ev=>ev.places.forEach(p=>ps.add(p)));recapHighlightedPlaces=[...ps];recapHighlightedPlaces.forEach(id=>highlightMarker(id));document.getElementById('sessionFilter').value=last.id;filterMapBySession(last.id)}
 function exitRecapMode(){recapActive=false;document.getElementById('recapBtn').classList.remove('active');recapHighlightedPlaces.forEach(id=>unhighlightMarker(id));recapHighlightedPlaces=[];document.querySelector('.tab-btn[data-tab="adventurers"]').classList.add('active');document.getElementById('tab-adventurers').classList.add('active');document.getElementById('tab-recap').classList.remove('active');document.getElementById('sessionFilter').value='all';filterMapBySession('all')}
-function renderRecap(s){const p=document.getElementById('tab-recap');let h=`<div class="recap-header"><div class="recap-label">${s.label}</div><h2>${s.title}</h2></div>`;s.events.forEach(ev=>{h+=`<div class="recap-event"><div class="recap-event-title">${ev.title}</div>${linkifyFactions(ev.recap)}</div>`});const placeIds=new Set();s.events.forEach(ev=>ev.places.forEach(x=>placeIds.add(x)));if(placeIds.size){h+='<div class="recap-section"><h3>PLATSER</h3>';placeIds.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<span class="recap-tag place-tag" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="showLocation(locations.find(l=>l.id==='${pid}'))">${loc.name}</span>`});h+='</div>'}const npcNames=new Set();s.events.forEach(ev=>{if(ev.npcs)ev.npcs.forEach(n=>npcNames.add(n))});if(npcNames.size){h+='<div class="recap-section"><h3>NPCs</h3>';npcNames.forEach(name=>{const npc=npcsData.find(n=>n.name===name);if(npc)h+=`<span class="recap-tag npc-tag" onclick="showNPCDetail(npcsData.find(n=>n.name==='${name.replace(/'/g,"\\'")}'))">${name}</span>`;else h+=`<span class="recap-tag npc-tag" style="cursor:default">${name}</span>`});h+='</div>'}p.innerHTML=h}
+function renderRecap(s){
+  const p=document.getElementById('tab-recap');
+  const opts=sessions.map(x=>`<option value="${x.id}"${x.id===s.id?' selected':''}>${x.label}: ${x.title}</option>`).join('');
+  const dateStr=s.date?`<div class="recap-date">📅 ${formatSessionDate(s.date)}</div>`:'';
+  let h=`<div class="recap-header"><div class="recap-label">RECAP</div><h2>${s.title}</h2>${dateStr}<select class="recap-session-select" onchange="switchRecapSession(this.value)">${opts}</select></div>`;
+  s.events.forEach(ev=>{h+=`<div class="recap-event"><div class="recap-event-title">${ev.title}</div>${linkifyFactions(ev.recap)}</div>`});
+  const placeIds=new Set();s.events.forEach(ev=>ev.places.forEach(x=>placeIds.add(x)));
+  if(placeIds.size){h+='<div class="recap-section"><h3>PLATSER</h3>';placeIds.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<span class="recap-tag place-tag" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="showLocation(locations.find(l=>l.id==='${pid}'))">${loc.name}</span>`});h+='</div>'}
+  const npcNames=new Set();s.events.forEach(ev=>{if(ev.npcs)ev.npcs.forEach(n=>npcNames.add(n))});
+  if(npcNames.size){h+='<div class="recap-section"><h3>NPCs</h3>';npcNames.forEach(name=>{const npc=npcsData.find(n=>n.name===name);if(npc)h+=`<span class="recap-tag npc-tag" onclick="showNPCDetail(npcsData.find(n=>n.name==='${name.replace(/'/g,"\\'")}'))">${name}</span>`;else h+=`<span class="recap-tag npc-tag" style="cursor:default">${name}</span>`});h+='</div>'}
+  p.innerHTML=h;
+}
+function switchRecapSession(val){
+  const s=sessions.find(x=>x.id===parseInt(val));
+  if(!s)return;
+  // Clear old highlights
+  recapHighlightedPlaces.forEach(id=>unhighlightMarker(id));
+  recapHighlightedPlaces=[];
+  // Render and re-highlight new session
+  renderRecap(s);
+  const ps=new Set();s.events.forEach(ev=>ev.places.forEach(p=>ps.add(p)));
+  recapHighlightedPlaces=[...ps];
+  recapHighlightedPlaces.forEach(id=>highlightMarker(id));
+  // Sync session filter on map
+  document.getElementById('sessionFilter').value=s.id;
+  filterMapBySession(s.id);
+}
 
 // ===== LOCALSTORAGE STATE =====
 const STORAGE_KEY='grastensvaktarna.uistate.v1';

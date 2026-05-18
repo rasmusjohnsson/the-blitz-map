@@ -139,6 +139,36 @@
     "summary": "Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail som drabbats av drakeld och kult under Gråstensväktarnas första kampanj. Chaunteas tempel ligger i stadens hjärta.",
     "events": [
       {
+        "title": "Spaning vid kvarnen",
+        "preview": "Vittringen var helt fel...",
+        "detail": "Haldan och Cedric lämnade gruppen som tung reserv i keepet och rörde sig ensamma ut i natten mot kvarnen. När de närmade sig kände Haldan att vittringen var helt fel – och med Cedrics erfarenhet bekräftande, vägrade de bita på kultens bete. De avbröt scoutingen och föll metodiskt tillbaka till den säkra tunneln.",
+        "session": 3
+      },
+      {
+        "title": "Sidoportens försvar",
+        "preview": "Varm tjära riggas vid sidoporten...",
+        "detail": "Medan Haldan och Cedric scoutade förstärkte Theron, Gothmog och Oweyn keepets sidoport. Escobert hade uttryckt oro för portens sårbarhet – så äventyrarna riggade en tunna med varm, flytande tjära ovanför den, redo att hällas över alla inkräktare.",
+        "session": 3
+      },
+      {
+        "title": "Den vita röken",
+        "preview": "Vit rök från kvarnen – en fälla...",
+        "detail": "Väl tillbaka i keepet för en Short Rest kom oroande nyheter från murarna: vit rök steg från stadens kvarn, inte svart. Haldan läste av tecknen direkt – vit rök betyder fuktigt bränsle. Kulten försökte inte förstöra kvarnen utan riggade en fälla för att locka ut keepets försvarare.",
+        "session": 3
+      },
+      {
+        "title": "De dolda morden vid tunneln",
+        "preview": "Två spejare elimineras i tystnad...",
+        "detail": "Uppe vid skogsbrynet upptäckte Haldans skarpa Ranger-sinnen två av kultens spejare som precis lokaliserat den dolda tunnelingången under keepet. Haldans pil sköt den första kultisten där han stod, och innan den andre hann skrika rusade Gothmog fram och högg ner honom i total tystnad. Theron stod kvar vid skogsbrynet och vakade höjden. Kropparna släpades in och gömdes i tunnelns mörker.",
+        "session": 3
+      },
+      {
+        "title": "Strategiskt avancemang",
+        "preview": "Haldan tar taktiskt kommando...",
+        "detail": "Efter evakueringen av Chaunteas tempel drog sig Gråstensväktarna tillbaka till bäckravinen. Haldan tog det taktiska kommandot: han och Theron klättrade upp i skogsbrynets skydd för att hålla höjd och uppsikt, medan Cedric, Gothmog och Oweyn rörde sig snabbt längs den öppna sandbanken nere i ravinen.",
+        "session": 3
+      },
+      {
         "title": "Tillbaka i ravinen",
         "preview": "Sextio själar räddade...",
         "detail": "Med Oweyn bärandes på den sista sårade sökte sig Gråstensväktarna åter ner i bäckravinens skydd. Sextio själar räddade, kultens befälhavare aska – men kriget om Greenests överlevnad har bara börjat.",

@@ -3,6 +3,7 @@
     "id": 0,
     "label": "SESSION 0",
     "title": "Ursprunget – Gråstensväktarna formas",
+    "date": "2026-03-15",
     "events": [
       {
         "title": "Haldans drakjakt",
@@ -66,6 +67,7 @@
     "id": 1,
     "label": "SESSION 1",
     "title": "Greenest brinner",
+    "date": "2026-04-05",
     "events": [
       {
         "title": "Therons kallelse",
@@ -132,6 +134,7 @@
     "id": 2,
     "label": "SESSION 2",
     "title": "Chaunteas tempel",
+    "date": "2026-04-26",
     "events": [
       {
         "title": "Nyckeln till mörkret",
@@ -202,6 +205,44 @@
         "places": [
           "greenest"
         ],
+        "npcs": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "label": "SESSION 3",
+    "title": "Kvarnens slöja",
+    "date": "2026-05-17",
+    "events": [
+      {
+        "title": "Strategiskt avancemang",
+        "recap": "Efter evakueringen av Chaunteas tempel drog sig Gråstensväktarna tillbaka till bäckravinen. Haldan tog det taktiska kommandot: han och Theron klättrade upp i skogsbrynets skydd för att hålla höjd och uppsikt, medan Cedric, Gothmog och Oweyn rörde sig snabbt längs den öppna sandbanken nere i ravinen.",
+        "places": ["greenest"],
+        "npcs": []
+      },
+      {
+        "title": "De dolda morden vid tunneln",
+        "recap": "Uppe vid skogsbrynet upptäckte Haldans skarpa Ranger-sinnen två av kultens spejare som precis lokaliserat den dolda tunnelingången under keepet. Haldan släppte en pil från skogsbrynet som fällde den första kultisten där han stod. Innan den andre hann skrika rusade Gothmog fram och högg ner honom i total tystnad. Kropparna släpades in och gömdes i tunnelns mörker. Theron stod kvar vid skogsbrynet och vakade höjden.",
+        "places": ["greenest"],
+        "npcs": ["Raiders"]
+      },
+      {
+        "title": "Den vita röken",
+        "recap": "Väl tillbaka i keepet för en Short Rest kom oroande nyheter från murarna: vit rök steg från stadens kvarn, inte svart. Haldan läste av tecknen direkt – vit rök betyder fuktigt bränsle. Kulten försökte inte förstöra kvarnen utan riggade en fälla för att locka ut keepets försvarare.",
+        "places": ["greenest"],
+        "npcs": ["Raiders"]
+      },
+      {
+        "title": "Sidoportens försvar",
+        "recap": "Medan Haldan och Cedric scoutade förstärkte Theron, Gothmog och Oweyn keepets sidoport. Escobert hade uttryckt oro för portens sårbarhet – så äventyrarna riggade en tunna med varm, flytande tjära ovanför den, redo att hällas över alla inkräktare.",
+        "places": ["greenest"],
+        "npcs": ["Escobert the Red"]
+      },
+      {
+        "title": "Spaning vid kvarnen",
+        "recap": "Haldan och Cedric lämnade gruppen som tung reserv i keepet och rörde sig ensamma ut i natten mot kvarnen. När de närmade sig kände Haldan att vittringen var helt fel – och med Cedrics erfarenhet bekräftande, vägrade de bita på kultens bete. De avbröt scoutingen och föll metodiskt tillbaka till den säkra tunneln.",
+        "places": ["greenest"],
         "npcs": []
       }
     ]

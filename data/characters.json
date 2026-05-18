@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Tystnadens kommandant",
+        "text": "Tog det taktiska kommandot efter evakueringen och ledde Theron upp i skogsbrynets skydd. Mina Ranger-sinnen upptäckte två kultspejare som lokaliserat tunnelmynningen. En pil från min båge fällde den första där han stod – innan den andre hann skrika rusade Gothmog fram och högg ner honom. När vit rök steg från kvarnen läste jag tecknen direkt: fuktigt bränsle, en fälla. Cedric och jag scoutade ändå men vittringen var fel – vi bet aldrig på betet.",
+        "session": 3
+      },
+      {
         "label": "Tystnadens öga",
         "text": "Kände fiendepatrullernas lukt i ravinen innan de märkte oss. Vid Chaunteas tempel kallade jag fram skogens rankor som snärjde Dragonclaw mot stengolvet – och såg honom brinna i Cedrics flammor. Mina mekaniska fingrar värker, men mitt sikte har aldrig varit säkrare.",
         "session": 2
@@ -63,6 +68,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Skuggor vid skogsbrynet",
+        "text": "Följde Haldan upp i skogsbrynet och höll höjd över ravinen. När två kultspejare dök upp vid den dolda tunnelingången fällde Haldans pil den första där han stod – Gothmog rusade fram ur skuggan och högg ner den andre innan han hann skrika. Jag vakade höjden så ingen larmade. Tidigare hade jag riggat tjärtunnan ovanför sidoporten med Gothmog och Oweyn efter Escoberts oro.",
+        "session": 3
+      },
+      {
         "label": "Klingan vid templet",
         "text": "Stormade in genom bakdörren först av alla, Haldan tätt i hans följe. Vid huvudgången bad han om att bli insläppt – och Oweyns röst svarade från andra sidan dörren. Höll bakdörren, höll mittgången, vakade över sextio räddade själar.",
         "session": 2
@@ -106,6 +116,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Sidoportens fästning",
+        "text": "När Escobert oroade sig för sidoportens sårbarhet kavlade jag upp ärmarna tillsammans med Theron och Gothmog. Vi hivade upp en tunna med varm flytande tjära ovanför porten – redo att hällas över första inkräktaren som dristade sig nära. Stod sen tung reserv i keepet medan Haldan och Cedric scoutade kvarnen.",
+        "session": 3
+      },
+      {
         "label": "Beskyddaren i Chaunteas tempel",
         "text": "Stod ensam med sextio bybor inne i templet medan kobolder och kultister belägrade dörrarna i timmar. När Theron bankade på huvudporten öppnade han för gruppen. När striden var över bar han ut den sista sårade på sina axlar.",
         "session": 2
@@ -148,6 +163,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Stöten ur skuggan",
+        "text": "När Haldans pil visslade förbi och fällde den första kultspejaren vid tunnelmynningen rusade jag fram ur skuggan och högg ner den andre innan han hann få upp ett skri. Theron stod kvar och vakade höjden. Innan dess hade jag och Theron riggat tjärtunnan ovanför sidoporten efter Escoberts oro.",
+        "session": 3
+      },
       {
         "label": "Skuggor i ravinen",
         "text": "Smög med gruppen genom keepets hemliga tunnel, tillbaka till bäckens skuggor. Stod vakt vid templets bakdörr när striden härjade och bar med sig de räddade tillbaka in i ravinens skydd när allt var över.",
@@ -196,6 +216,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Vittringens röst",
+        "text": "Följde Haldan ut i natten mot kvarnen medan resten höll keepet. När vi närmade oss kände rangern att vittringen var helt fel – och min egen erfarenhet bekräftade det. Vit rök, fuktigt bränsle, en alldeles för uppenbar lockfälla. Vi vägrade bita på betet och föll metodiskt tillbaka till tunnelns säkerhet.",
+        "session": 3
+      },
       {
         "label": "Dolkarnas virvelvind",
         "text": "Släppte loss en virvelvind av magiska klingor över koboldernas patrull vid templets bakdörr. När Dragonclaw stod fångad i Haldans rankor lät han kultens befälhavare besegla sitt öde i en eldsvepa.",

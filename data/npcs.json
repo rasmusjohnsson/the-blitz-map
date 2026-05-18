@@ -36,6 +36,11 @@
         "label": "Tunnelns vägvisare",
         "text": "Visade vägen till tunnelns mynning vid bäcken och stängde porten bakom Gråstensväktarna när de gav sig ut i natten.",
         "session": 2
+      },
+      {
+        "label": "Oro för sidoporten",
+        "text": "Uttryckte oro för sidoportens sårbarhet. Gråstensväktarna riggade en tunna med varm flytande tjära ovanför porten för att försvara den.",
+        "session": 3
       }
     ]
   },
@@ -85,6 +90,16 @@
         "label": "Belägringen av Chaunteas tempel",
         "text": "Försökte storma templet där sextio bybor sökt skydd. Föll för Cedrics dolkvirvel vid bakdörren och Therons klinga på mittgången.",
         "session": 2
+      },
+      {
+        "label": "Spejare vid tunneln",
+        "text": "Två kultspejare lokaliserade keepets hemliga tunnelingång. Den första föll för Haldans pil från skogsbrynet, den andre högg Gothmog ner innan han hann skrika. Theron vakade höjden.",
+        "session": 3
+      },
+      {
+        "label": "Kvarnens fälla",
+        "text": "Tände vit rök vid stadens kvarn för att locka ut keepets försvarare. Fällan avslöjades av Haldans naturkunskap och Cedrics vaksamhet – Gråstensväktarna bet aldrig på betet.",
+        "session": 3
       }
     ]
   },
