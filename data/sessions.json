@@ -246,5 +246,50 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 4,
+    "label": "SESSION 4",
+    "title": "Bakhållet och Utmaningen",
+    "date": "2026-05-25",
+    "events": [
+      {
+        "title": "Bakhållet vid sidoporten",
+        "recap": "Haldan och Cedric upptäckte en fientlig patrull närma sig keepets sidoport: kobolder ridandes på jätteödlor och en CyansWrath-riddare med två bomber i bälten. Med ett kliniskt skott från långbågen gick Haldans pil rakt genom riddarens hals – han föll utan ett ljud. Gothmog kastade undan den första bomben, Haldan slungade iväg den andra precis innan tändaren slog. Bomben detonerade en bit bort, porten höll, fienderna flydde i panik. Haldan tog en del skada av tryckvågen och elden.",
+        "places": ["greenest"],
+        "npcs": ["Raiders", "Kobolder", "Cyanwrath"]
+      },
+      {
+        "title": "Förhöret i keepet",
+        "recap": "Gråstensväktarna släpade en tillfångatagen raider upp i keepet till guvernör Nighthill och Escobert. Gothmog pressade hårt – Cedric tog över och fick fången att tala. Han avslöjade sig som medlem i en grupp som kallar sig CyansWrath och hävdade att deras ideologi handlar om att krossa de rika och hjälpa de svaga under slagordet 'Frihet genom styrka'. Haldan noterade direkt motsägelsen: drakar bryr sig inte om mänsklig ideologi – samarbetet med en blå drake avslöjar bedrägeriet.",
+        "places": ["greenest"],
+        "npcs": ["Tarbaw Nighthill", "Escobert the Red", "Raiders"]
+      },
+      {
+        "title": "Folkets vilja",
+        "recap": "Vid genomsökningen av fången hittades ett fint, avryckt pergament med titeln 'Folkets vilja' – ett välformulerat manifest om att störta ordningen. Haldans analys som lönnmördare och spårare: en rökridå skriven av någon med utbildning för att manipulera fotsoldater. Den avryckta delen döljer kultens sanna, drakdyrkande ledare. Pergamentet överlämnades till guvernör Nighthill.",
+        "places": ["greenest"],
+        "npcs": ["Tarbaw Nighthill"],
+        "pixelArt": "folkets_vilja"
+      },
+      {
+        "title": "Frihet genom styrka",
+        "recap": "Gothmog tog fången och slängde ut honom på borggården till pöbeln med orden 'han är er att döma' – och upprepade kultens slagord 'Frihet genom styrka'. Byborna tog hand om fången. En lynchning. Viskningar och oro spred sig genom borggården. Haldan backade undan och lät det ske – fokus på nästa steg.",
+        "places": ["greenest"],
+        "npcs": ["Raiders"]
+      },
+      {
+        "title": "Hästskoplatån",
+        "recap": "Innan fången mötte sitt öde pressades den exakta positionen för kultens läger fram: en hästskoformad platå i området kring Greenfields. En första ledtråd om var den blå draken och kultens befälhavare håller till.",
+        "places": ["greenest", "kultlagret"],
+        "npcs": []
+      },
+      {
+        "title": "Cyanwraths utmaning",
+        "recap": "Sessionen avslutades dramatiskt: en blå halvdrake klev fram till keepets portar med gisslan i greppet. Han presenterade sig som Cyanwrath och utmanade keepets bästa kämpe på duell – liv mot liv. Villkoret: vinner Greenests kämpe släpps gisslan och kulten lämnar byn. Förlorar han får de guvernören.",
+        "places": ["greenest"],
+        "npcs": ["Cyanwrath"]
+      }
+    ]
   }
 ]

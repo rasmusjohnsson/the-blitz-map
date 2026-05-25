@@ -139,6 +139,43 @@
     "summary": "Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail som drabbats av drakeld och kult under Gråstensväktarnas första kampanj. Chaunteas tempel ligger i stadens hjärta.",
     "events": [
       {
+        "title": "Cyanwraths utmaning",
+        "preview": "Blå halvdrake vid keepets portar...",
+        "detail": "En blå halvdrake klev fram till Greenest Keeps portar med gisslan i greppet och presenterade sig som Cyanwrath. Han utmanade keepets bästa kämpe på en duell på liv och död – vinner försvararen släpps gisslan, förlorar han faller guvernören i kultens händer.",
+        "session": 4
+      },
+      {
+        "title": "Hästskoplatån avslöjas",
+        "preview": "Lägrets position pressas fram...",
+        "detail": "Under förhöret avslöjades kultens läger – en hästskoformad platå någonstans i Greenfields. Första konkreta ledtråden om var den blå draken och CyansWrath håller till mellan attackerna.",
+        "session": 4
+      },
+      {
+        "title": "Frihet genom styrka",
+        "preview": "Fången kastas till pöbeln...",
+        "detail": "Efter förhöret bar Gothmog ut fången på borggården och kastade honom till pöbeln med orden 'han är er att döma' – och upprepade kultens slagord 'Frihet genom styrka'. Byborna lynchade fången på fläcken. Viskningar spred sig genom borggården om Gråstensväktarnas hårda metoder.",
+        "session": 4
+      },
+      {
+        "title": "Pergamentet 'Folkets vilja'",
+        "preview": "Ett avryckt manifest avslöjar kultens rökridå...",
+        "detail": "Vid genomsökningen av fången hittades ett avryckt pergament med titeln 'Folkets vilja' – ett välformulerat manifest om att störta ordningen och hjälpa de svaga. Haldans analys: en rökridå skriven av någon utbildad, designad för att manipulera fotsoldater. Den avryckta delen döljer kultens sanna, drakdyrkande ledare. Överlämnades till guvernör Nighthill.",
+        "session": 4,
+        "pixelArt": "folkets_vilja"
+      },
+      {
+        "title": "Förhöret i keepet",
+        "preview": "Cedric pressar fram sanningen ur fången...",
+        "detail": "En tillfångatagen raider släpades upp till guvernör Nighthill och Escobert. Gothmog pressade hårt – Cedric tog över med tålamod. Fången avslöjade tillhörigheten till CyansWrath och slagordet 'Frihet genom styrka'. Haldan noterade direkt att samarbete med en blå drake avslöjar att 'folkrörelsen' är en bedrägeri.",
+        "session": 4
+      },
+      {
+        "title": "Bakhållet vid sidoporten",
+        "preview": "Kobolder på jätteödlor och en bomb...",
+        "detail": "Haldan och Cedric upptäckte en patrull närma sig sidoporten: kobolder ridandes på jätteödlor eskorterande en CyansWrath-riddare med två bomber. Haldans pil sköt riddaren död i ett enda skott. Gothmog kastade undan första bomben, Haldan slungade den andra precis i tid. Porten höll, fienderna flydde. Haldan tog skada av tryckvågen och elden.",
+        "session": 4
+      },
+      {
         "title": "Spaning vid kvarnen",
         "preview": "Vittringen var helt fel...",
         "detail": "Haldan och Cedric lämnade gruppen som tung reserv i keepet och rörde sig ensamma ut i natten mot kvarnen. När de närmade sig kände Haldan att vittringen var helt fel – och med Cedrics erfarenhet bekräftande, vägrade de bita på kultens bete. De avbröt scoutingen och föll metodiskt tillbaka till den säkra tunneln.",
@@ -275,6 +312,22 @@
         "preview": "Sökte sig till skogarna...",
         "detail": "Haldan sökte sig till skogarna och fann Emerald Enclave.",
         "session": 0
+      }
+    ]
+  },
+  {
+    "id": "kultlagret",
+    "name": "Hästskoplatån",
+    "x": 1720,
+    "y": 1180,
+    "visited": false,
+    "summary": "Kultens dolda läger på en hästskoformad platå någonstans i Greenfields. Position pressad fram under förhöret i session 4. Här tros den blå draken och CyansWraths befälhavare hålla till mellan attackerna.",
+    "events": [
+      {
+        "title": "Lägrets position avslöjas",
+        "preview": "Hästskoformad platå någonstans i Greenfields...",
+        "detail": "Under förhöret i Greenest Keep avslöjade fången den exakta positionen för kultens läger – en hästskoformad platå i området kring Greenfields. Första konkreta ledtråden om var den blå draken och kultens ledare gömmer sig.",
+        "session": 4
       }
     ]
   },

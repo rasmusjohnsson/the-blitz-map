@@ -332,6 +332,11 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .updated-badge{display:inline-block;margin-left:6px;font-family:var(--font);font-size:7px;background:rgba(160,136,88,.2);color:#c4a868;padding:1px 5px;border-radius:3px;letter-spacing:.5px;vertical-align:middle;border:1px solid rgba(160,136,88,.4)}
 .updated-badge.fresh{background:rgba(255,215,0,.18);color:#ffd700;border-color:rgba(255,215,0,.5);box-shadow:0 0 6px rgba(255,215,0,.25);animation:pulseFresh 2.4s ease-in-out infinite}
 @keyframes pulseFresh{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.2)}50%{box-shadow:0 0 10px rgba(255,215,0,.45)}}
+/* ===== Pixel art (loot, dokument, fynd) ===== */
+.pixel-art-wrap{margin:16px auto 8px;padding:14px;background:rgba(196,168,120,.05);border:1px solid rgba(196,168,120,.3);border-radius:6px;text-align:center;max-width:480px}
+.pixel-art-canvas{display:block;margin:0 auto;width:360px;height:240px;max-width:100%;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 4px 12px rgba(0,0,0,.6))}
+.pixel-art-caption{margin-top:10px;font-family:var(--font);font-size:8px;color:#c4a878;letter-spacing:2px;text-shadow:0 0 6px rgba(196,168,120,.4)}
+@media(max-width:600px){.pixel-art-canvas{width:280px;height:186px}}
 /* ===== Interior open button (Greenest mini-karta) ===== */
 .interior-open-btn{display:block;width:100%;margin:10px 0 4px;padding:10px 14px;background:linear-gradient(180deg,#3a2a5a,#1f1538);color:#ffd700;border:2px solid #ffd700;border-radius:5px;font-family:var(--font);font-size:9px;letter-spacing:1.5px;cursor:pointer;transition:all .15s;text-align:center}
 .interior-open-btn:hover{background:linear-gradient(180deg,#4a3a6a,#2a2048);box-shadow:0 0 14px rgba(255,215,0,.4);transform:translateY(-1px)}

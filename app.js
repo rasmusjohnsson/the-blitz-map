@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.1.0';
+const APP_VERSION='2.2.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -99,6 +99,59 @@ raiders:()=>{c.fillStyle='#2a2a3a';c.fillRect(3,1,10,6);c.fillRect(4,7,8,2);c.fi
 kobolder:()=>{c.fillStyle='#6a4030';c.fillRect(4,3,8,5);c.fillRect(3,5,10,2);c.fillStyle='#8a5040';c.fillRect(5,4,6,1);c.fillStyle='#3a2010';c.fillRect(3,7,1,1);c.fillRect(12,7,1,1);c.fillStyle='#3a1808';c.fillRect(4,2,1,2);c.fillRect(11,2,1,2);c.fillRect(5,1,1,2);c.fillRect(10,1,1,2);c.fillStyle='#ffaa00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#000';c.fillRect(6,5,1,2);c.fillRect(10,5,1,2);c.fillStyle='#5a3020';c.fillRect(6,8,4,2);c.fillStyle='#fff';c.fillRect(6,9,1,1);c.fillRect(8,9,1,1);c.fillRect(9,9,1,1);c.fillStyle='#5a4a3a';c.fillRect(3,10,10,6);c.fillStyle='#3a2a1a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#a02020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#8a6a3a';c.fillRect(14,3,1,11);c.fillStyle='#9a9aaa';c.fillRect(13,2,3,2)},
 dragonclaw:()=>{c.fillStyle='#8a1010';c.fillRect(3,0,1,3);c.fillRect(12,0,1,3);c.fillRect(4,1,1,2);c.fillRect(11,1,1,2);c.fillStyle='#5a0808';c.fillRect(3,3,10,7);c.fillStyle='#7a1010';c.fillRect(4,4,8,2);c.fillStyle='#2a0404';c.fillRect(3,9,10,1);c.fillStyle='#ff6020';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#ffff00';c.fillRect(5,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#000';c.fillRect(6,6,1,1);c.fillRect(10,6,1,1);c.fillStyle='#fff';c.fillRect(5,8,1,2);c.fillRect(7,8,1,2);c.fillRect(9,8,1,2);c.fillRect(11,8,1,2);c.fillStyle='#3a1010';c.fillRect(6,8,1,1);c.fillRect(8,8,1,1);c.fillRect(10,8,1,1);c.fillStyle='#3a3a4a';c.fillRect(2,10,12,6);c.fillStyle='#2a2a3a';c.fillRect(3,11,10,1);c.fillRect(3,13,10,1);c.fillStyle='#ff6020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#5a0808';c.fillRect(1,11,2,3);c.fillRect(13,11,2,3);c.fillStyle='#3a0404';c.fillRect(0,12,1,2);c.fillRect(15,12,1,2)}
 };if(P[id])P[id]();else{c.fillStyle='#3a3a5a';c.fillRect(4,3,8,8);c.fillStyle='#6a6a8a';c.fillRect(5,4,6,4);c.fillStyle='#8080a0';c.fillRect(6,6,1,1);c.fillRect(9,6,1,1);c.fillStyle='#2a2a4a';c.fillRect(3,11,10,5);c.fillStyle='#8080a0';c.fillRect(7,5,2,1)}}
+
+// ===== PIXEL ART (loot, dokument, fynd) =====
+// 3x5 pixel font for short titles
+const PIXEL_FONT={
+  F:['111','100','110','100','100'],O:['111','101','101','101','111'],L:['100','100','100','100','111'],
+  K:['101','110','100','110','101'],E:['111','100','110','100','111'],T:['111','010','010','010','010'],
+  S:['111','100','111','001','111'],V:['101','101','101','101','010'],I:['111','010','010','010','111'],
+  J:['111','010','010','010','110'],A:['010','101','111','101','101'],' ':['000','000','000','000','000']
+};
+function drawPixelString(c,str,sx,sy,color){c.fillStyle=color;let x=sx;str.split('').forEach(ch=>{const rows=PIXEL_FONT[ch]||PIXEL_FONT[' '];for(let r=0;r<5;r++){for(let i=0;i<3;i++){if(rows[r][i]==='1')c.fillRect(x+i,sy+r,1,1)}}x+=4})}
+const PIXEL_ART={
+  folkets_vilja:cv=>{
+    const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
+    // parchment body
+    c.fillStyle='#c4a878';c.fillRect(0,0,108,80);
+    c.fillStyle='#dbc090';c.fillRect(0,0,108,2);c.fillRect(0,0,2,80);
+    c.fillStyle='#a08858';c.fillRect(0,77,108,3);
+    // stains
+    c.fillStyle='#b89868';c.fillRect(15,40,8,3);c.fillRect(80,55,6,4);c.fillRect(30,65,12,2);c.fillRect(55,20,5,2);
+    // torn right edge - jagged
+    const jag=[2,4,1,3,5,2,4,1,3,5,2,4,3,1,4,2,5,3,1,4,2,5,3,1,4,2,5,3,1,4,2,5,3,1,4,2,5,3,1,4];
+    c.fillStyle='#1a1a2e';
+    for(let y=0;y<80;y++){const j=jag[y%jag.length];c.fillRect(108-j,y,j+12,1)}
+    // broken wax seal upper left
+    c.fillStyle='#7a1010';c.fillRect(6,6,16,14);
+    c.fillStyle='#a02020';c.fillRect(7,7,14,12);
+    c.fillStyle='#c83838';c.fillRect(9,9,10,8);
+    // dragon symbol on seal
+    c.fillStyle='#2a0808';
+    c.fillRect(12,11,1,4);c.fillRect(15,11,1,4);c.fillRect(13,10,2,1);c.fillRect(13,15,2,1);
+    c.fillRect(11,13,1,1);c.fillRect(16,13,1,1);
+    // crack in seal
+    c.fillStyle='#3a0606';c.fillRect(13,7,1,2);c.fillRect(14,16,1,3);
+    // Title "FOLKETS VILJA" centered under seal
+    drawPixelString(c,'FOLKETS',32,8,'#2a1a08');
+    drawPixelString(c,'VILJA',44,16,'#2a1a08');
+    // squiggle body text lines
+    c.fillStyle='#3a2010';
+    const lines=[[6,28,86],[6,33,82],[6,38,90],[6,43,76],[6,48,84],[6,53,72],[6,58,80]];
+    lines.forEach(l=>c.fillRect(l[0],l[1],l[2],1));
+    // ink dabs
+    c.fillStyle='#5a3020';c.fillRect(22,28,2,1);c.fillRect(48,33,3,1);c.fillRect(70,38,2,1);c.fillRect(35,48,2,1);c.fillRect(58,58,3,1);
+    // torn-off bottom: shorter ragged last line
+    c.fillStyle='#3a2010';c.fillRect(6,63,38,1);
+    // big ink blot
+    c.fillStyle='#1a0808';c.fillRect(64,66,6,3);c.fillRect(63,67,8,1);c.fillRect(65,69,4,1);
+    // bottom torn edge: dark wedge in lower right
+    c.fillStyle='#1a1a2e';
+    c.fillRect(50,73,58,7);c.fillRect(45,75,5,5);c.fillRect(40,77,5,3);
+  }
+};
+function renderPixelArt(id){if(!PIXEL_ART[id])return'';return`<div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${id}"></canvas><div class="pixel-art-caption">PERGAMENT · "FOLKETS VILJA"</div></div>`}
+function activatePixelArtCanvases(root){(root||document).querySelectorAll('canvas.pixel-art-canvas[data-art]').forEach(cv=>{const id=cv.dataset.art;if(PIXEL_ART[id])PIXEL_ART[id](cv)})}
 
 // Map is now a background image (map.jpg) on .map-canvas via CSS
 
@@ -334,11 +387,13 @@ function showLocation(l){
       });
       chipsHtml+='</div>';
     }
+    const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';
     const d=document.createElement('div');d.className='event-item';
-    d.innerHTML=`<div class="event-title">${linkifyFactions(ev.title)}</div>${sessLabel}<div class="event-preview">${linkifyFactions(ev.preview)}</div><div class="event-detail" id="ed_${l.id}_${i}">${linkifyFactions(ev.detail)}${chipsHtml}</div>`;
+    d.innerHTML=`<div class="event-title">${linkifyFactions(ev.title)}</div>${sessLabel}<div class="event-preview">${linkifyFactions(ev.preview)}</div><div class="event-detail" id="ed_${l.id}_${i}">${linkifyFactions(ev.detail)}${artHtml}${chipsHtml}</div>`;
     d.onclick=()=>document.getElementById(`ed_${l.id}_${i}`).classList.toggle('active');
     e.appendChild(d);
   });
+  activatePixelArtCanvases(e);
   // Position in screen-space near the marker
   const ma=document.querySelector('.map-container');
   const maRect=ma.getBoundingClientRect();
@@ -388,7 +443,7 @@ function showCharacterDetail(ch){
   document.getElementById('charDetailPopup').classList.add('active');
 }
 function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;document.getElementById('npcDetailRoleLabel').textContent=n.role||'';const pp=document.getElementById('npcDetailPortrait');pp.innerHTML='';const pcv=document.createElement('canvas');pp.appendChild(pcv);drawNpcPortrait(pcv,n.id);const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${linkifyFactions(n.desc)}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{const sess=e.session!==undefined?sessions.find(s=>s.id===e.session):null;const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${sl}<div class="pe-text">${linkifyFactions(e.text)}</div></div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
-function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');b.innerHTML=`<div class="recap">${linkifyFactions(ev.recap)}</div>`;if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
+function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';b.innerHTML=`<div class="recap">${linkifyFactions(ev.recap)}</div>${artHtml}`;activatePixelArtCanvases(b);if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
 function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup','factionDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'));document.querySelectorAll('.location-marker.npc-glow').forEach(m=>m.classList.remove('npc-glow'))}
@@ -516,12 +571,13 @@ function renderRecap(s){
   const opts=sessions.map(x=>`<option value="${x.id}"${x.id===s.id?' selected':''}>${x.label}: ${x.title}</option>`).join('');
   const dateStr=s.date?`<div class="recap-date">📅 ${formatSessionDate(s.date)}</div>`:'';
   let h=`<div class="recap-header"><div class="recap-label">RECAP</div><h2>${s.title}</h2>${dateStr}<select class="recap-session-select" onchange="switchRecapSession(this.value)">${opts}</select></div>`;
-  s.events.forEach(ev=>{h+=`<div class="recap-event"><div class="recap-event-title">${ev.title}</div>${linkifyFactions(ev.recap)}</div>`});
+  s.events.forEach(ev=>{const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';h+=`<div class="recap-event"><div class="recap-event-title">${ev.title}</div>${linkifyFactions(ev.recap)}${artHtml}</div>`});
   const placeIds=new Set();s.events.forEach(ev=>ev.places.forEach(x=>placeIds.add(x)));
   if(placeIds.size){h+='<div class="recap-section"><h3>PLATSER</h3>';placeIds.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<span class="recap-tag place-tag" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="showLocation(locations.find(l=>l.id==='${pid}'))">${loc.name}</span>`});h+='</div>'}
   const npcNames=new Set();s.events.forEach(ev=>{if(ev.npcs)ev.npcs.forEach(n=>npcNames.add(n))});
   if(npcNames.size){h+='<div class="recap-section"><h3>NPCs</h3>';npcNames.forEach(name=>{const npc=npcsData.find(n=>n.name===name);if(npc)h+=`<span class="recap-tag npc-tag" onclick="showNPCDetail(npcsData.find(n=>n.name==='${name.replace(/'/g,"\\'")}'))">${name}</span>`;else h+=`<span class="recap-tag npc-tag" style="cursor:default">${name}</span>`});h+='</div>'}
   p.innerHTML=h;
+  activatePixelArtCanvases(p);
 }
 function switchRecapSession(val){
   const s=sessions.find(x=>x.id===parseInt(val));

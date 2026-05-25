@@ -16,6 +16,11 @@
         "label": "Nyckeln till mörkret",
         "text": "Räckte över nyckeln till keepets hemliga tunnel och pekade ut vägen mot Chaunteas tempel där bybor sökt skydd.",
         "session": 2
+      },
+      {
+        "label": "Pergamentet i hand",
+        "text": "Mottog det avryckta pergamentet 'Folkets vilja' och Gråstensväktarnas analys: en rökridå avsedd att manipulera fotsoldater. Inser nu att fienden inte är en folkrörelse utan en drakdyrkande kult som gömmer sig bakom ideologi.",
+        "session": 4
       }
     ]
   },
@@ -41,6 +46,11 @@
         "label": "Oro för sidoporten",
         "text": "Uttryckte oro för sidoportens sårbarhet. Gråstensväktarna riggade en tunna med varm flytande tjära ovanför porten för att försvara den.",
         "session": 3
+      },
+      {
+        "label": "Tjärtunnan bevisar sig",
+        "text": "Sidoporten klarade sig under bakhållet i session 4 – fienden hann aldrig nära porten innan deras egen bomb detonerade och de flydde. Escoberts oro var berättigad och Gråstensväktarnas tjärtunna stod redo om de hade kommit längre.",
+        "session": 4
       }
     ]
   },
@@ -100,6 +110,16 @@
         "label": "Kvarnens fälla",
         "text": "Tände vit rök vid stadens kvarn för att locka ut keepets försvarare. Fällan avslöjades av Haldans naturkunskap och Cedrics vaksamhet – Gråstensväktarna bet aldrig på betet.",
         "session": 3
+      },
+      {
+        "label": "CyansWrath-riddaren faller",
+        "text": "En riddare i CyansWraths färger ledde patrullen mot keepets sidoport med två bomber i bälten. Haldans pil gick rakt genom hans hals – han föll utan ett ljud. Resterande raiders flydde i panik när bomberna kastades undan av Gothmog och Haldan.",
+        "session": 4
+      },
+      {
+        "label": "Förhöret och lynchningen",
+        "text": "En raider togs som fånge och pressades på information i keepet. Avslöjade tillhörigheten till CyansWrath, slagordet 'Frihet genom styrka' och lägrets position på en hästskoformad platå. Kastades sen ut till pöbeln på borggården av Gothmog och möttes av en lynchning.",
+        "session": 4
       }
     ]
   },
@@ -114,6 +134,26 @@
         "label": "Belägringen av templet",
         "text": "Kastade facklor mot Chaunteas tempels bakdörr och föll snabbt för Gråstensväktarnas klingor.",
         "session": 2
+      },
+      {
+        "label": "Jätteödle-kavalleriet",
+        "text": "Kobolder ridandes på jätteödlor eskorterade CyansWrath-riddaren mot keepets sidoport. Flydde i panik när riddaren föll för Haldans pil och bomberna kastades undan.",
+        "session": 4
+      }
+    ]
+  },
+  {
+    "id": "cyanwrath",
+    "name": "Cyanwrath",
+    "aliases": ["Langdedrosa Cyanwrath", "blå halvdrake"],
+    "status": "hostile",
+    "role": "Blå halvdrake – kultens utmanare",
+    "desc": "En väldig blå halvdrake i drakhuvad rustning. Hans hud är blå-grå, hans andetag knastrar av statisk elektricitet och hans röst är ett lågt mullrande. Ledare för den slagkraftiga falangen CyansWrath som bär hans namn. Klev fram till Greenest Keep med gisslan och utmanade keepets bästa kämpe på en duell på liv och död.",
+    "events": [
+      {
+        "label": "Utmaningen vid keepets portar",
+        "text": "Klev fram med gisslan i greppet och utmanade keepets bästa kämpe på duell. Vinner Greenests försvarare släpps gisslan – förlorar de tar kulten guvernören.",
+        "session": 4
       }
     ]
   },
