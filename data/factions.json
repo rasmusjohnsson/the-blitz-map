@@ -3,7 +3,65 @@
     "id": "order_of_the_gauntlet",
     "name": "Order of the Gauntlet",
     "motto": "Rättvisa genom handling",
+    "symbol": "⚔️",
+    "status": "allied",
     "desc": "Order of the Gauntlet är en organisation som samlar krigare, riddare och troende med ett gemensamt mål: att upprätthålla rättvisa i Faerûn. Till skillnad från många andra grupper drivs de varken av makt eller kunskap i sig, utan av en stark övertygelse om att ondska aktivt måste bekämpas.\n\nOrganisationen är varken en traditionell armé eller en kyrka, utan snarare ett nätverk av individer som förenas av sin tro på handling. Medlemmarna söker inte ära eller rikedom, utan rör sig dit hoten finns, ingriper och försöker stoppa det som skadar andra.\n\nDeras styrka ligger i deras beslutsamhet och tydliga värdegrund – men just detta kan också vara en svaghet. I en värld där ondska inte alltid är tydlig eller öppen kan deras synsätt bli förenklat, och de riskerar att missa nyanser i mer komplexa situationer.\n\nFör en medlem av Order of the Gauntlet är världen i grunden uppdelad i rätt och fel, och det är deras uppgift att stå däremellan och försvara det som är gott.",
-    "symbol": "⚔️"
+    "npcs": [],
+    "places": ["baldursgate", "elturel"],
+    "events": []
+  },
+  {
+    "id": "emerald_enclave",
+    "name": "Emerald Enclave",
+    "motto": "Naturens balans måste bevaras",
+    "symbol": "🌿",
+    "status": "allied",
+    "desc": "Emerald Enclave är ett löst sammansatt nätverk av druider, rangers, barbarer och andra som tjänar naturen. De sköter de vilda platserna mellan civilisationerna, jagar monster som hotar bräckliga byar och håller naturens balans när drakar, demoner eller mörkare krafter försöker rubba den.\n\nMedlemmarna är ofta ensamvargar – spårare, monsterjägare och tysta beskyddare som rör sig i utkanten av byar och hjälper när ingen annan kan. Enclaven tränar sina utvalda i fältkonst, smyg och rituell magi, och vissa får särskilda uppdrag som spioner eller lönnmördare när naturens fiender är för farliga att möta öppet.\n\nDe är inte en armé och inte en kyrka. De är ögonen i skogen, viskningen i vinden, pilen som kommer från ingenstans när rovdjuren blir för fräcka.",
+    "npcs": [],
+    "places": [],
+    "events": []
+  },
+  {
+    "id": "folkets_vilja",
+    "name": "Folkets vilja",
+    "aliases": ["CyansWrath", "Cult of the Dragon"],
+    "motto": "Frihet genom styrka",
+    "symbol": "🐉",
+    "status": "hostile",
+    "desc": "På ytan en folkrörelse som påstår sig vilja krossa de rika och hjälpa de svaga. Slagordet 'Frihet genom styrka' upprepas av fotsoldaterna, och pamfletten 'Folkets vilja' delas ut för att rekrytera missnöjda.\n\nUnder ytan är det en drakdyrkande kult som samarbetar med en blå drake och hennes halvdrake-vasall Cyanwrath. Manifestet 'Folkets vilja' är en rökridå – skickligt skriven av någon med utbildning för att manipulera fotsoldater. Den avryckta delen av pergamentet döljer kultens sanna, drakdyrkande ledare.\n\nFalangen kallas CyansWrath efter halvdraken som leder den. De plundrar Greenfields i drakens tjänst, brände Greenest, försökte slakta byborna i Chaunteas tempel och utmanade till slut keepets bästa kämpe på en duell på liv och död.",
+    "npcs": ["Cyanwrath"],
+    "places": ["greenest", "kultlagret"],
+    "events": [
+      {
+        "session": 1,
+        "title": "Slakten i Greenest",
+        "text": "Banditer och kobolder i drakens tjänst stormade Greenest. En blå drake svepte över hustaken och slog blixt mot Gråstensväktarna. Swift-familjen räddades, byborna evakuerades till keepet och templet."
+      },
+      {
+        "session": 2,
+        "title": "Belägringen av Chaunteas tempel",
+        "text": "Kultens befälhavare Dragonclaw försökte slakta sextio bybor i templet. Föll för Haldans rankor och Cedrics flammor på mittgången."
+      },
+      {
+        "session": 3,
+        "title": "Kvarnens fälla",
+        "text": "Vit rök från kvarnen var en lockfälla för att dra ut keepets försvarare. Haldan läste tecknen, gruppen bet inte."
+      },
+      {
+        "session": 4,
+        "title": "Bakhållet vid sidoporten",
+        "text": "En CyansWrath-riddare med två bomber, eskorterad av kobolder på jätteödlor, försökte spränga keepets sidoport. Föll för Haldans pil. Bomberna kastades undan."
+      },
+      {
+        "session": 4,
+        "title": "Pergamentet 'Folkets vilja'",
+        "text": "Det avryckta manifestet hittades på en tillfångatagen raider. Avslöjar rörelsens fasad – och döljer dess drakdyrkande ledare."
+      },
+      {
+        "session": 4,
+        "title": "Cyanwraths utmaning",
+        "text": "Halvdraken klev fram inom hörhåll från keepet och utmanade dess bästa kämpe på duell på liv och död."
+      }
+    ]
   }
 ]

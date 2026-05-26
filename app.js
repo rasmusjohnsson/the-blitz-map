@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.2.0';
+const APP_VERSION='2.3.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -215,13 +215,29 @@ function scrollToSession(sid){
 }
 // Senast-uppdaterad: hämta högsta session-id i events-arrayen
 function getLatestSession(events){if(!events||!events.length)return null;let max=-1;events.forEach(e=>{if(typeof e.session==='number'&&e.session>max)max=e.session});return max<0?null:max}
+function renderFactions(){
+  const p=document.getElementById('tab-factions');p.innerHTML='';
+  if(!factions.length){p.innerHTML='<div class="empty-state">Inga faktioner registrerade ännu.</div>';return}
+  const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
+  factions.forEach((f,i)=>{
+    const card=document.createElement('div');
+    card.className='faction-card'+(f.status==='hostile'?' hostile':f.status==='allied'?' allied':'');
+    const lastSess=getLatestSession(f.events);
+    const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senast aktiv: S${lastSess}">S${lastSess}</span>`:'';
+    const sl={allied:'Allierad',hostile:'Fiende',neutral:'Neutral'};
+    const statusChip=f.status?`<span class="faction-status ${f.status}">${sl[f.status]||f.status}</span>`:'';
+    card.innerHTML=`<div class="faction-card-symbol">${f.symbol||'⚜'}</div><div class="faction-card-info"><div class="faction-card-name">${f.name}${updBadge}</div><div class="faction-card-motto">"${f.motto||''}"</div>${statusChip}</div>`;
+    card.onclick=()=>showFactionDetail(f);
+    p.appendChild(card);
+  });
+}
 function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
 
 // ===== TABS =====
 document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{if(recapActive)exitRecapMode();document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active');scheduleSave()})});
 
 // ===== SEARCH =====
-function buildSearchIndex(){const idx=[];locations.forEach(l=>idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id}));characters.forEach(c=>idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)}));npcsData.forEach(n=>idx.push({type:'NPC',name:n.name,desc:n.desc,action:()=>showNPCDetail(n)}));sessions.forEach(s=>s.events.forEach(ev=>idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})));return idx}
+function buildSearchIndex(){const idx=[];locations.forEach(l=>idx.push({type:'Plats',name:l.name,action:()=>showLocation(l),locId:l.id}));characters.forEach(c=>idx.push({type:'Karaktär',name:c.name,action:()=>showCharacterDetail(c)}));npcsData.forEach(n=>idx.push({type:'NPC',name:n.name,desc:n.desc,action:()=>showNPCDetail(n)}));factions.forEach(f=>idx.push({type:'Faktion',name:f.name,desc:f.desc,action:()=>showFactionDetail(f)}));sessions.forEach(s=>s.events.forEach(ev=>idx.push({type:'Händelse',name:ev.title,action:()=>showTimelineDetail(ev),places:ev.places})));return idx}
 let searchIndex=[];
 function normalize(s){return s.toLowerCase().replace(/[åä]/g,'a').replace(/[ö]/g,'o')}
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
@@ -495,7 +511,51 @@ function linkifyReferences(text){
 }
 // Backwards compat alias - all existing calls now get full linkification
 const linkifyFactions=linkifyReferences;
-function showFactionDetail(f){document.getElementById('factionTitle').textContent=f.name;document.getElementById('factionMotto').textContent=f.motto||'';document.getElementById('factionSymbol').textContent=f.symbol||'⚜';let h=`<div>${f.desc}</div>`;const members=characters.filter(c=>c.org===f.name);if(members.length){h+='<div class="faction-members"><h3>MEDLEMMAR I GRÅSTENSVÄKTARNA</h3>';members.forEach(m=>{h+=`<span class="faction-member-chip" onclick="closePopup();setTimeout(()=>showCharacterDetail(characters.find(c=>c.id==='${m.id}')),100)">⚔️ ${m.name}</span>`});h+='</div>'}document.getElementById('factionBody').innerHTML=h;document.getElementById('overlay').classList.add('active');document.getElementById('factionDetailPopup').classList.add('active')}
+function showFactionDetail(f){
+  document.getElementById('factionTitle').textContent=f.name;
+  document.getElementById('factionMotto').textContent=f.motto?'"'+f.motto+'"':'';
+  document.getElementById('factionSymbol').textContent=f.symbol||'⚜';
+  let h=`<div class="faction-desc">${linkifyFactions(f.desc||'')}</div>`;
+  // Members from PC-roster
+  const members=characters.filter(c=>c.org===f.name);
+  if(members.length){
+    h+='<div class="faction-section"><h3>MEDLEMMAR I GRÅSTENSVÄKTARNA</h3><div class="chip-row">';
+    members.forEach(m=>{h+=`<span class="faction-member-chip" onclick="closePopup();setTimeout(()=>showCharacterDetail(characters.find(c=>c.id==='${m.id}')),100)">⚔️ ${m.name}</span>`});
+    h+='</div></div>';
+  }
+  // NPCs
+  if(f.npcs&&f.npcs.length){
+    h+='<div class="faction-section"><h3>KÄNDA NPC:ER</h3><div class="chip-row">';
+    f.npcs.forEach(name=>{
+      const npc=npcsData.find(n=>n.name===name);
+      if(npc){const cls=npc.status==='hostile'?'event-npc-chip hostile':'event-npc-chip';h+=`<span class="${cls}" onclick="closePopup();setTimeout(()=>showNPCDetail(npcsData.find(n=>n.name==='${name.replace(/'/g,"\\'")}')),100)">👤 ${name}</span>`}
+      else h+=`<span class="event-npc-chip unknown">👤 ${name}</span>`;
+    });
+    h+='</div></div>';
+  }
+  // Places
+  if(f.places&&f.places.length){
+    h+='<div class="faction-section"><h3>PLATSER</h3><ul class="ref-list">';
+    f.places.forEach(pid=>{
+      const loc=locations.find(l=>l.id===pid);
+      if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`;
+    });
+    h+='</ul></div>';
+  }
+  // Session events
+  if(f.events&&f.events.length){
+    h+='<div class="faction-section"><h3>HÄNDELSER PER SESSION</h3>';
+    f.events.forEach(ev=>{
+      const sess=ev.session!==undefined?sessions.find(s=>s.id===ev.session):null;
+      const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';
+      h+=`<div class="pe-item"><div class="pe-label">${ev.title}</div>${sl}<div class="pe-text">${linkifyFactions(ev.text||'')}</div></div>`;
+    });
+    h+='</div>';
+  }
+  document.getElementById('factionBody').innerHTML=h;
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('factionDetailPopup').classList.add('active');
+}
 
 // ===== PAN & ZOOM (mouse + touch) =====
 let scale=1,panX=0,panY=0,isDragging=false,dragSX,dragSY;
@@ -670,7 +730,7 @@ async function init(){
   }
   validateData();
   searchIndex=buildSearchIndex();
-  renderCharacters();renderNPCs();renderTimeline();renderMarkers();populateSessionFilter();
+  renderCharacters();renderNPCs();renderFactions();renderTimeline();renderMarkers();populateSessionFilter();
   document.getElementById('recapBtn').addEventListener('click',toggleRecapMode);
   // Restore saved state or default to fit-map-to-view
   const saved=loadUIState();

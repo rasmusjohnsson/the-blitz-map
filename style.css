@@ -332,6 +332,25 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .updated-badge{display:inline-block;margin-left:6px;font-family:var(--font);font-size:7px;background:rgba(160,136,88,.2);color:#c4a868;padding:1px 5px;border-radius:3px;letter-spacing:.5px;vertical-align:middle;border:1px solid rgba(160,136,88,.4)}
 .updated-badge.fresh{background:rgba(255,215,0,.18);color:#ffd700;border-color:rgba(255,215,0,.5);box-shadow:0 0 6px rgba(255,215,0,.25);animation:pulseFresh 2.4s ease-in-out infinite}
 @keyframes pulseFresh{0%,100%{box-shadow:0 0 4px rgba(255,215,0,.2)}50%{box-shadow:0 0 10px rgba(255,215,0,.45)}}
+/* ===== Faktion-flikens kort ===== */
+.faction-card{display:flex;align-items:center;gap:12px;padding:14px 12px;background:rgba(255,215,0,.04);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;cursor:pointer;transition:all .15s}
+.faction-card:hover{background:rgba(255,215,0,.1);transform:translateX(3px);box-shadow:0 0 10px rgba(255,215,0,.2)}
+.faction-card.hostile{border-color:rgba(200,60,60,.5);background:rgba(200,60,60,.06)}
+.faction-card.hostile:hover{background:rgba(200,60,60,.14);box-shadow:0 0 10px rgba(200,60,60,.25)}
+.faction-card.allied{border-color:rgba(96,200,120,.4);background:rgba(96,200,120,.05)}
+.faction-card.allied:hover{background:rgba(96,200,120,.12);box-shadow:0 0 10px rgba(96,200,120,.2)}
+.faction-card-symbol{font-size:32px;flex:0 0 44px;text-align:center;filter:drop-shadow(0 0 6px rgba(255,215,0,.4))}
+.faction-card-info{flex:1;min-width:0}
+.faction-card-name{font-family:var(--font);font-size:11px;color:#ffd700;letter-spacing:1.2px;margin-bottom:4px}
+.faction-card-motto{font-family:var(--font);font-size:8px;color:#a08858;font-style:italic;margin-bottom:6px;letter-spacing:.5px}
+.faction-status{display:inline-block;font-family:var(--font);font-size:7px;padding:2px 7px;border-radius:3px;letter-spacing:1px}
+.faction-status.allied{background:rgba(96,200,120,.15);color:#7fdb9a;border:1px solid rgba(96,200,120,.4)}
+.faction-status.hostile{background:rgba(200,60,60,.18);color:#ff8888;border:1px solid rgba(200,60,60,.5)}
+.faction-status.neutral{background:rgba(160,136,88,.15);color:#c4a878;border:1px solid rgba(160,136,88,.4)}
+.faction-section{margin-top:18px;padding-top:14px;border-top:1px solid var(--border)}
+.faction-section h3{font-family:var(--font);font-size:9px;color:#ffd700;letter-spacing:2px;margin-bottom:10px}
+.faction-desc{white-space:pre-line;line-height:1.55}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px}
 /* ===== Pixel art (loot, dokument, fynd) ===== */
 .pixel-art-wrap{margin:16px auto 8px;padding:14px;background:rgba(196,168,120,.05);border:1px solid rgba(196,168,120,.3);border-radius:6px;text-align:center;max-width:480px}
 .pixel-art-canvas{display:block;margin:0 auto;width:360px;height:240px;max-width:100%;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 4px 12px rgba(0,0,0,.6))}
