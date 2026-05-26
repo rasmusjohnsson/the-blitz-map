@@ -103,7 +103,6 @@
           "greenest"
         ],
         "npcs": [
-          "Raiders",
           "Linan & Cuth Swift"
         ]
       },
@@ -153,10 +152,7 @@
         "places": [
           "greenest"
         ],
-        "npcs": [
-          "Raiders",
-          "Kobolder"
-        ]
+        "npcs": []
       },
       {
         "title": "Belägringen av templet",
@@ -164,10 +160,7 @@
         "places": [
           "greenest"
         ],
-        "npcs": [
-          "Raiders",
-          "Kobolder"
-        ]
+        "npcs": []
       },
       {
         "title": "Bakdörren håller",
@@ -175,10 +168,7 @@
         "places": [
           "greenest"
         ],
-        "npcs": [
-          "Raiders",
-          "Kobolder"
-        ]
+        "npcs": []
       },
       {
         "title": "Återförenade i helgedomen",
@@ -194,10 +184,7 @@
         "places": [
           "greenest"
         ],
-        "npcs": [
-          "Dragonclaw",
-          "Raiders"
-        ]
+        "npcs": []
       },
       {
         "title": "Tillbaka i ravinen",
@@ -225,13 +212,13 @@
         "title": "De dolda morden vid tunneln",
         "recap": "Uppe vid skogsbrynet upptäckte Haldans skarpa Ranger-sinnen två av kultens spejare som precis lokaliserat den dolda tunnelingången under keepet. Haldan släppte en pil från skogsbrynet som fällde den första kultisten där han stod. Innan den andre hann skrika rusade Gothmog fram och högg ner honom i total tystnad. Kropparna släpades in och gömdes i tunnelns mörker. Theron stod kvar vid skogsbrynet och vakade höjden.",
         "places": ["greenest"],
-        "npcs": ["Raiders"]
+        "npcs": []
       },
       {
         "title": "Den vita röken",
         "recap": "Väl tillbaka i keepet för en Short Rest kom oroande nyheter från murarna: vit rök steg från stadens kvarn, inte svart. Haldan läste av tecknen direkt – vit rök betyder fuktigt bränsle. Kulten försökte inte förstöra kvarnen utan riggade en fälla för att locka ut keepets försvarare.",
         "places": ["greenest"],
-        "npcs": ["Raiders"]
+        "npcs": []
       },
       {
         "title": "Sidoportens försvar",
@@ -257,13 +244,13 @@
         "title": "Bakhållet vid sidoporten",
         "recap": "Haldan och Cedric upptäckte en fientlig patrull närma sig keepets sidoport: kobolder ridandes på jätteödlor och en CyansWrath-riddare med två bomber i bälten. Med ett kliniskt skott från långbågen gick Haldans pil rakt genom riddarens hals – han föll utan ett ljud. Gothmog kastade undan den första bomben, Haldan slungade iväg den andra precis innan tändaren slog. Bomben detonerade en bit bort, porten höll, fienderna flydde i panik. Haldan tog en del skada av tryckvågen och elden.",
         "places": ["greenest"],
-        "npcs": ["Raiders", "Kobolder", "Cyanwrath"]
+        "npcs": ["Cyanwrath"]
       },
       {
         "title": "Förhöret i keepet",
         "recap": "Gråstensväktarna släpade en tillfångatagen raider upp i keepet till guvernör Nighthill och Escobert. Gothmog pressade hårt – Cedric tog över och fick fången att tala. Han avslöjade sig som medlem i en grupp som kallar sig CyansWrath och hävdade att deras ideologi handlar om att krossa de rika och hjälpa de svaga under slagordet 'Frihet genom styrka'. Haldan noterade direkt motsägelsen: drakar bryr sig inte om mänsklig ideologi – samarbetet med en blå drake avslöjar bedrägeriet.",
         "places": ["greenest"],
-        "npcs": ["Tarbaw Nighthill", "Escobert the Red", "Raiders"]
+        "npcs": ["Tarbaw Nighthill", "Escobert the Red"]
       },
       {
         "title": "Folkets vilja",
@@ -276,7 +263,7 @@
         "title": "Frihet genom styrka",
         "recap": "Gothmog tog fången och slängde ut honom på borggården till pöbeln med orden 'han är er att döma' – och upprepade kultens slagord 'Frihet genom styrka'. Byborna tog hand om fången. En lynchning. Viskningar och oro spred sig genom borggården. Haldan backade undan och lät det ske – fokus på nästa steg.",
         "places": ["greenest"],
-        "npcs": ["Raiders"]
+        "npcs": []
       },
       {
         "title": "Hästskoplatån",

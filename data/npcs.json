@@ -85,64 +85,6 @@
     ]
   },
   {
-    "id": "raiders",
-    "name": "Raiders",
-    "status": "hostile",
-    "role": "Plundrare – Cult of the Dragon",
-    "desc": "Banditer och kultister som härjar Greenfields under drakattacken. Bär koboldhäger som muskelstöd och drakemblem på rustningen. Plundrar, bränner och slaktar i kultens tjänst.",
-    "events": [
-      {
-        "label": "Slakten i Greenest",
-        "text": "Besegrades av Theron, Haldan och Gothmog medan de försökte slakta Swift-familjen.",
-        "session": 1
-      },
-      {
-        "label": "Belägringen av Chaunteas tempel",
-        "text": "Försökte storma templet där sextio bybor sökt skydd. Föll för Cedrics dolkvirvel vid bakdörren och Therons klinga på mittgången.",
-        "session": 2
-      },
-      {
-        "label": "Spejare vid tunneln",
-        "text": "Två kultspejare lokaliserade keepets hemliga tunnelingång. Den första föll för Haldans pil från skogsbrynet, den andre högg Gothmog ner innan han hann skrika. Theron vakade höjden.",
-        "session": 3
-      },
-      {
-        "label": "Kvarnens fälla",
-        "text": "Tände vit rök vid stadens kvarn för att locka ut keepets försvarare. Fällan avslöjades av Haldans naturkunskap och Cedrics vaksamhet – Gråstensväktarna bet aldrig på betet.",
-        "session": 3
-      },
-      {
-        "label": "CyansWrath-riddaren faller",
-        "text": "En riddare i CyansWraths färger ledde patrullen mot keepets sidoport med två bomber i bälten. Haldans pil gick rakt genom hans hals – han föll utan ett ljud. Resterande raiders flydde i panik när bomberna kastades undan av Gothmog och Haldan.",
-        "session": 4
-      },
-      {
-        "label": "Förhöret och lynchningen",
-        "text": "En raider togs som fånge och pressades på information i keepet. Avslöjade tillhörigheten till CyansWrath, slagordet 'Frihet genom styrka' och lägrets position på en hästskoformad platå. Kastades sen ut till pöbeln på borggården av Gothmog och möttes av en lynchning.",
-        "session": 4
-      }
-    ]
-  },
-  {
-    "id": "kobolder",
-    "name": "Kobolder",
-    "status": "hostile",
-    "role": "Drakkultens fotsoldater",
-    "desc": "Små skälvande reptilvarelser med gula blanka ögon och drakemblem på sina lappade rustningar. Strömmar i flockar genom Greenfields i kultens tjänst – hänsynslösa, men föga intelligenta.",
-    "events": [
-      {
-        "label": "Belägringen av templet",
-        "text": "Kastade facklor mot Chaunteas tempels bakdörr och föll snabbt för Gråstensväktarnas klingor.",
-        "session": 2
-      },
-      {
-        "label": "Jätteödle-kavalleriet",
-        "text": "Kobolder ridandes på jätteödlor eskorterade CyansWrath-riddaren mot keepets sidoport. Flydde i panik när riddaren föll för Haldans pil och bomberna kastades undan.",
-        "session": 4
-      }
-    ]
-  },
-  {
     "id": "cyanwrath",
     "name": "Cyanwrath",
     "aliases": ["Langdedrosa Cyanwrath", "blå halvdrake"],
@@ -157,18 +99,5 @@
       }
     ]
   },
-  {
-    "id": "dragonclaw",
-    "name": "Dragonclaw",
-    "status": "hostile",
-    "role": "Drakkultens befälhavare",
-    "desc": "En bjässe i drakhuvad rustning som ledde slakten av Greenest. Stark, blodtörstig och hängiven kulten. Hans dödsskri ekar fortfarande mellan templets pelare.",
-    "events": [
-      {
-        "label": "Templets mittgång",
-        "text": "Snärjdes av Haldans rankor och brann ihjäl i Cedrics flammor inne i Chaunteas tempel.",
-        "session": 2
-      }
-    ]
   }
 ]
