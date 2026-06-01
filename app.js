@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.3.0';
+const APP_VERSION='2.4.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -97,6 +97,52 @@ swift:()=>{c.fillStyle='#dbb89a';c.fillRect(2,4,5,4);c.fillStyle='#6a4020';c.fil
 bluedragon:()=>{c.fillStyle='#d0d0d0';c.fillRect(3,0,1,2);c.fillRect(12,0,1,2);c.fillStyle='#b0b0b0';c.fillRect(4,1,1,1);c.fillRect(11,1,1,1);c.fillStyle='#3060b0';c.fillRect(3,2,10,8);c.fillStyle='#4080d0';c.fillRect(4,3,8,2);c.fillStyle='#1a3a7a';c.fillRect(3,8,10,2);c.fillStyle='#ffcc00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#ff6600';c.fillRect(5,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#000';c.fillRect(6,6,1,1);c.fillRect(10,6,1,1);c.fillStyle='#2050a0';c.fillRect(5,10,6,3);c.fillStyle='#1a3a7a';c.fillRect(6,11,4,1);c.fillStyle='#e0e0c0';c.fillRect(6,13,1,2);c.fillRect(8,13,1,2);c.fillRect(10,13,1,2);c.fillStyle='#2050a0';c.fillRect(4,14,8,2);c.fillStyle='#1a3a7a';c.fillRect(5,15,6,1);c.fillStyle='#ffff00';c.fillRect(0,3,1,1);c.fillRect(1,5,1,1);c.fillRect(15,3,1,1);c.fillRect(14,5,1,1)},
 raiders:()=>{c.fillStyle='#2a2a3a';c.fillRect(3,1,10,6);c.fillRect(4,7,8,2);c.fillStyle='#1a1a2a';c.fillRect(5,4,6,4);c.fillStyle='#ff4a4a';c.fillRect(6,5,2,1);c.fillRect(9,5,2,1);c.fillStyle='#a0302a';c.fillRect(7,7,2,1);c.fillStyle='#3a2a1a';c.fillRect(3,10,10,6);c.fillStyle='#2a1a0a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#8a8a9a';c.fillRect(13,5,2,4);c.fillStyle='#4a3a2a';c.fillRect(12,9,3,1);c.fillStyle='#c0c0c0';c.fillRect(7,12,2,2)},
 kobolder:()=>{c.fillStyle='#6a4030';c.fillRect(4,3,8,5);c.fillRect(3,5,10,2);c.fillStyle='#8a5040';c.fillRect(5,4,6,1);c.fillStyle='#3a2010';c.fillRect(3,7,1,1);c.fillRect(12,7,1,1);c.fillStyle='#3a1808';c.fillRect(4,2,1,2);c.fillRect(11,2,1,2);c.fillRect(5,1,1,2);c.fillRect(10,1,1,2);c.fillStyle='#ffaa00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#000';c.fillRect(6,5,1,2);c.fillRect(10,5,1,2);c.fillStyle='#5a3020';c.fillRect(6,8,4,2);c.fillStyle='#fff';c.fillRect(6,9,1,1);c.fillRect(8,9,1,1);c.fillRect(9,9,1,1);c.fillStyle='#5a4a3a';c.fillRect(3,10,10,6);c.fillStyle='#3a2a1a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#a02020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#8a6a3a';c.fillRect(14,3,1,11);c.fillStyle='#9a9aaa';c.fillRect(13,2,3,2)},
+cyanwrath:()=>{
+// blue-grey half-dragon head + armor
+c.fillStyle='#3a5a8a';c.fillRect(4,1,8,9); // head/face
+c.fillStyle='#2a4a7a';c.fillRect(4,1,8,1);c.fillRect(4,9,8,1); // shading
+// horns
+c.fillStyle='#1a2a4a';c.fillRect(3,0,2,3);c.fillRect(11,0,2,3);c.fillRect(2,1,1,1);c.fillRect(13,1,1,1);
+// snout
+c.fillStyle='#3a5a8a';c.fillRect(6,8,4,2);c.fillStyle='#1a3a6a';c.fillRect(6,9,4,1);
+// fierce eyes
+c.fillStyle='#ffcc00';c.fillRect(5,4,2,2);c.fillRect(9,4,2,2);
+c.fillStyle='#cc4400';c.fillRect(5,4,1,1);c.fillRect(9,4,1,1);
+c.fillStyle='#000';c.fillRect(6,5,1,1);c.fillRect(10,5,1,1);
+// nostrils
+c.fillStyle='#1a1a2a';c.fillRect(7,8,1,1);c.fillRect(8,8,1,1);
+// teeth/fangs
+c.fillStyle='#e0e0c0';c.fillRect(6,9,1,1);c.fillRect(9,9,1,1);
+// dragon armor - blue scales
+c.fillStyle='#1a3a6a';c.fillRect(3,10,10,6);
+c.fillStyle='#2a4a7a';c.fillRect(4,11,8,1);c.fillRect(4,13,8,1);
+// chestplate emblem (cyan crest)
+c.fillStyle='#5aaaff';c.fillRect(7,12,2,2);c.fillStyle='#90d0ff';c.fillRect(7,12,2,1);
+// spikes on shoulders
+c.fillStyle='#1a2a4a';c.fillRect(2,10,1,3);c.fillRect(13,10,1,3);
+// scratched/static glow
+c.fillStyle='#aaccff';c.fillRect(4,1,1,1);c.fillRect(11,2,1,1);c.fillRect(14,8,1,1);c.fillRect(1,5,1,1);
+},
+mok:()=>{
+// Raven: black body, eye, beak, feet
+c.fillStyle='#1a1a1a';c.fillRect(3,4,10,8);c.fillRect(4,3,8,1);c.fillRect(2,6,1,4);c.fillRect(13,6,1,4);
+// wing shading
+c.fillStyle='#2a2a2a';c.fillRect(5,5,3,5);c.fillRect(9,5,3,5);
+// head
+c.fillStyle='#1a1a1a';c.fillRect(5,2,6,3);
+// beak
+c.fillStyle='#3a2a1a';c.fillRect(11,4,3,1);c.fillRect(12,5,2,1);
+// eye
+c.fillStyle='#ffd700';c.fillRect(8,4,1,1);
+c.fillStyle='#000';c.fillRect(8,4,1,1); // overlay - just for darker dot
+c.fillStyle='#ffaa00';c.fillRect(8,4,1,1);
+// feet/perch
+c.fillStyle='#3a2a1a';c.fillRect(6,12,1,2);c.fillRect(9,12,1,2);
+// glints on feathers
+c.fillStyle='#4a4a5a';c.fillRect(4,5,1,1);c.fillRect(10,4,1,1);c.fillRect(6,9,1,1);
+// tail
+c.fillStyle='#1a1a1a';c.fillRect(1,8,2,3);c.fillStyle='#2a2a2a';c.fillRect(0,9,1,2);
+},
 dragonclaw:()=>{c.fillStyle='#8a1010';c.fillRect(3,0,1,3);c.fillRect(12,0,1,3);c.fillRect(4,1,1,2);c.fillRect(11,1,1,2);c.fillStyle='#5a0808';c.fillRect(3,3,10,7);c.fillStyle='#7a1010';c.fillRect(4,4,8,2);c.fillStyle='#2a0404';c.fillRect(3,9,10,1);c.fillStyle='#ff6020';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#ffff00';c.fillRect(5,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#000';c.fillRect(6,6,1,1);c.fillRect(10,6,1,1);c.fillStyle='#fff';c.fillRect(5,8,1,2);c.fillRect(7,8,1,2);c.fillRect(9,8,1,2);c.fillRect(11,8,1,2);c.fillStyle='#3a1010';c.fillRect(6,8,1,1);c.fillRect(8,8,1,1);c.fillRect(10,8,1,1);c.fillStyle='#3a3a4a';c.fillRect(2,10,12,6);c.fillStyle='#2a2a3a';c.fillRect(3,11,10,1);c.fillRect(3,13,10,1);c.fillStyle='#ff6020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#5a0808';c.fillRect(1,11,2,3);c.fillRect(13,11,2,3);c.fillStyle='#3a0404';c.fillRect(0,12,1,2);c.fillRect(15,12,1,2)}
 };if(P[id])P[id]();else{c.fillStyle='#3a3a5a';c.fillRect(4,3,8,8);c.fillStyle='#6a6a8a';c.fillRect(5,4,6,4);c.fillStyle='#8080a0';c.fillRect(6,6,1,1);c.fillRect(9,6,1,1);c.fillStyle='#2a2a4a';c.fillRect(3,11,10,5);c.fillStyle='#8080a0';c.fillRect(7,5,2,1)}}
 
@@ -173,7 +219,7 @@ if(currentSessionFilter!=='all'){
 }
 if(!displayNpcs.length){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='Inga NPC:er påträffade i denna session.';p.appendChild(empty);return}
 const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
-displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
+displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='captured'?'⛓️':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
 function formatSessionDate(d){if(!d)return'';try{const dt=new Date(d);const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];return dt.getDate()+' '+m[dt.getMonth()]+' '+dt.getFullYear();}catch(e){return d}}
 function renderTimeline(){
   const p=document.getElementById('tab-history');p.innerHTML='';
@@ -458,7 +504,7 @@ function showCharacterDetail(ch){
   document.getElementById('overlay').classList.add('active');
   document.getElementById('charDetailPopup').classList.add('active');
 }
-function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;document.getElementById('npcDetailRoleLabel').textContent=n.role||'';const pp=document.getElementById('npcDetailPortrait');pp.innerHTML='';const pcv=document.createElement('canvas');pp.appendChild(pcv);drawNpcPortrait(pcv,n.id);const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${linkifyFactions(n.desc)}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{const sess=e.session!==undefined?sessions.find(s=>s.id===e.session):null;const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${sl}<div class="pe-text">${linkifyFactions(e.text)}</div></div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
+function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;document.getElementById('npcDetailRoleLabel').textContent=n.role||'';const pp=document.getElementById('npcDetailPortrait');pp.innerHTML='';const pcv=document.createElement('canvas');pp.appendChild(pcv);drawNpcPortrait(pcv,n.id);const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${linkifyFactions(n.desc)}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{const sess=e.session!==undefined?sessions.find(s=>s.id===e.session):null;const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${sl}<div class="pe-text">${linkifyFactions(e.text)}</div></div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';b.innerHTML=`<div class="recap">${linkifyFactions(ev.recap)}</div>${artHtml}`;activatePixelArtCanvases(b);if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}

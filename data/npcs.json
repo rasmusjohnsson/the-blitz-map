@@ -3,9 +3,9 @@
     "id": "nighthill",
     "name": "Tarbaw Nighthill",
     "aliases": ["Nighthill"],
-    "status": "friendly",
-    "role": "Guvernör av Greenest",
-    "desc": "Greenests äldre och väderbitne guvernör. Satt i belägring i Greenest Keep när draken och raiders attackerade byn. Bad Gråstensväktarna om hjälp att rädda bybor genom en hemlig tunnel.",
+    "status": "captured",
+    "role": "Tillfångatagen guvernör av Greenest",
+    "desc": "Greenests äldre och väderbitne guvernör. Satt i belägring i Greenest Keep när draken och raiders attackerade byn. Bad Gråstensväktarna om hjälp att rädda bybor genom en hemlig tunnel. Efter Gothmogs förlust mot Cyanwrath i session 5 tvingades Greenest överlämna honom till kulten som duellens pris – nu i Folkets viljas händer, troligen vid Hästskoplatån.",
     "events": [
       {
         "label": "Belägringen av Greenest",
@@ -21,6 +21,11 @@
         "label": "Pergamentet i hand",
         "text": "Mottog det avryckta pergamentet 'Folkets vilja' och Gråstensväktarnas analys: en rökridå avsedd att manipulera fotsoldater. Inser nu att fienden inte är en folkrörelse utan en drakdyrkande kult som gömmer sig bakom ideologi.",
         "session": 4
+      },
+      {
+        "label": "Överlämnad till kulten",
+        "text": "När Gothmog förlorade duellen mot Cyanwrath stod villkoret kvar: guvernören skulle överlämnas. Tarbaw kliver ut från keepet utan att tveka – ansiktet stelt, blicken stadig. Tas till Hästskoplatån som Folkets viljas fånge. Gråstensväktarna måste nu rädda honom innan kultens ledare avslöjar varför han egentligen togs.",
+        "session": 5
       }
     ]
   },
@@ -51,6 +56,11 @@
         "label": "Tjärtunnan bevisar sig",
         "text": "Sidoporten klarade sig under bakhållet i session 4 – fienden hann aldrig nära porten innan deras egen bomb detonerade och de flydde. Escoberts oro var berättigad och Gråstensväktarnas tjärtunna stod redo om de hade kommit längre.",
         "session": 4
+      },
+      {
+        "label": "Tackoffret bakom murarna",
+        "text": "När Gråstensväktarna vilade i keepet efter Gothmogs förlust kom Escobert med 200 guldmynt – ett tack från Greenest för de sextio bybor de räddat ur Chaunteas tempel. En tung gest medan staden sörjde sin guvernör. Står kvar som kastellan och försöker hålla ihop det som finns kvar.",
+        "session": 5
       }
     ]
   },
@@ -85,6 +95,21 @@
     ]
   },
   {
+    "id": "mok",
+    "name": "Mok",
+    "aliases": ["Moks"],
+    "status": "friendly",
+    "role": "Haldans korp · familjär",
+    "desc": "En slank, svartblänkande korp med kvicka ögon och en näbb skarp som en kniv. Haldans familjär och förlängda sinnen i luften – tränad av Emerald Enclave att flyga i tyst formation och rapportera tillbaka. Genom Delade Sinnen kan Haldan se genom Moks ögon och kartlägga vad ingen marknära spejare kommer åt.",
+    "events": [
+      {
+        "label": "Moks ögon över Hästskoplatån",
+        "text": "Steg upp i kvällsluften över kultens läger och kartlade platån från ovan. Spanade in vagnar med Greenests stulna skatter, fångar uppbundna på pålar längre in, och ett läger utan fasta vaktlinjer – oorganiserat, sårbart. Rapporterade tillbaka till Haldan via Delade Sinnen.",
+        "session": 5
+      }
+    ]
+  },
+  {
     "id": "cyanwrath",
     "name": "Cyanwrath",
     "aliases": ["Langdedrosa Cyanwrath", "blå halvdrake"],
@@ -96,6 +121,11 @@
         "label": "Utmaningen vid keepets portar",
         "text": "Klev fram inom hörhåll från keepet och utmanade keepets bästa kämpe på duell. Vinner Greenests försvarare lämnar kulten byn – förlorar de tar de guvernören. Talade om gisslan men Gråstensväktarna har inte sett dem med egna ögon.",
         "session": 4
+      },
+      {
+        "label": "Duellens seger",
+        "text": "Mötte Gothmog i envig framför keepets portar och fällde honom blödande till marken. Vände sig om och tog Tarbaw Nighthill som sitt pris utan ett ord. Försvann mot Hästskoplatån med Greenests guvernör i sitt grepp.",
+        "session": 5
       }
     ]
   }

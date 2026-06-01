@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Moks ögon över platån",
+        "text": "När Gothmog föll och guvernören lämnades över höll jag tyst – det fanns inget mer att säga. Vi vilade bakom murarna, läkte våra sår, och när nattens skuggor föll drog vi på oss kult-kåporna. Vid Hästskoplatåns rand släppte jag upp Mok. Genom Delade Sinnen lät jag hans ögon bli mina. Vagnar fulla av Greenests stulna skatter, fångar uppbundna vid pålar längre in, och – det viktigaste – inga vaktlinjer. Folkets vilja är en flock, inte en armé. Vi vet hur vi tar oss in.",
+        "session": 5
+      },
+      {
         "label": "Pilen genom halsen",
         "text": "Upptäckte patrullen från skogsbrynet tillsammans med Cedric: kobolder på jätteödlor och en CyansWrath-riddare med två bomber. Sänkte rösten, spände långbågen, släppte ett kliniskt skott rakt genom riddarens hals – han dog ljudlöst. När bomberna föll slungade jag den andra precis innan tändaren slog. Tryckvågen och elden bet i mig men porten höll. Senare i keepet analyserade jag det avryckta pergamentet: 'Folkets vilja' är en rökridå, kulten gömmer sig bakom ideologin. Drakar bryr sig inte om människors politik – det är beviset.",
         "session": 4
@@ -73,6 +78,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Eden som svek",
+        "text": "Stod på muren när Gothmog klev ut för att möta Cyanwrath. Min hand låg på svärdsfästet – kanske skulle det varit jag. Watcher's Eye läste striden: halvdraken var för stark. Gothmog föll. Tarbaw Nighthill överlämnades. Order of the Gauntlet svär att skydda de svaga – och vi misslyckades med en av Greenests egna. I keepets stillhet vilade vi och svor en tyst ed: vi får tillbaka honom. Kåporna lades över axlarna och vi gick mot Hästskoplatån.",
+        "session": 5
+      },
+      {
         "label": "Inför Cyanwrath",
         "text": "Höll keepets murar med Oweyn medan Haldan, Cedric och Gothmog hanterade bakhållet vid sidoporten och förhöret. Stod på borggården när byborna lynchade fången – och stod på murarna när en blå halvdrake klev fram ur natten inom hörhåll och utmanade keepets bästa kämpe på duell. Han talade om gisslan men ingen av oss har sett dem. Watcher's Eye läste hans avsikt: han kom inte för att lura. Han kom för att slakta.",
         "session": 4
@@ -126,6 +136,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Kåpa över vapenbrodern",
+        "text": "Såg Gothmog falla framför keepets portar. Bar honom in tillsammans med Theron, tryckte mot såren tills blödningarna stannade. När Tarbaw kliver ut till Cyanwrath fanns ingenting jag kunde göra. Escobert räckte oss 200 guld – tyst, allvarsam. Efter vilan drog jag kåpan över axlarna som de andra. Det är konstigt att klä sig i fiendens färger. Men om det får oss in i lägret räcker det.",
+        "session": 5
+      },
+      {
         "label": "Murarnas väktare",
         "text": "Höll keepets murar tillsammans med Theron under bakhållet vid sidoporten. När fången släpades upp för förhör backade jag undan och lät Cedric och Gothmog göra grovjobbet – jag bevittnade lynchningen från avstånd. När Cyanwrath klev fram inom hörhåll och utmanade keepets bästa kämpe kände jag näven knytas runt fästet på mitt vapen. Han talade om gisslan men ingen av oss har sett dem. Order of the Gauntlet svär att skydda de svaga – och nu står en av oss inför ett val: kliva fram som keepets kämpe.",
         "session": 4
@@ -178,6 +193,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Halvdrakens stål",
+        "text": "Klev ut som keepets kämpe. Inte för att jag trodde jag skulle vinna – för att någon var tvungen. Cyanwraths slag var som åskviggar genom rustningen. Mina runor brann men hans stål brann mer. Jag föll i mitt eget blod framför portarna och såg Tarbaw kliva ut till halvdraken med stadig blick. Bakom murarna tog jag emot en Long Rest, mina vänner runt mig. Runorna säger: jag är inte den jag försökte vara, men inte heller den jag vägrar bli. Nu går vi mot Hästskoplatån i kåpor – inte som jätte, utan som skugga.",
+        "session": 5
+      },
       {
         "label": "Frihet genom styrka",
         "text": "Kastade bort den första bomben från sidoporten med blotta händerna innan Haldan slungade den andra. Senare i keepet pressade jag fången hårt under förhöret – brytningen kom när Cedric tog över med tålamod. När informationen var pressad ur honom bar jag ut honom på borggården och slängde honom till pöbeln med orden 'han är er att döma'. Upprepade hans eget slagord tillbaka mot honom: 'Frihet genom styrka'. Byborna gjorde resten. En del kallar det rättvisa, andra mord. Runorna i min hud säger: jag valde vem jag vägrar bli.",
@@ -236,6 +256,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Skarpa observationer",
+        "text": "Bevittnade duellen från muren – noterade Cyanwraths kampstil, hur han rörde sig, var hans rustning hade luckor. Information för senare. När Gothmog föll hjälpte jag bära in honom, viskade besvärjelser för att stabilisera blödningen. Tog en Long Rest i keepet och studerade kåporna noggrant innan vi tog på oss dem – fästena, symbolerna, hur de hängde. Detalj är skillnaden mellan att smälta in och att bli avslöjad. Vid platåns rand stod jag tyst medan Haldan såg genom Moks ögon. Den blå draken är där någonstans. Vi ska hitta henne.",
+        "session": 5
+      },
       {
         "label": "Förhörets mästare",
         "text": "Spårade patrullen från skogsbrynet med Haldan – kobolder på jätteödlor och en CyansWrath-riddare med bomber. När Gothmog pressade fången för hårt i keepet tog jag över med tålamodets metod, och informationen rann ur honom: CyansWrath, slagordet, lägret på hästskoplatån. Det avryckta pergamentet 'Folkets vilja' analyserade jag tillsammans med Haldan – välformulerat, utbildat handlag, en rökridå. Den blå draken bryr sig inte om mänsklig politik. Kulten gömmer sig bakom ideologin.",

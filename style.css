@@ -129,6 +129,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .npc-status.hostile{background:#3a1a1a;color:#e04a4a;border:1px solid #6a2a2a}
 .npc-status.neutral{background:#2a2a1a;color:#c0b060;border:1px solid #5a5a2a}
 .npc-status.unknown{background:#1a1a2a;color:#8080a0;border:1px solid #3a3a5a}
+.npc-status.captured{background:#3a2a0a;color:#e0a040;border:1px solid #6a4a1a}
 .empty-state{font-size:11px;color:#4a4a6e;padding:24px;text-align:center;line-height:2}
 .sr-item{padding:12px;margin-bottom:6px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid var(--gold);cursor:pointer;transition:all .15s;font-size:11px;display:flex;align-items:center;gap:10px}
 .sr-item:hover{border-color:var(--gold);background:#1a1a38;color:var(--gold)}

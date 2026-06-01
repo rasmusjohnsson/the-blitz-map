@@ -278,5 +278,49 @@
         "npcs": ["Cyanwrath"]
       }
     ]
+  },
+  {
+    "id": 5,
+    "label": "SESSION 5",
+    "title": "Halvdrakens seger",
+    "date": "2026-06-01",
+    "events": [
+      {
+        "title": "Duellen vid keepet",
+        "recap": "Cyanwraths utmaning besvarades. Gothmog klev fram som keepets kämpe och mötte halvdraken i envig framför portarna. Halvdraken visade sig vara alldeles för stark – Gothmog föll svårt skadad till marken, blödande men levande. Duellen var förlorad.",
+        "places": ["greenest"],
+        "npcs": ["Cyanwrath"]
+      },
+      {
+        "title": "Guvernören överlämnas",
+        "recap": "Förlusten band Greenest till villkoret. Tarbaw Nighthill steg ut från keepet utan att tveka och överlämnades till Cyanwrath och Folkets vilja. Halvdraken försvann i natten med sin gisslan – vägen ledde mot Hästskoplatån. Greenest hade förlorat sin guvernör men höll fortfarande sina murar.",
+        "places": ["greenest"],
+        "npcs": ["Tarbaw Nighthill", "Cyanwrath"]
+      },
+      {
+        "title": "Vila bakom murarna",
+        "recap": "Gråstensväktarna barrikaderade sig inne i fästningen – inte Askhållan denna gång – och tog en Long Rest. Sår läktes, rustningar lagades, tankar samlades. Escobert kom upp med 200 guldmynt som tack för de sextio byborna ni räddat ur Chaunteas tempel. Tyst tacksamhet i en sörjande stad.",
+        "places": ["greenest"],
+        "npcs": ["Escobert the Red"]
+      },
+      {
+        "title": "Beslutet och kåporna",
+        "recap": "Efter vilan fattades beslutet: spåra upp kulten innan guvernören är borta för gott. Gråstensväktarna lämnade keepet och rörde sig mot Hästskoplatån. På vägen tog de på sig kult-kåpor de kommit över – mörka tygveck med drakemblem, perfekt för att smälta in bland CyansWraths egna.",
+        "places": ["greenest", "kultlagret"],
+        "npcs": []
+      },
+      {
+        "title": "Moks ögon",
+        "recap": "Vid platåns rand skickade Haldan upp sin korp Mok i luften. Genom Delade Sinnen såg han genom korpens ögon – platån kartlagd ovanifrån, varje vagn, varje pål, varje vakts position observerad utan att en enda kultmedlem höjde blicken.",
+        "places": ["kultlagret"],
+        "npcs": ["Mok"]
+      },
+      {
+        "title": "Rapporten från ovan",
+        "recap": "Moks ögon rapporterade tillbaka: vagnar och hästar lastade med Greenests stulna skatter, fångar uppbundna på pålar längre in i lägret, och – mest avgörande – ingen organiserad försvarslinje. Lägret är extremt oorganiserat, vakter går utan mönster, ingen perimetervakt. Folkets viljas styrka är numerär, inte disciplin.",
+        "places": ["kultlagret"],
+        "npcs": ["Mok"]
+      }
+    ]
   }
 ]

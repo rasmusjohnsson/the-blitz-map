@@ -139,6 +139,24 @@
     "summary": "Hemstad för Gråstensväktarna. Liten stad i Greenfields vid Uldoon Trail som drabbats av drakeld och kult under Gråstensväktarnas första kampanj. Chaunteas tempel ligger i stadens hjärta.",
     "events": [
       {
+        "title": "Vila bakom murarna",
+        "preview": "Long rest i keepet, 200 guld från Escobert...",
+        "detail": "Gråstensväktarna barrikaderade sig i fästningen efter Gothmogs förlust och tog en Long Rest – inte i Askhållan, utan bakom keepets murar mitt i en sörjande stad. Escobert kom upp med 200 guldmynt som tack för de sextio bybor de räddat ur Chaunteas tempel.",
+        "session": 5
+      },
+      {
+        "title": "Guvernören överlämnas",
+        "preview": "Tarbaw kliver ut till Cyanwrath...",
+        "detail": "Förlusten band Greenest till villkoret. Tarbaw Nighthill steg ut från keepet utan att tveka och överlämnades till Cyanwrath. Halvdraken försvann i natten med sin gisslan mot Hästskoplatån. Greenest hade förlorat sin guvernör men höll fortfarande sina murar.",
+        "session": 5
+      },
+      {
+        "title": "Duellen vid keepet",
+        "preview": "Gothmog föll för halvdraken...",
+        "detail": "Cyanwraths utmaning besvarades. Gothmog klev fram som keepets kämpe och mötte halvdraken i envig framför portarna. Halvdraken visade sig vara alldeles för stark – Gothmog föll svårt skadad till marken, blödande men levande. Duellen var förlorad och kulten krävde sitt pris.",
+        "session": 5
+      },
+      {
         "title": "Cyanwraths utmaning",
         "preview": "Blå halvdrake inom hörhåll från keepet...",
         "detail": "En blå halvdrake klev fram inom hörhåll från Greenest Keeps portar och presenterade sig som Cyanwrath. Han utmanade keepets bästa kämpe på en duell på liv och död – vinner försvararen lämnar kulten byn, förlorar han faller guvernören i kultens händer. Han talade om gisslan men ingen i keepet har sett dem.",
@@ -320,9 +338,41 @@
     "name": "Hästskoplatån",
     "x": 1580,
     "y": 1218,
-    "visited": false,
-    "summary": "Kultens dolda läger på en hästskoformad platå någonstans i Greenfields. Position pressad fram under förhöret i session 4. Här tros den blå draken och CyansWraths befälhavare hålla till mellan attackerna.",
+    "visited": true,
+    "summary": "Kultens dolda läger på en hästskoformad platå i Greenfields. Folkets viljas operativa bas där den blå draken och Cyanwrath håller till mellan attackerna. Infiltrerad och kartlagd av Gråstensväktarna i session 5 genom Moks ögon.",
+    "descriptions": [
+      {
+        "title": "VAD MOK SÅG OVANIFRÅN",
+        "items": [
+          "<strong>Vagnar &amp; hästar:</strong> Lastade med Greenests stulna skatter – guld, vapen, tygbalar.",
+          "<strong>Fångarna:</strong> Bundna vid pålar längre in i lägret – troligen Tarbaw Nighthill bland dem.",
+          "<strong>Vaktlinjer:</strong> Inga. Lägret är extremt oorganiserat – patruller går utan mönster.",
+          "<strong>Folkmängd:</strong> Stor numerär överlägsenhet – styrka i mängd, inte disciplin.",
+          "<strong>Form:</strong> Naturlig hästskoformad platå med branta sidor – endast ett par naturliga uppgångar."
+        ]
+      },
+      {
+        "title": "INFILTRATIONSMETOD",
+        "items": [
+          "Kult-kåpor med drakemblem – plundrade från fallna raiders.",
+          "Mörker och vana att smälta in i CyansWraths rörelser.",
+          "Moks ögon ger uppdaterad rekognosering ovanifrån."
+        ]
+      }
+    ],
     "events": [
+      {
+        "title": "Rapporten från Mok",
+        "preview": "Vagnar, fångar och inga vaktlinjer...",
+        "detail": "Haldans korp Mok kartlade platån genom Delade Sinnen. Vagnar lastade med Greenests stulna skatter, fångar bundna vid pålar längre in, och ett läger utan organiserade vaktlinjer. Folkets viljas styrka ligger i numerär, inte disciplin.",
+        "session": 5
+      },
+      {
+        "title": "Infiltration i kåpor",
+        "preview": "Mörka tygveck med drakemblem...",
+        "detail": "Gråstensväktarna närmade sig platån klädda i kult-kåpor de kommit över. Mörka tygveck med Folkets viljas drakemblem – kamouflage som ska låta dem röra sig fritt bland CyansWraths egna.",
+        "session": 5
+      },
       {
         "title": "Lägrets position avslöjas",
         "preview": "Hästskoformad platå någonstans i Greenfields...",
