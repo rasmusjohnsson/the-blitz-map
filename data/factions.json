@@ -3,6 +3,7 @@
     "id": "order_of_the_gauntlet",
     "name": "Order of the Gauntlet",
     "motto": "Rättvisa genom handling",
+    "tagline": "Rättvisa och handling",
     "symbol": "⚔️",
     "status": "allied",
     "desc": "Order of the Gauntlet är en organisation som samlar krigare, riddare och troende med ett gemensamt mål: att upprätthålla rättvisa i Faerûn. Till skillnad från många andra grupper drivs de varken av makt eller kunskap i sig, utan av en stark övertygelse om att ondska aktivt måste bekämpas.\n\nOrganisationen är varken en traditionell armé eller en kyrka, utan snarare ett nätverk av individer som förenas av sin tro på handling. Medlemmarna söker inte ära eller rikedom, utan rör sig dit hoten finns, ingriper och försöker stoppa det som skadar andra.\n\nDeras styrka ligger i deras beslutsamhet och tydliga värdegrund – men just detta kan också vara en svaghet. I en värld där ondska inte alltid är tydlig eller öppen kan deras synsätt bli förenklat, och de riskerar att missa nyanser i mer komplexa situationer.\n\nFör en medlem av Order of the Gauntlet är världen i grunden uppdelad i rätt och fel, och det är deras uppgift att stå däremellan och försvara det som är gott.",
@@ -14,6 +15,7 @@
     "id": "emerald_enclave",
     "name": "Emerald Enclave",
     "motto": "Naturens balans måste bevaras",
+    "tagline": "Balans och natur",
     "symbol": "🌿",
     "status": "allied",
     "desc": "Emerald Enclave är ett löst sammansatt nätverk av druider, rangers, barbarer och andra som tjänar naturen. De sköter de vilda platserna mellan civilisationerna, jagar monster som hotar bräckliga byar och håller naturens balans när drakar, demoner eller mörkare krafter försöker rubba den.\n\nMedlemmarna är ofta ensamvargar – spårare, monsterjägare och tysta beskyddare som rör sig i utkanten av byar och hjälper när ingen annan kan. Enclaven tränar sina utvalda i fältkonst, smyg och rituell magi, och vissa får särskilda uppdrag som spioner eller lönnmördare när naturens fiender är för farliga att möta öppet.\n\nDe är inte en armé och inte en kyrka. De är ögonen i skogen, viskningen i vinden, pilen som kommer från ingenstans när rovdjuren blir för fräcka.",
@@ -22,13 +24,51 @@
     "events": []
   },
   {
+    "id": "harpers",
+    "name": "Harpers",
+    "motto": "I skuggan står frihetens väktare",
+    "tagline": "Frihet och begränsning av makt",
+    "symbol": "🎵",
+    "status": "neutral",
+    "desc": "Harpers är ett hemligt nätverk av spioner, lärda, magiker och äventyrare som verkar i skuggorna för att förhindra att makten i Faerûn samlas på för få händer. De motsätter sig tyranner, despoter och kulter med samma envishet – inte genom öppen krigföring, utan genom information, små handlingar och tystnadens vapen.\n\nMedlemmar arbetar ofta ensamma eller i små celler, och få känner igen varandra på rocken. De rör sig genom värdshus, hov och vildmark, lyssnar mer än de talar och rapporterar till andra Harpers när mönstret är klart. Sång, koder och visor har länge varit deras språk.\n\nDe söker inte ära eller titel – endast att hålla balansen tipping i de fria folkens favör. För Harpers är friheten en bräcklig sak som måste vaktas just när ingen annan tittar.",
+    "npcs": [],
+    "places": [],
+    "events": []
+  },
+  {
+    "id": "zhentarim",
+    "name": "Zhentarim",
+    "aliases": ["Det Svarta Nätverket", "Black Network"],
+    "motto": "Möjligheter åt den som griper dem",
+    "tagline": "Möjligheter och inflytande",
+    "symbol": "🐍",
+    "status": "neutral",
+    "desc": "Zhentarim, ofta kallade Det Svarta Nätverket, är en organisation av köpmän, legosoldater, äventyrare och andra inflytelserika personer som verkar över stora delar av Faerûn. Organisationen är känd för sitt omfattande kontaktnät och sin förmåga att få saker gjorda där andra misslyckas.\n\nTill skillnad från många andra grupper drivs Zhentarim inte av ideal om rättvisa, balans eller tro. Istället strävar de efter makt, inflytande och välstånd. De anser att stabilitet och framgång uppnås bäst genom starka allianser, handel och kontroll över viktiga resurser.\n\nZhentarim är kända för att skydda handelsvägar, erbjuda säkerhet och skapa möjligheter för sina medlemmar. Samtidigt är de omgivna av rykten om spionage, utpressning och hemliga affärer. Organisationen är ofta mer intresserad av resultat än av hur resultaten uppnås.\n\nDeras styrka ligger i deras flexibilitet och omfattande nätverk av kontakter. Medlemmar uppmuntras att vara ambitiösa, kompetenta och självständiga, men också att hjälpa organisationen när det gynnar båda parter.\n\nFör vanliga människor framstår Zhentarim ofta som professionella, hemlighetsfulla och mäktiga. Många litar på deras förmåga, men få vet egentligen vad Det Svarta Nätverket planerar bakom stängda dörrar.",
+    "npcs": [],
+    "places": [],
+    "events": []
+  },
+  {
+    "id": "lords_alliance",
+    "name": "Lords' Alliance",
+    "motto": "Genom ordning, välstånd",
+    "tagline": "Ordning och stabilitet",
+    "symbol": "🛡️",
+    "status": "neutral",
+    "desc": "Lords' Alliance är en koalition av städer och politiska makter längs Sword Coast – Waterdeep, Baldur's Gate, Neverwinter, Silverymoon och flera andra – som har enats kring ett gemensamt mål: trygghet, handel och stabilitet i en värld där hot ständigt växer fram bortom murarna.\n\nAlliansen är inte en armé eller en domstol, utan ett rådslag av makthavare, ambassadörer och deras agenter. När en stad behöver förstärkning, en handelsväg hotas eller en gemensam fiende reser sig, är det Lords' Alliance som koordinerar svaret. Diplomati först, vapen när det måste till.\n\nMedlemmar är ofta lojala lokalpatrioter som ser den större bilden – att deras stad blomstrar bäst i en värld där andra fria städer också gör det. De motsätter sig kaos, tyranni och plundring oavsett varifrån det kommer.\n\nFör Lords' Alliance är frihet och ordning inte motsatser utan två sidor av samma mynt. Utan stabilitet finns ingen frihet att försvara.",
+    "npcs": [],
+    "places": ["waterdeep", "baldursgate", "neverwinter"],
+    "events": []
+  },
+  {
     "id": "folkets_vilja",
     "name": "Folkets vilja",
     "aliases": ["CyansWrath", "Cult of the Dragon"],
     "motto": "Frihet genom styrka",
+    "tagline": "Drakdyrkande kult bakom folklig fasad",
     "symbol": "🐉",
     "status": "hostile",
-    "desc": "På ytan en folkrörelse som påstår sig vilja krossa de rika och hjälpa de svaga. Slagordet 'Frihet genom styrka' upprepas av fotsoldaterna, och pamfletten 'Folkets vilja' delas ut för att rekrytera missnöjda.\n\nUnder ytan är det en drakdyrkande kult som samarbetar med en blå drake och hennes halvdrake-vasall Cyanwrath. Manifestet 'Folkets vilja' är en rökridå – skickligt skriven av någon med utbildning för att manipulera fotsoldater. Den avryckta delen av pergamentet döljer kultens sanna, drakdyrkande ledare.\n\nFalangen kallas CyansWrath efter halvdraken som leder den. De plundrar Greenfields i drakens tjänst, brände Greenest, försökte slakta byborna i Chaunteas tempel och utmanade till slut keepets bästa kämpe på en duell på liv och död.",
+    "desc": "På ytan en folkrörelse som påstår sig vilja krossa de rika och hjälpa de svaga. Slagordet 'Frihet genom styrka' upprepas av fotsoldaterna, och pamfletten 'Folkets vilja' delas ut för att rekrytera missnöjda.\n\nUnder ytan är det en drakdyrkande kult som samarbetar med en blå drake och hennes halvdrake-vasall Cyanwrath. Manifestet 'Folkets vilja' är en rökridå – skickligt skriven av någon med utbildning för att manipulera fotsoldater. Den avryckta delen av pergamentet döljer kultens sanna, drakdyrkande ledare.\n\nFalangen kallas CyansWrath efter halvdraken som leder den. De plundrar Greenfields i drakens tjänst, brände Greenest, försökte slakta byborna i Chaunteas tempel, utmanade till slut keepets bästa kämpe på en duell på liv och död och tog Greenests guvernör som pris.",
     "npcs": ["Cyanwrath"],
     "places": ["greenest", "kultlagret"],
     "events": [
@@ -71,6 +111,16 @@
         "session": 5,
         "title": "Lägret kartlagt",
         "text": "Hästskoplatån kartlagd ovanifrån genom Haldans korp Mok. Vagnar med stulna skatter, fångar uppbundna vid pålar, och inga organiserade vaktlinjer. Folkets viljas styrka är numerär – inte disciplin."
+      },
+      {
+        "session": 6,
+        "title": "Infiltrationen och avtalet",
+        "text": "Gråstensväktarna rörde sig öppet genom Hästskoplatån i kult-kåpor. Cornwind tog emot dem och utfärdade papper på ett jaktjobb – kulten har själv hjälpt fienden in i sin egen organisation utan att veta det."
+      },
+      {
+        "session": 6,
+        "title": "Den vilda flykten från platån",
+        "text": "Larmet gick när Gothmog kändes igen. Hela lägret tog upp jakten men kunde inte stoppa Kunskapens Vagn från att dåna ut från Hästskoplatån. Folkets vilja förlorade hästar, prestige – och får snart svara för det inför Cyanwrath."
       }
     ]
   }

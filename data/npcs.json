@@ -95,6 +95,20 @@
     ]
   },
   {
+    "id": "cornwind",
+    "name": "Cornwind",
+    "status": "hostile",
+    "role": "Kultledare – Folkets vilja",
+    "desc": "En ledare inom Folkets vilja som residerar i ett av tälten på Hästskoplatån. När infiltratörer dyker upp i kåpor är det Cornwind de hänvisas till. Pragmatisk och affärsinriktad – ger ut uppdrag, papper och jaktjobb till nykomlingar i kulten utan att ifrågasätta för mycket. Haldan och Theron lyckades förhandla till sig ett jaktjobb av honom och fick papper på att låna hästar.",
+    "events": [
+      {
+        "label": "Förhandlingen i tältet",
+        "text": "Tog emot Haldan och Theron i sitt tält när de kom i kåpor. Lät sig övertalas av Therons förhandlingstaktik och utfärdade papper på ett jaktjobb med rätt att låna hästar – inte anandes att 'jaktjobbet' användes till att dumpa kött vid drakägg-grottan och scouta inför flykten.",
+        "session": 6
+      }
+    ]
+  },
+  {
     "id": "mok",
     "name": "Mok",
     "aliases": ["Moks"],

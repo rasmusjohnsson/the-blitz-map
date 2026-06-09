@@ -322,5 +322,37 @@
         "npcs": ["Mok"]
       }
     ]
+  },
+  {
+    "id": 6,
+    "label": "SESSION 6",
+    "title": "Hästskoplatån & Den vilda flykten",
+    "date": "2026-06-08",
+    "events": [
+      {
+        "title": "Infiltrationen djupare in",
+        "recap": "Haldan och Theron rörde sig djupare in på Hästskoplatån under sina kult-kåpor. Förbi vagnar och pålar, mellan tält och eldar – ingen höjde blicken. När de frågade sig fram blev de hänvisade till tältet hos en ledare vid namn Cornwind.",
+        "places": ["kultlagret"],
+        "npcs": []
+      },
+      {
+        "title": "Avtalet med Cornwind",
+        "recap": "I Cornwinds tält förhandlade Theron fram ett jaktjobb. De fick papper på att få låna hästar och order om att dumpa kött vid en grotta i klippväggen – samma grotta där kulten vaktar drakägg. Haldan och Theron red ut från lägret med pappret i handen, dumpade köttet vid grottans mynning, och såg drakägg-grottan med egna ögon innan de vände tillbaka.",
+        "places": ["kultlagret", "drakagg_grottan"],
+        "npcs": ["Cornwind"]
+      },
+      {
+        "title": "Fällan slår igen",
+        "recap": "Tillbaka i lägret återförenades de med Cedric och Gothmog vid Kunskapens Vagn. Haldan och Theron klättrade upp i ett vakttorn och mutade vakterna att lämna sin post. Cedric och Gothmog lastade vagnen i tystnad. När klartecken gavs från tornet skulle vagnen rulla förbi och flykten påbörjas – men i sista stund kände en kultmedlem igen Gothmog. Larmet ekade över platån och hela lägret tog upp jakten.",
+        "places": ["kultlagret"],
+        "npcs": []
+      },
+      {
+        "title": "Den vilda flykten",
+        "recap": "Vagnen dånade förbi vakttornet i rasande fart. Haldan och Theron hoppade ner från tornets gångplank, dräpte snabbt vakterna vid spärren och försökte kasta sig upp i farten. Haldan landade säkert på en av hästarna. Theron missade greppet och föll under hästarna och vagnen – ena hjulet rullade rakt över honom. När vagnen saktats ner lyckades en mörbultad Theron, trots flera smällar från förföljarna, kasta sig ombord igen. Gråstensväktarna försvann ut från Hästskoplatån med kultens jakthästar och Kunskapens Vagn – och med Theron blödande på flaket.",
+        "places": ["kultlagret"],
+        "npcs": []
+      }
+    ]
   }
 ]

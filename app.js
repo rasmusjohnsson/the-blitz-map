@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.4.0';
+const APP_VERSION='2.5.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -272,7 +272,8 @@ function renderFactions(){
     const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senast aktiv: S${lastSess}">S${lastSess}</span>`:'';
     const sl={allied:'Allierad',hostile:'Fiende',neutral:'Neutral'};
     const statusChip=f.status?`<span class="faction-status ${f.status}">${sl[f.status]||f.status}</span>`:'';
-    card.innerHTML=`<div class="faction-card-symbol">${f.symbol||'⚜'}</div><div class="faction-card-info"><div class="faction-card-name">${f.name}${updBadge}</div><div class="faction-card-motto">"${f.motto||''}"</div>${statusChip}</div>`;
+    const taglineHtml=f.tagline?`<div class="faction-card-tagline">${f.tagline}</div>`:'';
+    card.innerHTML=`<div class="faction-card-symbol">${f.symbol||'⚜'}</div><div class="faction-card-info"><div class="faction-card-name">${f.name}${updBadge}</div>${taglineHtml}<div class="faction-card-motto">"${f.motto||''}"</div>${statusChip}</div>`;
     card.onclick=()=>showFactionDetail(f);
     p.appendChild(card);
   });
@@ -668,6 +669,33 @@ function getNpcPlaces(npcName){const ps=new Set();sessions.forEach(s=>{s.events.
 function highlightMarkerNpc(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('npc-glow')}
 function unhighlightMarkerNpc(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('npc-glow')}
 
+// Ladda ner kampanjkrönika som textfil
+function downloadChronicle(){
+  const months=['januari','februari','mars','april','maj','juni','juli','augusti','september','oktober','november','december'];
+  function fmtDate(d){if(!d)return'';try{const dt=new Date(d);return dt.getDate()+' '+months[dt.getMonth()]+' '+dt.getFullYear()}catch(e){return d}}
+  let out='GRÅSTENSVÄKTARNA – TYRANNY OF DRAGONS\nKampanjkrönika\n'+'='.repeat(60)+'\n\n';
+  sessions.forEach(sess=>{
+    out+='\n'+'#'.repeat(60)+'\n';
+    out+='# '+sess.label+': '+sess.title+'\n';
+    if(sess.date)out+='# Spelades: '+fmtDate(sess.date)+'\n';
+    out+='#'.repeat(60)+'\n\n';
+    sess.events.forEach((ev,i)=>{
+      out+='--- '+(i+1)+'. '+ev.title+' ---\n\n';
+      out+=(ev.recap||'')+'\n\n';
+      if(ev.places&&ev.places.length){const names=ev.places.map(p=>{const l=locations.find(x=>x.id===p);return l?l.name:p});out+='Platser: '+names.join(', ')+'\n'}
+      if(ev.npcs&&ev.npcs.length)out+='NPCs: '+ev.npcs.join(', ')+'\n';
+      out+='\n';
+    });
+  });
+  const d=new Date();const stamp=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  out+='\n'+'='.repeat(60)+'\nGenererad: '+stamp+'\nApp-version: '+APP_VERSION+'\n';
+  const blob=new Blob([out],{type:'text/plain;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='grastensvaktarna-kronika-'+stamp+'.txt';
+  document.body.appendChild(a);a.click();
+  setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url)},100);
+}
 // Recap mode
 let recapActive=false,recapHighlightedPlaces=[];
 function toggleRecapMode(){if(recapActive){exitRecapMode();return}recapActive=true;document.getElementById('recapBtn').classList.add('active');document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-recap').classList.add('active');const last=sessions[sessions.length-1];renderRecap(last);const ps=new Set();last.events.forEach(ev=>ev.places.forEach(p=>ps.add(p)));recapHighlightedPlaces=[...ps];recapHighlightedPlaces.forEach(id=>highlightMarker(id));document.getElementById('sessionFilter').value=last.id;filterMapBySession(last.id)}
@@ -778,6 +806,7 @@ async function init(){
   searchIndex=buildSearchIndex();
   renderCharacters();renderNPCs();renderFactions();renderTimeline();renderMarkers();populateSessionFilter();
   document.getElementById('recapBtn').addEventListener('click',toggleRecapMode);
+  document.getElementById('downloadBtn').addEventListener('click',downloadChronicle);
   // Restore saved state or default to fit-map-to-view
   const saved=loadUIState();
   if(saved){

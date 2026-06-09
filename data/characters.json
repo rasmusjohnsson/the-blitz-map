@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Mörka tygveck och hästryggar",
+        "text": "Drog kåpan tätare och rörde mig djupare in på platån med Theron vid sidan. Cornwind köpte vår förklädnad. Vi red ut, dumpade köttet vid drakägg-grottan – jag såg klippväggens form, mynningen, hur värmen från äggen tryckte ut ur grottan. Tillbaka i lägret klättrade vi upp i tornet och mutade vakterna med tungt mynt. När vagnen rullade förbi gav jag signalen. Sen blev allt rop och hovar. Hoppade ner, fällde spärrvakten med en stöt, tog mig upp på en frigående häst i full galopp. Theron klarade det inte – han föll under hjulen. Jag red bredvid tills vagnen saktade och vi fick honom ombord. Vi tog deras hästar med oss.",
+        "session": 6
+      },
+      {
         "label": "Moks ögon över platån",
         "text": "När Gothmog föll och guvernören lämnades över höll jag tyst – det fanns inget mer att säga. Vi vilade bakom murarna, läkte våra sår, och när nattens skuggor föll drog vi på oss kult-kåporna. Vid Hästskoplatåns rand släppte jag upp Mok. Genom Delade Sinnen lät jag hans ögon bli mina. Vagnar fulla av Greenests stulna skatter, fångar uppbundna vid pålar längre in, och – det viktigaste – inga vaktlinjer. Folkets vilja är en flock, inte en armé. Vi vet hur vi tar oss in.",
         "session": 5
@@ -78,6 +83,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Under hästhovarna",
+        "text": "Förhandlade fram jaktjobbet hos Cornwind med stadig röst – Bahamuts ljus får inte synas i fiendens tält. Red ut med Haldan, såg drakägg-grottan med egna ögon, tänkte på vad det betyder. Tillbaka klättrade jag upp i tornet och tog över mutan av vakterna. När larmet gick hoppade jag ner med Haldan och fällde spärrvakten. Jag försökte få fäste på vagnen i full fart – missade. Hjulet rullade över mig. Smärtan slet andan ur mig. Pilar och spjut singlade förbi medan jag låg där. När vagnen saktade reste jag mig på mörbultade ben och kastade mig ombord igen. Order of the Gauntlet svär att stå upp igen. Jag stod upp.",
+        "session": 6
+      },
+      {
         "label": "Eden som svek",
         "text": "Stod på muren när Gothmog klev ut för att möta Cyanwrath. Min hand låg på svärdsfästet – kanske skulle det varit jag. Watcher's Eye läste striden: halvdraken var för stark. Gothmog föll. Tarbaw Nighthill överlämnades. Order of the Gauntlet svär att skydda de svaga – och vi misslyckades med en av Greenests egna. I keepets stillhet vilade vi och svor en tyst ed: vi får tillbaka honom. Kåporna lades över axlarna och vi gick mot Hästskoplatån.",
         "session": 5
@@ -136,6 +146,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Vid vagnen i tystnad",
+        "text": "Stannade kvar vid Kunskapens Vagn med Cedric och Gothmog medan Haldan och Theron tog det djupare arbetet. Hjälpte till att lasta vagnen i tystnad – kistor, vapen, allt vi kommit över. När klartecknet kom från tornet kände jag pulsen sätta fart. Sen larmet, ropet, hovarna. Vi körde. Theron försvann under hjulen – jag hörde honom skrika. När han kom ombord igen, blodig och knappt vid medvetande, höll jag honom uppe medan vagnen dånade fram. Mina runor och mitt vapen säger att jag står kvar med min broder. Order of the Gauntlet svär det – men jag svär det också utan eden.",
+        "session": 6
+      },
+      {
         "label": "Kåpa över vapenbrodern",
         "text": "Såg Gothmog falla framför keepets portar. Bar honom in tillsammans med Theron, tryckte mot såren tills blödningarna stannade. När Tarbaw kliver ut till Cyanwrath fanns ingenting jag kunde göra. Escobert räckte oss 200 guld – tyst, allvarsam. Efter vilan drog jag kåpan över axlarna som de andra. Det är konstigt att klä sig i fiendens färger. Men om det får oss in i lägret räcker det.",
         "session": 5
@@ -193,6 +208,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Igenkänd i lägret",
+        "text": "Stod vid Cedrics sida och lastade vagnen i tystnad. Mina runor pulserade lugnt mot huden – så här långt hade infiltrationen fungerat. När klartecknet kom satte hästarna fart och vagnen rullade. Och då hände det: en av kultens egna såg mig. Halvorkens drag är inte lätta att glömma, även under en kåpa. Han ropade mitt namn över lägret och hela platån vände sig mot oss. Jag piskade hästarna fram, ratten fast i mina nävar, medan pilar singlade förbi öronen. Theron föll under hjulen – jag hörde det och kände det. När han kom ombord igen, blödande och tyst, lyfte jag honom till flaket och drev hästarna ännu hårdare. Jag är inte den som gömmer sig länge.",
+        "session": 6
+      },
       {
         "label": "Halvdrakens stål",
         "text": "Klev ut som keepets kämpe. Inte för att jag trodde jag skulle vinna – för att någon var tvungen. Cyanwraths slag var som åskviggar genom rustningen. Mina runor brann men hans stål brann mer. Jag föll i mitt eget blod framför portarna och såg Tarbaw kliva ut till halvdraken med stadig blick. Bakom murarna tog jag emot en Long Rest, mina vänner runt mig. Runorna säger: jag är inte den jag försökte vara, men inte heller den jag vägrar bli. Nu går vi mot Hästskoplatån i kåpor – inte som jätte, utan som skugga.",
@@ -256,6 +276,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Kunskapens Vagn på flykt",
+        "text": "Stannade kvar vid Kunskapens Vagn medan Haldan och Theron tog det riskabla djupinträngandet. Lastade vagnen i tystnad tillsammans med Gothmog och Oweyn – böckerna ompackade i tjocka kläden, vapnen i hörnen, kistorna fasta. Min Codex-Golem höll lågt profil bland fållarna. När klartecknet kom från tornet visste jag att fönstret var litet. Gothmog tog tömmarna. När han blev igenkänd och larmet gick var det bara hastighet som spelade roll. Jag mässade snabba besvärjelser för att hålla vagnen stabil i kurvorna, viskade Mage Hand-kommandon för att lyfta bort hinder framför oss. När Theron försvann under hjulen kände jag golvet vibrera och hjärtat stanna. När han kom ombord igen tog jag fram allt jag hade av läkande för att hålla honom vid liv. Far Steve byggde vagnen för långa resor – nu visste vi att den klarar en flykt också.",
+        "session": 6
+      },
       {
         "label": "Skarpa observationer",
         "text": "Bevittnade duellen från muren – noterade Cyanwraths kampstil, hur han rörde sig, var hans rustning hade luckor. Information för senare. När Gothmog föll hjälpte jag bära in honom, viskade besvärjelser för att stabilisera blödningen. Tog en Long Rest i keepet och studerade kåporna noggrant innan vi tog på oss dem – fästena, symbolerna, hur de hängde. Detalj är skillnaden mellan att smälta in och att bli avslöjad. Vid platåns rand stod jag tyst medan Haldan såg genom Moks ögon. Den blå draken är där någonstans. Vi ska hitta henne.",

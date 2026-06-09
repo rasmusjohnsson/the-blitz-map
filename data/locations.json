@@ -334,6 +334,22 @@
     ]
   },
   {
+    "id": "drakagg_grottan",
+    "name": "Drakägg-grottan",
+    "x": 1530,
+    "y": 1198,
+    "visited": true,
+    "summary": "En grotta i klippväggen nära Hästskoplatån där Folkets vilja vaktar drakägg. Besökt kort i session 6 när Haldan och Theron dumpade jaktkött där under ett påhittat jaktjobb – en täckmantel för att scouta området inför flykten med Kunskapens Vagn.",
+    "events": [
+      {
+        "title": "Köttet vid grottans mynning",
+        "preview": "Jaktjobbet var en täckmantel...",
+        "detail": "Haldan och Theron red ut från Hästskoplatån med papper på ett jaktjobb från Cornwind. Dumpade köttet vid grottans mynning som ordern krävde – men det verkliga syftet var att se grottan med egna ögon. Drakäggen finns där, vaktade. Något att återvända till.",
+        "session": 6
+      }
+    ]
+  },
+  {
     "id": "kultlagret",
     "name": "Hästskoplatån",
     "x": 1580,
@@ -361,6 +377,30 @@
       }
     ],
     "events": [
+      {
+        "title": "Den vilda flykten",
+        "preview": "Kunskapens Vagn dånar genom lägret...",
+        "detail": "Haldan och Theron mutade vakterna i ett torn att lämna sin post. Cedric och Gothmog lastade Kunskapens Vagn. Klartecken gavs från tornet – men i sista stund kände en kultmedlem igen Gothmog. Hela lägret tog upp jakten. Vagnen dånade förbi tornet i rasande fart, Haldan och Theron hoppade ner, dräpte vakterna vid spärren och försökte kasta sig upp i farten. Haldan landade säkert på en häst. Theron missade och föll under hästarna och vagnen. När vagnen saktats ner lyckades en mörbultad Theron, trots flera smällar från förföljarna, kasta sig ombord igen.",
+        "session": 6
+      },
+      {
+        "title": "Tornet och mutan",
+        "preview": "Vakterna i tornet lämnade sin post...",
+        "detail": "Innan flykten klättrade Haldan och Theron upp i ett av platåns vakttorn och övertalade vakterna att lämna sin post – mutor eller bluff, det fungerade. Tornet blev både utkikspost och signalplats för Cedrics och Gothmogs vagn-flykt.",
+        "session": 6
+      },
+      {
+        "title": "Avtalet med Cornwind",
+        "preview": "Theron förhandlar fram ett jaktjobb...",
+        "detail": "Haldan och Theron blev hänvisade till Cornwinds tält när de rörde sig djupare in på platån i sina kåpor. Theron förhandlade fram ett jaktjobb och papper på att låna hästar. Cornwind skickade ut dem med order att dumpa kött vid drakägg-grottan – inte anandes att detta var täckmantel för att scouta inför flykten.",
+        "session": 6
+      },
+      {
+        "title": "Infiltrationen djupare in",
+        "preview": "Haldan och Theron rör sig mot ledarens tält...",
+        "detail": "Med kåpor över axlarna gick Haldan och Theron djupare in på Hästskoplatån, förbi vagnar och pålar mot platåns centrum. Hänvisades vidare till tältet hos en ledare vid namn Cornwind.",
+        "session": 6
+      },
       {
         "title": "Rapporten från Mok",
         "preview": "Vagnar, fångar och inga vaktlinjer...",
