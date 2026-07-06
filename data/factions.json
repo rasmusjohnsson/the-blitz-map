@@ -31,9 +31,15 @@
     "symbol": "🎵",
     "status": "neutral",
     "desc": "Harpers är ett hemligt nätverk av spioner, lärda, magiker och äventyrare som verkar i skuggorna för att förhindra att makten i Faerûn samlas på för få händer. De motsätter sig tyranner, despoter och kulter med samma envishet – inte genom öppen krigföring, utan genom information, små handlingar och tystnadens vapen.\n\nMedlemmar arbetar ofta ensamma eller i små celler, och få känner igen varandra på rocken. De rör sig genom värdshus, hov och vildmark, lyssnar mer än de talar och rapporterar till andra Harpers när mönstret är klart. Sång, koder och visor har länge varit deras språk.\n\nDe söker inte ära eller titel – endast att hålla balansen tipping i de fria folkens favör. För Harpers är friheten en bräcklig sak som måste vaktas just när ingen annan tittar.",
-    "npcs": [],
-    "places": [],
-    "events": []
+    "npcs": ["Leosin"],
+    "places": ["drakagg_grottan"],
+    "events": [
+      {
+        "session": 8,
+        "title": "Leosin räddad",
+        "text": "En Harpers-agent vid namn Leosin hittades tillfångatagen i Cult of the Dragons grotta och räddades av Gråstensväktarna. Under sin fångenskap hade han samlat avgörande information om kultens ritual och namnet Rezmir."
+      }
+    ]
   },
   {
     "id": "zhentarim",
@@ -55,10 +61,34 @@
     "tagline": "Ordning och stabilitet",
     "symbol": "🛡️",
     "status": "neutral",
-    "desc": "Lords' Alliance är en koalition av städer och politiska makter längs Sword Coast – Waterdeep, Baldur's Gate, Neverwinter, Silverymoon och flera andra – som har enats kring ett gemensamt mål: trygghet, handel och stabilitet i en värld där hot ständigt växer fram bortom murarna.\n\nAlliansen är inte en armé eller en domstol, utan ett rådslag av makthavare, ambassadörer och deras agenter. När en stad behöver förstärkning, en handelsväg hotas eller en gemensam fiende reser sig, är det Lords' Alliance som koordinerar svaret. Diplomati först, vapen när det måste till.\n\nMedlemmar är ofta lojala lokalpatrioter som ser den större bilden – att deras stad blomstrar bäst i en värld där andra fria städer också gör det. De motsätter sig kaos, tyranni och plundring oavsett varifrån det kommer.\n\nFör Lords' Alliance är frihet och ordning inte motsatser utan två sidor av samma mynt. Utan stabilitet finns ingen frihet att försvara.",
+    "desc": "Lords' Alliance är en sammanslutning av städer, härskare och makthavare längs Svärdskusten som samarbetar för att skydda handel, lag och civilisation. Organisationen grundades eftersom många av regionens städer insåg att de var för svaga var för sig när de ställdes inför krig, monster, rövarhärar eller andra hot.\n\nTill skillnad från Harpers eller Emerald Enclave handlar Lords' Alliance inte om ideal eller balans. De tror att ordning, stabilitet och starka institutioner är det som håller världen samman. Om civilisationen ska överleva måste lagar upprätthållas, vägar hållas säkra och städer kunna försvara sig.\n\nOrganisationen består av många självständiga städer som ofta konkurrerar med varandra. Medlemmarna samarbetar när det behövs, men varje ledare vill i slutändan främja sin egen stads intressen. Därför präglas alliansen av politik, kompromisser och maktspel.\n\nLords' Alliance ses ofta som den konservativa kraften i Faerûn. De föredrar ordning framför förändring, stabilitet framför idealism och ser misstänksamt på rörelser som riskerar att skapa kaos, även om de säger sig kämpa för en god sak. För en medlem av Lords' Alliance är den viktigaste frågan sällan om världen är rättvis – utan om den är säker.",
     "npcs": [],
     "places": ["waterdeep", "baldursgate", "neverwinter"],
     "events": []
+  },
+  {
+    "id": "cult_of_the_dragon",
+    "name": "Cult of the Dragon",
+    "aliases": ["Drakkulten", "CotD"],
+    "motto": "Draken skall stiga",
+    "tagline": "Skuggan bakom Folkets vilja",
+    "symbol": "🐲",
+    "status": "hostile",
+    "desc": "En större, äldre och mörkare drakdyrkande organisation som Harpers-agenten Leosin misstänker står bakom Folkets vilja. Enligt hans information samlar de skatter från plundrade byar för en stor ritual – syftet är fortfarande okänt.\n\nNamnet Rezmir upprepas ofta bland de högsta i hierarkin, men även Leosin vet inte vem eller vad Rezmir är. Frulam Mondath verkar vara en av deras präster – kopplingen bekräftades när hon magiskt brände Cyanwraths kropp i drakäggs-grottorna för att ingenting skulle lämnas åt fienden.\n\nGråstensväktarna har ännu bara skymtat organisationens ytterkanter. Folkets vilja var ansiktet utåt. Cult of the Dragon är det verkliga hotet.",
+    "npcs": ["Rezmir", "Frulam Mondath"],
+    "places": ["kultlagret", "drakagg_grottan"],
+    "events": [
+      {
+        "session": 8,
+        "title": "Kopplingen avslöjas",
+        "text": "Leosin, Harpers-agenten som Gråstensväktarna räddade, avslöjade sin misstanke: Folkets vilja är bara en fasad. Bakom står den drakdyrkande kulten Cult of the Dragon. Skatter samlas för en ritual. Namnet Rezmir viskas bland de högsta – men även Leosin vet inte vem Rezmir är."
+      },
+      {
+        "session": 8,
+        "title": "Frulams kroppsbränning",
+        "text": "När Cyanwrath föll i grottans djup klev Frulam Mondath fram och brände hans kropp med magisk eld innan hon flydde. Prästerskapets pragmatism – ingenting får lämnas kvar som kan användas mot dem."
+      }
+    ]
   },
   {
     "id": "folkets_vilja",
@@ -69,8 +99,8 @@
     "symbol": "🐉",
     "status": "hostile",
     "desc": "På ytan en folkrörelse som påstår sig vilja krossa de rika och hjälpa de svaga. Slagordet 'Frihet genom styrka' upprepas av fotsoldaterna, och pamfletten 'Folkets vilja' delas ut för att rekrytera missnöjda.\n\nUnder ytan är det en drakdyrkande kult som samarbetar med en blå drake och hennes halvdrake-vasall Cyanwrath. Manifestet 'Folkets vilja' är en rökridå – skickligt skriven av någon med utbildning för att manipulera fotsoldater. Den avryckta delen av pergamentet döljer kultens sanna, drakdyrkande ledare.\n\nFalangen kallas CyansWrath efter halvdraken som leder den. De plundrar Greenfields i drakens tjänst, brände Greenest, försökte slakta byborna i Chaunteas tempel, utmanade till slut keepets bästa kämpe på en duell på liv och död och tog Greenests guvernör som pris.",
-    "npcs": ["Cyanwrath"],
-    "places": ["greenest", "kultlagret"],
+    "npcs": ["Cyanwrath", "Cornwind"],
+    "places": ["greenest", "kultlagret", "drakagg_grottan"],
     "events": [
       {
         "session": 1,
@@ -121,6 +151,26 @@
         "session": 6,
         "title": "Den vilda flykten från platån",
         "text": "Larmet gick när Gothmog kändes igen. Hela lägret tog upp jakten men kunde inte stoppa Kunskapens Vagn från att dåna ut från Hästskoplatån. Folkets vilja förlorade hästar, prestige – och får snart svara för det inför Cyanwrath."
+      },
+      {
+        "session": 7,
+        "title": "Lägret evakuerat",
+        "text": "Mellan session 6 och 7 evakuerades hela Hästskoplatån. Tält, eldar och kultister borta. Drakägg-grottan i klippväggen är fortfarande bemannad – men kärntruppen har flyttat någonstans Gråstensväktarna ännu inte spårat."
+      },
+      {
+        "session": 7,
+        "title": "Drakvalparna under attack",
+        "text": "Gråstensväktarna infiltrerade drakägg-grottan i kultens egna vaktuniformer, slog stirges, smög förbi violet fungi och hittade Guard Drake-valpar i en inre kammare. Larmet gick när några kobolder flydde och nu strömmar förstärkningar mot dem. Folkets vilja försvarar sin avel-grotta med vad de har kvar."
+      },
+      {
+        "session": 8,
+        "title": "Cyanwraths fall",
+        "text": "Halvdraken som gav Folkets viljas falang dess namn föll i grottornas djup. Frulam Mondath brände hans kropp magiskt och flydde. Kulten har förlorat sitt slagkraftigaste ansikte utåt – men det verkliga hotet, Cult of the Dragon, står kvar bakom fasaden."
+      },
+      {
+        "session": 8,
+        "title": "Fasadens sprickor",
+        "text": "En tillfångatagen Harpers-agent (Leosin) räddad ur grottan avslöjade Folkets viljas natur för Gråstensväktarna: en fasad, inget mer. Bakom står Cult of the Dragon, skatter samlas för en ritual, och namnet Rezmir viskas bland de högsta."
       }
     ]
   }

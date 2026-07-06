@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.5.0';
+const APP_VERSION='2.7.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -219,7 +219,7 @@ if(currentSessionFilter!=='all'){
 }
 if(!displayNpcs.length){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='Inga NPC:er påträffade i denna session.';p.appendChild(empty);return}
 const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
-displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='captured'?'⛓️':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
+displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='captured'?'⛓️':n.status==='deceased'?'⚰️':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen',deceased:'Död'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
 function formatSessionDate(d){if(!d)return'';try{const dt=new Date(d);const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];return dt.getDate()+' '+m[dt.getMonth()]+' '+dt.getFullYear();}catch(e){return d}}
 function renderTimeline(){
   const p=document.getElementById('tab-history');p.innerHTML='';
@@ -278,7 +278,7 @@ function renderFactions(){
     p.appendChild(card);
   });
 }
-function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
+function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{if(l.parent)return;const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
 
 // ===== TABS =====
 document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{if(recapActive)exitRecapMode();document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active');scheduleSave()})});
@@ -415,10 +415,26 @@ function showLocation(l){
   closePopup();
   const popup=document.getElementById('locationPopup');
   document.getElementById('popupTitle').textContent=l.name;
-  let summaryHtml=linkifyFactions(l.summary);
+  let summaryHtml='';
+  if(l.parent){
+    const parent=locations.find(x=>x.id===l.parent);
+    if(parent)summaryHtml+=`<div class="parent-link" onclick="event.stopPropagation();closePopup();setTimeout(()=>showLocation(locations.find(x=>x.id==='${parent.id}')),100)">↑ Tillbaka till ${parent.name}</div>`;
+  }
+  summaryHtml+=linkifyFactions(l.summary);
   if(l.interiorView&&l.interiorView.openMode==='button'){
     const lbl=l.interiorView.buttonLabel||'🗺️ VISA DETALJKARTA';
     summaryHtml+=`<button class="interior-open-btn" onclick="event.stopPropagation();showInteriorView(locations.find(x=>x.id==='${l.id}'))">${lbl}</button>`;
+  }
+  // Underplatser (children)
+  const children=locations.filter(x=>x.parent===l.id);
+  if(children.length){
+    summaryHtml+='<div class="sub-locations"><div class="sub-loc-label">📍 UNDERPLATSER</div><div class="sub-loc-chips">';
+    children.forEach(child=>{
+      const ic=child.icon||'📍';
+      const visitedCls=child.visited?'visited':'';
+      summaryHtml+=`<span class="sub-loc-chip ${visitedCls}" onclick="event.stopPropagation();closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${child.id}')),100)">${ic} ${child.name}</span>`;
+    });
+    summaryHtml+='</div></div>';
   }
   document.getElementById('popupSummary').innerHTML=summaryHtml;
   // Descriptions section
@@ -457,13 +473,19 @@ function showLocation(l){
     e.appendChild(d);
   });
   activatePixelArtCanvases(e);
-  // Position in screen-space near the marker
+  // Position in screen-space near the marker. Children (no marker on map) are centered.
   const ma=document.querySelector('.map-container');
   const maRect=ma.getBoundingClientRect();
-  const sx=l.x*scale+panX+maRect.left+15;
-  const sy=l.y*scale+panY+maRect.top;
   const popW=380,popH=450;
-  let px=sx+20, py=sy-popH/2;
+  let sx,sy,px,py;
+  if(l.parent){
+    sx=maRect.left+maRect.width/2;sy=maRect.top+maRect.height/2;
+    px=sx-popW/2;py=sy-popH/2;
+  }else{
+    sx=l.x*scale+panX+maRect.left+15;
+    sy=l.y*scale+panY+maRect.top;
+    px=sx+20;py=sy-popH/2;
+  }
   // Keep within screen
   if(px+popW>window.innerWidth-8) px=sx-popW-20;
   if(px<8) px=8;
@@ -505,7 +527,7 @@ function showCharacterDetail(ch){
   document.getElementById('overlay').classList.add('active');
   document.getElementById('charDetailPopup').classList.add('active');
 }
-function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;document.getElementById('npcDetailRoleLabel').textContent=n.role||'';const pp=document.getElementById('npcDetailPortrait');pp.innerHTML='';const pcv=document.createElement('canvas');pp.appendChild(pcv);drawNpcPortrait(pcv,n.id);const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${linkifyFactions(n.desc)}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{const sess=e.session!==undefined?sessions.find(s=>s.id===e.session):null;const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${sl}<div class="pe-text">${linkifyFactions(e.text)}</div></div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
+function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=n.name;document.getElementById('npcDetailRoleLabel').textContent=n.role||'';const pp=document.getElementById('npcDetailPortrait');pp.innerHTML='';const pcv=document.createElement('canvas');pp.appendChild(pcv);drawNpcPortrait(pcv,n.id);const b=document.getElementById('npcDetailBody');const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen',deceased:'Död'};b.innerHTML=`<div><span class="npc-status ${n.status}" style="margin-bottom:10px">${sl[n.status]}</span><p style="margin-top:12px">${linkifyFactions(n.desc)}</p></div>`;if(n.events&&n.events.length){let h='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3>';n.events.forEach(e=>{const sess=e.session!==undefined?sessions.find(s=>s.id===e.session):null;const sl=sess?`<div class="pe-session" onclick="event.stopPropagation();closePopup();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}</div>`:'';h+=`<div class="pe-item"><div class="pe-label">${e.label}</div>${sl}<div class="pe-text">${linkifyFactions(e.text)}</div></div>`});h+='</div>';b.innerHTML+=h}else b.innerHTML+='<div class="npc-events"><h3>HÄNDELSER MED GRÅSTENSVÄKTARNA</h3><div class="empty-state">Inga direkta interaktioner ännu.</div></div>';const npcPlaces=getNpcPlaces(n.name);if(npcPlaces.length){let ph='<div class="npc-events"><h3>PLATSER</h3><ul class="ref-list">';npcPlaces.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)ph+=`<li class="place-ref" onmouseenter="highlightMarkerNpc('${pid}')" onmouseleave="unhighlightMarkerNpc('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});ph+='</ul></div>';b.innerHTML+=ph}document.getElementById('overlay').classList.add('active');document.getElementById('npcDetailPopup').classList.add('active')}
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';b.innerHTML=`<div class="recap">${linkifyFactions(ev.recap)}</div>${artHtml}`;activatePixelArtCanvases(b);if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}

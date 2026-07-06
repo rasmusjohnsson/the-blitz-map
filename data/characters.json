@@ -16,6 +16,16 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Pilen som fällde halvdraken",
+        "text": "Trängde djupare in i grottorna med gruppen. I fångehålan fann vi Leosin – Harpers-agent, som jag – misshandlad men vid liv. Han talade om Cult of the Dragon, om ritualen, om Rezmir. Namn på namn i mörkret. Sedan stod han där: Cyanwrath. Halvdraken som fällde Gothmog framför Greenests portar. Denna gång var det ingen duell. Vi anföll som ett spjut och min pil gick genom hans strupe. När han föll klev Frulam Mondath fram ur skuggorna och brände hans kropp innan vi hann röra den. Hon flydde. I hans rum stod en magisk dörr – och nästa gåta.",
+        "session": 8
+      },
+      {
+        "label": "Svamparnas tystnad",
+        "text": "Återvände till Hästskoplatån och fann den övergiven – bara vinden och spår. Vid grottmynningen tog vi ut två vakter ur skuggan, band dem och plockade av rustningarna. I grottans inre stannade jag plötsligt vid en passage – violet fungi, dödliga om man rör dem. Pekade ut svamparna för Cedric och vi smög hela gruppen förbi oskadda. Knowledge of the Wilds har räddat oss igen. Vid stirges-nästet höll jag avstånd och sköt – blod på pilskaften, men inte mitt. Längre in i drakbarnkammaren såg jag valparnas ögon. Inte ondska. Bara fångenskap. Vi tar dem med oss.",
+        "session": 7
+      },
+      {
         "label": "Mörka tygveck och hästryggar",
         "text": "Drog kåpan tätare och rörde mig djupare in på platån med Theron vid sidan. Cornwind köpte vår förklädnad. Vi red ut, dumpade köttet vid drakägg-grottan – jag såg klippväggens form, mynningen, hur värmen från äggen tryckte ut ur grottan. Tillbaka i lägret klättrade vi upp i tornet och mutade vakterna med tungt mynt. När vagnen rullade förbi gav jag signalen. Sen blev allt rop och hovar. Hoppade ner, fällde spärrvakten med en stöt, tog mig upp på en frigående häst i full galopp. Theron klarade det inte – han föll under hjulen. Jag red bredvid tills vagnen saktade och vi fick honom ombord. Vi tog deras hästar med oss.",
         "session": 6
@@ -83,6 +93,16 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Hämnden och gåtan",
+        "text": "Trängde djupt in i grottkomplexet. I fångehålan hittade vi Leosin – en Harpers-agent som pusslade ihop bitarna åt oss. Folkets vilja är bara fasaden. Bakom står Cult of the Dragon. En ritual planeras, skatter samlas, namnet Rezmir viskas i skuggorna. Sedan stod Cyanwrath framför oss igen. Halvdraken som tog Tarbaw som pris. Denna gång ingen duell. Vi anföll och han föll. Bahamuts ljus, men ingen upprättelse: Frulam Mondath brände kroppen till aska innan vi hann röra den. Inget lik, ingen trofé, bara aska. I hans rum står en magisk dörr med en gåta. Order of the Gauntlet svär att skydda de svaga – och just nu är det Tarbaw som väntar bakom nästa dörr.",
+        "session": 8
+      },
+      {
+        "label": "Vid grottans tröskel",
+        "text": "Efter vilan i Askhållan red vi tillbaka och hittade lägret tomt. Något stort har hänt – men inte här. Vi gick mot grottmynningen och tog vakterna i tystnad. Knöt deras händer hårt, plockade av rustningarna. Bahamuts ljus får oss inte synas igen – inte än. Inuti grottan kände jag stålet kallt mot huden, sköldemblemet inte mitt. Striden mot stirges var snabb. Vid drakbarnkammaren såg jag valparna och något i mig vred sig. De är unga, de är oskyldiga. Watcher's Eye läste deras rädsla. Vi räddar dem. Nu håller jag linjen medan förstärkningarna strömmar in. Order of the Gauntlet svär att stå upp – och jag står.",
+        "session": 7
+      },
+      {
         "label": "Under hästhovarna",
         "text": "Förhandlade fram jaktjobbet hos Cornwind med stadig röst – Bahamuts ljus får inte synas i fiendens tält. Red ut med Haldan, såg drakägg-grottan med egna ögon, tänkte på vad det betyder. Tillbaka klättrade jag upp i tornet och tog över mutan av vakterna. När larmet gick hoppade jag ner med Haldan och fällde spärrvakten. Jag försökte få fäste på vagnen i full fart – missade. Hjulet rullade över mig. Smärtan slet andan ur mig. Pilar och spjut singlade förbi medan jag låg där. När vagnen saktade reste jag mig på mörbultade ben och kastade mig ombord igen. Order of the Gauntlet svär att stå upp igen. Jag stod upp.",
         "session": 6
@@ -146,6 +166,16 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Hämnden för brodern",
+        "text": "Höll bakre linjen medan vi trängde djupare in. I fångehålan sträckte jag ut handen och lyfte upp Leosin – han vägde nästan ingenting. Harpers-agent, sa han. Cult of the Dragon, sa han. Sen kom Cyanwrath. Denna gång tänkte jag på Gothmog under halvdrakens klingor och min näve knöts hårdare än stenen omkring oss. Vi anföll och han föll. Jag ville stå över hans kropp med all min tyngd men Frulam Mondath brände honom först – bara aska kvar. Order of the Gauntlet svär att stå upp igen för sina bröder. Gothmog stod upp när han inte kunde. Jag står upp här.",
+        "session": 8
+      },
+      {
+        "label": "Knytnävar i grottans djup",
+        "text": "Återvände till platån och fann den tom. Konstigt – men inte alarmerande. Drakägg-grottan var där vi var nödvändiga. Vid mynningen tog vi de yttre vakterna och jag knöt repen själv – tighta knutar, ingen kommer loss. Trängde djupare in i kåporna jag bytt mot kult-rustningen. När andra vakter ifrågasatte gick jag fram med svaret innan misstanken växte. Vid stirges-nästet brakade näven i en av krypvarelserna och de blodsugarens vingar krasade. I drakbarnkammaren satt valparna och tittade upp. Order of the Gauntlet svär att skydda de svaga – och jag har aldrig sett något svagare och mer rädd än de här valparna. Jag håller stånd vid utgången medan vågorna kommer. De kommer inte förbi mig.",
+        "session": 7
+      },
+      {
         "label": "Vid vagnen i tystnad",
         "text": "Stannade kvar vid Kunskapens Vagn med Cedric och Gothmog medan Haldan och Theron tog det djupare arbetet. Hjälpte till att lasta vagnen i tystnad – kistor, vapen, allt vi kommit över. När klartecknet kom från tornet kände jag pulsen sätta fart. Sen larmet, ropet, hovarna. Vi körde. Theron försvann under hjulen – jag hörde honom skrika. När han kom ombord igen, blodig och knappt vid medvetande, höll jag honom uppe medan vagnen dånade fram. Mina runor och mitt vapen säger att jag står kvar med min broder. Order of the Gauntlet svär det – men jag svär det också utan eden.",
         "session": 6
@@ -208,6 +238,16 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Halberden mot halvdraken",
+        "text": "Runorna brann under kappan när vi trängde djupare in. I fångehålan såg jag Leosin – en främling som visste mer om vår fiende än vi själva. Cult of the Dragon, sa han. Ritual, sa han. Rezmir. Sen stod Cyanwrath framför mig igen. Han slog ner mig framför keepets portar en gång. Denna gång stod jag inte ensam. Vi anföll som en, min halberd fann honom bland stål och skinn, och han föll. Runorna sjöng. Men innan jag hann sätta foten på hans bröst brann kroppen till aska framför oss – Frulam Mondaths verk. Ingen trofé, ingen kropp att visa upp för Greenest. Bara vetskapen att han är död och att en tung dörr står och väntar på ett lösenord i hans rum.",
+        "session": 8
+      },
+      {
+        "label": "Drakvalparnas väktare",
+        "text": "Mina runor pulserade när vi närmade oss platån igen. Något hade förändrats – det visste jag innan jag såg det tomma lägret. Vid grottmynningen lät jag andra ta vakterna i tystnad – mina händer är för stora för att binda diskret. Tog rustningen och knäppte den över axlarna. Inuti grottan kändes svamparnas dödslukt innan jag såg dem – Cedric och Haldan pekade ut vägen förbi. Vid stirges-nästet blev det som det blir när det blir blod: jag står emellan dem och de mina. Och sen drakbarnkammaren. Jag förlorade min duell mot Cyanwrath – men jag förlorar inte den här. Valparna är oskyldiga, fångar i samma kult som tog Tarbaw. Runorna säger: jag vägrar bli som de som tog dem. Nu står jag mellan vågorna och valparna med halberden tung i nävarna.",
+        "session": 7
+      },
       {
         "label": "Igenkänd i lägret",
         "text": "Stod vid Cedrics sida och lastade vagnen i tystnad. Mina runor pulserade lugnt mot huden – så här långt hade infiltrationen fungerat. När klartecknet kom satte hästarna fart och vagnen rullade. Och då hände det: en av kultens egna såg mig. Halvorkens drag är inte lätta att glömma, även under en kåpa. Han ropade mitt namn över lägret och hela platån vände sig mot oss. Jag piskade hästarna fram, ratten fast i mina nävar, medan pilar singlade förbi öronen. Theron föll under hjulen – jag hörde det och kände det. När han kom ombord igen, blödande och tyst, lyfte jag honom till flaket och drev hästarna ännu hårdare. Jag är inte den som gömmer sig länge.",
@@ -276,6 +316,16 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Namnen i mörkret",
+        "text": "Djupt inne i grottorna fann vi Leosin i sin fångehåla – en Harpers-agent med huvudet fullt av pusselbitar. Cult of the Dragon står bakom Folkets vilja. Skatter samlas för en ritual. Namnet Rezmir viskas där uppe – men även han vet inte vem. Detta är nya kartor att rita. När Cyanwrath klev fram var det inte gången för duell utan för samlad attack. Vi anföll och han föll. Sen dök Frulam Mondath upp och brände kroppen med magisk eld – jag kände besvärjelsens signatur, ett formkontrollerat inferno, hon är utbildad. Hon flydde och jag var för långsam med Counterspell. I hans rum står en magisk dörr som kräver ord. Ord är mitt fält. Vi ska hitta det.",
+        "session": 8
+      },
+      {
+        "label": "Svamparnas språk",
+        "text": "Vilade i Askhållan med Kunskapens Vagn parkerad utanför – en kort paus i en lång löpning. När vi återvände till platån och fann den tom kände jag att något stort hade flyttats i kultens spelplan. Något att tänka på. Vid grottan klädde vi oss i vakternas rustningar och steg in i klippan. Längre in såg jag svamparna – ringen av purpur, sporsäckarna spruckna och redo. Violet fungi. Jag pekade ut dem för gruppen, Haldan bekräftade, vi smög förbi. Att veta vad något heter är att veta hur det dödar. Vid stirges-nästet höll jag bakåt och kastade flammor i flockarna. I drakbarnkammaren förstod jag direkt: dessa unga drakar är avelsmaterial, inte krigsdjur. Att förstöra dem är att bekräfta kultens narrativ – att de är hot. Vi räddar dem. Min Codex-Golem håller bak en korridor medan jag mässar besvärjelser för att hålla vågorna i schack.",
+        "session": 7
+      },
       {
         "label": "Kunskapens Vagn på flykt",
         "text": "Stannade kvar vid Kunskapens Vagn medan Haldan och Theron tog det riskabla djupinträngandet. Lastade vagnen i tystnad tillsammans med Gothmog och Oweyn – böckerna ompackade i tjocka kläden, vapnen i hörnen, kistorna fasta. Min Codex-Golem höll lågt profil bland fållarna. När klartecknet kom från tornet visste jag att fönstret var litet. Gothmog tog tömmarna. När han blev igenkänd och larmet gick var det bara hastighet som spelade roll. Jag mässade snabba besvärjelser för att hålla vagnen stabil i kurvorna, viskade Mage Hand-kommandon för att lyfta bort hinder framför oss. När Theron försvann under hjulen kände jag golvet vibrera och hjärtat stanna. När han kom ombord igen tog jag fram allt jag hade av läkande för att hålla honom vid liv. Far Steve byggde vagnen för långa resor – nu visste vi att den klarar en flykt också.",

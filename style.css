@@ -130,6 +130,7 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .npc-status.neutral{background:#2a2a1a;color:#c0b060;border:1px solid #5a5a2a}
 .npc-status.unknown{background:#1a1a2a;color:#8080a0;border:1px solid #3a3a5a}
 .npc-status.captured{background:#3a2a0a;color:#e0a040;border:1px solid #6a4a1a}
+.npc-status.deceased{background:#1a1a1a;color:#888;border:1px solid #444;text-decoration:line-through}
 .empty-state{font-size:11px;color:#4a4a6e;padding:24px;text-align:center;line-height:2}
 .sr-item{padding:12px;margin-bottom:6px;background:#12122a;border:1px solid #2a2a4e;border-left:3px solid var(--gold);cursor:pointer;transition:all .15s;font-size:11px;display:flex;align-items:center;gap:10px}
 .sr-item:hover{border-color:var(--gold);background:#1a1a38;color:var(--gold)}
@@ -356,6 +357,16 @@ body{background:var(--bg2);color:var(--text);font-family:var(--font);overflow:hi
 .faction-section h3{font-family:var(--font);font-size:9px;color:#ffd700;letter-spacing:2px;margin-bottom:10px}
 .faction-desc{white-space:pre-line;line-height:1.55}
 .chip-row{display:flex;flex-wrap:wrap;gap:6px}
+/* ===== Underplatser (sub-locations) ===== */
+.sub-locations{margin-top:12px;padding-top:10px;border-top:1px dashed rgba(255,215,0,.2)}
+.sub-loc-label{font-family:var(--font);font-size:8px;color:#ffd700;letter-spacing:1.5px;margin-bottom:6px;opacity:.9}
+.sub-loc-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sub-loc-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:14px;cursor:pointer;font-size:11px;color:#e0c878;transition:all .15s}
+.sub-loc-chip:hover{background:rgba(255,215,0,.18);border-color:#ffd700;box-shadow:0 0 8px rgba(255,215,0,.3);transform:translateY(-1px)}
+.sub-loc-chip.visited{border-color:#7fdb9a;color:#a0e8b8}
+.sub-loc-chip.visited:hover{border-color:#9fefb8;box-shadow:0 0 8px rgba(127,219,154,.35)}
+.parent-link{display:inline-block;font-family:var(--font);font-size:8px;color:#a08858;letter-spacing:1px;margin-bottom:8px;cursor:pointer;padding:4px 8px;border-radius:3px;background:rgba(160,136,88,.1);transition:all .15s}
+.parent-link:hover{background:rgba(160,136,88,.25);color:#ffd700}
 /* ===== Pixel art (loot, dokument, fynd) ===== */
 .pixel-art-wrap{margin:16px auto 8px;padding:14px;background:rgba(196,168,120,.05);border:1px solid rgba(196,168,120,.3);border-radius:6px;text-align:center;max-width:480px}
 .pixel-art-canvas{display:block;margin:0 auto;width:360px;height:240px;max-width:100%;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 4px 12px rgba(0,0,0,.6))}

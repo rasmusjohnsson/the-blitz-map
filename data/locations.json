@@ -339,8 +339,96 @@
     "x": 1530,
     "y": 1198,
     "visited": true,
-    "summary": "En grotta i klippväggen nära Hästskoplatån där Folkets vilja vaktar drakägg. Besökt kort i session 6 när Haldan och Theron dumpade jaktkött där under ett påhittat jaktjobb – en täckmantel för att scouta området inför flykten med Kunskapens Vagn.",
+    "parent": "kultlagret",
+    "icon": "🥚",
+    "summary": "En grottkomplex i klippväggen inne i Hästskoplatån där Folkets vilja/Cult of the Dragon vaktade drakägg och drakvalpar. Infiltrerat och rensat av Gråstensväktarna i session 7–8. Cyanwrath föll här. Frulam Mondath brände hans kropp och flydde. Leosin (Harpers-agent) räddades ur fångehålan. Inne i Cyanwraths rum står en magisk dörr som kräver lösenord.",
+    "descriptions": [
+      {
+        "title": "GROTTKOMPLEXETS RUM",
+        "items": [
+          "<strong>Yttre mynningen:</strong> Bevakad. Vakter avlöser varandra här.",
+          "<strong>Svamp-passagen:</strong> Parti farliga violet fungi – död om man rör dem. Smygas förbi.",
+          "<strong>Stirges-nästet:</strong> Blodsugande krypvarelser hängande i taket. Rensat av Gråstensväktarna.",
+          "<strong>Köttgrottan:</strong> Outforskad. Rum fyllt med kött – syfte oklart.",
+          "<strong>Otyugh-hålan:</strong> Outforskad. Stinker av sopor – minst en otyugh härinne.",
+          "<strong>Drakbarnkammaren:</strong> Guard Drake-valpar i yngre format. Räddade i session 7–8.",
+          "<strong>Fångehålan:</strong> Här hittades Leosin (Harpers-agent) tillfångatagen.",
+          "<strong>Cyanwraths rum:</strong> Halvdraken föll här i session 8. Innehåller en <strong>magisk dörr</strong> som kräver lösenord."
+        ]
+      },
+      {
+        "title": "MAGISKA DÖRREN (SESSION 8)",
+        "items": [
+          "Placering: Inne i Cyanwraths privata rum.",
+          "Kräver ett lösenord för att öppnas.",
+          "Bakom: okänt. Skattkammare? Ritualplats? Väg vidare?",
+          "Nästa uppgift: hitta lösenordet."
+        ]
+      },
+      {
+        "title": "INFILTRATIONSMETOD (SESSION 7)",
+        "items": [
+          "Förklädnad: vakternas egna rustningar (tagna från övermannade yttre vakter).",
+          "Haldan + Cedric identifierade violet fungi – kunskap räddade gruppen.",
+          "Tempo över utforskning: lät köttgrottan och otyugh-hålan vara."
+        ]
+      }
+    ],
     "events": [
+      {
+        "title": "Den magiska dörren",
+        "preview": "Lösenord krävs...",
+        "detail": "Inne i Cyanwraths rum, efter halvdrakens fall, upptäckte Gråstensväktarna en magisk dörr som kräver ett lösenord för att öppnas. Vad som ligger bakom är okänt – kanske kultens skattkammare, kanske ritualplatsen, kanske en väg vidare. Lösenordet är nästa gåta.",
+        "session": 8
+      },
+      {
+        "title": "Frulams flykt",
+        "preview": "Kroppen brändes med magisk eld...",
+        "detail": "I samma stund som Cyanwraths kropp föll klev Frulam Mondath fram ur skuggorna. Med magisk eld brände hon halvdrakens kropp till aska – ingen kropp fick lämnas som byte – och flydde sedan innan Gråstensväktarna hann fånga henne. Kall pragmatism där Cyanwraths raseri hade varit.",
+        "session": 8
+      },
+      {
+        "title": "Cyanwraths fall",
+        "preview": "Halvdraken faller i grottans djup...",
+        "detail": "Djupt inne i grottkomplexet konfronterade Gråstensväktarna Cyanwrath. Hans utmaning från Greenest fick sitt svar här – halvdraken föll för deras samlade attack. Hämnden för Gothmogs förlust vid keepets portar var slutförd.",
+        "session": 8
+      },
+      {
+        "title": "Leosin räddad",
+        "preview": "Harpers-agent bland fångarna...",
+        "detail": "Bland Folkets viljas fångar i grottan hittade Gråstensväktarna Leosin – en tillfångatagen Harpers-agent. Under fångenskapen hade han snappat upp viktig information: Folkets vilja är en fasad, Cult of the Dragon är det verkliga hotet, kulten samlar skatter för en ritual, och namnet Rezmir viskas bland de högsta.",
+        "session": 8
+      },
+      {
+        "title": "Larmet och vågorna",
+        "preview": "Hela grottan vaknar...",
+        "detail": "När några kobolder lyckades fly från drakbarnkammaren och slog larm strömmade förstärkningar in från alla håll. Kobolder och vakter i våg efter våg mot drakbarnkammaren. Gråstensväktarna håller linjen och skyddar valparna – striden pågår fortfarande.",
+        "session": 7
+      },
+      {
+        "title": "Drakbarnkammaren",
+        "preview": "Guard Drake-valpar bland kobolder...",
+        "detail": "I en tredje grottsal stötte gruppen på kobolder som vaktade en håla med unga Guard Drake-valpar. Anfallet kom snabbt och de flesta kobolder föll – men några lyckades fly och slå larm. Beslutet togs på fläcken: valparna ska räddas, inte slaktas. De är offer, inte fiender.",
+        "session": 7
+      },
+      {
+        "title": "Stirges-nästet",
+        "preview": "Blodsugare i taket...",
+        "detail": "I en av grottans kammare hängde stirges från taket och störtade ner över gruppen. Slogs ner en efter en. Förbi nästet passerade de en grotta full av kött och otyugh-hålan – båda outforskade. Tempo viktigare än kartläggning.",
+        "session": 7
+      },
+      {
+        "title": "Svamp-passagen",
+        "preview": "Violet fungi i skuggorna...",
+        "detail": "Längre in i grottan identifierade Haldan och Cedric ett parti violet fungi – död bland skuggorna för den som rör dem. Tack vare kunskapen smög hela gruppen förbi oskadda.",
+        "session": 7
+      },
+      {
+        "title": "Bakhållet vid grottmynningen",
+        "preview": "Två vakter övermannade...",
+        "detail": "Drakägg-grottan var inte övergiven. Gråstensväktarna lurade ut två vakter från mynningen, övermannade och band dem i tystnad. Under förhör avslöjades grottans inre disposition. Vakternas rustningar plockades av och drogs på – ny förklädnad, denna gång kultens egen vaktuniform.",
+        "session": 7
+      },
       {
         "title": "Köttet vid grottans mynning",
         "preview": "Jaktjobbet var en täckmantel...",
@@ -355,7 +443,7 @@
     "x": 1580,
     "y": 1218,
     "visited": true,
-    "summary": "Kultens dolda läger på en hästskoformad platå i Greenfields. Folkets viljas operativa bas där den blå draken och Cyanwrath håller till mellan attackerna. Infiltrerad och kartlagd av Gråstensväktarna i session 5 genom Moks ögon.",
+    "summary": "Kultens dolda läger på en hästskoformad platå i Greenfields. Var Folkets viljas operativa bas där den blå draken och Cyanwrath höll till mellan attackerna. Infiltrerad och kartlagd av Gråstensväktarna i session 5–6. Sedan session 7 är hela lägret evakuerat – tält och eldar borta, bara vinden över sandiga spår. Drakägg-grottan i klippväggen är dock fortfarande bemannad.",
     "descriptions": [
       {
         "title": "VAD MOK SÅG OVANIFRÅN",
@@ -377,6 +465,12 @@
       }
     ],
     "events": [
+      {
+        "title": "Lägret evakuerat",
+        "preview": "Bara vinden över sandiga spår...",
+        "detail": "När Gråstensväktarna återvände till Hästskoplatån efter sin vila i Askhållan möttes de av en spöklik tomhet. Hela lägret var evakuerat – inga kultister, inga tält, inga eldar. Bara vinden över platån och tomma spår i sanden. Kulten hade flyttat, men frågan kvarstod: vart, och varför just nu? Drakägg-grottan i klippväggen visade sig dock vara fortsatt bemannad.",
+        "session": 7
+      },
       {
         "title": "Den vilda flykten",
         "preview": "Kunskapens Vagn dånar genom lägret...",

@@ -354,5 +354,87 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 7,
+    "label": "SESSION 7",
+    "title": "In i grottans djup",
+    "date": "2026-06-16",
+    "events": [
+      {
+        "title": "Återkomsten till platån",
+        "recap": "Efter en tids vila i Askhållan begav sig Gråstensväktarna tillbaka till Hästskoplatån. När de kom fram var hela lägret evakuerat – inga kultister, inga tält, inga eldar. Bara vinden över den övergivna platån och tomma spår i sanden. Kulten hade flyttat – men frågan kvarstod: vart, och varför just nu?",
+        "places": ["askhallan", "kultlagret"],
+        "npcs": []
+      },
+      {
+        "title": "Bakhållet vid grottmynningen",
+        "recap": "Drakägg-grottan i klippväggen var inte övergiven. Gruppen lurade ut två vakter från mynningen, övermannade och band dem i tystnad. Under förhör avslöjades grottans inre disposition. Vakternas rustningar plockades av och drogs på – ny förklädnad, denna gång inte kåpor utan kultens egen vaktuniform.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Infiltrationen och svamparna",
+        "recap": "Klädda i de bundna vakternas rustningar tog sig Gråstensväktarna in i grottan. Andra vakter mötte dem och fattade viss misstanke men lät sig luras. Längre in identifierade Haldan och Cedric ett parti farliga violet fungi – död bland skuggorna om man rörde dem. Gruppen smög förbi oskadda.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Stirges-nästet",
+        "recap": "I en av grottans inre kammare bröt strid ut mot ett näste av stirges – blodsugande krypvarelser som hängde i taket och störtade ner. Gruppen slog ner dem en efter en. Förbi nästet passerade de en grotta full av kött och en som stank av sopor – otyugh-hålan – men lät båda vara outforskade. Tempot fick inte tappas.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Drakbarnkammaren",
+        "recap": "I en tredje grottsal stötte de på en grupp kobolder som vaktade en håla full med Guard Drake-valpar i yngre format. Anfallet kom snabbt – kobolderna föll men några lyckades fly och slå larm innan klingorna nådde dem. Beslutet togs på fläcken: drakvalparna ska räddas, inte slaktas. De är offer, inte fiender.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Larmet och vågorna",
+        "recap": "Larmet ekade genom grottans gångar och hela komplexet vaknade. Förstärkningar strömmade in från alla håll – kobolder och vakter i våg efter våg. Gråstensväktarna kämpar för att hålla linjen i drakbarnkammaren och skydda valparna medan striden eskalerar runt dem. Sessionen avslutas mitt i kaoset.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "label": "SESSION 8",
+    "title": "Halvdrakens död",
+    "date": "2026-06-22",
+    "events": [
+      {
+        "title": "Djupare in i grottorna",
+        "recap": "Gråstensväktarna fortsatte in i grottkomplexet, letandes efter drakäggen och kultens centrum. Förbi de rensade nästena och de outforskade hålorna trängde de djupare, alltid på jakt efter kärnan.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Leosin räddad",
+        "recap": "I en fångehåla hittade Gråstensväktarna en tanig, misshandlad man – Leosin, en agent från Harpers. Under sin fångenskap hade han snappat upp avgörande information: Folkets vilja är bara en fasad, det verkliga hotet är Cult of the Dragon. Kulten samlar skatter för en ritual. Namnet Rezmir upprepas ofta bland ledarna – men även han vet inte vem eller vad Rezmir är.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Leosin"]
+      },
+      {
+        "title": "Konfrontation med Cyanwrath",
+        "recap": "Djupt inne i grottkomplexet stod han igen – blå halvdrake, drakhuvad rustning, den som fällt Gothmog framför Greenests portar. Denna gång var det inte en duell. Gråstensväktarna anföll som ett spjut och Cyanwrath föll under deras samlade attack. Hämnden var slutförd.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Cyanwrath"]
+      },
+      {
+        "title": "Frulam Mondaths flykt",
+        "recap": "Innan Cyanwraths kropp hunnit svalna klev Frulam Mondath fram ur skuggorna. Med magisk eld brände hon halvdrakens kropp till aska – ingen kropp fick lämnas åt fienden. Sedan flydde hon in i grottornas mörker innan gruppen hann fånga henne. Namnet Mondath viskades av kultisterna med respekt.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Frulam Mondath"]
+      },
+      {
+        "title": "Den magiska dörren",
+        "recap": "I Cyanwraths privata rum hittade Gråstensväktarna en magisk dörr – tung, mörk, gnistrande av besvärjelser. Den kräver ett lösenord. Vad som ligger bakom är okänt: kultens skattkammare, ritualplatsen, en väg vidare. Att hitta lösenordet är gruppens nästa gåta.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      }
+    ]
   }
 ]

@@ -95,6 +95,43 @@
     ]
   },
   {
+    "id": "frulam",
+    "name": "Frulam Mondath",
+    "aliases": ["Frulam", "Mondath"],
+    "status": "hostile",
+    "role": "Präst i Folkets vilja / Cult of the Dragon",
+    "desc": "En magibrukande präst inom Folkets vilja – och, enligt Leosin, ett kugghjul i den större kulten Cult of the Dragon. Klev fram i grottorna först efter Cyanwraths fall och brände halvdrakens kropp med magisk eld innan hon flydde. Kall, målmedveten, ingen slösad rörelse. Hennes efternamn Mondath talades av kultisterna med respekt – någon högre än Cornwind, kanske näst efter Rezmir.",
+    "events": [
+      {
+        "label": "Kroppsbränningen",
+        "text": "Klev fram i grottans skuggor omedelbart efter att Cyanwrath fallit. Brände halvdrakens kropp med magisk eld på plats – inget lik fick lämnas åt fienden – och flydde sedan innan Gråstensväktarna hann fånga henne. En kall pragmatism som Cyanwraths raseri saknade.",
+        "session": 8
+      }
+    ]
+  },
+  {
+    "id": "rezmir",
+    "name": "Rezmir",
+    "status": "unknown",
+    "role": "Omnämnd – Cult of the Dragon",
+    "desc": "Ett namn som viskas bland de högsta i kulten. Enligt Leosin, Harpers-agenten Gråstensväktarna räddade, upprepas det bland dem som styr Cult of the Dragon – men även han vet inte vem eller vad Rezmir är. Sättet kultisterna sänker rösten när de talar om henne pekar mot någon på toppen av hierarkin, långt över Cyanwrath och Frulam Mondath.",
+    "events": []
+  },
+  {
+    "id": "leosin",
+    "name": "Leosin",
+    "status": "friendly",
+    "role": "Harpers-agent · räddad fånge",
+    "desc": "En taniga men skarpögd man som Gråstensväktarna hittade tillfångatagen djupt inne i drakäggs-grottorna. Avslöjade sig som agent för Harpers – utsänd för att kartlägga Folkets viljas verksamhet. Under sin fångenskap har han snappat upp att kulten samlar skatter för en ritual, att namnet Rezmir upprepas ofta bland ledarna, och att Folkets vilja troligen bara är en fasad – det verkliga hotet är Cult of the Dragon som han misstänker står bakom. Vet ännu inte vem Rezmir är.",
+    "events": [
+      {
+        "label": "Räddad ur grottans mörker",
+        "text": "Hittades av Gråstensväktarna djupt inne i drakäggs-grottorna, misshandlad men vid liv. Berättade om sitt Harpers-uppdrag, om kultens skatteinsamling till en ritual, om namnet Rezmir som viskas bland ledarna – och om sin misstanke att Folkets vilja bara är en fasad för Cult of the Dragon.",
+        "session": 8
+      }
+    ]
+  },
+  {
     "id": "cornwind",
     "name": "Cornwind",
     "status": "hostile",
@@ -127,9 +164,9 @@
     "id": "cyanwrath",
     "name": "Cyanwrath",
     "aliases": ["Langdedrosa Cyanwrath", "blå halvdrake"],
-    "status": "hostile",
-    "role": "Blå halvdrake – kultens utmanare",
-    "desc": "En väldig blå halvdrake i drakhuvad rustning. Hans hud är blå-grå, hans andetag knastrar av statisk elektricitet och hans röst är ett lågt mullrande. Ledare för den slagkraftiga falangen CyansWrath som bär hans namn. Klev fram inom hörhåll från Greenest Keep och utmanade keepets bästa kämpe på en duell på liv och död.",
+    "status": "deceased",
+    "role": "Fallen blå halvdrake – före detta ledare för CyansWrath",
+    "desc": "En väldig blå halvdrake i drakhuvad rustning. Hans hud var blå-grå, hans andetag knastrade av statisk elektricitet och hans röst var ett lågt mullrande. Ledde den slagkraftiga falangen CyansWrath som bar hans namn. Utmanade Gothmog på duell utanför Greenest Keep i session 5 och vann. Föll för Gråstensväktarna i drakäggs-grottornas djup i session 8. Hans kropp brändes magiskt av Frulam Mondath innan gruppen hann röra den.",
     "events": [
       {
         "label": "Utmaningen vid keepets portar",
@@ -140,6 +177,11 @@
         "label": "Duellens seger",
         "text": "Mötte Gothmog i envig framför keepets portar och fällde honom blödande till marken. Vände sig om och tog Tarbaw Nighthill som sitt pris utan ett ord. Försvann mot Hästskoplatån med Greenests guvernör i sitt grepp.",
         "session": 5
+      },
+      {
+        "label": "Fallen i grottans djup",
+        "text": "Konfronterades av Gråstensväktarna djupt inne i drakäggs-grottorna och föll för deras samlade attack. Hans kropp brändes magiskt av Frulam Mondath innan gruppen hann röra den – ingen krops till segerväxling, inget vapen att ta. Bara aska och ett rum bakom en magisk dörr.",
+        "session": 8
       }
     ]
   }
