@@ -110,6 +110,21 @@
     ]
   },
   {
+    "id": "modern",
+    "name": "Modern",
+    "aliases": ["modern"],
+    "status": "unknown",
+    "role": "Omnämnd – Cult of the Dragon",
+    "desc": "Ett fragment ur en halvbränd anteckning i Frulam Mondaths rum: 'Ära åt modern...'. Ingenting mer. Gruppen misstänker att 'modern' syftar på en drakmoder – möjligen den svarta draken vars ägg kläcks i Drakägg-grottan, möjligen någon större kraft ännu högre upp i Cult of the Dragons hierarki. Titeln 'modern' snarare än ett personnamn tyder på en gudomlig eller symbolisk figur i kulten.",
+    "events": [
+      {
+        "label": "Nämnd i anteckningen",
+        "text": "Namnet dök upp i det halvbrända dokumentet i Frulam Mondaths rum. Kontext: 'Ära åt modern...' – hyllning till en figur i kulten som ännu inte har ansikte, namn eller kropp för Gråstensväktarna.",
+        "session": 9
+      }
+    ]
+  },
+  {
     "id": "rezmir",
     "name": "Rezmir",
     "status": "unknown",

@@ -334,6 +334,23 @@
     ]
   },
   {
+    "id": "dodens_myr",
+    "name": "Dödens Myr",
+    "x": 1750,
+    "y": 1050,
+    "visited": false,
+    "icon": "🐍",
+    "summary": "Nämnd i det halvbrända dokumentet i Frulam Mondaths rum – 'Dödens Myr...'. Position okänd, natur okänd. Möjligen en av transporternas mål, möjligen ett gömställe för 'skatten'. Gruppen har bara hört namnet.",
+    "events": [
+      {
+        "title": "Namnet i det brända dokumentet",
+        "preview": "Dödens Myr...",
+        "detail": "Namnet dök upp i den halvbrända anteckningen från Frulam Mondaths rum. Ingen kontext, bara en fragment: 'Dödens Myr...'. Att spåra vad det är och var det ligger blir Gråstensväktarnas nästa uppgift.",
+        "session": 9
+      }
+    ]
+  },
+  {
     "id": "drakagg_grottan",
     "name": "Drakägg-grottan",
     "x": 1530,
@@ -341,7 +358,7 @@
     "visited": true,
     "parent": "kultlagret",
     "icon": "🥚",
-    "summary": "En grottkomplex i klippväggen inne i Hästskoplatån där Folkets vilja/Cult of the Dragon vaktade drakägg och drakvalpar. Infiltrerat och rensat av Gråstensväktarna i session 7–8. Cyanwrath föll här. Frulam Mondath brände hans kropp och flydde. Leosin (Harpers-agent) räddades ur fångehålan. Inne i Cyanwraths rum står en magisk dörr som kräver lösenord.",
+    "summary": "En grottkomplex i klippväggen inne i Hästskoplatån där Folkets vilja/Cult of the Dragon vaktade svarta drakägg. Infiltrerat och rensat av Gråstensväktarna i session 7–9. Cyanwrath föll här, Frulam Mondath flydde efter att ha bränt hans kropp, Leosin räddades ur fångehålan. Den magiska dörren i Cyanwraths rum öppnades i session 9 – innanför fanns svarta drakägg som lämnades kvar. Frulams rum genomsöktes och två brandskadade dokument bärgades. På väg ut sprängde Gråstensväktarna utgången så komplexet nu är permanent förseglat.",
     "descriptions": [
       {
         "title": "GROTTKOMPLEXETS RUM",
@@ -353,16 +370,20 @@
           "<strong>Otyugh-hålan:</strong> Outforskad. Stinker av sopor – minst en otyugh härinne.",
           "<strong>Drakbarnkammaren:</strong> Guard Drake-valpar i yngre format. Räddade i session 7–8.",
           "<strong>Fångehålan:</strong> Här hittades Leosin (Harpers-agent) tillfångatagen.",
-          "<strong>Cyanwraths rum:</strong> Halvdraken föll här i session 8. Innehåller en <strong>magisk dörr</strong> som kräver lösenord."
+          "<strong>Cyanwraths rum:</strong> Halvdraken föll här i session 8.",
+          "<strong>Drakägg-kammaren:</strong> Bakom den magiska dörren. Fylld med svarta drakägg. Lämnade orörda.",
+          "<strong>Frulams rum:</strong> Genomsökt i session 9. Brandskadade dokument bärgade.",
+          "<strong>Utgången:</strong> Sprängd och kollapsad i session 9. Grottan permanent förseglad."
         ]
       },
       {
-        "title": "MAGISKA DÖRREN (SESSION 8)",
+        "title": "DOKUMENTFYND (SESSION 9)",
         "items": [
-          "Placering: Inne i Cyanwraths privata rum.",
-          "Kräver ett lösenord för att öppnas.",
-          "Bakom: okänt. Skattkammare? Ritualplats? Väg vidare?",
-          "Nästa uppgift: hitta lösenordet."
+          "<strong>Brev till Rezmir:</strong> Rapport om Greenest-räden. Bytet större än 3 tidigare räder tillsammans.",
+          "<strong>Verkliga slagordet:</strong> 'Total frihet genom total kontroll' – kultens egna, inte fasadens.",
+          "<strong>Transporter norrut:</strong> Ska påbörjas efter omlastning.",
+          "<strong>Tre ägg kläckta:</strong> Kunde inte flyttas längre.",
+          "<strong>Bränd anteckning:</strong> Fragment kvar – 'Ära åt modern', 'Dödens Myr', 'Skatten kommer att...'."
         ]
       },
       {
@@ -375,6 +396,38 @@
       }
     ],
     "events": [
+      {
+        "title": "Kollapsen",
+        "preview": "Utgången sprängdes...",
+        "detail": "På väg ut ur grottan tog Gråstensväktarna beslutet att ingen fiende ska kunna använda platsen igen. Vid utgången sprängde de klippan så gången kollapsade i ett moln av damm och stenblock. Drakäggen bakom den magiska dörren, de tre kläckta drakvalparna, Frulams rum – allt tillhör nu berget.",
+        "session": 9
+      },
+      {
+        "title": "Den halvbrända anteckningen",
+        "preview": "Fragment: 'Dödens Myr', 'Modern'...",
+        "detail": "Det andra dokumentet från Frulams rum var kraftigt bränt. Bara fragment kvar: '...om lasten når...', 'Ära åt modern...', 'Dödens Myr...', 'Skatten kommer att...'. Två nya spår: någon eller något som kallas 'modern' – möjligen en drakmoder – och en okänd plats som heter Dödens Myr.",
+        "session": 9,
+        "pixelArt": "brand_anteckning"
+      },
+      {
+        "title": "Brevet till Rezmir",
+        "preview": "Rapport om Greenest-räden...",
+        "detail": "Det första dokumentet från Frulams rum var ett brev till Rezmir. Rapport om att bytet från Greenest-räden var större än de tre föregående räderna tillsammans. Moral hög i Folkets vilja under det verkliga slagordet 'Total frihet genom total kontroll'. Transporter norrut ska påbörjas efter omlastning. Tre drakägg har överlevt transport och kläcks nu i grottan.",
+        "session": 9,
+        "pixelArt": "brev_rezmir"
+      },
+      {
+        "title": "Frulams rum genomsökt",
+        "preview": "Brådskande övergivet – brandskadade dokument...",
+        "detail": "Vidare in i komplexet hittade gruppen Frulam Mondaths privata rum. Städat men brådskande övergivet – hon hade flytt när hon insåg att spelet var slut. På bordet låg två brandskadade dokument hon inte hunnit förstöra ordentligt.",
+        "session": 9
+      },
+      {
+        "title": "Svarta drakäggen bakom dörren",
+        "preview": "Lämnade orörda...",
+        "detail": "Lösenordet knäcktes och den magiska dörren gled upp. Innanför fanns en mörk kammare med svarta drakägg uppradade – redo att kläckas. Gruppen lämnade äggen där. En kammare full av svarta drakar var inte något de kunde ta med sig, inte just nu.",
+        "session": 9
+      },
       {
         "title": "Den magiska dörren",
         "preview": "Lösenord krävs...",

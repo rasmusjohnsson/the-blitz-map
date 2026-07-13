@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.7.0';
+const APP_VERSION='2.8.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -152,10 +152,97 @@ const PIXEL_FONT={
   F:['111','100','110','100','100'],O:['111','101','101','101','111'],L:['100','100','100','100','111'],
   K:['101','110','100','110','101'],E:['111','100','110','100','111'],T:['111','010','010','010','010'],
   S:['111','100','111','001','111'],V:['101','101','101','101','010'],I:['111','010','010','010','111'],
-  J:['111','010','010','010','110'],A:['010','101','111','101','101'],' ':['000','000','000','000','000']
+  J:['111','010','010','010','110'],A:['010','101','111','101','101'],
+  R:['110','101','110','101','101'],Z:['111','001','010','100','111'],M:['101','111','111','101','101'],
+  D:['110','101','101','101','110'],N:['101','111','111','111','101'],Y:['101','101','010','010','010'],
+  H:['101','101','111','101','101'],C:['011','100','100','100','011'],G:['011','100','101','101','011'],
+  U:['101','101','101','101','111'],P:['110','101','110','100','100'],B:['110','101','110','101','110'],
+  W:['101','101','101','111','101'],X:['101','101','010','101','101'],Q:['111','101','101','111','011'],
+  '.':['000','000','000','000','010'],'-':['000','000','111','000','000'],':':['000','010','000','010','000'],
+  ' ':['000','000','000','000','000']
 };
 function drawPixelString(c,str,sx,sy,color){c.fillStyle=color;let x=sx;str.split('').forEach(ch=>{const rows=PIXEL_FONT[ch]||PIXEL_FONT[' '];for(let r=0;r<5;r++){for(let i=0;i<3;i++){if(rows[r][i]==='1')c.fillRect(x+i,sy+r,1,1)}}x+=4})}
 const PIXEL_ART={
+  brev_rezmir:cv=>{
+    const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
+    // Cream paper - letter quality
+    c.fillStyle='#e0c898';c.fillRect(0,0,120,80);
+    c.fillStyle='#f0dcaa';c.fillRect(0,0,120,2);c.fillRect(0,0,2,80);
+    c.fillStyle='#b89868';c.fillRect(0,77,120,3);c.fillRect(117,0,3,80);
+    // Faint aging stains
+    c.fillStyle='#c8b088';c.fillRect(88,15,6,3);c.fillRect(20,58,8,2);
+    // Scorch marks (bottom-right corner burn)
+    c.fillStyle='#3a2010';c.fillRect(95,60,25,20);
+    c.fillStyle='#1a0808';c.fillRect(102,66,18,14);c.fillRect(108,70,12,10);
+    c.fillStyle='#6a4020';c.fillRect(90,58,8,4);c.fillRect(85,62,4,3);
+    // Burn edge irregular
+    c.fillStyle='#4a2818';c.fillRect(88,63,2,2);c.fillRect(94,58,2,2);c.fillRect(96,55,2,2);
+    // Address: "REZMIR" at top
+    drawPixelString(c,'REZMIR',6,6,'#2a1a08');
+    // Body lines - short bars representing sentences
+    c.fillStyle='#3a2010';
+    c.fillRect(6,16,90,1);
+    c.fillRect(6,20,84,1);
+    c.fillRect(6,24,88,1);
+    c.fillRect(6,30,80,1);
+    c.fillRect(6,34,70,1);
+    c.fillRect(6,40,86,1);
+    c.fillRect(6,44,60,1);
+    c.fillRect(6,50,70,1);
+    // Ink dabs to feel like handwriting
+    c.fillStyle='#5a3020';
+    c.fillRect(30,20,3,1);c.fillRect(60,24,2,1);c.fillRect(45,34,2,1);c.fillRect(72,40,3,1);
+    // Signature/glyph at bottom (dragon rune)
+    c.fillStyle='#7a1010';c.fillRect(6,60,3,4);c.fillRect(4,62,7,1);c.fillRect(6,64,3,1);
+    // Wax seal fragment (mostly burned)
+    c.fillStyle='#5a0808';c.fillRect(80,50,10,8);
+    c.fillStyle='#8a1010';c.fillRect(81,51,8,6);
+    c.fillStyle='#2a0404';c.fillRect(83,53,4,3);
+  },
+  brand_anteckning:cv=>{
+    const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
+    // Heavily burned - center visible, all edges charred
+    c.fillStyle='#1a1a2e';c.fillRect(0,0,120,80);
+    // Center parchment island (small, irregular)
+    c.fillStyle='#c4a878';c.fillRect(20,18,72,44);
+    c.fillStyle='#b89868';c.fillRect(20,18,72,2);
+    // Charred edges bleeding inward
+    c.fillStyle='#2a1a0a';c.fillRect(18,16,4,48);c.fillRect(90,16,4,48);
+    c.fillRect(18,16,76,4);c.fillRect(18,60,76,4);
+    // Deep char
+    c.fillStyle='#0a0a15';
+    c.fillRect(0,0,120,10);c.fillRect(0,68,120,12);c.fillRect(0,0,10,80);c.fillRect(108,0,12,80);
+    // Uneven burn edges - flaming
+    c.fillStyle='#3a1a0a';
+    c.fillRect(15,12,4,2);c.fillRect(22,10,3,2);c.fillRect(45,8,5,3);c.fillRect(70,10,4,2);c.fillRect(88,12,4,2);
+    c.fillRect(15,66,3,2);c.fillRect(30,68,4,2);c.fillRect(55,66,3,2);c.fillRect(78,68,4,2);
+    c.fillRect(10,25,3,2);c.fillRect(8,45,3,2);c.fillRect(104,25,3,2);c.fillRect(106,45,3,2);
+    // Orange/red ember glow at edges (like still-smoldering)
+    c.fillStyle='#6a2a0a';
+    c.fillRect(24,15,2,1);c.fillRect(48,12,2,1);c.fillRect(72,15,2,1);
+    c.fillRect(28,63,2,1);c.fillRect(60,64,2,1);c.fillRect(80,63,2,1);
+    c.fillStyle='#a04010';c.fillRect(50,10,2,1);c.fillRect(65,66,2,1);
+    // Visible text fragments in the center - deliberately broken
+    // "...OM LASTEN NAR..." fragment
+    drawPixelString(c,'OM',26,24,'#2a1a08');
+    c.fillStyle='#3a2010';c.fillRect(35,26,8,1); // burn gap
+    drawPixelString(c,'LASTEN',44,24,'#2a1a08');
+    // Second line - "ARA AT MODERN"
+    drawPixelString(c,'MODERN',44,32,'#2a1a08');
+    c.fillStyle='#3a2010';c.fillRect(25,34,15,1);c.fillRect(70,34,18,1);
+    // Third - "DODENS MYR"
+    drawPixelString(c,'DODENS',28,40,'#2a1a08');
+    c.fillStyle='#3a2010';c.fillRect(56,42,6,1);
+    drawPixelString(c,'MYR',64,40,'#2a1a08');
+    // Fourth - "SKATTEN"
+    drawPixelString(c,'SKATTEN',26,48,'#2a1a08');
+    c.fillStyle='#3a2010';c.fillRect(56,50,30,1);
+    // Ash spots
+    c.fillStyle='#5a4a3a';c.fillRect(35,22,2,1);c.fillRect(60,42,2,1);c.fillRect(70,48,3,1);
+    // Char holes in the center - burned through
+    c.fillStyle='#1a1a2e';c.fillRect(75,28,8,4);c.fillRect(35,54,10,5);
+    c.fillStyle='#2a1a0a';c.fillRect(74,27,10,1);c.fillRect(74,32,10,1);c.fillRect(34,53,12,1);c.fillRect(34,59,12,1);
+  },
   folkets_vilja:cv=>{
     const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
     // parchment body
@@ -196,7 +283,8 @@ const PIXEL_ART={
     c.fillRect(50,73,58,7);c.fillRect(45,75,5,5);c.fillRect(40,77,5,3);
   }
 };
-function renderPixelArt(id){if(!PIXEL_ART[id])return'';return`<div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${id}"></canvas><div class="pixel-art-caption">PERGAMENT · "FOLKETS VILJA"</div></div>`}
+const PIXEL_ART_CAPTIONS={folkets_vilja:'PERGAMENT · "FOLKETS VILJA"',brev_rezmir:'BREV · TILL REZMIR',brand_anteckning:'HALVBRÄND ANTECKNING'};
+function renderPixelArt(id){if(!PIXEL_ART[id])return'';const cap=PIXEL_ART_CAPTIONS[id]||'DOKUMENTFYND';return`<div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${id}"></canvas><div class="pixel-art-caption">${cap}</div></div>`}
 function activatePixelArtCanvases(root){(root||document).querySelectorAll('canvas.pixel-art-canvas[data-art]').forEach(cv=>{const id=cv.dataset.art;if(PIXEL_ART[id])PIXEL_ART[id](cv)})}
 
 // Map is now a background image (map.jpg) on .map-canvas via CSS

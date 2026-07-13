@@ -436,5 +436,45 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 9,
+    "label": "SESSION 9",
+    "title": "Bakom den magiska dörren",
+    "date": "2026-06-29",
+    "events": [
+      {
+        "title": "Dörren öppnas",
+        "recap": "Lösenordet knäcktes och den magiska dörren i Cyanwraths rum gled upp. Innanför väntade det Gråstensväktarna anat men fruktat: svarta drakägg, uppradade i en mörk kammare, redo att kläckas. Gruppen lämnade äggen där. En kammare full av svarta drakar var inte något de kunde ta med sig, inte just nu.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      },
+      {
+        "title": "Frulams rum",
+        "recap": "Vidare in i grottkomplexet hittade gruppen Frulam Mondaths privata rum. Rummet var städat men brådskande övergivet – hon hade flytt när hon insåg att spelet var slut. På bordet låg brandskadade dokument som hon inte hunnit förstöra ordentligt.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Frulam Mondath"]
+      },
+      {
+        "title": "Brevet till Rezmir",
+        "recap": "Det första dokumentet var ett brev adresserat till Rezmir – rapport om räden mot Greenest. Bytet var större än tre föregående räder tillsammans. Moralen i Folkets vilja beskrevs som hög under det verkliga slagordet: 'Total frihet genom total kontroll'. Transporterna norrut skulle inledas så snart omlastningen var klar. Tre ägg hade överlevt transporten och kläcktes nu här.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Rezmir"],
+        "pixelArt": "brev_rezmir"
+      },
+      {
+        "title": "Den halvbrända anteckningen",
+        "recap": "Det andra dokumentet var en halvbränd anteckning. Det mesta var oläsligt – bara fragment kvar: '...om lasten når...', 'Ära åt modern...', 'Dödens Myr...', 'Skatten kommer att...'. Två nya spår: 'modern' – någon eller något högt över Rezmir – och 'Dödens Myr', en plats gruppen aldrig hört talas om.",
+        "places": ["drakagg_grottan"],
+        "npcs": ["Modern"],
+        "pixelArt": "brand_anteckning"
+      },
+      {
+        "title": "Kollapsen",
+        "recap": "På väg ut ur grottan fattade Gråstensväktarna beslutet: ingen fiende ska kunna använda den här platsen igen. Vid utgången sprängde de klippan så att gången kollapsade i ett moln av damm och stenblock. Drakäggen, äggen som redan kläckts, den magiska dörren – allt tillhör nu berget.",
+        "places": ["drakagg_grottan"],
+        "npcs": []
+      }
+    ]
   }
 ]

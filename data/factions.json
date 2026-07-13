@@ -70,13 +70,13 @@
     "id": "cult_of_the_dragon",
     "name": "Cult of the Dragon",
     "aliases": ["Drakkulten", "CotD"],
-    "motto": "Draken skall stiga",
+    "motto": "Total frihet genom total kontroll",
     "tagline": "Skuggan bakom Folkets vilja",
     "symbol": "🐲",
     "status": "hostile",
-    "desc": "En större, äldre och mörkare drakdyrkande organisation som Harpers-agenten Leosin misstänker står bakom Folkets vilja. Enligt hans information samlar de skatter från plundrade byar för en stor ritual – syftet är fortfarande okänt.\n\nNamnet Rezmir upprepas ofta bland de högsta i hierarkin, men även Leosin vet inte vem eller vad Rezmir är. Frulam Mondath verkar vara en av deras präster – kopplingen bekräftades när hon magiskt brände Cyanwraths kropp i drakäggs-grottorna för att ingenting skulle lämnas åt fienden.\n\nGråstensväktarna har ännu bara skymtat organisationens ytterkanter. Folkets vilja var ansiktet utåt. Cult of the Dragon är det verkliga hotet.",
-    "npcs": ["Rezmir", "Frulam Mondath"],
-    "places": ["kultlagret", "drakagg_grottan"],
+    "desc": "En större, äldre och mörkare drakdyrkande organisation som Harpers-agenten Leosin identifierade som skuggan bakom Folkets vilja. Deras verkliga slagord – avslöjat i Frulam Mondaths brev till Rezmir – är 'Total frihet genom total kontroll'. Fasaden 'Frihet genom styrka' är för fotsoldaterna.\n\nKulten samlar skatter från plundrade byar för en stor ritual. Räden mot Greenest gav mer byte än de tre föregående räderna tillsammans. Transporter av bytet ska föras norrut så snart omlastningen är klar.\n\nBland de högsta i hierarkin finns Rezmir – någon Leosin bekräftade men inte kunnat identifiera. Ännu högre finns en gestalt kallad 'Modern' – möjligen en drakmoder – nämnd i hyllningar i ett halvbränt dokument. Cult of the Dragon avlar svarta drakar i hemliga grottor. Tre ägg kläcktes i Drakägg-grottan innan Gråstensväktarna sprängde utgången.",
+    "npcs": ["Rezmir", "Frulam Mondath", "Modern"],
+    "places": ["kultlagret", "drakagg_grottan", "dodens_myr"],
     "events": [
       {
         "session": 8,
@@ -87,6 +87,16 @@
         "session": 8,
         "title": "Frulams kroppsbränning",
         "text": "När Cyanwrath föll i grottans djup klev Frulam Mondath fram och brände hans kropp med magisk eld innan hon flydde. Prästerskapets pragmatism – ingenting får lämnas kvar som kan användas mot dem."
+      },
+      {
+        "session": 9,
+        "title": "Dokumenten och sanningen",
+        "text": "I Frulam Mondaths rum bärgades två brandskadade dokument. Ett brev till Rezmir avslöjade kultens verkliga slagord ('Total frihet genom total kontroll'), att bytet från Greenest överträffade tre föregående räder, och att transporter norrut ska påbörjas. Tre drakägg kläcktes i grottan. En halvbränd anteckning nämnde 'Modern', 'Dödens Myr' och 'Skatten'."
+      },
+      {
+        "session": 9,
+        "title": "Grottan förseglad",
+        "text": "Gråstensväktarna sprängde utgången till Drakägg-grottan och förseglade komplexet permanent. Svarta drakäggen, de tre kläckta valparna, den magiska dörren – allt begravdes under berget. Kulten förlorade sin avel-grotta men skatterna hade redan flyttats norrut."
       }
     ]
   },

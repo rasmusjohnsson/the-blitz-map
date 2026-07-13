@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Namnen bakom dörren",
+        "text": "Vi öppnade den magiska dörren och där låg de – svarta drakägg, uppradade i mörkret. Vi lät dem vara. En kammare full av unga svarta drakar var inte vår kamp just nu. I Frulams rum rotade jag genom pappren och fann två dokument: brevet till Rezmir och den halvbrända anteckningen. Nu vet vi mer: 'Total frihet genom total kontroll' är deras verkliga slagord, transporterna går norrut, tre ägg har redan kläckts. Och två nya namn – 'Modern' och 'Dödens Myr'. Vi kommer att jaga båda. På väg ut sprängde vi utgången. Ingen kommer bakom oss.",
+        "session": 9
+      },
+      {
         "label": "Pilen som fällde halvdraken",
         "text": "Trängde djupare in i grottorna med gruppen. I fångehålan fann vi Leosin – Harpers-agent, som jag – misshandlad men vid liv. Han talade om Cult of the Dragon, om ritualen, om Rezmir. Namn på namn i mörkret. Sedan stod han där: Cyanwrath. Halvdraken som fällde Gothmog framför Greenests portar. Denna gång var det ingen duell. Vi anföll som ett spjut och min pil gick genom hans strupe. När han föll klev Frulam Mondath fram ur skuggorna och brände hans kropp innan vi hann röra den. Hon flydde. I hans rum stod en magisk dörr – och nästa gåta.",
         "session": 8
@@ -93,6 +98,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Drakäggen i mörkret",
+        "text": "Dörren gled upp och där låg de: svarta drakägg. En del av mig sa döda dem alla. En annan del sa nej – de är oskyldiga. Vi lämnade dem. Watcher's Eye på dörren när vi stängde den bakom oss. I Frulams rum lyste dokumenten upp bilden: Cult of the Dragon är starkare än vi anat, de förbereder något stort, transporterna går norrut till platser vi inte känner. 'Modern' hyllas i deras brev. 'Dödens Myr' – ett namn som får munnen torr. Bahamut väntar sitt svar från mig – och svaret är: vi följer spåren. På väg ut sprängde vi berget till en gravkammare. Låt kulten söka sina skatter under stenen.",
+        "session": 9
+      },
+      {
         "label": "Hämnden och gåtan",
         "text": "Trängde djupt in i grottkomplexet. I fångehålan hittade vi Leosin – en Harpers-agent som pusslade ihop bitarna åt oss. Folkets vilja är bara fasaden. Bakom står Cult of the Dragon. En ritual planeras, skatter samlas, namnet Rezmir viskas i skuggorna. Sedan stod Cyanwrath framför oss igen. Halvdraken som tog Tarbaw som pris. Denna gång ingen duell. Vi anföll och han föll. Bahamuts ljus, men ingen upprättelse: Frulam Mondath brände kroppen till aska innan vi hann röra den. Inget lik, ingen trofé, bara aska. I hans rum står en magisk dörr med en gåta. Order of the Gauntlet svär att skydda de svaga – och just nu är det Tarbaw som väntar bakom nästa dörr.",
         "session": 8
@@ -166,6 +176,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Nävar i sprängpulvret",
+        "text": "Bakom den magiska dörren låg drakäggen. Jag ville krossa dem alla med nävarna – men gruppen bestämde annat. Vi lämnade dem. I Frulams rum letade jag genom pappersstapel efter pappersstapel medan Cedric och Haldan tog dokumenten. Namnen 'Modern' och 'Dödens Myr' fick mig att grunna. Kult efter kult, alltid mörkare. På väg ut fick jag jobbet att förbereda kollapsen. Jag placerade laddningarna där berget skulle ge vika, tände lunten själv och sprang ut sist av alla. När stenblocken föll bakom oss log jag för första gången på länge. Ingenting av kulten kommer ut ur den där grottan igen.",
+        "session": 9
+      },
+      {
         "label": "Hämnden för brodern",
         "text": "Höll bakre linjen medan vi trängde djupare in. I fångehålan sträckte jag ut handen och lyfte upp Leosin – han vägde nästan ingenting. Harpers-agent, sa han. Cult of the Dragon, sa han. Sen kom Cyanwrath. Denna gång tänkte jag på Gothmog under halvdrakens klingor och min näve knöts hårdare än stenen omkring oss. Vi anföll och han föll. Jag ville stå över hans kropp med all min tyngd men Frulam Mondath brände honom först – bara aska kvar. Order of the Gauntlet svär att stå upp igen för sina bröder. Gothmog stod upp när han inte kunde. Jag står upp här.",
         "session": 8
@@ -238,6 +253,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Berget som förseglade",
+        "text": "Bakom den magiska dörren låg svarta drakägg. Mina runor viskade i huden när jag såg dem – jag tänkte på Tarbaw någonstans i norr, jag tänkte på hur många skador kulten redan hade orsakat. Vi lät äggen vara. Vi kunde inte bära dem, kunde inte döda dem, kunde inte lämna någon vakt. I Frulams rum läste jag dokumenten över Cedrics axel: transporter norrut, en 'Modern', en plats som heter 'Dödens Myr'. Nya jakter. På väg ut hjälpte jag Gothmog placera laddningarna. Vi tände lunten och jag sprang ut med de andra medan berget kollapsade bakom oss. Runorna sjöng: du valde vem du vägrar bli. Idag valde jag att inte lämna en fällla åt fienden.",
+        "session": 9
+      },
       {
         "label": "Halberden mot halvdraken",
         "text": "Runorna brann under kappan när vi trängde djupare in. I fångehålan såg jag Leosin – en främling som visste mer om vår fiende än vi själva. Cult of the Dragon, sa han. Ritual, sa han. Rezmir. Sen stod Cyanwrath framför mig igen. Han slog ner mig framför keepets portar en gång. Denna gång stod jag inte ensam. Vi anföll som en, min halberd fann honom bland stål och skinn, och han föll. Runorna sjöng. Men innan jag hann sätta foten på hans bröst brann kroppen till aska framför oss – Frulam Mondaths verk. Ingen trofé, ingen kropp att visa upp för Greenest. Bara vetskapen att han är död och att en tung dörr står och väntar på ett lösenord i hans rum.",
@@ -316,6 +336,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Läsandet i Frulams rum",
+        "text": "Jag knäckte lösenordet till den magiska dörren – Divination behöver inte alltid vara mystisk, ibland är det bara noggrannhet. Innanför låg drakäggen och deras potentiella framtid. Vi lämnade dem. I Frulam Mondaths rum blev jag ivrig – papper är mitt element. Brevet till Rezmir avslöjade den verkliga strukturen: 'Total frihet genom total kontroll' är slagordet innanför fasaden, transporter går norrut, tre ägg har redan kläckts. Den halvbrända anteckningen kastade fram nya namn: 'Modern', 'Dödens Myr'. Min far Steve lärde mig att fragment berättar mer än fullständiga texter – det som är brändt är det som var farligast. På väg ut placerade Gothmog laddningarna och jag mässade en Message-besvärjelse till Leosin: 'Vi har dokumenten. Vi är på väg.' Berget rasade bakom oss. Kunskapens Vagn väntade.",
+        "session": 9
+      },
       {
         "label": "Namnen i mörkret",
         "text": "Djupt inne i grottorna fann vi Leosin i sin fångehåla – en Harpers-agent med huvudet fullt av pusselbitar. Cult of the Dragon står bakom Folkets vilja. Skatter samlas för en ritual. Namnet Rezmir viskas där uppe – men även han vet inte vem. Detta är nya kartor att rita. När Cyanwrath klev fram var det inte gången för duell utan för samlad attack. Vi anföll och han föll. Sen dök Frulam Mondath upp och brände kroppen med magisk eld – jag kände besvärjelsens signatur, ett formkontrollerat inferno, hon är utbildad. Hon flydde och jag var för långsam med Counterspell. I hans rum står en magisk dörr som kräver ord. Ord är mitt fält. Vi ska hitta det.",
