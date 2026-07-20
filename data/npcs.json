@@ -133,6 +133,21 @@
     "events": []
   },
   {
+    "id": "ontharr",
+    "name": "Ontharr",
+    "aliases": ["Ontharr Frume"],
+    "status": "friendly",
+    "role": "Paladin · Order of the Gauntlet",
+    "desc": "En bredaxlad, högröstad paladin i Order of the Gauntlets tjänst. Möter Gråstensväktarna tillsammans med Leosin på Svartgevirens värdshus i Elturel. Skratt lika stort som näven, kärleken till starkt öl och rättvisa lika stark som svärdet vid hans sida. Bekräftar allvaret i det brev till Rezmir gruppen bärgade och skickar dem vidare mot Baldur's Gate för att infiltrera kulten där.",
+    "events": [
+      {
+        "label": "Mötet på Svartgevirens värdshus",
+        "text": "Tog emot Gråstensväktarna tillsammans med Leosin i Elturel. Läste brevet till Rezmir och blev än mer övertygad om Cult of the Dragons omfattning. Skickade gruppen vidare till Baldur's Gate med uppdraget: infiltrera kultisternas transporter norrut, klädda som vanliga merchants.",
+        "session": 10
+      }
+    ]
+  },
+  {
     "id": "leosin",
     "name": "Leosin",
     "status": "friendly",
@@ -143,6 +158,11 @@
         "label": "Räddad ur grottans mörker",
         "text": "Hittades av Gråstensväktarna djupt inne i drakäggs-grottorna, misshandlad men vid liv. Berättade om sitt Harpers-uppdrag, om kultens skatteinsamling till en ritual, om namnet Rezmir som viskas bland ledarna – och om sin misstanke att Folkets vilja bara är en fasad för Cult of the Dragon.",
         "session": 8
+      },
+      {
+        "label": "Återsedd på Svartgevirens värdshus",
+        "text": "Väntade Gråstensväktarna i Elturel tillsammans med paladinen Ontharr. Läste brevet till Rezmir och pusslade ihop kultens nästa drag: karavaner norrut från Baldur's Gate, kultisterna infiltrerade bland vanliga köpmän. Uppdraget: Gråstensväktarna ska infiltrera dem tillbaka.",
+        "session": 10
       }
     ]
   },

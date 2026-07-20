@@ -68,7 +68,19 @@
     "x": 1340,
     "y": 1082,
     "visited": true,
-    "summary": "Stor handelsstad vid Chionthar-flodens mynning.",
+    "icon": "🏛️",
+    "summary": "Stor handelsstad vid Chionthar-flodens mynning. För många i Greenest är staden nästan mytisk – karavaner återvänder därifrån med berättelser om enorma murar, trånga gator och fler människor än de flesta landsortsbor någonsin sett samlade på samma plats. Oweyn rekryterades av Order of the Gauntlet här.",
+    "descriptions": [
+      {
+        "title": "STADEN VID CHIONTHARS MYNNING",
+        "items": [
+          "<strong>Storlek:</strong> Enormt befolkningsantal – större än något Greenest-bornas ögon vant sig vid.",
+          "<strong>Murar:</strong> Mytomspunna – karavaner talar om dem i vördnad.",
+          "<strong>Handel:</strong> Karavaner strömmar in och ut längs Chionthar och Sword Coast.",
+          "<strong>Order of the Gauntlet:</strong> Har en aktiv närvaro här. Rekryterade Oweyn."
+        ]
+      }
+    ],
     "events": [
       {
         "title": "Oweyn rekryteras",
@@ -106,18 +118,94 @@
     "events": []
   },
   {
+    "id": "berdusk",
+    "name": "Berdusk",
+    "x": 1720,
+    "y": 1060,
+    "visited": false,
+    "icon": "📜",
+    "summary": "Gammal handelsstad längs floden Chionthar. Ryktet säger att nyheter färdas snabbt genom Berdusks värdshus och att man alltid kan hitta någon som vet lite mer än de borde. Köpmän, lärda och rykten möts här – en av regionens naturliga informationsknutar.",
+    "descriptions": [
+      {
+        "title": "HANDELSSTADEN VID CHIONTHAR",
+        "items": [
+          "<strong>Läge:</strong> Vid floden Chionthar, öster om Elturel.",
+          "<strong>Värdshus &amp; köpmän:</strong> Gott om båda – handel och nätverk.",
+          "<strong>Lärda:</strong> Böcker, arkiv och forskare – kunskap flödar hit.",
+          "<strong>Rykte:</strong> Nyheter färdas snabbt. Någon vet alltid lite mer än de borde.",
+          "<strong>Harpers:</strong> Berdusk är känd som en av deras naturliga vattenhål."
+        ]
+      }
+    ],
+    "events": []
+  },
+  {
     "id": "elturel",
     "name": "Elturel",
     "x": 1537,
     "y": 1047,
-    "visited": false,
-    "summary": "Stad vid floden Chionthar, känd för sin eviga sol Companion.",
+    "visited": true,
+    "icon": "☀️",
+    "summary": "Regionens beskyddare. Den närmaste och viktigaste storstaden för Greenest – känd för sina Hellriders, höga murar och det märkliga ljus (Companion) som svävar över staden dag och natt. När problem blir för stora för mindre byar är det ofta till Elturel man vänder sig för hjälp. Många i Greenest ser staden som regionens sköld mot mörkret.",
+    "descriptions": [
+      {
+        "title": "STADEN OCH DESS RYKTE",
+        "items": [
+          "<strong>Hellriders:</strong> Elturels berömda elitkavalleri – rider mot mörker där andra flyr.",
+          "<strong>Companion:</strong> Ett märkligt magiskt ljus som svävar över staden dag och natt.",
+          "<strong>Murar:</strong> Höga, försvarbara – staden är byggd för att stå emot belägring.",
+          "<strong>Regionens beskyddare:</strong> Byar och småstäder vänder sig hit när hoten blir för stora.",
+          "<strong>Från Greenest:</strong> Närmaste stora stad. Vägen dit är välkänd."
+        ]
+      }
+    ],
     "events": [
+      {
+        "title": "Mötet med Leosin och Ontharr",
+        "preview": "Brevet visas, uppdraget ges...",
+        "detail": "På Svartgevirens värdshus möttes Gråstensväktarna av Leosin och paladinen Ontharr. Brevet till Rezmir lades fram – och deras farhågor bekräftades. Kultisterna planerar att beblanda sig med vanliga köpmän i Baldur's Gate och röra sig norrut i skydd av karavaner. Uppdraget: infiltrera dem.",
+        "session": 10
+      },
+      {
+        "title": "Ankomsten till Elturel",
+        "preview": "Companion-ljuset över murarna...",
+        "detail": "Efter stormen nådde Gråstensväktarna Elturel. Companion svävade över staden som alltid, murarna reste sig höga över Chionthar. Från stadsporten gick de raka vägen till Svartgevirens värdshus där Leosin och Ontharr väntade.",
+        "session": 10
+      },
       {
         "title": "Order of the Gauntlet",
         "preview": "Riddarorden har stark närvaro...",
         "detail": "Theron och Oweyns riddarorden har stark närvaro här.",
         "session": 0
+      }
+    ]
+  },
+  {
+    "id": "svartgevirens_vardshus",
+    "name": "Svartgevirens värdshus",
+    "x": 1537,
+    "y": 1047,
+    "visited": true,
+    "parent": "elturel",
+    "icon": "🍺",
+    "summary": "Ett värdshus i Elturel med ett par väldiga svarta gevir monterade över dörren. Stamlokal för Hellriders och andra i Order of the Gauntlets krets. Här mötte Gråstensväktarna Leosin och Ontharr i session 10 och fick sitt nya uppdrag – att infiltrera Cult of the Dragons transporter från Baldur's Gate.",
+    "descriptions": [
+      {
+        "title": "VÄRDSHUSET",
+        "items": [
+          "<strong>Symbol:</strong> Två svarta gevir över entrén – lätta att hitta i Elturels gator.",
+          "<strong>Klientel:</strong> Hellriders, Order of the Gauntlet-medlemmar, resenärer med bud som inte kan tas i ministerpalats.",
+          "<strong>Ontharr:</strong> Paladin i Order of the Gauntlet – ofta att finna vid det stora bordet.",
+          "<strong>Diskretion:</strong> Där man kan lägga fram bränt pergament utan att någon stirrar."
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Uppdraget från Leosin och Ontharr",
+        "preview": "Brevet läses, båtresan planeras...",
+        "detail": "Gråstensväktarna lade fram brevet till Rezmir på bordet. Leosin och Ontharr läste, växlade blickar, och gav uppdraget: åk med båt ner för Chionthar till Baldur's Gate, hitta kultens transporter innan de lämnar hamnen och infiltrera dem klädda som vanliga köpmän. Kulten planerar att flytta bytet norrut under civil förklädnad.",
+        "session": 10
       }
     ]
   },

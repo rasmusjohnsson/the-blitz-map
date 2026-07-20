@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Genom Moks ögon över kulten",
+        "text": "På vägen mot Elturel skickade jag upp Mok. Genom Delade Sinnen såg jag dem: kultister som rörde sig längre norrut, och en grupp som stannat i en ring och utförde något magiskt under öppen himmel. Vad de kallade fram vet jag inte, men stormen som svepte över oss senare gav mig svaret. Vi tog skydd bland klipporna i en grotta med en flock oxar som fått samma idé. När vinden lade sig fortsatte vi. På Svartgevirens värdshus lade jag brevet till Rezmir på bordet framför Leosin och Ontharr. Nästa jakt är i Baldur's Gate. Vi seglar dit med floden i ryggen.",
+        "session": 10
+      },
+      {
         "label": "Namnen bakom dörren",
         "text": "Vi öppnade den magiska dörren och där låg de – svarta drakägg, uppradade i mörkret. Vi lät dem vara. En kammare full av unga svarta drakar var inte vår kamp just nu. I Frulams rum rotade jag genom pappren och fann två dokument: brevet till Rezmir och den halvbrända anteckningen. Nu vet vi mer: 'Total frihet genom total kontroll' är deras verkliga slagord, transporterna går norrut, tre ägg har redan kläckts. Och två nya namn – 'Modern' och 'Dödens Myr'. Vi kommer att jaga båda. På väg ut sprängde vi utgången. Ingen kommer bakom oss.",
         "session": 9
@@ -98,6 +103,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Ontharrs bord",
+        "text": "Stormen som slog över oss på vägen var inte naturens. Kulten kastar sig själva mot vindarna nu – de vet att vi är i rörelse. Vi tog skydd bland oxar i en klipphåla, väntade ut den, och gick vidare. På Svartgevirens värdshus såg jag Ontharr igen efter så många år – paladinen som skrattar med hela kroppen och slår mig hårdare i axeln än de flesta drakar. Vi lade fram brevet till Rezmir. Han läste, han svor, han sköt tillbaka stolen. Nästa uppdrag är i Baldur's Gate. Order of the Gauntlet svär att skydda de svaga – och Bahamut ler när vi vandrar rätt riktning. Vi tog båten samma kväll.",
+        "session": 10
+      },
+      {
         "label": "Drakäggen i mörkret",
         "text": "Dörren gled upp och där låg de: svarta drakägg. En del av mig sa döda dem alla. En annan del sa nej – de är oskyldiga. Vi lämnade dem. Watcher's Eye på dörren när vi stängde den bakom oss. I Frulams rum lyste dokumenten upp bilden: Cult of the Dragon är starkare än vi anat, de förbereder något stort, transporterna går norrut till platser vi inte känner. 'Modern' hyllas i deras brev. 'Dödens Myr' – ett namn som får munnen torr. Bahamut väntar sitt svar från mig – och svaret är: vi följer spåren. På väg ut sprängde vi berget till en gravkammare. Låt kulten söka sina skatter under stenen.",
         "session": 9
@@ -176,6 +186,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Oxarna och Ontharrs skratt",
+        "text": "Stormen som drog över oss var fel – jag känner skillnaden på vind och besvärjelse på huden. Vi tog skydd i en klipphåla med en flock oxar som skakade tätt intill oss. Runorna sjöng lugnt mot deras hetta. När vinden lade sig fortsatte vi. På Svartgevirens värdshus såg jag paladinen Ontharr för första gången – en man vars skratt är stort som mitt eget. Han tog min hand hårt över bordet och sa: 'Broder, vi har jobb att göra.' Vi lade fram brevet till Rezmir. Ny riktning: Baldur's Gate. Nya kåpor: köpmän. Runorna säger: jag valde vem jag vägrar bli. Idag är jag den som infiltrerar under mask igen.",
+        "session": 10
+      },
+      {
         "label": "Nävar i sprängpulvret",
         "text": "Bakom den magiska dörren låg drakäggen. Jag ville krossa dem alla med nävarna – men gruppen bestämde annat. Vi lämnade dem. I Frulams rum letade jag genom pappersstapel efter pappersstapel medan Cedric och Haldan tog dokumenten. Namnen 'Modern' och 'Dödens Myr' fick mig att grunna. Kult efter kult, alltid mörkare. På väg ut fick jag jobbet att förbereda kollapsen. Jag placerade laddningarna där berget skulle ge vika, tände lunten själv och sprang ut sist av alla. När stenblocken föll bakom oss log jag för första gången på länge. Ingenting av kulten kommer ut ur den där grottan igen.",
         "session": 9
@@ -253,6 +268,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Squire vid Ontharrs bord",
+        "text": "Stormen på vägen fick mig att spänna axlarna – vi visste alla att den var för perfekt. I klipphålan tryckte oxarna sig mot oss och jag lade en hand på den största av dem tills den lugnade sig. Djur känner igen skydd. I Elturel såg jag Companion-ljuset över murarna – vackrare än jag mindes. På Svartgevirens värdshus stod Ontharr och lyfte sitt öl mot mig som han skulle mot en broder. Han känner min mentor Theron. Jag är squire, jag är ny, men vid det bordet fick jag sitta som en jämlike. Vi läste brevet tillsammans. Nästa uppdrag: infiltrera kultens karavaner i Baldur's Gate. Order of the Gauntlet svär att skydda de svaga – och just nu är hela regionen svag.",
+        "session": 10
+      },
       {
         "label": "Berget som förseglade",
         "text": "Bakom den magiska dörren låg svarta drakägg. Mina runor viskade i huden när jag såg dem – jag tänkte på Tarbaw någonstans i norr, jag tänkte på hur många skador kulten redan hade orsakat. Vi lät äggen vara. Vi kunde inte bära dem, kunde inte döda dem, kunde inte lämna någon vakt. I Frulams rum läste jag dokumenten över Cedrics axel: transporter norrut, en 'Modern', en plats som heter 'Dödens Myr'. Nya jakter. På väg ut hjälpte jag Gothmog placera laddningarna. Vi tände lunten och jag sprang ut med de andra medan berget kollapsade bakom oss. Runorna sjöng: du valde vem du vägrar bli. Idag valde jag att inte lämna en fällla åt fienden.",
@@ -336,6 +356,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Stormens signatur",
+        "text": "På vägen mot Elturel kände jag besvärjelsen innan jag såg den – luften vred sig i cirklar som en Control Weather-krets. Kulten reser stormar över öppen himmel nu. Vi tog skydd bland klipporna i en grotta med en flock oxar; jag skrev ner mönstret i mina anteckningar medan vi väntade ut vinden. I Elturel gick vi rakt till Svartgevirens värdshus. Leosin såg trött men klarögd ut, Ontharr slog handen i bordet så tenkrusen hoppade. Brevet till Rezmir lästes högt. Alla tre organisationer – Harpers, Order of the Gauntlet, Emerald Enclave – har nu samma mål. Vi tar båten till Baldur's Gate. Kunskapens Vagn får ligga kvar i värdshusets stall tills vi återvänder.",
+        "session": 10
+      },
       {
         "label": "Läsandet i Frulams rum",
         "text": "Jag knäckte lösenordet till den magiska dörren – Divination behöver inte alltid vara mystisk, ibland är det bara noggrannhet. Innanför låg drakäggen och deras potentiella framtid. Vi lämnade dem. I Frulam Mondaths rum blev jag ivrig – papper är mitt element. Brevet till Rezmir avslöjade den verkliga strukturen: 'Total frihet genom total kontroll' är slagordet innanför fasaden, transporter går norrut, tre ägg har redan kläckts. Den halvbrända anteckningen kastade fram nya namn: 'Modern', 'Dödens Myr'. Min far Steve lärde mig att fragment berättar mer än fullständiga texter – det som är brändt är det som var farligast. På väg ut placerade Gothmog laddningarna och jag mässade en Message-besvärjelse till Leosin: 'Vi har dokumenten. Vi är på väg.' Berget rasade bakom oss. Kunskapens Vagn väntade.",

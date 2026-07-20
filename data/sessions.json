@@ -476,5 +476,49 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 10,
+    "label": "SESSION 10",
+    "title": "Vägen till Elturel",
+    "date": "2026-07-06",
+    "events": [
+      {
+        "title": "Moks blick över kulten",
+        "recap": "På vägen mot Elturel skickade Haldan upp Mok. Genom Delade Sinnen såg han hur kultister rörde sig längre norrut och fortsatte i den riktningen. Djupare in i sikten stod en grupp i en ring och utförde något magiskt – en ritual under öppen himmel. Vad de kallade fram var oklart, men strax därefter skulle stormen skvallra om att svaret kommit.",
+        "places": ["kultlagret", "elturel"],
+        "npcs": ["Mok"]
+      },
+      {
+        "title": "Den onaturliga stormen",
+        "recap": "När Gråstensväktarna nådde platsen där kulten nyss stått anlände stormen. Vinden vred sig fel, molnen rullade motsatt riktning från alla naturliga stormar – onaturlig, magisk, troligen kultens verk. Gruppen sökte skydd bland klipporna i en grotta där de fick sällskap av en flock oxar som också flytt undan ovädret. Stormen bröt över landskapet, gick över, och gruppen fortsatte västerut.",
+        "places": ["elturel"],
+        "npcs": []
+      },
+      {
+        "title": "Ankomsten till Elturel",
+        "recap": "Companion-ljuset svävade över Elturels murar när Gråstensväktarna passerade stadsporten. Handelsgatorna vimlade av liv men gruppen hade bara ett mål: Svartgevirens värdshus, där Leosin och Ontharr väntade.",
+        "places": ["elturel"],
+        "npcs": []
+      },
+      {
+        "title": "Svartgevirens värdshus",
+        "recap": "Vid det stora bordet inne på Svartgevirens värdshus möttes gruppen av Leosin – Harpers-agenten som räddats ur grottan – och paladinen Ontharr från Order of the Gauntlet. Brevet till Rezmir lades fram. Ontharr läste med sammanpressade läppar; Leosin nickade långsamt. Bekräftelse: kulten flyttar sitt byte norrut och tänker göra det osynligt.",
+        "places": ["svartgevirens_vardshus"],
+        "npcs": ["Leosin", "Ontharr"]
+      },
+      {
+        "title": "Uppdraget: Baldur's Gate",
+        "recap": "Ontharr och Leosin gav Gråstensväktarna det nya uppdraget. Kultisterna planerar att beblanda sig med vanliga köpmän i Baldur's Gate och röra sig norrut i skydd av karavanerna. Gråstensväktarnas jobb: infiltrera transporterna, spåra bytet, och hitta 'Modern' och 'Dödens Myr'.",
+        "places": ["svartgevirens_vardshus", "baldursgate"],
+        "npcs": ["Leosin", "Ontharr"]
+      },
+      {
+        "title": "Nedför Chionthar",
+        "recap": "Gruppen tog en båt vid Elturels kaj och lade ut på Chionthar med kurs mot Baldur's Gate. Floden flöt västerut, staden växte mindre bakom dem och de reste in i nästa fas av jakten på kultens ledare.",
+        "places": ["elturel", "baldursgate"],
+        "npcs": []
+      }
+    ]
   }
 ]

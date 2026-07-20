@@ -6,10 +6,16 @@
     "tagline": "Rättvisa och handling",
     "symbol": "⚔️",
     "status": "allied",
+    "npcs": ["Ontharr"],
+    "places": ["baldursgate", "elturel", "svartgevirens_vardshus"],
     "desc": "Order of the Gauntlet är en organisation som samlar krigare, riddare och troende med ett gemensamt mål: att upprätthålla rättvisa i Faerûn. Till skillnad från många andra grupper drivs de varken av makt eller kunskap i sig, utan av en stark övertygelse om att ondska aktivt måste bekämpas.\n\nOrganisationen är varken en traditionell armé eller en kyrka, utan snarare ett nätverk av individer som förenas av sin tro på handling. Medlemmarna söker inte ära eller rikedom, utan rör sig dit hoten finns, ingriper och försöker stoppa det som skadar andra.\n\nDeras styrka ligger i deras beslutsamhet och tydliga värdegrund – men just detta kan också vara en svaghet. I en värld där ondska inte alltid är tydlig eller öppen kan deras synsätt bli förenklat, och de riskerar att missa nyanser i mer komplexa situationer.\n\nFör en medlem av Order of the Gauntlet är världen i grunden uppdelad i rätt och fel, och det är deras uppgift att stå däremellan och försvara det som är gott.",
-    "npcs": [],
-    "places": ["baldursgate", "elturel"],
-    "events": []
+    "events": [
+      {
+        "session": 10,
+        "title": "Uppdraget från Ontharr",
+        "text": "Paladinen Ontharr mötte Gråstensväktarna på Svartgevirens värdshus i Elturel tillsammans med Leosin och gav dem uppdraget att åka till Baldur's Gate och infiltrera Cult of the Dragons transporter norrut."
+      }
+    ]
   },
   {
     "id": "emerald_enclave",
@@ -32,12 +38,17 @@
     "status": "neutral",
     "desc": "Harpers är ett hemligt nätverk av spioner, lärda, magiker och äventyrare som verkar i skuggorna för att förhindra att makten i Faerûn samlas på för få händer. De motsätter sig tyranner, despoter och kulter med samma envishet – inte genom öppen krigföring, utan genom information, små handlingar och tystnadens vapen.\n\nMedlemmar arbetar ofta ensamma eller i små celler, och få känner igen varandra på rocken. De rör sig genom värdshus, hov och vildmark, lyssnar mer än de talar och rapporterar till andra Harpers när mönstret är klart. Sång, koder och visor har länge varit deras språk.\n\nDe söker inte ära eller titel – endast att hålla balansen tipping i de fria folkens favör. För Harpers är friheten en bräcklig sak som måste vaktas just när ingen annan tittar.",
     "npcs": ["Leosin"],
-    "places": ["drakagg_grottan"],
+    "places": ["berdusk", "elturel", "svartgevirens_vardshus", "drakagg_grottan"],
     "events": [
       {
         "session": 8,
         "title": "Leosin räddad",
         "text": "En Harpers-agent vid namn Leosin hittades tillfångatagen i Cult of the Dragons grotta och räddades av Gråstensväktarna. Under sin fångenskap hade han samlat avgörande information om kultens ritual och namnet Rezmir."
+      },
+      {
+        "session": 10,
+        "title": "Mötet på Svartgevirens värdshus",
+        "text": "Leosin tog emot Gråstensväktarna i Elturel tillsammans med paladinen Ontharr från Order of the Gauntlet. Brevet till Rezmir analyserades, uppdraget att infiltrera kulten i Baldur's Gate formulerades. Harpers och Order of the Gauntlet samarbetar öppet i denna operation."
       }
     ]
   },
