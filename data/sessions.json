@@ -520,5 +520,37 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 11,
+    "label": "SESSION 11",
+    "title": "Störtfloden och infiltrationsplanen",
+    "date": "2026-07-13",
+    "events": [
+      {
+        "title": "Flodvågen vid förgreningen",
+        "recap": "På vägen ner för Chionthar mot Baldur's Gate stötte båten på en flodvåg vid en förgrening av floden. Gråstensväktarna slängde ankaret för att inte dras med – men upptäckte då en sandbank rakt under dem, en som när som helst kunde rasa och skicka båten och dess last i djupet. Två dåliga val, ett måste väljas.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Genom störtfloden",
+        "recap": "Beslutet togs: åka igenom störtfloden så snabbt som möjligt. Cedric mässade Enlarge – Theron och Gothmog växte till dubbel storlek med varsin åra i näven för att ro med all kraft. Haldan och Oweyn stod vid styrmannen och hjälpte honom hålla kursen genom det virvlande vattnet. Träet knakade, ankaret kapades, båten flög. Gruppen kom igenom med enbart en skadad häst under däck.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Ankomsten till Baldur's Gate",
+        "recap": "Båten lade till i Baldur's Gates hamn. Ovanför dem reste sig murarna som karavanerna alltid talat om. Utan att slösa tid tog gruppen sig direkt genom stadens gator till Order of the Gauntlets bas i staden.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Alesandra Voss och planen",
+        "recap": "På Order of the Gauntlets bas mötte Gråstensväktarna Alesandra Voss. Skarpögd, taktisk, med Baldur's Gates gator som sin egen ficka. Hon la fram planen: Folkets vilja – kultisterna – finns i staden och kommer smälta in bland vanliga handelsmän för att fortsätta karavanen norrut. Gruppen måste också smälta in. Som köpmän. Följa karavanen. Luska ut vilka som är kultister och vart de ska.",
+        "places": ["baldursgate"],
+        "npcs": ["Alesandra Voss"]
+      }
+    ]
   }
 ]

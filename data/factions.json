@@ -6,7 +6,7 @@
     "tagline": "Rättvisa och handling",
     "symbol": "⚔️",
     "status": "allied",
-    "npcs": ["Ontharr"],
+    "npcs": ["Ontharr", "Alesandra Voss"],
     "places": ["baldursgate", "elturel", "svartgevirens_vardshus"],
     "desc": "Order of the Gauntlet är en organisation som samlar krigare, riddare och troende med ett gemensamt mål: att upprätthålla rättvisa i Faerûn. Till skillnad från många andra grupper drivs de varken av makt eller kunskap i sig, utan av en stark övertygelse om att ondska aktivt måste bekämpas.\n\nOrganisationen är varken en traditionell armé eller en kyrka, utan snarare ett nätverk av individer som förenas av sin tro på handling. Medlemmarna söker inte ära eller rikedom, utan rör sig dit hoten finns, ingriper och försöker stoppa det som skadar andra.\n\nDeras styrka ligger i deras beslutsamhet och tydliga värdegrund – men just detta kan också vara en svaghet. I en värld där ondska inte alltid är tydlig eller öppen kan deras synsätt bli förenklat, och de riskerar att missa nyanser i mer komplexa situationer.\n\nFör en medlem av Order of the Gauntlet är världen i grunden uppdelad i rätt och fel, och det är deras uppgift att stå däremellan och försvara det som är gott.",
     "events": [
@@ -14,6 +14,11 @@
         "session": 10,
         "title": "Uppdraget från Ontharr",
         "text": "Paladinen Ontharr mötte Gråstensväktarna på Svartgevirens värdshus i Elturel tillsammans med Leosin och gav dem uppdraget att åka till Baldur's Gate och infiltrera Cult of the Dragons transporter norrut."
+      },
+      {
+        "session": 11,
+        "title": "Alesandras plan i Baldur's Gate",
+        "text": "Alesandra Voss från Order of the Gauntlets Baldur's Gate-cell tog emot Gråstensväktarna och la fram infiltrationsplanen. Kläs som köpmän, följ karavanen norrut, identifiera kultisterna bland handelsmännen. Order of the Gauntlet står bakom operationen."
       }
     ]
   },
@@ -87,7 +92,7 @@
     "status": "hostile",
     "desc": "En större, äldre och mörkare drakdyrkande organisation som Harpers-agenten Leosin identifierade som skuggan bakom Folkets vilja. Deras verkliga slagord – avslöjat i Frulam Mondaths brev till Rezmir – är 'Total frihet genom total kontroll'. Fasaden 'Frihet genom styrka' är för fotsoldaterna.\n\nKulten samlar skatter från plundrade byar för en stor ritual. Räden mot Greenest gav mer byte än de tre föregående räderna tillsammans. Transporter av bytet ska föras norrut så snart omlastningen är klar.\n\nBland de högsta i hierarkin finns Rezmir – någon Leosin bekräftade men inte kunnat identifiera. Ännu högre finns en gestalt kallad 'Modern' – möjligen en drakmoder – nämnd i hyllningar i ett halvbränt dokument. Cult of the Dragon avlar svarta drakar i hemliga grottor. Tre ägg kläcktes i Drakägg-grottan innan Gråstensväktarna sprängde utgången.",
     "npcs": ["Rezmir", "Frulam Mondath", "Modern"],
-    "places": ["kultlagret", "drakagg_grottan", "dodens_myr"],
+    "places": ["kultlagret", "drakagg_grottan", "dodens_myr", "baldursgate"],
     "events": [
       {
         "session": 8,
@@ -108,6 +113,11 @@
         "session": 9,
         "title": "Grottan förseglad",
         "text": "Gråstensväktarna sprängde utgången till Drakägg-grottan och förseglade komplexet permanent. Svarta drakäggen, de tre kläckta valparna, den magiska dörren – allt begravdes under berget. Kulten förlorade sin avel-grotta men skatterna hade redan flyttats norrut."
+      },
+      {
+        "session": 11,
+        "title": "Karavanen i Baldur's Gate",
+        "text": "Order of the Gauntlets Baldur's Gate-cell bekräftade att Cult of the Dragon samlar en karavan i staden. Kultisterna smälter in bland vanliga handelsmän för att flytta bytet norrut osynligt. Gråstensväktarna planerar nu att infiltrera karavanen som köpmän."
       }
     ]
   },

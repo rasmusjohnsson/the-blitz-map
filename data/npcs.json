@@ -133,6 +133,21 @@
     "events": []
   },
   {
+    "id": "alesandra",
+    "name": "Alesandra Voss",
+    "aliases": ["Alesandra", "Voss"],
+    "status": "friendly",
+    "role": "Kontakt i Order of the Gauntlet · Baldur's Gate",
+    "desc": "En skarpögd och taktisk kvinna i Order of the Gauntlets Baldur's Gate-cell. Tog emot Gråstensväktarna när de nådde staden efter Ontharrs uppdrag och la fram planen: Cult of the Dragon-anhängare kommer smälta in bland vanliga handelsmän för att fortsätta karavanen norrut. Gråstensväktarna måste också smälta in – som köpmän – följa karavanen och luska ut vilka som är kultister och vart de ska.",
+    "events": [
+      {
+        "label": "Planen i Baldur's Gate",
+        "text": "Tog emot Gråstensväktarna på Order of the Gauntlets bas i Baldur's Gate direkt när de klev av båten. Bekräftade Ontharrs analys och la fram infiltrationsplanen: klä er som köpmän, gå med karavanen norrut, hitta kultisterna bland handelsmännen. Alesandra vet Baldur's Gates gator som sin egen ficka och kommer att fungera som gruppens kontakt.",
+        "session": 11
+      }
+    ]
+  },
+  {
     "id": "ontharr",
     "name": "Ontharr",
     "aliases": ["Ontharr Frume"],

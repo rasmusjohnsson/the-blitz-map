@@ -77,11 +77,25 @@
           "<strong>Storlek:</strong> Enormt befolkningsantal – större än något Greenest-bornas ögon vant sig vid.",
           "<strong>Murar:</strong> Mytomspunna – karavaner talar om dem i vördnad.",
           "<strong>Handel:</strong> Karavaner strömmar in och ut längs Chionthar och Sword Coast.",
-          "<strong>Order of the Gauntlet:</strong> Har en aktiv närvaro här. Rekryterade Oweyn."
+          "<strong>Order of the Gauntlet:</strong> Har en aktiv närvaro här. Rekryterade Oweyn.",
+          "<strong>Alesandra Voss:</strong> Gruppens kontakt – Order of the Gauntlets Baldur's Gate-cell.",
+          "<strong>Cult of the Dragon:</strong> Deras karavaner samlas här inför transporten norrut."
         ]
       }
     ],
     "events": [
+      {
+        "title": "Infiltrationsplanen med Alesandra",
+        "preview": "Kläs som köpmän, gå med karavanen...",
+        "detail": "På Order of the Gauntlets bas mötte Gråstensväktarna Alesandra Voss. Hon bekräftade Ontharrs analys: Cult of the Dragon-anhängare kommer smälta in bland vanliga handelsmän för att fortsätta karavanen norrut. Planen: gruppen ska också smälta in – som köpmän – följa karavanen och luska ut vilka som är kultister och vart de ska.",
+        "session": 11
+      },
+      {
+        "title": "Ankomsten till Baldur's Gate",
+        "preview": "Efter störtfloden...",
+        "detail": "Gråstensväktarna klev av båten i Baldur's Gates hamn efter att ha kämpat sig igenom en flodvåg vid flodförgreningen. En häst under däck skadad, men gruppen intakt. Direkt från kajen tog de sig till Order of the Gauntlets bas i staden.",
+        "session": 11
+      },
       {
         "title": "Oweyn rekryteras",
         "preview": "En ung man sökte äventyr...",
