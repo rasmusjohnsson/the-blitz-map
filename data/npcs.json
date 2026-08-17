@@ -133,6 +133,35 @@
     "events": []
   },
   {
+    "id": "olo",
+    "name": "Olo",
+    "status": "friendly",
+    "role": "Bard i Baldur's Gate · kontaktförmedlare",
+    "desc": "En slagfärdig bard med en luta över axeln och ett kontaktnät som ingen ser hela av. Möter Gråstensväktarna på Alesandras rekommendation och hänvisar dem vidare till Akkin Zelabon – mannen som vet vad karavanerna vet innan de själva vet det. Olos värde ligger i vem han känner, inte i vad han säger själv.",
+    "events": [
+      {
+        "label": "Hänvisningen till Akkin",
+        "text": "Träffade Gråstensväktarna i Baldur's Gate och skickade dem vidare till Akkin Zelabon – en spindel i handelskaravanernas nät. 'Om någon vet något om kultisterna, så vet han.'",
+        "session": 12
+      }
+    ]
+  },
+  {
+    "id": "akkin",
+    "name": "Akkin Zelabon",
+    "aliases": ["Akkin", "Zelabon"],
+    "status": "friendly",
+    "role": "Handelskaravan-spindel · Baldur's Gate",
+    "desc": "En kort, flintskallig man med rött skägg och skepparkrans. Spindeln i nätet för handelskaravaner ut och in från Baldur's Gate – om någon vet vilka som rör sig och åt vilket håll är det Akkin. Möttes av Gråstensväktarna genom Olo, och har lovat att dela vad han vet om kultisternas karavaner – i utbyte mot en tjänst: hans egen vagn är stulen och han vill ha den tillbaka.",
+    "events": [
+      {
+        "label": "Den stulna vagnen",
+        "text": "Möttes av Gråstensväktarna genom barden Olo. Ville i utbyte för information om kultisternas karavaner att gruppen hjälpte honom återta hans stulna vagn. Vagnen är nu spårad till ett camp utanför staden.",
+        "session": 12
+      }
+    ]
+  },
+  {
     "id": "alesandra",
     "name": "Alesandra Voss",
     "aliases": ["Alesandra", "Voss"],

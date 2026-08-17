@@ -85,6 +85,24 @@
     ],
     "events": [
       {
+        "title": "Spåren till campet",
+        "preview": "Vagnen halvt gömd på gårdsplanen...",
+        "detail": "Haldan spårade den stulna vagnen från Baldur's Gate till ett camp utanför staden. Gråstensväktarna smög in för att leta – och till slut hittade de den halvt gömd på gårdsplanen bland andra ekipage. Gruppen började göra upp planen för hur de ska ta tillbaka vagnen utan att larmet går.",
+        "session": 12
+      },
+      {
+        "title": "Akkin Zelabon och den stulna vagnen",
+        "preview": "En spindel i karavan-nätet ber om tjänst...",
+        "detail": "Barden Olo hänvisade Gråstensväktarna vidare till Akkin Zelabon – en kort, flintskallig man med rött skägg och skepparkrans, spindeln i handelskaravanernas nät. Han lovade dela vad han vet om kultisternas karavaner – men i utbyte behövde de först återta hans stulna vagn.",
+        "session": 12
+      },
+      {
+        "title": "Mötet med barden Olo",
+        "preview": "Handelsvaror och en luta över axeln...",
+        "detail": "Efter en dag i Baldur's Gates marknader – ny klädsel, nya vagnar, allt för att smälta in som köpmän – mötte Gråstensväktarna barden Olo. Slagfärdig men diskret. Han hänvisade dem till Akkin Zelabon – mannen som vet vad karavanerna vet.",
+        "session": 12
+      },
+      {
         "title": "Infiltrationsplanen med Alesandra",
         "preview": "Kläs som köpmän, gå med karavanen...",
         "detail": "På Order of the Gauntlets bas mötte Gråstensväktarna Alesandra Voss. Hon bekräftade Ontharrs analys: Cult of the Dragon-anhängare kommer smälta in bland vanliga handelsmän för att fortsätta karavanen norrut. Planen: gruppen ska också smälta in – som köpmän – följa karavanen och luska ut vilka som är kultister och vart de ska.",

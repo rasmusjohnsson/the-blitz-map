@@ -552,5 +552,43 @@
         "npcs": ["Alesandra Voss"]
       }
     ]
+  },
+  {
+    "id": 12,
+    "label": "SESSION 12",
+    "title": "Akkins stulna vagn",
+    "date": "2026-07-20",
+    "events": [
+      {
+        "title": "Handel i staden",
+        "recap": "Gråstensväktarna handlade i Baldur's Gate – köpmansklädsel, vagnar, varor att sälja, allt för att bygga upp en trovärdig fasad. Nästa steg var att gå med i karavanen norrut som helt vanliga handelsmän.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Barden Olo",
+        "recap": "På en av stadens platser mötte gruppen barden Olo. En slagfärdig man med luta över axeln och ett kontaktnät ingen ser hela av. Han hänvisade dem vidare till Akkin Zelabon – 'om någon vet något om kultisterna, så vet han'.",
+        "places": ["baldursgate"],
+        "npcs": ["Olo"]
+      },
+      {
+        "title": "Akkin Zelabon",
+        "recap": "Gråstensväktarna följde hänvisningen och fann Akkin Zelabon: kort, flintskallig, rött skägg, skepparkrans. En spindel i nätet för handelskaravanerna in och ut från Baldur's Gate. Han lovade dela vad han vet om kultisternas karavaner – men i utbyte behövde de först återta hans stulna vagn.",
+        "places": ["baldursgate"],
+        "npcs": ["Akkin Zelabon"]
+      },
+      {
+        "title": "Spårningen till campet",
+        "recap": "Haldan spårade den stulna vagnen från Baldur's Gate ut till ett camp utanför staden. Gruppen följde spåret genom gränder och över öppen mark tills tälten och eldarna dök upp i sikte.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Vagnen på gårdsplanen",
+        "recap": "Gråstensväktarna smög in i campet, mellan tält och vaktposter. Till slut hittade de vagnen halvt gömd på gårdsplanen bland andra ekipage. Nu gjorde gruppen upp planen: hur ska vagnen tas tillbaka utan att larmet går?",
+        "places": ["baldursgate"],
+        "npcs": []
+      }
+    ]
   }
 ]
