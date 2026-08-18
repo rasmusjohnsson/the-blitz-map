@@ -16,8 +16,13 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Grå kappa och Locate Animal",
+        "text": "Vi levererade vagnen till Akkin och han levde upp till avtalet – plats i karavanen norrut. Jag drog den gråa kappan över axlarna, masken på: Gråkapporna. En persona som liknar oss så pass mycket att lögnen bär utan att kännas som en. Sven the Hoper anlitade oss – en man som ler mot dagar mörka som midnatt. Han berättade om giant spiders i skogen med samma leende. På första dagens resa kände jag doften först – något större än det borde vara rörde sig i skogsbrynet. Jag klättrade upp på vagnens tak och började kasta Locate Animal. I samma sekund som besvärjelsen tog fäste kröp spindlarna fram. Deras positioner ligger nu klara i mitt sinne. Vi ska rensa skogen.",
+        "session": 13
+      },
+      {
         "label": "Spåren från Akkins vagn",
-        "text": "En dag med handelsvaror och köpmansklädsel i Baldur's Gates gränder. Vi mötte barden Olo som pekade oss vidare till Akkin Zelabon – flintskallig, rödskäggig, en spindel i sitt eget nät. Hans vagn stulen, hans information i vår väg. Jag tog hans karta och läste marken från stadsporten. Spåren ledde ut till ett camp. Vi smög in mellan tält och vaktposter tills vagnen dök upp halvt gömd på gårdsplanen. Nu ligger den där och väntar. Planen skrivs.",
+        "text": "En dag med legosoldat-utrustning i Baldur's Gates gränder – slitna rustningar, välanvända vapen. Planen skiftade från Ontharrs 'köpmän' till 'legosoldater'; det passar oss bättre. Vi mötte barden Olo som pekade oss vidare till Akkin Zelabon – flintskallig, rödskäggig, en spindel i sitt eget nät. Hans vagn stulen, hans information i vår väg. Jag tog hans karta och läste marken från stadsporten. Spåren ledde ut till ett camp. Vi smög in mellan tält och vaktposter tills vagnen dök upp halvt gömd på gårdsplanen. Nu ligger den där och väntar. Planen skrivs.",
         "session": 12
       },
       {
@@ -113,8 +118,13 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
-        "label": "Köpmansmasken i Baldur's Gate",
-        "text": "Jag drog en enkel kaftan över Order of the Gauntlets tecken – ingen får se dem nu. Vi handlade i marknaderna, byggde upp lasten, skrev av kvitton. Olo pekade oss till Akkin Zelabon – en man vars kontor mest består av namn. Hans vagn är stulen. Om vi hjälper honom får vi svaren. Watcher's Eye läser han inte som en fiende. Vi tog uppdraget. Haldan spårade, vi smög, vagnen låg på gårdsplanen. Nu ska vi vinna den tillbaka. Bahamut föredrar sällan smyg – men Order of the Gauntlet svär att skydda de svaga, och just nu är Akkin en av dem.",
+        "label": "Gråkappan över Order-tecknet",
+        "text": "Vagnen tillbaka till Akkin, ord hållet på båda sidor. Jag lade en grå kappa över axlarna och en mask över ansiktet. Vi är nu Gråkapporna – en persona så nära vår egen att lögnen känns lätt. Bahamut ser oss ändå. Sven the Hoper anlitade oss. En man som ler mot allt. Watcher's Eye finner ingenting hotfullt i hans blick – bara sol. Kanske ska jag lära mig av honom. På första dagens resa hjälpte vi en fastknatnad vagn – bra sätt att lära känna karavanens folk. När Sven varnade för giant spiders klättrade Haldan upp på taket. Locate Animal, sedan striden. Jag drog svärdet och steg framåt.",
+        "session": 13
+      },
+      {
+        "label": "Legosoldat under kappan",
+        "text": "Jag drog en enkel lädertunika över Order of the Gauntlets tecken – ingen får se dem nu. Planen ändrades från köpmän till legosoldater; svärd vid höften är svårare att bortförklara som handelsvara. Vi handlade i marknaderna, satte ihop utrustningen. Olo pekade oss till Akkin Zelabon – en man vars kontor mest består av namn. Hans vagn är stulen. Om vi hjälper honom får vi svaren. Watcher's Eye läser han inte som en fiende. Vi tog uppdraget. Haldan spårade, vi smög, vagnen låg på gårdsplanen. Nu ska vi vinna den tillbaka. Bahamut föredrar sällan smyg – men Order of the Gauntlet svär att skydda de svaga, och just nu är Akkin en av dem.",
         "session": 12
       },
       {
@@ -206,8 +216,13 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Bar-viskningen om Edrick Vane",
+        "text": "Vagnen levererad, Akkin höll sitt ord. Gråkapporna – jag gillar namnet, det passar. Grå kappa, mask, en broder-skara som redan finns. På kvällen gick jag ensam till en bar för att lyssna. Halvorken i skuggan är osynlig på rätt sätt. Där hörde jag namnet: 'Edrick Vane är det största hoppet som finns just nu.' Två män med öl framför sig, respekt i rösten. Ingen förklaring. Bara namnet. Jag skrev det i minnet och gick. På vägen norrut lyfte Sven our humör – en optimist är farlig i god mening. När spindlarna kröp fram ur skogsbrynet höjde jag halberden och log. Runorna sjöng.",
+        "session": 13
+      },
+      {
         "label": "Nävar i skuggan av tält",
-        "text": "Handelsmansklädseln känns fel över axlarna – jag är byggd för halberd, inte för kvitton. Men vi hittade Olo, han hittade oss Akkin. Kort, flintskallig, rött skägg. En man som samlar namn. Hans vagn är stulen och våra svar sitter där. Vi följde Haldan ut till campet, smög mellan tält och vaktposter. När vagnen dök upp på gårdsplanen kliade jag i näverna – ryck den, forsla iväg. Men vi behöver planen. Runorna säger: styrka utan tanke är bara raseri. Vi skriver planen nu.",
+        "text": "Legosoldat-rustningen sitter bättre än köpmans-kaftan – jag är byggd för halberd, inte för kvitton. Planen ändrades och det var rätt beslut. Vi hittade Olo, han hittade oss Akkin. Kort, flintskallig, rött skägg. En man som samlar namn. Hans vagn är stulen och våra svar sitter där. Vi följde Haldan ut till campet, smög mellan tält och vaktposter. När vagnen dök upp på gårdsplanen kliade jag i näverna – ryck den, forsla iväg. Men vi behöver planen. Runorna säger: styrka utan tanke är bara raseri. Vi skriver planen nu.",
         "session": 12
       },
       {
@@ -299,8 +314,13 @@
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
       {
-        "label": "Under köpmansmasken",
-        "text": "Vi handlade i staden och byggde upp lasten som om vi verkligen skulle sälja. Jag skrev av kvittonen med jämn hand – Theron lärde mig ordning även i det osynliga. Olo tog oss till Akkin – rödskäggig, kortväxt, med ögon som väger folk. Hans vagn är stulen. Vi hjälper honom, han hjälper oss. Enkel handel. Vi följde Haldan ut till campet, ljudlöst mellan tält. När vagnen låg där på gårdsplanen visste jag att detta var mitt element – smyga in, ta det som ska tas, komma ut igen utan att någon vet. Order of the Gauntlet, tystare version.",
+        "label": "Gråkappa och mask",
+        "text": "Vagnen tillbaka, karavanen öppen. Jag drog den gråa kappan över axlarna, masken över ansiktet: Gråkapporna, vår nya persona. Cedric fick sin egen roll som handelsman i Kunskapens Vagn – han rör sig bland de riktiga köpmännen medan vi andra rör oss bland legosoldaterna. Sven the Hoper anlitade oss dagen efter. En man vars leende är hans skydd. På första dagens resa hjälpte vi en fastknatnad vagn – jag lyfte hjulet ur leran själv. När Sven varnade för giant spiders och Haldan klättrade upp på taket kände jag pulsen sätta fart. Order of the Gauntlet svär att skydda de svaga – Sven är en av dem just nu.",
+        "session": 13
+      },
+      {
+        "label": "Under legosoldatens kåpa",
+        "text": "Planen ändrades i staden: köpmän blev legosoldater. Enklare så, mer trovärdigt. Vi köpte slitna rustningar och välanvända vapen som vi. Jag testade läderrustningens rörlighet i gränden bakom smedjan – bra passform, tystare än jag väntat. Theron lärde mig ordning även i det osynliga; jag för anteckningar på våra köp. Olo tog oss till Akkin – rödskäggig, kortväxt, med ögon som väger folk. Hans vagn är stulen. Vi hjälper honom, han hjälper oss. Enkel handel. Vi följde Haldan ut till campet, ljudlöst mellan tält. När vagnen låg där på gårdsplanen visste jag att detta var mitt element – smyga in, ta det som ska tas, komma ut igen utan att någon vet. Order of the Gauntlet, tystare version.",
         "session": 12
       },
       {
@@ -397,8 +417,13 @@
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
       {
+        "label": "Handelsmannen i Kunskapens Vagn",
+        "text": "Vagnen till Akkin, karavanen öppen. De andra tog på sig gråa kappor och masker – Gråkapporna, en legosoldat-persona. Min roll blev en annan: handelsman i Kunskapens Vagn. Jag drog över en resande köpmans dräkt, band tygbalar synliga i vagnens bakre öppning, packade bort de mest uppenbara böckerna. Codex-Golemen ligger tystare än vanligt. Jag åker bland de riktiga köpmännen och lyssnar. Sven the Hoper – en man vars optimism är antingen fasad eller sinnesförändring – anlitade oss. På första dagens resa förde jag Kunskapens Vagn tätt bakom hans porslin. När han berättade om giant spiders med samma leende som han berättar om vackra soluppgångar tog jag fram besvärjelseboken. När Haldan klättrade upp på taket och började mässa Locate Animal visste jag att stunden var här. Jag höll tömmarna med en hand och redan med Fireball i den andra.",
+        "session": 13
+      },
+      {
         "label": "Namnen som binder marknaden",
-        "text": "En hel dag på Baldur's Gates marknader – tygbalar, kryddor, förfalskade sigill, en trärvagn köpt kontant. Detta är mitt fält lika mycket som besvärjelserna. Vi mötte Olo – en bard, ett vandrande register av kontakter. Han hänvisade oss till Akkin Zelabon: den kortväxta röd-skäggiga spindeln som samlar karavan-vetande som andra samlar mynt. Hans vagn stulen. Hans information i vår väg. Vi tog jobbet. Haldan spårade och Oweyn smög med kortare steg än mina. På gårdsplanen låg vagnen halvt gömd. Nu skriver vi planen med samma noggrannhet som far Steve skrev sina bokprologer.",
+        "text": "En hel dag på Baldur's Gates marknader – men planen skiftade tidigt. Ontharrs 'köpmän' blev vår 'legosoldater' när Alesandra påpekade att vi rör oss som soldater, inte köpmän. Vi köpte slitna rustningar, vapen som ser välanvända ut, och några enkla ryktesbrev från gamla anställningar. Detta är mitt fält lika mycket som besvärjelserna. Vi mötte Olo – en bard, ett vandrande register av kontakter. Han hänvisade oss till Akkin Zelabon: den kortväxta röd-skäggiga spindeln som samlar karavan-vetande som andra samlar mynt. Hans vagn stulen. Hans information i vår väg. Vi tog jobbet. Haldan spårade och Oweyn smög med kortare steg än mina. På gårdsplanen låg vagnen halvt gömd. Nu skriver vi planen med samma noggrannhet som far Steve skrev sina bokprologer.",
         "session": 12
       },
       {

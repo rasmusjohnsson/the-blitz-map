@@ -133,6 +133,35 @@
     "events": []
   },
   {
+    "id": "sven",
+    "name": "Sven the Hoper",
+    "aliases": ["Sven"],
+    "status": "friendly",
+    "role": "Porslinstransportör · karavan-arbetsgivare",
+    "desc": "En extremt optimistisk karavan-handlare vars vagnar är fyllda med porslin. Anlitade Gråstensväktarna (poserande som legosoldat-gänget Gråkapporna) som vakter på transporten norrut. Ser ljuset i varje moln, garanterar att 'alltid ordnar sig till slut' även när det inte gör det. Har berättat om giant spiders i skogen som en varning – med samma leende som han berättar om vackra solnedgångar.",
+    "events": [
+      {
+        "label": "Anlitade Gråkapporna",
+        "text": "Anställde Gråstensväktarna som karavan-vakter under deras Gråkappor-persona för resan norrut från Baldur's Gate. Betalning: säker lejd norr ut med hans porslinstransport. Berättade om giant spiders i skogen precis innan de dök upp.",
+        "session": 13
+      }
+    ]
+  },
+  {
+    "id": "edrick",
+    "name": "Edrick Vane",
+    "status": "unknown",
+    "role": "Omnämnd i baren · 'det största hoppet just nu'",
+    "desc": "Ett namn Gothmog snappade upp i en bar i Baldur's Gate: 'Edrick Vane är det största hoppet som finns just nu.' Ingen kontext, inget ansikte. Kan vara en resistansledare, en förtroende-figur i regionen, någon med planer mot kulten – eller något helt annat. Gruppen har bara ryktet att gå på.",
+    "events": [
+      {
+        "label": "Namn ur bar-vinden",
+        "text": "Gothmog hörde namnet i en bar i Baldur's Gate innan karavanen lämnade staden. Rösten sade det med respekt: 'det största hoppet som finns just nu'. Ingen ledtråd om vem eller vad – bara ett namn att komma ihåg.",
+        "session": 13
+      }
+    ]
+  },
+  {
     "id": "olo",
     "name": "Olo",
     "status": "friendly",
@@ -158,6 +187,11 @@
         "label": "Den stulna vagnen",
         "text": "Möttes av Gråstensväktarna genom barden Olo. Ville i utbyte för information om kultisternas karavaner att gruppen hjälpte honom återta hans stulna vagn. Vagnen är nu spårad till ett camp utanför staden.",
         "session": 12
+      },
+      {
+        "label": "Plats i karavanen",
+        "text": "Fick tillbaka sin vagn och höll sin del av handeln – ordnade en plats åt Gråstensväktarna i karavanen norrut, poserande som legosoldat-gänget Gråkapporna. Cedric fick också reda på hur han skulle klä sig som handelsman i Kunskapens Vagn för att smälta in bland karavanens riktiga köpmän.",
+        "session": 13
       }
     ]
   },

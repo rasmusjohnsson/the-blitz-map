@@ -85,6 +85,18 @@
     ],
     "events": [
       {
+        "title": "Karavanen lämnar staden",
+        "preview": "Gråkapporna anlitade som vakter...",
+        "detail": "Efter att Akkin fått tillbaka sin vagn öppnade han porten till karavanen norrut. Gråstensväktarna anställdes som legosoldater under namnet Gråkapporna – gråa kappor och masker, en gemensam persona. Cedric klädde ut sig som handelsman i Kunskapens Vagn för att smälta in bland riktiga köpmän. Sven the Hoper anlitade dem samma dag. Gothmog fick också ett namn med på vägen: Edrick Vane, 'det största hoppet som finns just nu', hört i en bar.",
+        "session": 13
+      },
+      {
+        "title": "Vagnen tillbaka till Akkin",
+        "preview": "Uppdraget slutfört...",
+        "detail": "Gråstensväktarna tog tillbaka Akkins vagn från campet utanför staden och levererade den. Akkin höll sin del av handeln: en plats i karavanen norrut mot okänd destination. Detta är gruppens ingång till Cult of the Dragons transporter.",
+        "session": 13
+      },
+      {
         "title": "Spåren till campet",
         "preview": "Vagnen halvt gömd på gårdsplanen...",
         "detail": "Haldan spårade den stulna vagnen från Baldur's Gate till ett camp utanför staden. Gråstensväktarna smög in för att leta – och till slut hittade de den halvt gömd på gårdsplanen bland andra ekipage. Gruppen började göra upp planen för hur de ska ta tillbaka vagnen utan att larmet går.",
@@ -98,8 +110,8 @@
       },
       {
         "title": "Mötet med barden Olo",
-        "preview": "Handelsvaror och en luta över axeln...",
-        "detail": "Efter en dag i Baldur's Gates marknader – ny klädsel, nya vagnar, allt för att smälta in som köpmän – mötte Gråstensväktarna barden Olo. Slagfärdig men diskret. Han hänvisade dem till Akkin Zelabon – mannen som vet vad karavanerna vet.",
+        "preview": "Slitna rustningar och en luta över axeln...",
+        "detail": "Efter en dag i Baldur's Gates marknader – legosoldat-utrustning, slitna rustningar, välanvända vapen, allt för att smälta in som anställda karavan-vakter istället för köpmän – mötte Gråstensväktarna barden Olo. Slagfärdig men diskret. Han hänvisade dem till Akkin Zelabon – mannen som vet vad karavanerna vet.",
         "session": 12
       },
       {
@@ -148,6 +160,29 @@
     "visited": false,
     "summary": "Stad nära Cloud Peaks, känd för sina gruvor.",
     "events": []
+  },
+  {
+    "id": "spindelskogen",
+    "name": "Spindelskogen",
+    "x": 1360,
+    "y": 990,
+    "visited": true,
+    "icon": "🕷️",
+    "summary": "En skog längs karavanvägen norr om Baldur's Gate. Ryktesbunden för sina giant spiders – och i session 13 dök de upp precis när Sven the Hoper varnat gruppen om dem. Haldan satte sig på taket av vagnen och kastade Locate Animal i samma stund som spindlarna kröp fram ur skogsbrynet.",
+    "events": [
+      {
+        "title": "Spindlarna ur skogsbrynet",
+        "preview": "Locate Animal och samtidigt attack...",
+        "detail": "På första dagens resa norrut från Baldur's Gate, medan Sven berättade om giant spiders i skogen, kände Gråstensväktarna oron växa. Haldan klättrade upp på vagnens tak och började kasta Locate Animal – och i samma ögonblick kröp spindlarna fram ur skogsbrynet. Sessionen slutade mitt i konfrontationen.",
+        "session": 13
+      },
+      {
+        "title": "Vagnen som fastnat",
+        "preview": "Hjälpsam gest på karavanvägen...",
+        "detail": "Under första dagens resa hjälpte Gråkapporna en annan vagn i karavanen som hade fastnat i leran. En gest av god vilja – och samtidigt en möjlighet att lära känna resande köpmän innan de behöver identifiera kultisterna.",
+        "session": 13
+      }
+    ]
   },
   {
     "id": "berdusk",

@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.11.0';
+const APP_VERSION='2.12.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -97,6 +97,43 @@ swift:()=>{c.fillStyle='#dbb89a';c.fillRect(2,4,5,4);c.fillStyle='#6a4020';c.fil
 bluedragon:()=>{c.fillStyle='#d0d0d0';c.fillRect(3,0,1,2);c.fillRect(12,0,1,2);c.fillStyle='#b0b0b0';c.fillRect(4,1,1,1);c.fillRect(11,1,1,1);c.fillStyle='#3060b0';c.fillRect(3,2,10,8);c.fillStyle='#4080d0';c.fillRect(4,3,8,2);c.fillStyle='#1a3a7a';c.fillRect(3,8,10,2);c.fillStyle='#ffcc00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#ff6600';c.fillRect(5,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#000';c.fillRect(6,6,1,1);c.fillRect(10,6,1,1);c.fillStyle='#2050a0';c.fillRect(5,10,6,3);c.fillStyle='#1a3a7a';c.fillRect(6,11,4,1);c.fillStyle='#e0e0c0';c.fillRect(6,13,1,2);c.fillRect(8,13,1,2);c.fillRect(10,13,1,2);c.fillStyle='#2050a0';c.fillRect(4,14,8,2);c.fillStyle='#1a3a7a';c.fillRect(5,15,6,1);c.fillStyle='#ffff00';c.fillRect(0,3,1,1);c.fillRect(1,5,1,1);c.fillRect(15,3,1,1);c.fillRect(14,5,1,1)},
 raiders:()=>{c.fillStyle='#2a2a3a';c.fillRect(3,1,10,6);c.fillRect(4,7,8,2);c.fillStyle='#1a1a2a';c.fillRect(5,4,6,4);c.fillStyle='#ff4a4a';c.fillRect(6,5,2,1);c.fillRect(9,5,2,1);c.fillStyle='#a0302a';c.fillRect(7,7,2,1);c.fillStyle='#3a2a1a';c.fillRect(3,10,10,6);c.fillStyle='#2a1a0a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#8a8a9a';c.fillRect(13,5,2,4);c.fillStyle='#4a3a2a';c.fillRect(12,9,3,1);c.fillStyle='#c0c0c0';c.fillRect(7,12,2,2)},
 kobolder:()=>{c.fillStyle='#6a4030';c.fillRect(4,3,8,5);c.fillRect(3,5,10,2);c.fillStyle='#8a5040';c.fillRect(5,4,6,1);c.fillStyle='#3a2010';c.fillRect(3,7,1,1);c.fillRect(12,7,1,1);c.fillStyle='#3a1808';c.fillRect(4,2,1,2);c.fillRect(11,2,1,2);c.fillRect(5,1,1,2);c.fillRect(10,1,1,2);c.fillStyle='#ffaa00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#000';c.fillRect(6,5,1,2);c.fillRect(10,5,1,2);c.fillStyle='#5a3020';c.fillRect(6,8,4,2);c.fillStyle='#fff';c.fillRect(6,9,1,1);c.fillRect(8,9,1,1);c.fillRect(9,9,1,1);c.fillStyle='#5a4a3a';c.fillRect(3,10,10,6);c.fillStyle='#3a2a1a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#a02020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#8a6a3a';c.fillRect(14,3,1,11);c.fillStyle='#9a9aaa';c.fillRect(13,2,3,2)},
+akkin:()=>{
+// Kort man - flintskallig hjässa, röd skepparkrans, rött skägg
+c.fillStyle='#dbb89a';c.fillRect(5,2,6,7); // face/hy
+c.fillStyle='#c49876';c.fillRect(5,8,6,1); // hakskuggning
+// Flintskallig hjässa - synligt skin ovanpå
+c.fillStyle='#e0c0a0';c.fillRect(6,2,4,2);
+// Skepparkrans - röd hårkrans runt sidor och bak
+c.fillStyle='#a03818';c.fillRect(4,4,1,4);c.fillRect(11,4,1,4);
+c.fillRect(3,5,1,3);c.fillRect(12,5,1,3);
+c.fillStyle='#c04828';c.fillRect(4,7,1,1);c.fillRect(11,7,1,1);
+// Ögonbryn - röda
+c.fillStyle='#8a2810';c.fillRect(6,4,1,1);c.fillRect(9,4,1,1);
+// Ögon - snabba blå
+c.fillStyle='#3070a0';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+c.fillStyle='#000';c.fillRect(6,5,1,1);
+c.fillStyle='#4a90c0';c.fillRect(9,5,1,1);
+// Näsa
+c.fillStyle='#c49876';c.fillRect(7,6,2,1);
+// Rött skägg - täcker haka och kinder
+c.fillStyle='#a03818';c.fillRect(5,7,6,3);c.fillRect(4,8,8,2);
+c.fillStyle='#c04828';c.fillRect(6,8,4,1); // ljus mitten
+c.fillStyle='#c04828';c.fillRect(7,9,2,1);
+// Mustasch
+c.fillStyle='#8a2810';c.fillRect(6,7,4,1);
+// Kropp - handelsmans-tunika i mörkt tyg
+c.fillStyle='#3a2818';c.fillRect(3,10,10,6);
+c.fillStyle='#4a3828';c.fillRect(4,11,8,1);
+// Krage
+c.fillStyle='#7a6040';c.fillRect(6,10,4,1);
+// Bälte
+c.fillStyle='#2a1808';c.fillRect(3,13,10,1);
+// Spänne (gyllene)
+c.fillStyle='#c0a030';c.fillRect(7,13,2,1);
+// Väska/mynt-pung vid sidan
+c.fillStyle='#5a3a1a';c.fillRect(12,12,2,3);
+c.fillStyle='#a08040';c.fillRect(13,13,1,1);
+},
 cyanwrath:()=>{
 // blue-grey half-dragon head + armor
 c.fillStyle='#3a5a8a';c.fillRect(4,1,8,9); // head/face

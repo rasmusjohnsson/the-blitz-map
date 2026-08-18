@@ -560,8 +560,8 @@
     "date": "2026-07-20",
     "events": [
       {
-        "title": "Handel i staden",
-        "recap": "Gråstensväktarna handlade i Baldur's Gate – köpmansklädsel, vagnar, varor att sälja, allt för att bygga upp en trovärdig fasad. Nästa steg var att gå med i karavanen norrut som helt vanliga handelsmän.",
+        "title": "Utrustning i staden",
+        "recap": "Gråstensväktarna handlade i Baldur's Gate – legosoldat-utrustning, slitna rustningar, vapen som ser välanvända ut, allt för att bygga upp en trovärdig fasad. Planen justerades från Ontharrs och Alesandras 'köpmän' till 'legosoldater' – enklare att motivera vapen, enklare att gå med i karavanen som anställda vakter istället för handelsmän med lager att förklara.",
         "places": ["baldursgate"],
         "npcs": []
       },
@@ -588,6 +588,50 @@
         "recap": "Gråstensväktarna smög in i campet, mellan tält och vaktposter. Till slut hittade de vagnen halvt gömd på gårdsplanen bland andra ekipage. Nu gjorde gruppen upp planen: hur ska vagnen tas tillbaka utan att larmet går?",
         "places": ["baldursgate"],
         "npcs": []
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "label": "SESSION 13",
+    "title": "Gråkapporna och spindlarna",
+    "date": "2026-07-27",
+    "events": [
+      {
+        "title": "Vagnen tillbaka till Akkin",
+        "recap": "Gråstensväktarna tog tillbaka den stulna vagnen från campet och levererade den till Akkin Zelabon. Han höll sin del av handeln direkt: en plats i karavanen norrut. Detta var gruppens ingång till Cult of the Dragons transport-nätverk.",
+        "places": ["baldursgate"],
+        "npcs": ["Akkin Zelabon"]
+      },
+      {
+        "title": "Gråkapporna föds",
+        "recap": "Gruppen antog en gemensam legosoldat-persona: Gråkapporna. Grå kappor över axlarna, masker över ansiktena, en samlad tystnad som skydd. Cedric fick sin egen roll – utklädd som handelsman i Kunskapens Vagn, resande i karavanen bland de riktiga köpmännen istället för bland legosoldaterna.",
+        "places": ["baldursgate"],
+        "npcs": []
+      },
+      {
+        "title": "Edrick Vane i baren",
+        "recap": "Innan karavanen lämnade staden satte sig Gothmog i en bar och snappade upp ett samtal: 'Edrick Vane är det största hoppet som finns just nu.' Ingen kontext, ingen förklaring – bara ett namn viskat med respekt. Ett spår att komma ihåg när tiden ger utrymme.",
+        "places": ["baldursgate"],
+        "npcs": ["Edrick Vane"]
+      },
+      {
+        "title": "Sven the Hoper",
+        "recap": "Dagen efter blev Gråkapporna anlitade av Sven the Hoper – en extremt optimistisk karavan-handlare som transporterar porslin. Ler mot varje problem, garanterar att allt ordnar sig. Har berättat om giant spiders i skogen med samma leende som han berättar om vackra soluppgångar.",
+        "places": ["baldursgate"],
+        "npcs": ["Sven the Hoper"]
+      },
+      {
+        "title": "Karavanen rullar",
+        "recap": "Karavanen lämnade Baldur's Gate och började sin resa norrut. En dag på vägen. Vid ett tillfälle hjälpte Gråkapporna en vagn som fastnat i leran – bra tillfälle att lära känna karavanens övriga folk och hålla ögonen öppna för misstänkta.",
+        "places": ["spindelskogen"],
+        "npcs": ["Sven the Hoper"]
+      },
+      {
+        "title": "Spindlarna",
+        "recap": "När Sven berättade om giant spiders i skogen växte oron i gruppen. Haldan satte sig på taket av vagnen och började kasta Locate Animal – och i samma ögonblick kröp spindlarna fram ur skogsbrynet. Sessionen slutade mitt i konfrontationen.",
+        "places": ["spindelskogen"],
+        "npcs": ["Sven the Hoper"]
       }
     ]
   }
