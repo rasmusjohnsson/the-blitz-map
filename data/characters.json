@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Nätet och alverna",
+        "text": "Locate Animal gav mig deras positioner innan de nådde vagnen. Jag sköt från taket, prick efter prick, medan de andra höll bak dem. När flocken var nere gick vi in bland träden och hittade nätet – två alver, Nohar och Selek, minutrar från gift. Vi skar ner dem. Vid nattens läger fick jag försiktigt Nohar att prata – alv möter alv, tystnad möter tystnad. Selek sade inget. Han såg allt. Senare vid en annan eld noterade jag Cornwind sittande med Frulam Mondath. Två kultledare i samma karavan. Vi har spårat rätt. Vi rör oss vidare mot värdshuset i ingenstans – och där brakar det loss med fyra tykiga adelsmän.",
+        "session": 14
+      },
+      {
         "label": "Grå kappa och Locate Animal",
         "text": "Vi levererade vagnen till Akkin och han levde upp till avtalet – plats i karavanen norrut. Jag drog den gråa kappan över axlarna, masken på: Gråkapporna. En persona som liknar oss så pass mycket att lögnen bär utan att kännas som en. Sven the Hoper anlitade oss – en man som ler mot dagar mörka som midnatt. Han berättade om giant spiders i skogen med samma leende. På första dagens resa kände jag doften först – något större än det borde vara rörde sig i skogsbrynet. Jag klättrade upp på vagnens tak och började kasta Locate Animal. I samma sekund som besvärjelsen tog fäste kröp spindlarna fram. Deras positioner ligger nu klara i mitt sinne. Vi ska rensa skogen.",
         "session": 13
@@ -118,6 +123,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Watcher's Eye på Cornwind",
+        "text": "Spindlarna föll för våra klingor och pilar. Vi räddade två alver ur nätet: Nohar och Selek. Watcher's Eye läser dem inte som fiender – bara som resande med hemligheter. Vid nattens läger fick jag syn på Cornwind vid en av eldarna. Kultledaren från Hästskoplatån. Jämte honom Frulam Mondath. Två personer jag har svurit att jaga sittande som resande. Oweyn och Gothmog gick närmare för att snoka bakom sina masker – Bahamut var med dem, ingen sett-igen. Men Frulam märkte snoket och drog sig in i tältet. Vi är på rätt spår. Vid värdshuset i ingenstans blockerar fyra tykiga adelsmän oss. Watcher's Eye på dem: raseri, arrogans, ingen ondska av kult-natur. Ändå står jag med de andra när Oweyn muckar gräl.",
+        "session": 14
+      },
+      {
         "label": "Gråkappan över Order-tecknet",
         "text": "Vagnen tillbaka till Akkin, ord hållet på båda sidor. Jag lade en grå kappa över axlarna och en mask över ansiktet. Vi är nu Gråkapporna – en persona så nära vår egen att lögnen känns lätt. Bahamut ser oss ändå. Sven the Hoper anlitade oss. En man som ler mot allt. Watcher's Eye finner ingenting hotfullt i hans blick – bara sol. Kanske ska jag lära mig av honom. På första dagens resa hjälpte vi en fastknatnad vagn – bra sätt att lära känna karavanens folk. När Sven varnade för giant spiders klättrade Haldan upp på taket. Locate Animal, sedan striden. Jag drog svärdet och steg framåt.",
         "session": 13
@@ -216,6 +226,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Under masken framför Cornwind",
+        "text": "Spindlarna föll snabbt när Locate Animal gav Haldan deras positioner. Vi skar ner Nohar och Selek ur näten. Vid nattens läger kunde jag knappt tro mina ögon: Cornwind vid en av eldarna. Kultledaren jag pressade om position för hästskoplatån. Bredvid honom satt Frulam Mondath, den som brände Cyanwrath. Två av kultens ansikten på samma bänk. Oweyn och jag drog upp gråkapporna, fixade masken över ansiktet och gick fram för att snoka. Runorna varnade lugnt: 'formen du väljer'. Frulam vände huvudet, mötte min blick genom masken – jag hoppas hon inte såg halvorken bakom. Hon reste sig och drog sig in i tältet. Jag stod kvar länge och tittade på tältöppningen. Ny plan formar sig. Vid värdshuset några dagar senare stötte vi på fyra tykiga adelsmän. Oweyn muckade gräl. Jag höll halberden i handen. Detta är enklare fiender än kulten.",
+        "session": 14
+      },
+      {
         "label": "Bar-viskningen om Edrick Vane",
         "text": "Vagnen levererad, Akkin höll sitt ord. Gråkapporna – jag gillar namnet, det passar. Grå kappa, mask, en broder-skara som redan finns. På kvällen gick jag ensam till en bar för att lyssna. Halvorken i skuggan är osynlig på rätt sätt. Där hörde jag namnet: 'Edrick Vane är det största hoppet som finns just nu.' Två män med öl framför sig, respekt i rösten. Ingen förklaring. Bara namnet. Jag skrev det i minnet och gick. På vägen norrut lyfte Sven our humör – en optimist är farlig i god mening. När spindlarna kröp fram ur skogsbrynet höjde jag halberden och log. Runorna sjöng.",
         "session": 13
@@ -313,6 +328,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Under gråkappan mot Frulam",
+        "text": "Spindlarna föll under våra klingor. Vi skar ner Nohar och Selek ur näten. Vid nattens läger såg jag Cornwind. Bredvid honom Frulam Mondath. Gothmog och jag drog upp gråkapporna, satte masken över ansiktet och gick fram som två anonyma legosoldater för att snoka. Order of the Gauntlet svär att skydda de svaga – och ibland gör man det genom att bära fiendens ansikte. Frulam märkte snoket och drog sig in i tältet – vad hon såg vet vi inte, men vi är kvar i karavanen. Vid värdshuset några dagar senare vägrade fyra tykiga adelsmän dela lokalen med oss. Jag muckade gräl. Om de vill ha slaget, ska de få det.",
+        "session": 14
+      },
       {
         "label": "Gråkappa och mask",
         "text": "Vagnen tillbaka, karavanen öppen. Jag drog den gråa kappan över axlarna, masken över ansiktet: Gråkapporna, vår nya persona. Cedric fick sin egen roll som handelsman i Kunskapens Vagn – han rör sig bland de riktiga köpmännen medan vi andra rör oss bland legosoldaterna. Sven the Hoper anlitade oss dagen efter. En man vars leende är hans skydd. På första dagens resa hjälpte vi en fastknatnad vagn – jag lyfte hjulet ur leran själv. När Sven varnade för giant spiders och Haldan klättrade upp på taket kände jag pulsen sätta fart. Order of the Gauntlet svär att skydda de svaga – Sven är en av dem just nu.",
@@ -416,6 +436,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Fireballs från handelsmannens vagn",
+        "text": "När spindlarna kröp fram ur skogsbrynet var jag redo. Fireball från Kunskapens Vagns bakre öppning – flocken brann. Theron och Gothmog stängde med klingorna, Haldan från taket, Oweyn mellan träden. Bland näten hittade vi Nohar och Selek – två alver. Codex-Golemen hjälpte skära ner dem. Vid nattens läger höll jag mig till 'handelsman'-rollen; talade med andra köpmän för att lyssna. Från mitt håll av lägret såg jag Cornwind och Frulam Mondath sitta tillsammans. Två av kultens ansikten. Jag noterade det i tystnad medan Oweyn och Gothmog gick närmare. Frulam drog sig in i tältet efter en stund. Vi är på rätt spår, det finns inget tvivel längre. Vid värdshuset några dagar senare mötte vi fyra tykiga adelsmän. Jag höll besvärjelseboken öppen under bordet medan Oweyn drog svärdet.",
+        "session": 14
+      },
       {
         "label": "Handelsmannen i Kunskapens Vagn",
         "text": "Vagnen till Akkin, karavanen öppen. De andra tog på sig gråa kappor och masker – Gråkapporna, en legosoldat-persona. Min roll blev en annan: handelsman i Kunskapens Vagn. Jag drog över en resande köpmans dräkt, band tygbalar synliga i vagnens bakre öppning, packade bort de mest uppenbara böckerna. Codex-Golemen ligger tystare än vanligt. Jag åker bland de riktiga köpmännen och lyssnar. Sven the Hoper – en man vars optimism är antingen fasad eller sinnesförändring – anlitade oss. På första dagens resa förde jag Kunskapens Vagn tätt bakom hans porslin. När han berättade om giant spiders med samma leende som han berättar om vackra soluppgångar tog jag fram besvärjelseboken. När Haldan klättrade upp på taket och började mässa Locate Animal visste jag att stunden var här. Jag höll tömmarna med en hand och redan med Fireball i den andra.",

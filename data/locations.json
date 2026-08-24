@@ -162,6 +162,23 @@
     "events": []
   },
   {
+    "id": "vardshuset_ingenstans",
+    "name": "Värdshuset i ingenstans",
+    "x": 1310,
+    "y": 940,
+    "visited": true,
+    "icon": "🏚️",
+    "summary": "Ett värdshus mitt ute i ingenstans längs karavanvägen norrut. Gråstensväktarna kom hit i session 14 för att sova över natten men fann det abbonerat av fyra tykiga adelsmän som vägrade dela lokalen trots att de bara var fyra. Oweyn muckade gräl. Sessionen slutade vid initiativkastet.",
+    "events": [
+      {
+        "title": "Fyra adelsmän och ett gräl",
+        "preview": "Abbonerat värdshus, Oweyn muckar...",
+        "detail": "Efter en dags färd nådde karavanen ett värdshus mitt ute i ingenstans. Gråkapporna ville sova över natten men fann lokalen abbonerat av fyra tykiga adelsmän som vägrade dela – trots att de bara var fyra själar i ett helt värdshus. Oweyn muckade gräl. Initiativ kastades. Sessionen slutade i luften mellan sittande stolar och draget stål.",
+        "session": 14
+      }
+    ]
+  },
+  {
     "id": "spindelskogen",
     "name": "Spindelskogen",
     "x": 1360,
@@ -170,6 +187,30 @@
     "icon": "🕷️",
     "summary": "En skog längs karavanvägen norr om Baldur's Gate. Ryktesbunden för sina giant spiders – och i session 13 dök de upp precis när Sven the Hoper varnat gruppen om dem. Haldan satte sig på taket av vagnen och kastade Locate Animal i samma stund som spindlarna kröp fram ur skogsbrynet.",
     "events": [
+      {
+        "title": "Cornwind och Frulam i lägret",
+        "preview": "Två gamla fiender i samma karavan...",
+        "detail": "Vid nattens läger såg Gråstensväktarna Cornwind – kultledaren från Hästskoplatån – sittande vid en av eldarna. Oweyn och Gothmog närmade sig honom under sina gråkappor och masker för att snoka. Bredvid honom satt Frulam Mondath. Om Cornwind kände igen dem sade han inget. Frulam märkte att de snokade och drog sig snabbt in i tältet.",
+        "session": 14
+      },
+      {
+        "title": "Lägersamtalet med Nohar",
+        "preview": "Fåord blir historia vid elden...",
+        "detail": "Vid nattens läger försökte Gråstensväktarna få Nohar att prata. Han lossnade försiktigt och berättade lite om sig själv och om sin stumma kompanjon Selek. Vart de skulle och varför blev fortfarande oklart, men förtroende började byggas.",
+        "session": 14
+      },
+      {
+        "title": "Nohar och Selek räddas",
+        "preview": "Två alver ur spindelnätet...",
+        "detail": "När Gråkapporna besegrade giant spider-flocken hittade de två alver invecklade i näten – Nohar och hans stumma kompanjon Selek. Räddade dem innan giftet fullbordade sitt arbete.",
+        "session": 14
+      },
+      {
+        "title": "Spindlarna besegrade",
+        "preview": "Ambushen avvärjd...",
+        "detail": "Gråkapporna slog ner giant spider-flocken som angripit karavanen. Cedric med besvärjelser från Kunskapens Vagn, Theron och Gothmog i frontlinjen, Haldan från vagnens tak med Locate Animal-koordinater i huvudet, Oweyn i skogsbrynet mellan trädstammarna. Karavanen räddad – och två alver hittade i näten.",
+        "session": 14
+      },
       {
         "title": "Spindlarna ur skogsbrynet",
         "preview": "Locate Animal och samtidigt attack...",

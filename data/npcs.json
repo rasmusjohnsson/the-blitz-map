@@ -106,6 +106,11 @@
         "label": "Kroppsbränningen",
         "text": "Klev fram i grottans skuggor omedelbart efter att Cyanwrath fallit. Brände halvdrakens kropp med magisk eld på plats – inget lik fick lämnas åt fienden – och flydde sedan innan Gråstensväktarna hann fånga henne. En kall pragmatism som Cyanwraths raseri saknade.",
         "session": 8
+      },
+      {
+        "label": "Snokandet i karavanlägret",
+        "text": "Satt bredvid Cornwind i karavanlägret under nattens rast. Kände inte igen Oweyn och Gothmog under deras gråkappor och masker – men märkte att de snokade och drog sig snabbt in i tältet. Att båda kultledarna reser med samma karavan pekar mot att Gråstensväktarna har följt rätt spår.",
+        "session": 14
       }
     ]
   },
@@ -131,6 +136,34 @@
     "role": "Omnämnd – Cult of the Dragon",
     "desc": "Ett namn som viskas bland de högsta i kulten. Enligt Leosin, Harpers-agenten Gråstensväktarna räddade, upprepas det bland dem som styr Cult of the Dragon – men även han vet inte vem eller vad Rezmir är. Sättet kultisterna sänker rösten när de talar om henne pekar mot någon på toppen av hierarkin, långt över Cyanwrath och Frulam Mondath.",
     "events": []
+  },
+  {
+    "id": "nohar",
+    "name": "Nohar",
+    "status": "friendly",
+    "role": "Alv · räddad ur spindelnätet",
+    "desc": "En alv som Gråstensväktarna räddade ur giant spiders grepp när flocken angrep karavanen i skogen. Reser tillsammans med sin kompanjon Selek. Fåordig i början men lossnade vid nattens läger och började dela sin historia med gruppen. Anledningen till att han och Selek färdades genom skogen är fortfarande dunkel.",
+    "events": [
+      {
+        "label": "Räddad ur spindelnätet",
+        "text": "Hittades fångad i giant spiders nät under ambushen mot karavanen. Gråstensväktarna slog spindlarna och skar ner honom och Selek innan giftet hann fullborda sitt arbete. Vid nattlägret började han försiktigt prata.",
+        "session": 14
+      }
+    ]
+  },
+  {
+    "id": "selek",
+    "name": "Selek",
+    "status": "friendly",
+    "role": "Nohars stumma kompanjon",
+    "desc": "Nohars ständige kompanjon. Stum – kommunicerar med gester, blickar och skrivna tecken när det behövs. Räddades tillsammans med Nohar ur spindelnätet. Uppmärksam på sätt som få talande hinner vara. Vad som fört honom och Nohar samman förklarades aldrig i det första lägersamtalet.",
+    "events": [
+      {
+        "label": "Räddad tillsammans med Nohar",
+        "text": "Skars ner ur spindelnätet med Nohar. Höll sig i bakgrunden vid lägret men följde varje samtal med ögonen. En dold uppmärksamhet som Gråstensväktarna märkte, även om han inte sade ett ord.",
+        "session": 14
+      }
+    ]
   },
   {
     "id": "sven",
@@ -255,6 +288,11 @@
         "label": "Förhandlingen i tältet",
         "text": "Tog emot Haldan och Theron i sitt tält när de kom i kåpor. Lät sig övertalas av Therons förhandlingstaktik och utfärdade papper på ett jaktjobb med rätt att låna hästar – inte anandes att 'jaktjobbet' användes till att dumpa kött vid drakägg-grottan och scouta inför flykten.",
         "session": 6
+      },
+      {
+        "label": "Skymtad i karavan-lägret",
+        "text": "Dök oväntat upp i karavanlägret under nattens rast. Oweyn och Gothmog närmade sig honom bakom sina gråkappor och masker för att snoka. Bredvid honom satt Frulam Mondath. Om Cornwind kände igen dem sade han inget – men Frulam märkte att de snokade och drog sig in i tältet.",
+        "session": 14
       }
     ]
   },

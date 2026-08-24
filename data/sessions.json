@@ -634,5 +634,43 @@
         "npcs": ["Sven the Hoper"]
       }
     ]
+  },
+  {
+    "id": 14,
+    "label": "SESSION 14",
+    "title": "Under Gråkapporna",
+    "date": "2026-08-03",
+    "events": [
+      {
+        "title": "Spindlarna faller",
+        "recap": "Gråkapporna slog ner giant spider-flocken som ambushat karavanen. Cedric med besvärjelser, Theron och Gothmog i frontlinjen, Haldan från vagnens tak, Oweyn mellan trädstammarna. Ambushen avvärjd, karavanen räddad.",
+        "places": ["spindelskogen"],
+        "npcs": []
+      },
+      {
+        "title": "Nohar och Selek räddas",
+        "recap": "I spindelnäten hittade Gråkapporna två alver – Nohar och hans stumma kompanjon Selek. Skars ner innan giftet fullbordade sitt arbete och togs tillbaka till karavanen.",
+        "places": ["spindelskogen"],
+        "npcs": ["Nohar", "Selek"]
+      },
+      {
+        "title": "Nattens läger",
+        "recap": "Karavanen slog läger för natten. Gruppen försökte konversera med Nohar som lossnade försiktigt och berättade om sig själv och om Selek, sin stumma kompanjon. Vart alverna färdades och varför blev fortfarande oklart, men förtroendet började byggas.",
+        "places": ["spindelskogen"],
+        "npcs": ["Nohar", "Selek"]
+      },
+      {
+        "title": "Cornwind i skenet av elden",
+        "recap": "Vid en av lägrets eldar såg Gråstensväktarna Cornwind – kultledaren från Hästskoplatån. Oweyn och Gothmog närmade sig honom bakom sina gråkappor och masker för att snoka. Bredvid honom satt Frulam Mondath. Om Cornwind kände igen dem sade han inget – men Frulam märkte att de snokade och drog sig snabbt in i tältet.",
+        "places": ["spindelskogen"],
+        "npcs": ["Cornwind", "Frulam Mondath"]
+      },
+      {
+        "title": "Värdshuset i ingenstans",
+        "recap": "Nästa dag nådde karavanen ett värdshus mitt ute i ingenstans. Gråkapporna ville sova över natten men fann lokalen abbonerat av fyra tykiga adelsmän som vägrade dela – trots att de bara var fyra i ett helt värdshus. Oweyn muckade gräl. Initiativ kastades. Sessionen slutade mitt i luften mellan sittande stolar och draget stål.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      }
+    ]
   }
 ]
