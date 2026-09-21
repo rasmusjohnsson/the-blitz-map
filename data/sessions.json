@@ -672,5 +672,43 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 15,
+    "label": "SESSION 15",
+    "title": "Alarmen i natten",
+    "date": "2026-08-10",
+    "events": [
+      {
+        "title": "Ut ur värdshuset",
+        "recap": "Gråkapporna avvärjde slagsmålet inne i värdshuset och backade ut i tystnad. Bättre att inte dra fler blickar än nödvändigt när Frulam Mondath och Cornwind rör sig i samma karavan-nätverk.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      },
+      {
+        "title": "Striden vid stallet",
+        "recap": "Gruppen gick till stallet för att ställa in hästarna för natten – och just då kom adelsmännen ut från värdshuset och attackerade. Denna gång rullade det till fullt slagsmål. Gruppen slog ner en av dem till låg HP och pressade henne att ge upp. När hon vek sig gav de andra tre också upp.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      },
+      {
+        "title": "Freden och kvällen",
+        "recap": "Efter kapitulationen slöts fred. Adelsmännen erbjöd Gråkapporna det värdshus de nyss vägrat dela – en märklig gest efter kort strid. Gruppen accepterade men drack väldigt lite under kvällen. Misstron mot de fyra satt i skinnet.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      },
+      {
+        "title": "Sköldens hemlighet",
+        "recap": "Under kvällen studerade Theron sin sköld noggrannare än vanligt. Något var på gång med den – oanade krafter viskade i metallen, krafter han ännu inte fullt förstod men som han kände växa. Watcher's Eye kanske? Bahamut? Eller något äldre? Han la den vid sängkanten över natten.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      },
+      {
+        "title": "Alarmen och attentatörerna",
+        "recap": "Gruppen la sig med Cedrics Alarm-besvärjelser mässade över dörrarna. Under natten gick ett av alarmen. Alla vaknade av besvärjelsens skri. Flera maskerade figurer hade smugit sig in i värdshuset och försökt ta sig in i Gråkapporternas rum. Strid utbröt i mörka korridorer – de flesta attentatörer föll för klingor och besvärjelser. En lyckades bryta sig ut genom ytterdörren och sprang ut i natten. Gruppen följer efter. Sessionen slutar i förföljandet.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      }
+    ]
   }
 ]

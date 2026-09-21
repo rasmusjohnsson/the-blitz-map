@@ -168,8 +168,38 @@
     "y": 940,
     "visited": true,
     "icon": "🏚️",
-    "summary": "Ett värdshus mitt ute i ingenstans längs karavanvägen norrut. Gråstensväktarna kom hit i session 14 för att sova över natten men fann det abbonerat av fyra tykiga adelsmän som vägrade dela lokalen trots att de bara var fyra. Oweyn muckade gräl. Sessionen slutade vid initiativkastet.",
+    "summary": "Ett värdshus mitt ute i ingenstans längs karavanvägen norrut. Gråstensväktarna kom hit i session 14 för att sova över natten men fann det abbonerat av fyra tykiga adelsmän som vägrade dela lokalen. I session 15 slöts fred efter en kort strid vid stallet – men samma natt gick Alarm-besvärjelserna av när maskerade attentatörer försökte ta sig in. En flydde ut i natten.",
     "events": [
+      {
+        "title": "Attentatörerna i natten",
+        "preview": "Alarmen skriker, korridorerna blir slagfält...",
+        "detail": "Gråkapporna la sig med Cedrics Alarm-besvärjelser mässade över dörrarna. Under natten gick ett av alarmen. Maskerade figurer hade smugit sig in och försökte bryta sig in i rummen. Strid i mörka korridorer. Alla utom en föll – den sista bröt sig ut genom ytterdörren och sprang ut i natten. Gruppen följer efter.",
+        "session": 15
+      },
+      {
+        "title": "Sköldens hemlighet",
+        "preview": "Oanade krafter viskar i metallen...",
+        "detail": "Under kvällen studerade Theron sin sköld noggrannare än vanligt. Oanade krafter viskade i metallen – krafter han ännu inte fullt förstod men som han kände växa. Watcher's Eye kanske? Bahamut? Eller något äldre? Han la den vid sängkanten över natten.",
+        "session": 15
+      },
+      {
+        "title": "Freden och kvällen",
+        "preview": "Adelsmännen erbjuder plötsligt lokalen...",
+        "detail": "Efter kapitulationen vid stallet slöts fred. Adelsmännen erbjöd Gråkapporna det värdshus de nyss vägrat dela – en märklig gest efter kort strid. Gruppen accepterade men drack väldigt lite under kvällen. Misstron mot de fyra satt i skinnet.",
+        "session": 15
+      },
+      {
+        "title": "Striden vid stallet",
+        "preview": "Adelsmännen kommer ut och angriper...",
+        "detail": "När Gråkapporna gick till stallet för att ställa in hästarna kom adelsmännen ut från värdshuset och attackerade. Fullt slagsmål – gruppen slog ner en av dem till låg HP och pressade henne att ge upp. När hon vek sig gav de andra tre också upp.",
+        "session": 15
+      },
+      {
+        "title": "Ut ur värdshuset",
+        "preview": "Gråkapporna backar undan gräl...",
+        "detail": "Gråkapporna avvärjde slagsmålet inne i värdshuset och backade ut i tystnad. Bättre att inte dra fler blickar än nödvändigt när Frulam Mondath och Cornwind rör sig i samma karavan-nätverk.",
+        "session": 15
+      },
       {
         "title": "Fyra adelsmän och ett gräl",
         "preview": "Abbonerat värdshus, Oweyn muckar...",
