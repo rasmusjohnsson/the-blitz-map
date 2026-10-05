@@ -710,5 +710,37 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 16,
+    "label": "SESSION 16",
+    "title": "Pakten med Frulam",
+    "date": "2026-10-05",
+    "events": [
+      {
+        "title": "Jakten genom skogen",
+        "recap": "Gruppen jagade den flyende tjuven ut i skogen. Han undkom i mörkret – men inte innan Haldan och Mok lyckades spåra honom. Riktningen var tydlig: tillbaka mot handels-karavanen. Attentatet kom inifrån den egna gruppen av resande.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": ["Mok"]
+      },
+      {
+        "title": "Adelsmännen avslöjar sig",
+        "recap": "På morgonen pratade Gråstensväktarna med de fyra tykiga adelsmännen från värdshuset. De bad om ursäkt för gårdagens uppträdande och avslöjade sanningen: de arbetar för Lords' Alliance. Grälet var en test – och Gråkapporna hade bestått. Som bevis på deras goda vilja fick gruppen en 'token' – en signalring de kan använda när de behöver Lords' Alliances hjälp.",
+        "places": ["vardshuset_ingenstans"],
+        "npcs": []
+      },
+      {
+        "title": "Spåret till Frulams tält",
+        "recap": "Tillbaka i karavanlägret började pusselbitarna falla på plats. Cedric mässade Locate Object och Locate Poison. Haldan hade luktat på pilarna som attentatörerna lämnat efter sig – och nu kände han samma lukt vid Frulams tält. Frulam Mondath var den som anstiftat nattens attentat.",
+        "places": ["spindelskogen"],
+        "npcs": ["Frulam Mondath"]
+      },
+      {
+        "title": "Hårlocken och pakten",
+        "recap": "Gruppen konfronterade Frulam Mondath. Hon hade stulit en hårlock från Oweyn – troligen för någon form av magisk sympati-besvärjelse. Istället för konfrontation slöts en osannolik pakt: hårlocken återlämnades, Gråstensväktarna håller tyst om Frulams vagn fylld med guld, och i gengäld hjälper gruppen att eskortera vagnen fram till destinationen. Spåret ska leda dem till kultens kärna.",
+        "places": ["spindelskogen"],
+        "npcs": ["Frulam Mondath"]
+      }
+    ]
   }
 ]

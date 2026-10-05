@@ -171,6 +171,18 @@
     "summary": "Ett värdshus mitt ute i ingenstans längs karavanvägen norrut. Gråstensväktarna kom hit i session 14 för att sova över natten men fann det abbonerat av fyra tykiga adelsmän som vägrade dela lokalen. I session 15 slöts fred efter en kort strid vid stallet – men samma natt gick Alarm-besvärjelserna av när maskerade attentatörer försökte ta sig in. En flydde ut i natten.",
     "events": [
       {
+        "title": "Adelsmännen avslöjar sig",
+        "preview": "Lords' Alliance-agenter, token överlämnad...",
+        "detail": "På morgonen efter attentatet pratade Gråstensväktarna med de fyra tykiga adelsmännen. De bad om ursäkt och avslöjade sanningen: de arbetar för Lords' Alliance. Grälet hade varit en test – och Gråkapporna hade bestått. Som bevis på god vilja fick gruppen en 'token' – en signalring att använda när de behöver Lords' Alliances hjälp i framtiden.",
+        "session": 16
+      },
+      {
+        "title": "Jakten genom skogen",
+        "preview": "Tjuven undkom men spåret ledde tillbaka...",
+        "detail": "Gråstensväktarna jagade den flyende attentatören ut i skogens mörker. Han undkom – men inte innan Haldan och Mok lyckades spåra honom. Riktningen var tydlig: tillbaka mot handels-karavanen. Attentatet kom inifrån.",
+        "session": 16
+      },
+      {
         "title": "Attentatörerna i natten",
         "preview": "Alarmen skriker, korridorerna blir slagfält...",
         "detail": "Gråkapporna la sig med Cedrics Alarm-besvärjelser mässade över dörrarna. Under natten gick ett av alarmen. Maskerade figurer hade smugit sig in och försökte bryta sig in i rummen. Strid i mörka korridorer. Alla utom en föll – den sista bröt sig ut genom ytterdörren och sprang ut i natten. Gruppen följer efter.",
@@ -217,6 +229,18 @@
     "icon": "🕷️",
     "summary": "En skog längs karavanvägen norr om Baldur's Gate. Ryktesbunden för sina giant spiders – och i session 13 dök de upp precis när Sven the Hoper varnat gruppen om dem. Haldan satte sig på taket av vagnen och kastade Locate Animal i samma stund som spindlarna kröp fram ur skogsbrynet.",
     "events": [
+      {
+        "title": "Hårlocken och pakten med Frulam",
+        "preview": "Osannolik överenskommelse under tystnadens täcke...",
+        "detail": "Gråstensväktarna konfronterade Frulam Mondath i hennes tält. Hon hade stulit en hårlock från Oweyn – troligen för en sympati-besvärjelse. Istället för strid slöts en osannolik pakt: hårlocken återlämnad, Gråstensväktarna tiger om Frulams vagn fylld med guld, och i gengäld eskorterar de henne hela vägen till destinationen. Spåret ska leda dem till kultens kärna – rakt in i den.",
+        "session": 16
+      },
+      {
+        "title": "Spåret till Frulams tält",
+        "preview": "Locate Object + Locate Poison avslöjar...",
+        "detail": "Tillbaka i karavanlägret började pusselbitarna falla på plats. Cedric mässade Locate Object och Locate Poison. Haldan hade luktat på pilarna som attentatörerna lämnat efter sig – och nu kände han samma lukt vid Frulams tält. Frulam Mondath var den som anstiftat nattens attentat.",
+        "session": 16
+      },
       {
         "title": "Cornwind och Frulam i lägret",
         "preview": "Två gamla fiender i samma karavan...",

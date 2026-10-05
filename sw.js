@@ -1,6 +1,6 @@
 // Service Worker för Gråstensväktarna PWA
 // Versionera CACHE_NAME för att invalidera vid uppdateringar
-const CACHE_VERSION = 'v2.14.0';
+const CACHE_VERSION = 'v2.15.0';
 const CACHE_NAME = 'grastensvaktarna-' + CACHE_VERSION;
 
 // Filer att förcacha vid install

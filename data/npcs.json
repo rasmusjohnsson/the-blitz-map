@@ -111,6 +111,11 @@
         "label": "Snokandet i karavanlägret",
         "text": "Satt bredvid Cornwind i karavanlägret under nattens rast. Kände inte igen Oweyn och Gothmog under deras gråkappor och masker – men märkte att de snokade och drog sig snabbt in i tältet. Att båda kultledarna reser med samma karavan pekar mot att Gråstensväktarna har följt rätt spår.",
         "session": 14
+      },
+      {
+        "label": "Attentatet och den osannolika pakten",
+        "text": "Beordrade nattens attentat mot Gråkapporna via inhyrda masker och stal en hårlock från Oweyn – troligen för en sympati-besvärjelse. När gruppen spårade pilarnas lukt till hennes tält med Locate Object och Locate Poison var hon avslöjad. Istället för strid slöts en osannolik pakt: hårlocken åter, Gråstensväktarna tiger om hennes guld-vagn, och i gengäld eskorterar de henne hela vägen till destinationen. Hon vet att hon förråder dem senare – och de vet det också. Men vägen leder dem till kultens kärna.",
+        "session": 16
       }
     ]
   },
@@ -308,6 +313,11 @@
         "label": "Moks ögon över Hästskoplatån",
         "text": "Steg upp i kvällsluften över kultens läger och kartlade platån från ovan. Spanade in vagnar med Greenests stulna skatter, fångar uppbundna på pålar längre in, och ett läger utan fasta vaktlinjer – oorganiserat, sårbart. Rapporterade tillbaka till Haldan via Delade Sinnen.",
         "session": 5
+      },
+      {
+        "label": "Spåret genom skogen",
+        "text": "Hjälpte Haldan spåra den flyende attentatören genom skogen i nattens mörker. Attentatören undkom – men inte innan Mok hade sett vart han var på väg: tillbaka mot handels-karavanen. Spåret ledde direkt till Frulam Mondaths tält.",
+        "session": 16
       }
     ]
   },

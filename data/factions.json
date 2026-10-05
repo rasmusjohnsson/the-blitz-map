@@ -79,8 +79,14 @@
     "status": "neutral",
     "desc": "Lords' Alliance är en sammanslutning av städer, härskare och makthavare längs Svärdskusten som samarbetar för att skydda handel, lag och civilisation. Organisationen grundades eftersom många av regionens städer insåg att de var för svaga var för sig när de ställdes inför krig, monster, rövarhärar eller andra hot.\n\nTill skillnad från Harpers eller Emerald Enclave handlar Lords' Alliance inte om ideal eller balans. De tror att ordning, stabilitet och starka institutioner är det som håller världen samman. Om civilisationen ska överleva måste lagar upprätthållas, vägar hållas säkra och städer kunna försvara sig.\n\nOrganisationen består av många självständiga städer som ofta konkurrerar med varandra. Medlemmarna samarbetar när det behövs, men varje ledare vill i slutändan främja sin egen stads intressen. Därför präglas alliansen av politik, kompromisser och maktspel.\n\nLords' Alliance ses ofta som den konservativa kraften i Faerûn. De föredrar ordning framför förändring, stabilitet framför idealism och ser misstänksamt på rörelser som riskerar att skapa kaos, även om de säger sig kämpa för en god sak. För en medlem av Lords' Alliance är den viktigaste frågan sällan om världen är rättvis – utan om den är säker.",
     "npcs": [],
-    "places": ["waterdeep", "baldursgate", "neverwinter"],
-    "events": []
+    "places": ["waterdeep", "baldursgate", "neverwinter", "vardshuset_ingenstans"],
+    "events": [
+      {
+        "session": 16,
+        "title": "Adelsmännen avslöjar sig",
+        "text": "De fyra tykiga adelsmännen från värdshuset avslöjade sig som Lords' Alliance-agenter. Grälet var en test – och Gråkapporna hade bestått. Som bevis på deras goda vilja fick gruppen en 'token' – en signalring att använda när de behöver Lords' Alliances hjälp."
+      }
+    ]
   },
   {
     "id": "cult_of_the_dragon",
@@ -123,6 +129,11 @@
         "session": 14,
         "title": "Cornwind och Frulam i karavanen",
         "text": "Gråstensväktarna – under sin Gråkappor-persona – såg både Cornwind och Frulam Mondath vid samma eld i karavanlägret. Att båda kultledarna reser med samma karavan bekräftar att detta är kultens transport. Oweyn och Gothmogs snokande drev Frulam in i tältet – ingen sett-igen än, men rörelsen är noterad."
+      },
+      {
+        "session": 16,
+        "title": "Attentatet och Frulams pakt",
+        "text": "Frulam Mondath anstiftade nattens attentat mot Gråkapporna och stal en hårlock från Oweyn. Avslöjades när Haldan spårade pilarnas lukt till hennes tält (Locate Object + Locate Poison). Istället för strid slöts en osannolik pakt: hårlocken åter, Gråstensväktarna tiger om hennes guld-vagn, och i gengäld eskorterar de henne till destinationen – precis där de vill komma."
       }
     ]
   },

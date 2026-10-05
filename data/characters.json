@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Luktspåret till Frulams tält",
+        "text": "Jagade attentatören ut i skogen. Mok ovanför träden, jag mellan dem. Han var snabb, hann undan – men inte innan vi spårat hans riktning: rakt tillbaka mot karavanen. På morgonen avslöjade sig adelsmännen från värdshuset: Lords' Alliance-agenter. De gav oss en token. Jag plockade upp en av attentatörs-pilarna och drog in doften djupt – gift, metall, något annat. Vid karavanen mässade Cedric Locate Poison och jag följde doften med min egen näsa. Samma lukt vid Frulams tält. Hon var upphovet. Vi gick in. Istället för strid – pakt. Hon återlämnade Oweyns hårlock, vi tiger om hennes guldvagn, hon leder oss hela vägen till destinationen. Hon vet att vi förråder henne där. Vi vet att hon förråder oss först.",
+        "session": 16
+      },
+      {
         "label": "Pilar genom mörka korridorer",
         "text": "Vi backade ut ur värdshuset – ingen anledning att dra blickar mot Gråkapporna när Frulam och Cornwind rör sig i samma nätverk. Vid stallet kom adelsmännen ut och angrep. Kort strid, deras ledare vek sig, de andra gav upp. Fred slöts men jag drack knappt. Om det ska vara gift så ska det inte fastna i mig. Cedric mässade Alarm över våra dörrar. På natten skrek besvärjelsen – jag var vaken innan ljudet slog. Pilar från säng, klingor från de andra rummen. Maskerade attentatörer föll en efter en. En bröt sig ut. Jag är först ut i natten efter honom – spåren är färska i månskenet.",
         "session": 15
@@ -128,6 +133,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Lords' Alliance-token och Frulams pakt",
+        "text": "Vi förföljde attentatören men han undkom. Haldan och Mok fick spåret: tillbaka mot karavanen. På morgonen klev adelsmännen fram och avslöjade sig – Lords' Alliance-agenter. Watcher's Eye hade läst dem rätt: inte onda, bara i tjänst. De gav oss en token, en signalring. Jag höll den i handen – metallen gav samma stilla hum som min sköld. Två allierade organisationer har nu räckt oss redskap. Vid karavanen spårade Cedric och Haldan luktspåret till Frulam Mondaths tält. Vi gick in. Istället för Bahamuts rättvisa – pakt. Hon stal Oweyns hårlock, vi tiger om hennes guldvagn, hon leder oss till destinationen. Order of the Gauntlet skulle normalt säga 'nej' till en sådan avtal med en fiende. Men Bahamut lär mig: ibland leder tystnaden rakt till drakens näste. Vi tar den vägen.",
+        "session": 16
+      },
+      {
         "label": "Skölden viskar",
         "text": "Vi avvärjde slaget inne i värdshuset och backade ut. Vid stallet kom adelsmännen ut och angrep. Watcher's Eye läste dem tydligt: raseri utan djupare mening. Vi slog ner ledaren, hon vek sig, de andra också. Fred. På kvällen erbjöd de oss värdshuset – en märklig gest. Vi drack knappt. Jag studerade min sköld i lampskenet. Något har vaknat i den. Krafter jag inte kände till – de viskar när jag håller den, blir starkare när jag mediterar. Bahamut ler kanske. Eller något annat är på gång. Jag la den vid sängkanten och somnade. Alarmen skrek i natten. Maskerade figurer i korridorerna. Jag drog svärd och sköld – och skölden kändes annorlunda i handen, tyngre av mening. Attentatörerna föll. En bröt sig ut. Vi jagar.",
         "session": 15
@@ -236,6 +246,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Pakten med Frulam",
+        "text": "Jagade attentatören. Mina ben bar mig snabbare än jag trodde, men han undkom i mörkret. Haldan och Mok tog spåret. På morgonen avslöjade adelsmännen sig – Lords' Alliance. Jag skrattade: dagens fiender är gårdagens pröare. De gav oss en token. Vid Frulams tält stod vi ansikte mot ansikte med halvdrakens präst. Hon stal en hårlock från Oweyn för en besvärjelse. Runorna sjöng varning: krossa henne nu. Men vi slöt pakt istället. Hon leder oss till destinationen, vi tiger om hennes guld. Runorna säger: 'formen du väljer, inte den du föddes till'. Idag väljer jag tålamodet. Men mina nävar glömmer inte.",
+        "session": 16
+      },
+      {
         "label": "Nävar i mörkret",
         "text": "Vi lämnade värdshuset utan slag. Vid stallet ändrade sig adelsmännen. Halberden vaknade i näverna, vi anföll och slog ner deras ledare snabbt. Hon vek sig. De andra också. Fred. På kvällen erbjöd de oss värdshuset – jag drack knappt en droppe. Runorna sjöng varning. På natten skrek Alarm och jag var på fötter innan ekot dog. Halberden vid handen, korridoren mörk, klingor mötte klingor. Attentatörerna föll under mina huggen. En sprang. Vi jagar. Runorna säger: 'jakten är också ett val'.",
         "session": 15
@@ -343,6 +358,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Hårlocken åter",
+        "text": "De stal en hårlock från mig – för en sympati-besvärjelse, mest troligen. Något de kunde använda för att hitta mig, binda mig, skada mig på avstånd. Attentatet i värdshuset var första försöket. Vi jagade attentatören men han undkom. På morgonen avslöjade adelsmännen sig – Lords' Alliance. De testade oss. Vi klarade testet. En token i min hand, ett löfte om hjälp. Sedan luktspåret till Frulam Mondath. Jag stod ansikte mot ansikte med den som sände attentat mot min grupp och stal av min kropp. Order of the Gauntlet säger: rättvisa genom handling. Men ibland är handlingen att hålla tyst och spela med. Vi fick hårlocken åter, slöt pakten, kommer leda henne – och hennes guldvagn – till destinationen där hon tänker förråda oss. Vi förråder henne först.",
+        "session": 16
+      },
       {
         "label": "Muckade gräl som slutade i fred",
         "text": "Vi backade ut ur värdshuset istället för att slå. Vid stallet vände jag på det – provocerade adelsmännen. Slaget bröt ut, deras ledare vek sig snabbt när vi pressade henne. De andra också. Fred slöts, värdshuset erbjöds. Jag drack som en riddare i tjänst: inget mer än en tredjedels stop. På natten skrek Alarm-besvärjelsen. Attentatörerna trängde in – jag mötte dem i korridoren med Order of the Gauntlets tecken framme, för första gången på länge. Order of the Gauntlet svär att skydda de svaga – i natt var det Gråkapporna som var måltavla. En attentatör bröt sig ut. Nu jagar vi.",
@@ -456,6 +476,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Locate Object och Locate Poison",
+        "text": "Vi förföljde attentatören men förlorade honom i mörkret – dock hade Haldan och Mok spåret: tillbaka mot karavanen. På morgonen klev Lords' Alliance-adelsmännen fram med ursäkter och en token. En signalring. Jag förde upp den mot ljuset, kände dess magiska signatur – äkta. Vid karavanen mässade jag Locate Object för hårlocken Oweyn förlorat, Locate Poison för pilgiftet från natten. Båda spåren pekade mot ett tält: Frulam Mondaths. Vi gick in. Istället för strid – pakt. Hon leder oss till destinationen, vi tiger om guldvagnen, hon återlämnar hårlocken. Spelet är nu dubbel-dubbel-dubbelt bedrägeri. Jag älskar sådana spel. Kunskapens Vagn följer med karavanen vidare, min besvärjelsebok öppen på sidorna om Dispel Magic.",
+        "session": 16
+      },
       {
         "label": "Alarm och attentatörer",
         "text": "Vi backade ut från värdshuset – klok taktik med tanke på vem som reser i karavanen. Vid stallet kom striden. Kort och koncis. Efter fredsslutet erbjöd adelsmännen värdshuset – jag noterade den snabba omvändningen och gjorde diagnos: antingen har vi imponerat, eller så ligger något under. Vi drack knappt. Under kvällen såg jag Theron studera sin sköld längre än vanligt – något är på gång med den, jag känner en magisk signatur som växer. Kanske Watcher's Eye som bär över på hans utrustning. Innan sängen mässade jag Alarm över alla dörrar. På natten skrek besvärjelsen – jag var uppe innan mitt hjärta hann accelerera. Sköt Magic Missile genom dörröppningen mot första masken jag såg. Korridorstriden kort men brutal. En bröt sig ut – nu jagar vi. Kunskapens Vagn står redo vid stallet.",
