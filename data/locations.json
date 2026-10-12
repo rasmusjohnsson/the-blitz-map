@@ -221,6 +221,49 @@
     ]
   },
   {
+    "id": "myconidskogen",
+    "name": "Myconid-skogen",
+    "x": 1270,
+    "y": 900,
+    "visited": true,
+    "icon": "🍄",
+    "summary": "En skog längs karavanvägen norrut där jättesvampar växer allt tätare ju längre man kommer in. I session 17 upptäckte Gråstensväktarna att svamparna strömmade upp ur ett hål i marken ungefär hundra meter in i skogen – och mötte där Myconid Sovereign, en gigantisk sentient svamp som styr myconid-folket. Mok spanade in en alternativ karavanväg runt territoriet och Gråstensväktarna dirigerade om karavanen för att respektera svamparna.",
+    "descriptions": [
+      {
+        "title": "SKOGEN &amp; MYCONID-FOLKET",
+        "items": [
+          "<strong>Växande svampar:</strong> Jättesvampar som blir större ju närmare källan man kommer.",
+          "<strong>Källan:</strong> Hål i marken ~100m in i skogen där svamparna strömmar upp.",
+          "<strong>Sporer:</strong> Släpper medvetenheslamande sporer vid störning – Gothmog däckade av en.",
+          "<strong>Skydd:</strong> Tyg runt mun och näsa skyddar mot sporer.",
+          "<strong>Myconid Sovereign:</strong> Härskaren – gigantisk sentient svamp.",
+          "<strong>Konflikt:</strong> Arg på människors skogsskövling och vägbyggande.",
+          "<strong>Lösning:</strong> Karavanens väg dirigerades om runt myconid-territoriet."
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Myconid Sovereign",
+        "preview": "Gigantisk sentient svamp...",
+        "detail": "Haldan och Theron klev ner i källan där jättesvamparna växte. Där mötte de Myconid Sovereign – en gigantisk sentient svamp som styr myconid-folket. Grön av vrede över människors skogsskövling. Haldan talade försiktigt. Theron backade med. Till slut förstod svamp-herren och lät dem gå. Vägen dirigerades om.",
+        "session": 17
+      },
+      {
+        "title": "Sporfallet",
+        "preview": "Gothmog försöker samla ett prov...",
+        "detail": "Gothmog försökte stoppa ner en av jättesvamparna i sin ryggsäck. Svampen släppte ut en spor-moln och han däckade medvetslös på fläcken. Gruppen healade honom tillbaka och förberedde sig därefter med tyg runt mun och näsa innan de närmade sig källan.",
+        "session": 17
+      },
+      {
+        "title": "Mok ser källan",
+        "preview": "Hål i marken ~100m in...",
+        "detail": "Haldan skickade upp Mok när svamparna växte allt större. Från ovan såg korpen hålet i marken där jättesvamparna strömmade upp – och spanade också in en alternativ karavanväg runt myconid-territoriet.",
+        "session": 17
+      }
+    ]
+  },
+  {
     "id": "spindelskogen",
     "name": "Spindelskogen",
     "x": 1360,

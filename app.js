@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.15.0';
+const APP_VERSION='2.17.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -97,6 +97,180 @@ swift:()=>{c.fillStyle='#dbb89a';c.fillRect(2,4,5,4);c.fillStyle='#6a4020';c.fil
 bluedragon:()=>{c.fillStyle='#d0d0d0';c.fillRect(3,0,1,2);c.fillRect(12,0,1,2);c.fillStyle='#b0b0b0';c.fillRect(4,1,1,1);c.fillRect(11,1,1,1);c.fillStyle='#3060b0';c.fillRect(3,2,10,8);c.fillStyle='#4080d0';c.fillRect(4,3,8,2);c.fillStyle='#1a3a7a';c.fillRect(3,8,10,2);c.fillStyle='#ffcc00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#ff6600';c.fillRect(5,5,1,1);c.fillRect(9,5,1,1);c.fillStyle='#000';c.fillRect(6,6,1,1);c.fillRect(10,6,1,1);c.fillStyle='#2050a0';c.fillRect(5,10,6,3);c.fillStyle='#1a3a7a';c.fillRect(6,11,4,1);c.fillStyle='#e0e0c0';c.fillRect(6,13,1,2);c.fillRect(8,13,1,2);c.fillRect(10,13,1,2);c.fillStyle='#2050a0';c.fillRect(4,14,8,2);c.fillStyle='#1a3a7a';c.fillRect(5,15,6,1);c.fillStyle='#ffff00';c.fillRect(0,3,1,1);c.fillRect(1,5,1,1);c.fillRect(15,3,1,1);c.fillRect(14,5,1,1)},
 raiders:()=>{c.fillStyle='#2a2a3a';c.fillRect(3,1,10,6);c.fillRect(4,7,8,2);c.fillStyle='#1a1a2a';c.fillRect(5,4,6,4);c.fillStyle='#ff4a4a';c.fillRect(6,5,2,1);c.fillRect(9,5,2,1);c.fillStyle='#a0302a';c.fillRect(7,7,2,1);c.fillStyle='#3a2a1a';c.fillRect(3,10,10,6);c.fillStyle='#2a1a0a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#8a8a9a';c.fillRect(13,5,2,4);c.fillStyle='#4a3a2a';c.fillRect(12,9,3,1);c.fillStyle='#c0c0c0';c.fillRect(7,12,2,2)},
 kobolder:()=>{c.fillStyle='#6a4030';c.fillRect(4,3,8,5);c.fillRect(3,5,10,2);c.fillStyle='#8a5040';c.fillRect(5,4,6,1);c.fillStyle='#3a2010';c.fillRect(3,7,1,1);c.fillRect(12,7,1,1);c.fillStyle='#3a1808';c.fillRect(4,2,1,2);c.fillRect(11,2,1,2);c.fillRect(5,1,1,2);c.fillRect(10,1,1,2);c.fillStyle='#ffaa00';c.fillRect(5,5,2,2);c.fillRect(9,5,2,2);c.fillStyle='#000';c.fillRect(6,5,1,2);c.fillRect(10,5,1,2);c.fillStyle='#5a3020';c.fillRect(6,8,4,2);c.fillStyle='#fff';c.fillRect(6,9,1,1);c.fillRect(8,9,1,1);c.fillRect(9,9,1,1);c.fillStyle='#5a4a3a';c.fillRect(3,10,10,6);c.fillStyle='#3a2a1a';c.fillRect(4,11,8,1);c.fillRect(4,14,8,1);c.fillStyle='#a02020';c.fillRect(7,12,2,2);c.fillStyle='#ffd700';c.fillRect(7,12,2,1);c.fillStyle='#8a6a3a';c.fillRect(14,3,1,11);c.fillStyle='#9a9aaa';c.fillRect(13,2,3,2)},
+ontharr:()=>{
+// Ontharr Frume - bredaxlad högröstad paladin med skratt stort som näven, Order of the Gauntlet, ölkrus i handen
+// Hair - mörkbrunt tjockt
+c.fillStyle='#3a2010';c.fillRect(4,0,8,3);
+c.fillStyle='#5a3018';c.fillRect(5,0,6,1); // highlight
+// Face - solbränt, kraftigt
+c.fillStyle='#d4a070';c.fillRect(5,2,6,5);
+c.fillStyle='#b88a58';c.fillRect(5,6,6,1); // ansikts-skugga
+// Pannband/ögonbryn skuggade av hår
+c.fillStyle='#2a1808';c.fillRect(5,3,1,1);c.fillRect(10,3,1,1);
+// Ögon - sprudlande, bruna
+c.fillStyle='#8a4020';c.fillRect(6,4,1,1);c.fillRect(9,4,1,1);
+c.fillStyle='#000';c.fillRect(6,4,1,1);c.fillStyle='#4a2010';c.fillRect(9,4,1,1);
+// Näsa
+c.fillStyle='#b88a58';c.fillRect(7,5,1,1);
+// Stort leende/skratt
+c.fillStyle='#8a4a3a';c.fillRect(6,7,4,1);
+c.fillStyle='#e0d8c0';c.fillRect(7,7,2,1); // tänder
+// Tjockt skägg
+c.fillStyle='#2a1808';c.fillRect(4,8,8,2);
+c.fillRect(3,8,1,2);c.fillRect(12,8,1,2); // sidor
+c.fillStyle='#4a2a18';c.fillRect(5,8,6,1); // highlight
+c.fillStyle='#2a1808';c.fillRect(5,10,6,1); // skägg nedåt
+// Bred rustnings-kropp (större silhouett än Alesandra)
+c.fillStyle='#6a6a8a';c.fillRect(2,10,12,6);
+c.fillStyle='#8a8aa0';c.fillRect(3,11,10,1); // top highlight
+// Massiva axel-pauldroner
+c.fillStyle='#4a4a6a';c.fillRect(1,10,2,3);c.fillRect(13,10,2,3);
+c.fillStyle='#6a6a8a';c.fillRect(1,10,1,1);c.fillRect(14,10,1,1);
+c.fillStyle='#c0a030';c.fillRect(1,12,2,1);c.fillRect(13,12,2,1); // guldbårder
+// Gauntlet-emblem på bröstet (större än Alesandras)
+c.fillStyle='#c0a030';c.fillRect(5,11,6,4);
+c.fillStyle='#e0c050';c.fillRect(5,11,6,1);
+c.fillStyle='#8a7020';c.fillRect(6,12,4,2); // fingrar
+c.fillStyle='#8a7020';c.fillRect(5,13,1,1);c.fillRect(10,13,1,1);
+// Bälte brett
+c.fillStyle='#3a1808';c.fillRect(2,15,12,1);
+c.fillStyle='#c0a030';c.fillRect(7,15,2,1); // guldspänne
+// Ölkrus i handen till höger (hint)
+c.fillStyle='#8a5a2a';c.fillRect(14,13,2,2);
+c.fillStyle='#c89060';c.fillRect(14,13,2,1); // handtag/ljus
+c.fillStyle='#e0d8a0';c.fillRect(15,13,1,1); // skum
+},
+alesandra:()=>{
+// Alesandra Voss - Order of the Gauntlet-kontakt i Baldur's Gate: skarpögd kvinna i rustning med gyllene gauntlet-emblem
+// Hair - rödbrun, praktisk kort cut
+c.fillStyle='#7a2810';c.fillRect(3,1,10,3);
+c.fillStyle='#9a3818';c.fillRect(4,1,3,1);c.fillRect(9,1,3,1); // highlight ovanpå
+c.fillStyle='#7a2810';c.fillRect(2,2,1,4);c.fillRect(13,2,1,4); // sidor till öron
+// Face - ljus hud
+c.fillStyle='#e0bc98';c.fillRect(5,3,6,5);
+c.fillStyle='#c89878';c.fillRect(5,7,6,1); // haka-skugga
+// Ögonbryn - mörka, rakade
+c.fillStyle='#5a1a08';c.fillRect(6,4,1,1);c.fillRect(9,4,1,1);
+// Ögon - skarpa, blå
+c.fillStyle='#2070b0';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+c.fillStyle='#4090d0';c.fillRect(6,5,1,1);
+c.fillStyle='#000';c.fillRect(9,5,1,1);
+// Näsa
+c.fillStyle='#c89878';c.fillRect(7,6,1,1);
+// Mun
+c.fillStyle='#8a4040';c.fillRect(7,7,2,1);
+// Örhängen eller öron hint
+c.fillStyle='#c0a030';c.fillRect(4,6,1,1);c.fillRect(11,6,1,1);
+// Rustnings-krage
+c.fillStyle='#5a5a7a';c.fillRect(4,8,8,1);
+// Axel-pauldroner (större i siluetten)
+c.fillStyle='#4a4a6a';c.fillRect(2,8,2,3);c.fillRect(12,8,2,3);
+c.fillStyle='#7a7a9a';c.fillRect(2,8,1,1);c.fillRect(13,8,1,1); // highlight topp
+c.fillStyle='#c0a030';c.fillRect(2,10,2,1);c.fillRect(12,10,2,1); // guld-kant
+// Bröstplåt - stål med guldbårder
+c.fillStyle='#7a7a9a';c.fillRect(4,9,8,5);
+c.fillStyle='#9a9ab0';c.fillRect(4,9,8,1); // top highlight
+c.fillStyle='#c0a030';c.fillRect(4,9,8,1); // gold trim top
+// Order of the Gauntlet-emblem (gyllene knytnäve) centralt på bröstet
+c.fillStyle='#c0a030';c.fillRect(6,10,4,3);
+c.fillStyle='#e0c050';c.fillRect(6,10,4,1); // highlight
+c.fillStyle='#8a7020';c.fillRect(7,11,2,1); // fingrar-detalj
+c.fillStyle='#8a7020';c.fillRect(6,12,1,1);c.fillRect(9,12,1,1); // sides
+// Bälte
+c.fillStyle='#2a1808';c.fillRect(3,14,10,1);
+c.fillStyle='#c0a030';c.fillRect(7,14,2,1); // guldspänne
+// Blå tabard/cape som faller nedåt
+c.fillStyle='#2a4078';c.fillRect(3,15,10,1);
+c.fillStyle='#1a3058';c.fillRect(5,15,1,1);c.fillRect(10,15,1,1);
+// Svärdsfäste vid höften
+c.fillStyle='#5a3a1a';c.fillRect(14,13,1,2);
+c.fillStyle='#c0a030';c.fillRect(14,12,1,1); // guldfäste-knopp
+},
+leosin:()=>{
+// Leosin - halv-alv Harpers-agent, mörkt kort hår, krämfärgad tunika + läderväst, blått skärp, stav bakom axlarna
+// Hair - mörkt kort
+c.fillStyle='#1a0a08';c.fillRect(4,1,8,2);
+c.fillRect(3,2,10,2);
+c.fillRect(4,4,1,3);c.fillRect(11,4,1,3); // sidor
+// Face
+c.fillStyle='#d4a878';c.fillRect(5,3,6,5);
+c.fillStyle='#b89468';c.fillRect(5,7,6,1); // haka-skugga
+// Elf-ears (små spetsar)
+c.fillStyle='#d4a878';c.fillRect(3,5,1,1);c.fillRect(12,5,1,1);
+// Eyes - skarpa, brunoch
+c.fillStyle='#2a1a0a';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+// Näsa
+c.fillStyle='#c08866';c.fillRect(7,6,1,1);
+// Mun
+c.fillStyle='#8a4a3a';c.fillRect(7,7,2,1);
+// Stav bakom axlarna (horisontell, syns på båda sidorna)
+c.fillStyle='#5a3a1a';c.fillRect(0,8,3,1);c.fillRect(13,8,3,1);
+c.fillStyle='#c0a030';c.fillRect(0,8,1,1);c.fillRect(15,8,1,1); // gyllene stav-ändar
+// Kräm-vit tunika
+c.fillStyle='#d8c898';c.fillRect(4,9,8,4);
+c.fillStyle='#e8d8a8';c.fillRect(5,10,6,1); // highlight
+// Mörk läderväst (kanter)
+c.fillStyle='#6a4028';c.fillRect(3,9,2,5);c.fillRect(11,9,2,5);
+c.fillStyle='#4a2810';c.fillRect(3,9,1,5);c.fillRect(12,9,1,5);
+// Väst-söm/krage
+c.fillStyle='#2a1808';c.fillRect(4,9,8,1);
+// Blått skärp/bälte
+c.fillStyle='#2a4078';c.fillRect(3,13,10,2);
+c.fillStyle='#4060a0';c.fillRect(3,13,10,1);
+// Guldspänne
+c.fillStyle='#c0a030';c.fillRect(7,13,2,1);
+c.fillStyle='#e0c050';c.fillRect(7,13,1,1);
+// Mörka byxor / skor
+c.fillStyle='#2a1808';c.fillRect(5,15,2,1);c.fillRect(9,15,2,1);
+// Blå sandaler (små toner)
+c.fillStyle='#3a5088';c.fillRect(5,15,1,1);c.fillRect(10,15,1,1);
+},
+frulam:()=>{
+// Frulam Mondath - svart kort hår, lila/guld-prästdräkt med drakögssigill, stav
+// Staff (vertical left edge)
+c.fillStyle='#5a3a1a';c.fillRect(0,3,1,13); // wooden shaft
+c.fillStyle='#4a4a5a';c.fillRect(0,0,1,3); // metal top
+c.fillStyle='#2a2a3a';c.fillRect(0,1,1,1);
+// Hair - svart bob
+c.fillStyle='#1a1a1a';
+c.fillRect(4,1,8,2); // crown
+c.fillRect(3,2,10,2); // sides
+c.fillRect(4,4,1,3);c.fillRect(11,4,1,3); // sides down to ears
+// Face
+c.fillStyle='#d4a878';c.fillRect(5,3,6,5);
+c.fillStyle='#b89468';c.fillRect(5,7,6,1); // jaw shadow
+// Elf-ears (små spetsar)
+c.fillStyle='#d4a878';c.fillRect(3,5,1,1);c.fillRect(12,5,1,1);
+// Bangs
+c.fillStyle='#1a1a1a';c.fillRect(5,3,2,1);c.fillRect(9,3,2,1);
+// Eyes - mörka, intensiva
+c.fillStyle='#2a1a0a';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+// Näsa skugga
+c.fillStyle='#c89866';c.fillRect(7,6,1,1);
+// Läppar
+c.fillStyle='#8a4040';c.fillRect(7,7,2,1);
+// Collar – skarpa lila spetsar som pekar upp vid axlarna
+c.fillStyle='#3a1a60';c.fillRect(1,8,1,2);c.fillRect(14,8,1,2);
+c.fillStyle='#4a2070';c.fillRect(2,8,12,1);
+c.fillStyle='#6a3090';c.fillRect(3,8,10,1); // highlight
+// Mantelns kropp – lila med guldbårder
+c.fillStyle='#4a2070';c.fillRect(2,9,12,7);
+c.fillStyle='#6a3090';c.fillRect(2,10,2,4);c.fillRect(12,10,2,4); // sides lighter
+c.fillStyle='#2a0a40';c.fillRect(7,9,2,7); // central dark panel
+// Gold stripes längs centrum
+c.fillStyle='#c0a030';c.fillRect(6,9,1,7);c.fillRect(9,9,1,7);
+c.fillStyle='#e0c050';c.fillRect(6,9,1,1);c.fillRect(9,9,1,1);
+// Draköga-bälte-spänne
+c.fillStyle='#c0a030';c.fillRect(6,12,4,2);
+c.fillStyle='#90d0ff';c.fillRect(7,12,2,1);
+c.fillStyle='#1a3050';c.fillRect(7,13,2,1);
+c.fillStyle='#000';c.fillRect(7,12,1,1);
+c.fillStyle='#4a90d0';c.fillRect(8,12,1,1);
+// Dark gloves vid stav
+c.fillStyle='#1a1a1a';c.fillRect(2,13,1,2);c.fillRect(13,13,1,2);
+// Mantel-tips som faller nedåt
+c.fillStyle='#3a1a60';c.fillRect(1,14,1,2);c.fillRect(14,14,1,2);
+},
 akkin:()=>{
 // Kort man - flintskallig hjässa, röd skepparkrans, rött skägg
 c.fillStyle='#dbb89a';c.fillRect(5,2,6,7); // face/hy
@@ -322,6 +496,33 @@ const PIXEL_ART={
 };
 const PIXEL_ART_CAPTIONS={folkets_vilja:'PERGAMENT · "FOLKETS VILJA"',brev_rezmir:'BREV · TILL REZMIR',brand_anteckning:'HALVBRÄND ANTECKNING'};
 function renderPixelArt(id){if(!PIXEL_ART[id])return'';const cap=PIXEL_ART_CAPTIONS[id]||'DOKUMENTFYND';return`<div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${id}"></canvas><div class="pixel-art-caption">${cap}</div></div>`}
+// Hitta alla events med pixelArt (både i sessions och locations)
+function collectPixelArtFinds(){
+  const finds=[];const seen=new Set();
+  sessions.forEach(s=>{s.events.forEach(ev=>{if(ev.pixelArt&&!seen.has(ev.pixelArt+'|'+ev.title)){seen.add(ev.pixelArt+'|'+ev.title);finds.push({art:ev.pixelArt,title:ev.title,recap:ev.recap,session:s,source:'session'})}})});
+  locations.forEach(l=>{(l.events||[]).forEach(ev=>{if(ev.pixelArt&&!seen.has(ev.pixelArt+'|'+ev.title)){seen.add(ev.pixelArt+'|'+ev.title);finds.push({art:ev.pixelArt,title:ev.title,recap:ev.detail,session:sessions.find(s=>s.id===ev.session),location:l,source:'location'})}})});
+  // Sortera senaste först
+  return finds.sort((a,b)=>(b.session?.id||0)-(a.session?.id||0));
+}
+function openGallery(){
+  const b=document.getElementById('galleryBody');
+  const finds=collectPixelArtFinds();
+  if(!finds.length){b.innerHTML='<div class="empty-state">Inga dokument hittade ännu.</div>'}
+  else{
+    let h='';
+    finds.forEach((f,i)=>{
+      const sess=f.session;
+      const sessChip=sess?`<div class="gallery-session" onclick="closeGallery();openSessionTab(${sess.id})">📜 ${sess.label}: ${sess.title}${sess.date?' · '+formatSessionDate(sess.date):''}</div>`:'';
+      const cap=PIXEL_ART_CAPTIONS[f.art]||f.title;
+      h+=`<div class="gallery-item"><div class="gallery-item-header"><h3>${f.title}</h3>${sessChip}</div><div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${f.art}" data-key="${i}"></canvas><div class="pixel-art-caption">${cap}</div></div><div class="gallery-recap">${linkifyFactions(f.recap||'')}</div></div>`;
+    });
+    b.innerHTML=h;
+    activatePixelArtCanvases(b);
+  }
+  document.getElementById('overlay').classList.add('active');
+  document.getElementById('galleryModal').classList.add('active');
+}
+function closeGallery(){document.getElementById('galleryModal').classList.remove('active');document.getElementById('overlay').classList.remove('active')}
 function activatePixelArtCanvases(root){(root||document).querySelectorAll('canvas.pixel-art-canvas[data-art]').forEach(cv=>{const id=cv.dataset.art;if(PIXEL_ART[id])PIXEL_ART[id](cv)})}
 
 // Map is now a background image (map.jpg) on .map-canvas via CSS
@@ -329,14 +530,14 @@ function activatePixelArtCanvases(root){(root||document).querySelectorAll('canva
 // ===== RENDER =====
 function renderCharacters(){const l=document.getElementById('tab-adventurers');l.innerHTML='';characters.forEach(c=>{const d=document.createElement('div');d.className='character-card';d.onclick=()=>showCharacterDetail(c);const p=document.createElement('div');p.className='portrait';const cv=document.createElement('canvas');p.appendChild(cv);drawPortrait(cv,c.id);d.appendChild(p);const i=document.createElement('div');i.className='char-info';i.innerHTML=`<div class="char-name">${c.name}</div><div class="char-class">${c.subclass}</div><div class="char-species">${c.species}</div>`;d.appendChild(i);l.appendChild(d)})}
 function renderNPCs(){const p=document.getElementById('tab-npcs');p.innerHTML='';if(!npcsData.length){p.innerHTML='<div class="empty-state">Inga NPC:er påträffade ännu.<br><br>NPC:er dyker upp här efter varje session.</div>';return}
-// Filter NPCs by current session filter
-let displayNpcs=npcsData;
+// Filter NPCs by current session filter (och dölj alltid hidden-markerade NPCs från listan)
+let displayNpcs=npcsData.filter(n=>!n.hidden);
 if(currentSessionFilter!=='all'){
   const s=sessions.find(x=>x.id===parseInt(currentSessionFilter));
   if(s){
     const npcNames=new Set();
     s.events.forEach(ev=>{if(ev.npcs)ev.npcs.forEach(n=>npcNames.add(n))});
-    displayNpcs=npcsData.filter(n=>npcNames.has(n.name));
+    displayNpcs=npcsData.filter(n=>!n.hidden&&npcNames.has(n.name));
     const banner=document.createElement('div');banner.className='filter-banner';
     banner.innerHTML=`<span class="fb-label">📜 Filtrerar: ${s.label}</span><button class="filter-banner-clear" onclick="clearSessionFilter()">Rensa</button>`;
     p.appendChild(banner);
@@ -344,7 +545,16 @@ if(currentSessionFilter!=='all'){
 }
 if(!displayNpcs.length){const empty=document.createElement('div');empty.className='empty-state';empty.textContent='Inga NPC:er påträffade i denna session.';p.appendChild(empty);return}
 const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
-displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card';c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='captured'?'⛓️':n.status==='deceased'?'⚰️':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen',deceased:'Död'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div><span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
+// Sortera: senast omnämnda NPCs först (högsta session-id först, de utan events sist)
+displayNpcs=[...displayNpcs].sort((a,b)=>{
+  const la=getLatestSession(a.events);
+  const lb=getLatestSession(b.events);
+  if(la===null&&lb===null)return 0;
+  if(la===null)return 1;
+  if(lb===null)return -1;
+  return lb-la;
+});
+displayNpcs.forEach(n=>{const c=document.createElement('div');c.className='npc-card'+(n.status==='deceased'?' deceased':'');c.onclick=()=>showNPCDetail(n);const ic=document.createElement('div');ic.className='npc-icon';const cv=document.createElement('canvas');ic.appendChild(cv);drawNpcPortrait(cv,n.id);const badge=document.createElement('div');badge.className='npc-status-badge';badge.textContent=n.status==='friendly'?'😊':n.status==='hostile'?'💀':n.status==='captured'?'⛓️':n.status==='deceased'?'⚰️':'😐';ic.appendChild(badge);c.appendChild(ic);const i=document.createElement('div');i.className='npc-info';const sl={friendly:'Vänlig',hostile:'Fiende',neutral:'Neutral',unknown:'Okänd',captured:'Tillfångatagen',deceased:'Död'};const lastSess=getLatestSession(n.events);const updBadge=lastSess!==null?`<span class="updated-badge${lastSess===latestSid?' fresh':''}" title="Senaste händelse: S${lastSess}">S${lastSess}</span>`:'';const seenDate=lastSess!==null?dateForSession(lastSess):'';const seenLine=seenDate?`<div class="seen-date">👁️ Senast sedd: ${seenDate}</div>`:'';i.innerHTML=`<div class="npc-name">${n.name}${updBadge}</div><div class="npc-role">${n.role||''}</div>${seenLine}<span class="npc-status ${n.status}">${sl[n.status]||'Okänd'}</span>`;c.appendChild(i);p.appendChild(c)})}
 function formatSessionDate(d){if(!d)return'';try{const dt=new Date(d);const m=['jan','feb','mar','apr','maj','jun','jul','aug','sep','okt','nov','dec'];return dt.getDate()+' '+m[dt.getMonth()]+' '+dt.getFullYear();}catch(e){return d}}
 function renderTimeline(){
   const p=document.getElementById('tab-history');p.innerHTML='';
@@ -386,11 +596,30 @@ function scrollToSession(sid){
 }
 // Senast-uppdaterad: hämta högsta session-id i events-arrayen
 function getLatestSession(events){if(!events||!events.length)return null;let max=-1;events.forEach(e=>{if(typeof e.session==='number'&&e.session>max)max=e.session});return max<0?null:max}
+// Hämta formattedate för session-id
+function dateForSession(sid){if(sid==null)return'';const s=sessions.find(x=>x.id===sid);return s&&s.date?formatSessionDate(s.date):''}
+// För en plats: senaste session där den förekommer (antingen i location.events[].session eller i session.events[].places)
+function getLatestSessionForLocation(locId){
+  let max=-1;
+  const loc=locations.find(l=>l.id===locId);
+  if(loc&&loc.events)loc.events.forEach(e=>{if(typeof e.session==='number'&&e.session>max)max=e.session});
+  sessions.forEach(s=>{s.events.forEach(ev=>{if((ev.places||[]).includes(locId)&&s.id>max)max=s.id})});
+  return max<0?null:max;
+}
 function renderFactions(){
   const p=document.getElementById('tab-factions');p.innerHTML='';
   if(!factions.length){p.innerHTML='<div class="empty-state">Inga faktioner registrerade ännu.</div>';return}
   const latestSid=sessions.length?Math.max(...sessions.map(s=>s.id)):null;
-  factions.forEach((f,i)=>{
+  // Sortera: senast aktiva faktioner först (högsta session-id först, de utan events sist)
+  const sortedFactions=[...factions].sort((a,b)=>{
+    const la=getLatestSession(a.events);
+    const lb=getLatestSession(b.events);
+    if(la===null&&lb===null)return 0;
+    if(la===null)return 1;
+    if(lb===null)return -1;
+    return lb-la;
+  });
+  sortedFactions.forEach((f,i)=>{
     const card=document.createElement('div');
     card.className='faction-card'+(f.status==='hostile'?' hostile':f.status==='allied'?' allied':'');
     const lastSess=getLatestSession(f.events);
@@ -404,6 +633,84 @@ function renderFactions(){
   });
 }
 function renderMarkers(){const c=document.getElementById('mapCanvas');c.querySelectorAll('.location-marker').forEach(m=>m.remove());locations.forEach(l=>{if(l.parent)return;const m=document.createElement('div');m.className=`location-marker ${l.visited?'marker-visited':''}`;m.id='marker-'+l.id;m.style.left=l.x+'px';m.style.top=l.y+'px';m.onclick=e=>{e.stopPropagation();showLocation(l)};m.innerHTML=`<div class="marker-label">${l.name}</div><div class="marker-dot"></div>`;c.appendChild(m)})}
+
+// ===== RESVÄGS-OVERLAY =====
+let campaignRouteActive=false;
+function sessionRoutePoints(session){
+  if(!session)return[];
+  const seen=new Set();const pts=[];
+  session.events.forEach(ev=>{
+    (ev.places||[]).forEach(pid=>{
+      if(seen.has(pid))return;
+      let loc=locations.find(l=>l.id===pid);
+      if(!loc)return;
+      // sub-location → använd parentens koords
+      if(loc.parent){const parent=locations.find(l=>l.id===loc.parent);if(parent)loc=parent}
+      seen.add(pid);
+      pts.push({x:loc.x,y:loc.y,id:loc.id,name:loc.name});
+    });
+  });
+  // Dedupera konsekutiva duplicates (när events ligger på samma plats)
+  return pts.filter((p,i,arr)=>i===0||p.id!==arr[i-1].id);
+}
+function routeColorForSession(sid,total){
+  // Gradient blå → gul över sessionsföljden
+  const t=total>1?sid/(total-1):0;
+  const r=Math.round(80+(255-80)*t);
+  const g=Math.round(140+(215-140)*t);
+  const b=Math.round(220-(220-20)*t);
+  return`rgb(${r},${g},${b})`;
+}
+function renderRoutes(){
+  const svg=document.getElementById('routeSvg');
+  if(!svg)return;
+  svg.innerHTML='';
+  let sessionsToDraw=[];
+  if(campaignRouteActive){
+    sessionsToDraw=sessions.filter(s=>s.id>0); // hoppa över session 0 (bakgrund)
+  }else if(currentSessionFilter!=='all'){
+    const s=sessions.find(x=>x.id===parseInt(currentSessionFilter));
+    if(s)sessionsToDraw=[s];
+  }
+  if(!sessionsToDraw.length){svg.style.display='none';return}
+  svg.style.display='block';
+  const maxSid=sessions.length?Math.max(...sessions.map(s=>s.id)):1;
+  sessionsToDraw.forEach(session=>{
+    const pts=sessionRoutePoints(session);
+    if(pts.length<2)return;
+    const color=campaignRouteActive?routeColorForSession(session.id,maxSid+1):'#ffd700';
+    const d=pts.map((p,i)=>(i===0?'M':'L')+p.x+','+p.y).join(' ');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',d);
+    path.setAttribute('stroke',color);
+    path.setAttribute('stroke-width',campaignRouteActive?6:8);
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke-linecap','round');
+    path.setAttribute('stroke-linejoin','round');
+    path.setAttribute('opacity',campaignRouteActive?'0.65':'0.85');
+    path.setAttribute('stroke-dasharray','18,10');
+    path.setAttribute('class','route-path');
+    svg.appendChild(path);
+    // Pilhuvuden mellan punkter: en liten triangel vid varje mitt
+    for(let i=1;i<pts.length;i++){
+      const a=pts[i-1],b=pts[i];
+      const mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
+      const ang=Math.atan2(b.y-a.y,b.x-a.x);
+      const s=18;
+      const tri=`${mx+Math.cos(ang)*s},${my+Math.sin(ang)*s} ${mx+Math.cos(ang+2.5)*s},${my+Math.sin(ang+2.5)*s} ${mx+Math.cos(ang-2.5)*s},${my+Math.sin(ang-2.5)*s}`;
+      const arrow=document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      arrow.setAttribute('points',tri);
+      arrow.setAttribute('fill',color);
+      arrow.setAttribute('opacity',campaignRouteActive?'0.75':'0.95');
+      svg.appendChild(arrow);
+    }
+  });
+}
+function toggleCampaignRoute(){
+  campaignRouteActive=!campaignRouteActive;
+  document.getElementById('routeToggle').classList.toggle('active',campaignRouteActive);
+  renderRoutes();
+}
 
 // ===== TABS =====
 document.querySelectorAll('.tab-btn').forEach(b=>{b.addEventListener('click',()=>{if(recapActive)exitRecapMode();document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tab-'+b.dataset.tab).classList.add('active');document.getElementById('tab-search').classList.remove('active');scheduleSave()})});
@@ -545,6 +852,8 @@ function showLocation(l){
     const parent=locations.find(x=>x.id===l.parent);
     if(parent)summaryHtml+=`<div class="parent-link" onclick="event.stopPropagation();closePopup();setTimeout(()=>showLocation(locations.find(x=>x.id==='${parent.id}')),100)">↑ Tillbaka till ${parent.name}</div>`;
   }
+  const lastLocSess=getLatestSessionForLocation(l.id);
+  if(lastLocSess!==null){const d=dateForSession(lastLocSess);if(d)summaryHtml+=`<div class="seen-date loc-seen">👁️ Senast besökt: ${d} <span style="opacity:.6">(S${lastLocSess})</span></div>`}
   summaryHtml+=linkifyFactions(l.summary);
   if(l.interiorView&&l.interiorView.openMode==='button'){
     const lbl=l.interiorView.buttonLabel||'🗺️ VISA DETALJKARTA';
@@ -656,7 +965,7 @@ function showNPCDetail(n){document.getElementById('npcDetailTitle').textContent=
 function showTimelineDetail(ev){document.getElementById('tlDetailTitle').textContent=ev.title;const b=document.getElementById('tlDetailBody');const artHtml=ev.pixelArt?renderPixelArt(ev.pixelArt):'';b.innerHTML=`<div class="recap">${linkifyFactions(ev.recap)}</div>${artHtml}`;activatePixelArtCanvases(b);if(ev.places.length){let h='<div class="ref-section"><h4>PLATSER</h4><ul class="ref-list">';ev.places.forEach(pid=>{const loc=locations.find(l=>l.id===pid);if(loc)h+=`<li class="place-ref" onmouseenter="highlightMarker('${pid}')" onmouseleave="unhighlightMarker('${pid}')" onclick="closePopup();setTimeout(()=>showLocation(locations.find(l=>l.id==='${pid}')),100)"><span class="ref-icon">&#9679;</span>${loc.name}</li>`});h+='</ul></div>';b.innerHTML+=h}if(ev.npcs&&ev.npcs.length){let h='<div class="ref-section"><h4>NPCs</h4><ul class="ref-list">';ev.npcs.forEach(n=>h+=`<li class="npc-ref"><span class="ref-icon">&#9670;</span>${n}</li>`);h+='</ul></div>';b.innerHTML+=h}document.getElementById('overlay').classList.add('active');document.getElementById('tlDetail').classList.add('active')}
 function highlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.add('highlighted')}
 function unhighlightMarker(id){const m=document.getElementById('marker-'+id);if(m)m.classList.remove('highlighted')}
-function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup','factionDetailPopup'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'));document.querySelectorAll('.location-marker.npc-glow').forEach(m=>m.classList.remove('npc-glow'))}
+function closePopup(){document.getElementById('overlay').classList.remove('active');['charDetailPopup','tlDetail','npcDetailPopup','factionDetailPopup','galleryModal'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});document.getElementById('locationPopup').classList.remove('active');document.querySelectorAll('.location-marker.highlighted').forEach(m=>m.classList.remove('highlighted'));document.querySelectorAll('.location-marker.npc-glow').forEach(m=>m.classList.remove('npc-glow'))}
 function linkifyReferences(text){
   if(!text)return text||'';
   const refs=[];
@@ -808,7 +1117,7 @@ document.getElementById('mapCanvas').addEventListener('click',function(e){
 // Session filter
 let currentSessionFilter='all';
 function populateSessionFilter(){const sel=document.getElementById('sessionFilter');sel.innerHTML='<option value="all">Alla sessioner</option>';sessions.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.label+': '+s.title;sel.appendChild(o)});sel.addEventListener('change',function(){filterMapBySession(this.value)})}
-function filterMapBySession(val){currentSessionFilter=val;scheduleSave();if(val==='all'){document.querySelectorAll('.location-marker').forEach(m=>m.classList.remove('session-dimmed'))}else{const s=sessions.find(x=>x.id===parseInt(val));if(s){const placeSet=new Set();s.events.forEach(ev=>ev.places.forEach(p=>placeSet.add(p)));locations.forEach(l=>{const m=document.getElementById('marker-'+l.id);if(!m)return;if(placeSet.has(l.id))m.classList.remove('session-dimmed');else m.classList.add('session-dimmed')})}}renderNPCs()}
+function filterMapBySession(val){currentSessionFilter=val;scheduleSave();if(val==='all'){document.querySelectorAll('.location-marker').forEach(m=>m.classList.remove('session-dimmed'))}else{const s=sessions.find(x=>x.id===parseInt(val));if(s){const placeSet=new Set();s.events.forEach(ev=>ev.places.forEach(p=>placeSet.add(p)));locations.forEach(l=>{const m=document.getElementById('marker-'+l.id);if(!m)return;if(placeSet.has(l.id))m.classList.remove('session-dimmed');else m.classList.add('session-dimmed')})}}renderNPCs();renderRoutes()}
 function clearSessionFilter(){document.getElementById('sessionFilter').value='all';filterMapBySession('all')}
 
 // NPC-to-place utility
@@ -954,6 +1263,7 @@ async function init(){
   renderCharacters();renderNPCs();renderFactions();renderTimeline();renderMarkers();populateSessionFilter();
   document.getElementById('recapBtn').addEventListener('click',toggleRecapMode);
   document.getElementById('downloadBtn').addEventListener('click',downloadChronicle);
+  document.getElementById('galleryBtn').addEventListener('click',openGallery);
   // Restore saved state or default to fit-map-to-view
   const saved=loadUIState();
   if(saved){
@@ -966,6 +1276,7 @@ async function init(){
       if(sel)sel.value=saved.sessionFilter;
       filterMapBySession(saved.sessionFilter);
     }
+    renderRoutes();
     if(saved.activeTab&&saved.activeTab!=='adventurers'){
       const btn=document.querySelector(`.tab-btn[data-tab="${saved.activeTab}"]`);
       if(btn)btn.click();
@@ -981,4 +1292,4 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').catch(err=>console.warn('SW registration failed:',err));
   });
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('interiorView').classList.contains('active')){closeInteriorView();return}if(recapActive)exitRecapMode();closePopup();sE.classList.remove('active')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('galleryModal')?.classList.contains('active')){closeGallery();return}if(document.getElementById('interiorView').classList.contains('active')){closeInteriorView();return}if(recapActive)exitRecapMode();closePopup();sE.classList.remove('active')}});

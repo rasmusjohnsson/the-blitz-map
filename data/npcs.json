@@ -69,6 +69,7 @@
     "name": "Linan & Cuth Swift",
     "aliases": ["Linan", "Cuth", "Swift-familjen"],
     "status": "friendly",
+    "hidden": true,
     "role": "Bybor – familj i Greenest",
     "desc": "En ung familj från Greenest med två barn. Fann sig omringade av raiders i natten innan Gråstensväktarna kastade sig in i striden och skyddade dem hela vägen till keepet.",
     "events": [
@@ -141,6 +142,21 @@
     "role": "Omnämnd – Cult of the Dragon",
     "desc": "Ett namn som viskas bland de högsta i kulten. Enligt Leosin, Harpers-agenten Gråstensväktarna räddade, upprepas det bland dem som styr Cult of the Dragon – men även han vet inte vem eller vad Rezmir är. Sättet kultisterna sänker rösten när de talar om henne pekar mot någon på toppen av hierarkin, långt över Cyanwrath och Frulam Mondath.",
     "events": []
+  },
+  {
+    "id": "myconid_sovereign",
+    "name": "Myconid Sovereign",
+    "aliases": ["Svamp-herren", "den stora svampen"],
+    "status": "neutral",
+    "role": "Sentient svamp-härskare · myconid-folket",
+    "desc": "En gigantisk sentient svamp som styr ett helt myconid-folk i skogen längs karavanvägen. Grön av vrede över människors skogsskövling och vägbyggande som förstört för hans sporer-folk. Känner skogen genom spor-nätverket – vet när en människa kommer långt innan han ser dem. Haldan lyckades förhandla fram en förståelse i session 17 och Gråstensväktarna dirigerade om karavanens väg för att respektera myconid-territoriet.",
+    "events": [
+      {
+        "label": "Mötet i svampkällan",
+        "text": "Haldan och Theron klev ner i källan där jättesvamparna växte och mötte den gigantiska Myconid Sovereign. Vrede över människors skogsskövling pyrde i hans sporer. Haldan talade försiktigt, erbjöd respekt istället för strid. Den stora svampen förstod – och lät dem gå. Gråstensväktarna dirigerade sedan om karavanens väg för att inte störa myconid-folket.",
+        "session": 17
+      }
+    ]
   },
   {
     "id": "nohar",
@@ -298,6 +314,11 @@
         "label": "Skymtad i karavan-lägret",
         "text": "Dök oväntat upp i karavanlägret under nattens rast. Oweyn och Gothmog närmade sig honom bakom sina gråkappor och masker för att snoka. Bredvid honom satt Frulam Mondath. Om Cornwind kände igen dem sade han inget – men Frulam märkte att de snokade och drog sig in i tältet.",
         "session": 14
+      },
+      {
+        "label": "Nästan ett förhör",
+        "text": "I karavanen rörde han sig oftare mellan vagnarna och började prata med alla han kunde. Med Gråkapporna – fortfarande maskerade – ställde han frågor som gick lite för nära. Snarare förhör än småprat. Han letar efter något. Eller någon.",
+        "session": 17
       }
     ]
   },
@@ -306,6 +327,7 @@
     "name": "Mok",
     "aliases": ["Moks"],
     "status": "friendly",
+    "hidden": true,
     "role": "Haldans korp · familjär",
     "desc": "En slank, svartblänkande korp med kvicka ögon och en näbb skarp som en kniv. Haldans familjär och förlängda sinnen i luften – tränad av Emerald Enclave att flyga i tyst formation och rapportera tillbaka. Genom Delade Sinnen kan Haldan se genom Moks ögon och kartlägga vad ingen marknära spejare kommer åt.",
     "events": [
@@ -318,6 +340,11 @@
         "label": "Spåret genom skogen",
         "text": "Hjälpte Haldan spåra den flyende attentatören genom skogen i nattens mörker. Attentatören undkom – men inte innan Mok hade sett vart han var på väg: tillbaka mot handels-karavanen. Spåret ledde direkt till Frulam Mondaths tält.",
         "session": 16
+      },
+      {
+        "label": "Blick över svamp-källan",
+        "text": "Flög över skogen när svamparna växte allt större längs karavanvägen. Från ovan såg han hålet i marken där jättesvamparna strömmade upp – ungefär hundra meter in i skogen – och spanade också in en alternativ karavanväg runt myconid-territoriet.",
+        "session": 17
       }
     ]
   },

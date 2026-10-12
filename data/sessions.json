@@ -742,5 +742,49 @@
         "npcs": ["Frulam Mondath"]
       }
     ]
+  },
+  {
+    "id": 17,
+    "label": "SESSION 17",
+    "title": "Svamp-herren",
+    "date": "2026-10-19",
+    "events": [
+      {
+        "title": "Cornwinds frågor",
+        "recap": "Karavanen rullade vidare. Cornwind rörde sig oftare mellan vagnarna och började prata med alla han kom åt. När han kom till Gråkapporna var det nästan som ett förhör – frågor som gick lite för nära. Han letar efter något. Eller någon.",
+        "places": ["spindelskogen"],
+        "npcs": ["Cornwind"]
+      },
+      {
+        "title": "Svamparna växer",
+        "recap": "Vägen leder in i tätare skog och plötsligt dyker svamparna upp – först små, sedan större, sedan jättelika. Haldan skickade upp Mok. Genom Delade Sinnen såg han ett hål i marken ungefär hundra meter in i skogen där svamparna strömmade upp – och en alternativ karavanväg runt territoriet.",
+        "places": ["myconidskogen"],
+        "npcs": ["Mok"]
+      },
+      {
+        "title": "Sporer i Gothmogs ryggsäck",
+        "recap": "Gothmog försökte stoppa ner en av jättesvamparna i sin ryggsäck. Svampen släppte ut en spor-moln och han däckade medvetslös på fläcken. Gruppen healade honom tillbaka. Lektion lärd: svamparna försvarar sig.",
+        "places": ["myconidskogen"],
+        "npcs": []
+      },
+      {
+        "title": "Till källan under tygmasker",
+        "recap": "Gruppen band tyg runt mun och näsa för att skydda sig mot sporerna. Haldan och Theron klev försiktigt närmare källan för att undersöka om det var naturligt eller onaturligt. Något kände de – skogen själv höll andan.",
+        "places": ["myconidskogen"],
+        "npcs": []
+      },
+      {
+        "title": "Myconid Sovereign",
+        "recap": "Ur källan steg Myconid Sovereign – en gigantisk sentient svamp. Grön av vrede över människors skogsskövling och vägbyggande. Haldan talade försiktigt, erbjöd respekt istället för strid. Theron bakade långsamt med. Till slut förstod svamp-herren att dessa människor inte var som de andra – och lät dem gå.",
+        "places": ["myconidskogen"],
+        "npcs": ["Myconid Sovereign"]
+      },
+      {
+        "title": "Omdirigerad väg",
+        "recap": "Tillbaka vid karavanen övertygade Gråstensväktarna de övriga att dirigera om vägen runt myconid-territoriet. En liten gest för att inte stöta en skog som nu vet att de kom i respekt. Nya allierade i det tysta – kanske.",
+        "places": ["myconidskogen"],
+        "npcs": []
+      }
+    ]
   }
 ]

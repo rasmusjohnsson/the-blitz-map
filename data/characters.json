@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Samtalet med Myconid Sovereign",
+        "text": "Cornwind cirklade mellan vagnarna som en hök – hans frågor till Gråkapporna var snarare förhör. Men vi gav honom bara det han kunde få av verkliga legosoldater: tystnad, grymtningar, rulla med ögonen. Senare, djupare in i skogen, såg jag svamparna växa i storlek. Jag skickade upp Mok. Genom hans ögon såg jag hålet – svamparnas källa, hundra meter in. Och en alternativ väg. Jag band tyg runt mun och näsa, Theron samma. Vi gick ner till källan. Där steg han ur – Myconid Sovereign. En gigantisk sentient svamp, grön av vrede över skogsskövling. Jag talade långsamt, erbjöd respekt istället för stål. Han förstod. Vi backade försiktigt. Tillbaka vid karavanen fick vi dem att dirigera om. En liten gest – men svamp-folket såg den. Kanske är det nya vänner i det tysta.",
+        "session": 17
+      },
+      {
         "label": "Luktspåret till Frulams tält",
         "text": "Jagade attentatören ut i skogen. Mok ovanför träden, jag mellan dem. Han var snabb, hann undan – men inte innan vi spårat hans riktning: rakt tillbaka mot karavanen. På morgonen avslöjade sig adelsmännen från värdshuset: Lords' Alliance-agenter. De gav oss en token. Jag plockade upp en av attentatörs-pilarna och drog in doften djupt – gift, metall, något annat. Vid karavanen mässade Cedric Locate Poison och jag följde doften med min egen näsa. Samma lukt vid Frulams tält. Hon var upphovet. Vi gick in. Istället för strid – pakt. Hon återlämnade Oweyns hårlock, vi tiger om hennes guldvagn, hon leder oss hela vägen till destinationen. Hon vet att vi förråder henne där. Vi vet att hon förråder oss först.",
         "session": 16
@@ -133,6 +138,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Bakom tygmasken inför svampen",
+        "text": "Cornwind svalde inte vårt Gråkappor-pladder helt – hans frågor var alltför precisa. Watcher's Eye läste honom: en jägare. När svamparna växte i skogen band jag tyg runt mun och näsa och följde Haldan ner till källan. Där steg Myconid Sovereign ur – en gigantisk sentient svamp, grön av vrede. Jag höll handen stilla på svärdsfästet men drog inte. Bahamut lär: inte alla fiender ska stridas med. Haldan talade, jag bakade långsamt vid hans sida. Till slut såg svamp-herren oss som annorlunda. Vi lät skogen stå. Vägen dirigerades om. Order of the Gauntlet svär att skydda de svaga – idag räknades även svampar till de svaga. Jag skulle inte sagt det för sex månader sen.",
+        "session": 17
+      },
+      {
         "label": "Lords' Alliance-token och Frulams pakt",
         "text": "Vi förföljde attentatören men han undkom. Haldan och Mok fick spåret: tillbaka mot karavanen. På morgonen klev adelsmännen fram och avslöjade sig – Lords' Alliance-agenter. Watcher's Eye hade läst dem rätt: inte onda, bara i tjänst. De gav oss en token, en signalring. Jag höll den i handen – metallen gav samma stilla hum som min sköld. Två allierade organisationer har nu räckt oss redskap. Vid karavanen spårade Cedric och Haldan luktspåret till Frulam Mondaths tält. Vi gick in. Istället för Bahamuts rättvisa – pakt. Hon stal Oweyns hårlock, vi tiger om hennes guldvagn, hon leder oss till destinationen. Order of the Gauntlet skulle normalt säga 'nej' till en sådan avtal med en fiende. Men Bahamut lär mig: ibland leder tystnaden rakt till drakens näste. Vi tar den vägen.",
         "session": 16
@@ -246,6 +256,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Sporfallet",
+        "text": "Cornwind kom för nära med sina frågor. Jag grymtade och såg bort som en legosoldat gör när han inte vill prata. Sen skogen – svamparna växte. Jag såg en snygg specimen och tänkte: bra prov. Jag stoppade ner den i ryggsäcken. Sporer. Sedan mörker. Jag vaknade med Cedrics besvärjelse i öronen och Theron över mig. Mina runor viskade: 'formen du väljer, inte den du föddes till'. Idag valde jag inte svamptjuvens form. Vi band tyg runt mun och näsa och jag stod kvar i karavanen medan Haldan och Theron gick till källan. När de kom tillbaka hade de talat med en gigantisk sentient svamp. Och vi dirigerade om vägen. Jag ler fortfarande. Vårt sällskap är underligt och Order of the Gauntlet skulle aldrig förstått.",
+        "session": 17
+      },
+      {
         "label": "Pakten med Frulam",
         "text": "Jagade attentatören. Mina ben bar mig snabbare än jag trodde, men han undkom i mörkret. Haldan och Mok tog spåret. På morgonen avslöjade adelsmännen sig – Lords' Alliance. Jag skrattade: dagens fiender är gårdagens pröare. De gav oss en token. Vid Frulams tält stod vi ansikte mot ansikte med halvdrakens präst. Hon stal en hårlock från Oweyn för en besvärjelse. Runorna sjöng varning: krossa henne nu. Men vi slöt pakt istället. Hon leder oss till destinationen, vi tiger om hennes guld. Runorna säger: 'formen du väljer, inte den du föddes till'. Idag väljer jag tålamodet. Men mina nävar glömmer inte.",
         "session": 16
@@ -358,6 +373,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Vakten vid vagnen",
+        "text": "Cornwind ställde frågor till alla men stannade för länge vid oss. Jag höll min roll som bred-axlad legosoldat. När svamparna växte stod jag kvar vid Kunskapens Vagn med Cedric och de andra, redo att försvara om något knöt sig. Gothmog däckade av sporer – jag höll honom tills Cedrics besvärjelse väckte honom. Jag ville inte riskera gruppen genom att följa Haldan och Theron ner till källan; min roll var här. När de kom tillbaka och berättade om Myconid Sovereign begrep jag att dagen inte handlat om strid. Order of the Gauntlet säger: rättvisa genom handling. Idag var handlingen att dirigera om en väg. En liten rättvisa för en skog.",
+        "session": 17
+      },
       {
         "label": "Hårlocken åter",
         "text": "De stal en hårlock från mig – för en sympati-besvärjelse, mest troligen. Något de kunde använda för att hitta mig, binda mig, skada mig på avstånd. Attentatet i värdshuset var första försöket. Vi jagade attentatören men han undkom. På morgonen avslöjade adelsmännen sig – Lords' Alliance. De testade oss. Vi klarade testet. En token i min hand, ett löfte om hjälp. Sedan luktspåret till Frulam Mondath. Jag stod ansikte mot ansikte med den som sände attentat mot min grupp och stal av min kropp. Order of the Gauntlet säger: rättvisa genom handling. Men ibland är handlingen att hålla tyst och spela med. Vi fick hårlocken åter, slöt pakten, kommer leda henne – och hennes guldvagn – till destinationen där hon tänker förråda oss. Vi förråder henne först.",
@@ -476,6 +496,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Botanist i karavanen",
+        "text": "Cornwind pratade mer än han brukade. Jag noterade mönstret: varje grupp fick samma fråga om varifrån de kom. Han letar efter något – troligen efter oss. Jag höll handelsmannens profil. När svamparna växte började jag plocka ut relevant botanisk kunskap ur mina minnesanteckningar – jättesvampar i den här storleken brukar vara myconid-territorium. När Gothmog däckade av sporer kastade jag Lesser Restoration och han vaknade blinkande. Vi band tyg runt mun och näsa och Haldan + Theron gick till källan. Jag höll vagnen redo med Fireball om något knöt sig. När de kom tillbaka med berättelsen om Myconid Sovereign tog jag anteckningar – första gången jag haft en bekräftad primärkälla om myconid-härskares storlek och vrede-cykel. Kunskapens Vagn kommer att växa med dagen.",
+        "session": 17
+      },
       {
         "label": "Locate Object och Locate Poison",
         "text": "Vi förföljde attentatören men förlorade honom i mörkret – dock hade Haldan och Mok spåret: tillbaka mot karavanen. På morgonen klev Lords' Alliance-adelsmännen fram med ursäkter och en token. En signalring. Jag förde upp den mot ljuset, kände dess magiska signatur – äkta. Vid karavanen mässade jag Locate Object för hårlocken Oweyn förlorat, Locate Poison för pilgiftet från natten. Båda spåren pekade mot ett tält: Frulam Mondaths. Vi gick in. Istället för strid – pakt. Hon leder oss till destinationen, vi tiger om guldvagnen, hon återlämnar hårlocken. Spelet är nu dubbel-dubbel-dubbelt bedrägeri. Jag älskar sådana spel. Kunskapens Vagn följer med karavanen vidare, min besvärjelsebok öppen på sidorna om Dispel Magic.",
