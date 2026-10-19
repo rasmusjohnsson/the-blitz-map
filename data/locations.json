@@ -58,9 +58,53 @@
     "name": "Daggerford",
     "x": 1247,
     "y": 676,
-    "visited": false,
-    "summary": "Befäst stad vid Delimbiyr-floden.",
-    "events": []
+    "visited": true,
+    "icon": "🏘️",
+    "summary": "Befäst stad vid Delimbyr-floden söder om Waterdeep. Karavan-stopp och traditionellt firande-ställe mitt i resan upp från Baldur's Gate. Här parkerade Gråkapporna karavanen i stadens centrum, firade på världshuset och mötte Jamna vid pokerbordet.",
+    "descriptions": [
+      {
+        "title": "VÄRDSHUSET I DAGGERFORD",
+        "items": [
+          "<strong>Tradition:</strong> Karavaner firar här efter att de värsta vägarna är bakom dem.",
+          "<strong>Stämning:</strong> Kortspel, tärning, barder, hög ljudvolym.",
+          "<strong>Mötet med Jamna:</strong> Vid pokerbordet, Zone of Truth kastad över bordet.",
+          "<strong>Sven:</strong> Köpte stort öl, berättade om sin tre kilos abborre i en timme.",
+          "<strong>Cedrics rökiga sprit:</strong> Mycket stark – 'smakade som prickkorv efter att starken släppt'."
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Protesen känns igen",
+        "preview": "Cornwind skakar hand med Haldan och stelnar...",
+        "detail": "När Cornwind skakade Haldans hand efter pokernatten stelnade han till. Han hade sett en liknande protes förut – i sitt tält nere vid Hästskoplatån-lägret. Han vet inte att det var Haldan då (gråkappor och masker gömmer). Men misstanken växer. Han håller nu extra öga på Haldan under resan vidare.",
+        "session": 18
+      },
+      {
+        "title": "Jamna ansluter till karavanen",
+        "preview": "Vill resa med till Waterdeep...",
+        "detail": "Efter pokernatten erbjöd sig Jamna att följa med karavanen till Waterdeep. Hon vill själv gå med i Folkets vilja. Gruppen accepterade men sökte igenom henne – kortbåge och kniv togs ifrån henne (kniven i stöveln behöll hon). Placerades i Svens vagn.",
+        "session": 18
+      },
+      {
+        "title": "Pokernatten och Zone of Truth",
+        "preview": "Cedric kastar besvärjelsen över bordet...",
+        "detail": "Vid pokerbordet spelade Gråkapporna mot Jamna, Cornwind och Theron. När insatserna höjdes föreslog gruppen att göra det svårare för alla att bluffa – Cedric kastade Zone of Truth över spelbordet. Jamna och Cornwind failade sitt save. Haldan började ställa försiktiga frågor: läskigaste personer, Edricks namn (Jamna reagerade märkbart), 'Mirror of the Dead' (DM: 'det finns många platser som kallas så'). Jamna vann rundan med 20 efter att ha fuskat.",
+        "session": 18
+      },
+      {
+        "title": "Festligheter på världshuset",
+        "preview": "Sven, öl och en jävlig stark sprit...",
+        "detail": "Karavanen parkerades i Daggerfords centrum. Gruppen gick till värdshuset – kortspel, tärning, barder spelar. Sven i finare skjorta köpte stort öl. Cedric fick en mycket rökig stark sprit (bevisat ogiftig av Haldans Monster Slayer-koll). Frulam Mondath sippade diskret på vin utan att slappna av.",
+        "session": 18
+      },
+      {
+        "title": "Ankomsten till Daggerford",
+        "preview": "Sista stopp innan Waterdeep...",
+        "detail": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig och passerade genom tätare landskap – byar, hus, Bowshot som rastställe. Sword Mountains skymtade i fjärran, Phandalin låg på andra sidan. Till slut Delimbyr-floden och Daggerford. Sven berättade traditionen att fira här – 'bara nerförsbacke till Waterdeep härifrån'.",
+        "session": 18
+      }
+    ]
   },
   {
     "id": "baldursgate",

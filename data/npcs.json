@@ -117,6 +117,11 @@
         "label": "Attentatet och den osannolika pakten",
         "text": "Beordrade nattens attentat mot Gråkapporna via inhyrda masker och stal en hårlock från Oweyn – troligen för en sympati-besvärjelse. När gruppen spårade pilarnas lukt till hennes tält med Locate Object och Locate Poison var hon avslöjad. Istället för strid slöts en osannolik pakt: hårlocken åter, Gråstensväktarna tiger om hennes guld-vagn, och i gengäld eskorterar de henne hela vägen till destinationen. Hon vet att hon förråder dem senare – och de vet det också. Men vägen leder dem till kultens kärna.",
         "session": 16
+      },
+      {
+        "label": "Röd-mantel-mannen stiger fram",
+        "text": "Efter Daggerford, på resans första etapp, stannade karavanen vid Frulams vagn. Ut klev en smal, rakryggad man i djupröd mantel med uppfälld huva – gömd dittills. Han talade lågmält med Frulam och de rörde sig bort från gruppen tillsammans. Vem han är och varför han färdas dolt i Frulams vagn är nästa gåta.",
+        "session": 18
       }
     ]
   },
@@ -142,6 +147,35 @@
     "role": "Omnämnd – Cult of the Dragon",
     "desc": "Ett namn som viskas bland de högsta i kulten. Enligt Leosin, Harpers-agenten Gråstensväktarna räddade, upprepas det bland dem som styr Cult of the Dragon – men även han vet inte vem eller vad Rezmir är. Sättet kultisterna sänker rösten när de talar om henne pekar mot någon på toppen av hierarkin, långt över Cyanwrath och Frulam Mondath.",
     "events": []
+  },
+  {
+    "id": "jamna",
+    "name": "Jamna",
+    "status": "friendly",
+    "role": "Resenär · misstänkt kopplad till Folkets vilja",
+    "desc": "En okänd kvinna i enkel ledig rustning som dök upp i Daggerfords värdshus där hon spelade poker mot Gråkapporna, Theron och Cornwind. Vann rundan efter att Zone of Truth hade kastats över bordet. Berättade om Edrick Vane och Folkets vilja – hon har läst deras pamfletter, hört dem tala i Waterdeep och vill själv gå med. Reagerade märkbart när Edricks namn nämndes i ett visst sammanhang. Erbjöd sig att följa karavanen till Waterdeep – gruppen accepterade men sökte igenom henne (hon behöll kniven i stöveln). Åker i Svens vagn.",
+    "events": [
+      {
+        "label": "Pokernatten i Daggerford",
+        "text": "Mötte Gråkapporna i Daggerfords värdshus, spelade poker, fuskade och vann rundan med 20 efter att Zone of Truth hade castats över bordet. Berättade då om Folkets vilja och Edrick Vane. Erbjöd sig följa karavanen till Waterdeep – vill gå med i Folkets vilja själv.",
+        "session": 18
+      }
+    ]
+  },
+  {
+    "id": "rodmantel",
+    "name": "Mannen i röd mantel",
+    "aliases": ["Röda manteln", "huvudmannen"],
+    "status": "unknown",
+    "role": "Okänd · steg ut ur Frulams vagn",
+    "desc": "En smal, rakryggad man i djupröd mantel med uppfälld huva. Steg ut ur Frulams vagn under en rast på vägen till Waterdeep och pratade lågmält med henne. Ansiktet dolt. De rörde sig sedan bort tillsammans längre in i karavanen. Identitet okänd – men någon som Frulam Mondath reser med utan att gruppen fått syn på förut. Rezmir? Edrick? Modern? Allt är öppet.",
+    "events": [
+      {
+        "label": "Ut ur Frulams vagn",
+        "text": "Dök upp när karavanen stannade på resans första etapp efter Daggerford. Steg ut ur Frulam Mondaths vagn, pratade lågmält med henne och rörde sig sen bort från gruppen tillsammans med henne. Första bekräftelsen på att någon reser dolt inne i Frulams vagn.",
+        "session": 18
+      }
+    ]
   },
   {
     "id": "myconid_sovereign",
@@ -198,6 +232,11 @@
         "label": "Anlitade Gråkapporna",
         "text": "Anställde Gråstensväktarna som karavan-vakter under deras Gråkappor-persona för resan norrut från Baldur's Gate. Betalning: säker lejd norr ut med hans porslinstransport. Berättade om giant spiders i skogen precis innan de dök upp.",
         "session": 13
+      },
+      {
+        "label": "Daggerford-firandet och tre kilos abborren",
+        "text": "I Daggerford pratade Sven om traditionen att fira efter träskmarkerna – 'bara nerförsbacke till Waterdeep härifrån'. Köpte ett stort öl, pratade med Cedric om fiske i en timme, inklusive den tre kilos abborre han fångat med en köttbit som lockbete. Visade finger-ärret han fått när linan skar sig djupt. Lät Jamna åka med i sin vagn.",
+        "session": 18
       }
     ]
   },
@@ -205,13 +244,18 @@
     "id": "edrick",
     "name": "Edrick Vane",
     "status": "unknown",
-    "role": "Omnämnd i baren · 'det största hoppet just nu'",
-    "desc": "Ett namn Gothmog snappade upp i en bar i Baldur's Gate: 'Edrick Vane är det största hoppet som finns just nu.' Ingen kontext, inget ansikte. Kan vara en resistansledare, en förtroende-figur i regionen, någon med planer mot kulten – eller något helt annat. Gruppen har bara ryktet att gå på.",
+    "role": "Ledare – Folkets vilja (publik fasad)",
+    "desc": "Ledare inom folkrörelsen Folkets vilja. Enligt Jamna är han svår att nå – hon har bara träffat honom en gång. Han pratar om att inte vilja ha någon hierarki inom rörelsen, men talar själv med starkast röst. Rekryteringspamfletter sprids i Waterdeep. Rörelsen växer snabbt – 'folket är tröttat', säger de som läst dem. Gothmog hörde först namnet i en bar i Baldur's Gate: 'Edrick Vane är det största hoppet som finns just nu.'\n\nGruppen vet att Folkets vilja är en fasad för Cult of the Dragon – men om Edrick Vane själv är insatt i drak-sidan eller bara är en manipulerad folkledare är fortfarande oklart.",
     "events": [
       {
         "label": "Namn ur bar-vinden",
         "text": "Gothmog hörde namnet i en bar i Baldur's Gate innan karavanen lämnade staden. Rösten sade det med respekt: 'det största hoppet som finns just nu'. Ingen ledtråd om vem eller vad – bara ett namn att komma ihåg.",
         "session": 13
+      },
+      {
+        "label": "Jamnas berättelse",
+        "text": "Jamna i Daggerford bekräftade: Edrick Vane är ledaren för Folkets vilja. Han säger sig vilja slopa hierarki men talar själv med starkast röst. Hon har bara träffat honom en gång, han är svår att nå. Hon reagerade märkbart när namnet nämndes i ett visst sammanhang – vad betyder det?",
+        "session": 18
       }
     ]
   },
@@ -319,6 +363,11 @@
         "label": "Nästan ett förhör",
         "text": "I karavanen rörde han sig oftare mellan vagnarna och började prata med alla han kunde. Med Gråkapporna – fortfarande maskerade – ställde han frågor som gick lite för nära. Snarare förhör än småprat. Han letar efter något. Eller någon.",
         "session": 17
+      },
+      {
+        "label": "Igenkänd protes – men inte mannen",
+        "text": "Efter pokernatten i Daggerford skakade Cornwind hand med Haldan och stelnade till. Han hade sett en liknande protes förut – i sitt tält nere i Hästskoplatån-lägret. Han vet inte att det var samma man han talade med då (Haldan är fortfarande maskerad som Gråkappa). Men hans misstanke växer – han håller nu extra öga på Haldan under resan.",
+        "session": 18
       }
     ]
   },

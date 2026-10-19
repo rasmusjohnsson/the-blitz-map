@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Handen som gav mig bort",
+        "text": "I Daggerford gick vi till värdshuset. Jag höll en öl i handen, lät de andra spela poker. När Cedric kastade Zone of Truth över bordet steg jag in och sköt frågor runt borden. Lätta till en början – 'kallingar' för att testa deras reaktion. Sedan Edrick Vane – och Jamna reagerade på hans namn, märkbart. Cornwind skrattade bort det. Han vet mer än han vill säga. När rundan var över skakade han hand med mig. Protesen – han kände igen den. 'Nere i Hästskoplatån-lägret, en jävla trevlig kille i mitt tält hade en sån hand.' Det var mig han pratade om. Han ser mig inte under masken. Än. Jag drar kappan tätare och håller avstånd nu.",
+        "session": 18
+      },
+      {
         "label": "Samtalet med Myconid Sovereign",
         "text": "Cornwind cirklade mellan vagnarna som en hök – hans frågor till Gråkapporna var snarare förhör. Men vi gav honom bara det han kunde få av verkliga legosoldater: tystnad, grymtningar, rulla med ögonen. Senare, djupare in i skogen, såg jag svamparna växa i storlek. Jag skickade upp Mok. Genom hans ögon såg jag hålet – svamparnas källa, hundra meter in. Och en alternativ väg. Jag band tyg runt mun och näsa, Theron samma. Vi gick ner till källan. Där steg han ur – Myconid Sovereign. En gigantisk sentient svamp, grön av vrede över skogsskövling. Jag talade långsamt, erbjöd respekt istället för stål. Han förstod. Vi backade försiktigt. Tillbaka vid karavanen fick vi dem att dirigera om. En liten gest – men svamp-folket såg den. Kanske är det nya vänner i det tysta.",
         "session": 17
@@ -138,6 +143,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Pokerleende vid Zone of Truth",
+        "text": "I Daggerfords värdshus satte jag mig vid pokerbordet. Jamna dök upp – okänd kvinna, enkel rustning, lugnt sinne. Watcher's Eye läser henne som förbehållsamt. Cornwind drack sig glad. När Cedric kastade Zone of Truth över bordet accepterade jag villkoret – jag har inget att dölja från detta bord. Jag förlorade rundan men vann observationer. Jamna reagerade när Edricks namn nämndes – Watcher's Eye var tydligt. När rundan var över skakade Cornwind min hand utan tecken. Men när han tog Haldans hand stelnade han. Protesen. Han minns den från Hästskoplatån. Han vet inte vem Haldan är ännu – men vi måste räkna med att han kan koppla snart. Order of the Gauntlet säger: rättvisa genom handling. Vi tar steget försiktigt.",
+        "session": 18
+      },
+      {
         "label": "Bakom tygmasken inför svampen",
         "text": "Cornwind svalde inte vårt Gråkappor-pladder helt – hans frågor var alltför precisa. Watcher's Eye läste honom: en jägare. När svamparna växte i skogen band jag tyg runt mun och näsa och följde Haldan ner till källan. Där steg Myconid Sovereign ur – en gigantisk sentient svamp, grön av vrede. Jag höll handen stilla på svärdsfästet men drog inte. Bahamut lär: inte alla fiender ska stridas med. Haldan talade, jag bakade långsamt vid hans sida. Till slut såg svamp-herren oss som annorlunda. Vi lät skogen stå. Vägen dirigerades om. Order of the Gauntlet svär att skydda de svaga – idag räknades även svampar till de svaga. Jag skulle inte sagt det för sex månader sen.",
         "session": 17
@@ -256,6 +266,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Daggerfords firande",
+        "text": "Daggerford var ett andningshål. Jag drack öl, lät axlarna slappna ner för första gången på länge. Vid pokerbordet gav jag Cornwind beröm när han vann en runda – 'du är för bra på bluff'. Han vårlade. Mannen får inte tillräckligt med beröm i sin organisation, det syntes direkt. Information. Jag höll min halvorksroll – legosoldat, grym, inte en tänkare. När Cedric kastade Zone of Truth lät jag Haldan ställa frågorna. Jag drack. När rundan slutade såg jag Cornwind stelna till över Haldans hand. Han kommer koppla. Vi måste röra oss försiktigt. Och sen – röda manteln ur Frulams vagn. Någon högre upp än henne reser dolt. Runorna säger: 'formen du väljer'. Idag valde jag beröm som vapen. Imorgon vet jag inte.",
+        "session": 18
+      },
+      {
         "label": "Sporfallet",
         "text": "Cornwind kom för nära med sina frågor. Jag grymtade och såg bort som en legosoldat gör när han inte vill prata. Sen skogen – svamparna växte. Jag såg en snygg specimen och tänkte: bra prov. Jag stoppade ner den i ryggsäcken. Sporer. Sedan mörker. Jag vaknade med Cedrics besvärjelse i öronen och Theron över mig. Mina runor viskade: 'formen du väljer, inte den du föddes till'. Idag valde jag inte svamptjuvens form. Vi band tyg runt mun och näsa och jag stod kvar i karavanen medan Haldan och Theron gick till källan. När de kom tillbaka hade de talat med en gigantisk sentient svamp. Och vi dirigerade om vägen. Jag ler fortfarande. Vårt sällskap är underligt och Order of the Gauntlet skulle aldrig förstått.",
         "session": 17
@@ -373,6 +388,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Söker Jamnas vapen",
+        "text": "I Daggerfords värdshus satt jag med en öl och hade öga på de andra. Pokerspelet drog till sig uppmärksamhet men jag höll avstånd – 'vakten som inte dricker för mycket' är en bra legosoldatroll. När Jamna erbjöd sig följa med karavanen till Waterdeep insisterade jag på att söka igenom henne. Hon slog ut armarna – kortbåge på ryggen, kniv i stöveln. Jag tog shortbow och den synliga kniven. Order of the Gauntlet säger: stol tryckbart, lita försiktigt. Hon fick ändå följa med. Senare på vägen såg jag mannen i röd mantel stiga ur Frulams vagn. Smal, rakryggad, dolt ansikte. Jag drog svärdet en halv tum i skidan av instinkt. Vi är i mitten av något större än vi anat.",
+        "session": 18
+      },
       {
         "label": "Vakten vid vagnen",
         "text": "Cornwind ställde frågor till alla men stannade för länge vid oss. Jag höll min roll som bred-axlad legosoldat. När svamparna växte stod jag kvar vid Kunskapens Vagn med Cedric och de andra, redo att försvara om något knöt sig. Gothmog däckade av sporer – jag höll honom tills Cedrics besvärjelse väckte honom. Jag ville inte riskera gruppen genom att följa Haldan och Theron ner till källan; min roll var här. När de kom tillbaka och berättade om Myconid Sovereign begrep jag att dagen inte handlat om strid. Order of the Gauntlet säger: rättvisa genom handling. Idag var handlingen att dirigera om en väg. En liten rättvisa för en skog.",
@@ -496,6 +516,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Flytande mord och Zone of Truth",
+        "text": "Sven tryckte en 'flytande mord' i min hand – rökig stark sprit som smakade prickkorv när hettan släppt. Haldan kollade med Monster Slayer-sinne att den inte var förgiftad. Jag höll den i handen hela kvällen, drack små klunkar – nykter är lönsamt i den här karavanen. Vid pokerbordet övertalades jag att kasta Zone of Truth när insatserna höjdes – perfekt tillfälle, inget bättre forum. Jamna och Cornwind failade. Haldan drev frågorna; jag höll mitt poker-ansikte. När Edricks namn nämndes såg jag Jamnas mikrorörelse. Information. Sen upptäckten: Cornwind kände igen Haldans protes. 'En jävla trevlig kille i mitt tält nere i Hästskoplatån-lägret' – det var Haldan själv i session 6. Han vet inte än. När vi lämnade Daggerford nästa dag berättade Sven om sin tre kilos abborre i en timme – jag antecknade metodiken för framtiden. När karavanen stannade vid Frulams vagn såg jag honom: smal, rakryggad man i djupröd mantel. Jag kände magisk signatur från hans mantel. Kunskapens Vagn får ny forskningsnotis.",
+        "session": 18
+      },
       {
         "label": "Botanist i karavanen",
         "text": "Cornwind pratade mer än han brukade. Jag noterade mönstret: varje grupp fick samma fråga om varifrån de kom. Han letar efter något – troligen efter oss. Jag höll handelsmannens profil. När svamparna växte började jag plocka ut relevant botanisk kunskap ur mina minnesanteckningar – jättesvampar i den här storleken brukar vara myconid-territorium. När Gothmog däckade av sporer kastade jag Lesser Restoration och han vaknade blinkande. Vi band tyg runt mun och näsa och Haldan + Theron gick till källan. Jag höll vagnen redo med Fireball om något knöt sig. När de kom tillbaka med berättelsen om Myconid Sovereign tog jag anteckningar – första gången jag haft en bekräftad primärkälla om myconid-härskares storlek och vrede-cykel. Kunskapens Vagn kommer att växa med dagen.",

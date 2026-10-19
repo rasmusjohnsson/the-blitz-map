@@ -786,5 +786,55 @@
         "npcs": []
       }
     ]
+  },
+  {
+    "id": 18,
+    "label": "SESSION 18",
+    "title": "Daggerford och den röda manteln",
+    "date": "2026-10-26",
+    "events": [
+      {
+        "title": "Ut ur träskmarkerna",
+        "recap": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig. Landskapet blev tätare – byar, hus, åkerlandskap. Vid Bowshot stannade de för att proviantera och vila hästarna. Sword Mountains skymtade i fjärran, Phandalin låg bortom. Till slut dök Delimbyr-floden upp och Sven pekade mot stadens taklinje: Daggerford.",
+        "places": ["daggerford"],
+        "npcs": ["Sven the Hoper"]
+      },
+      {
+        "title": "Festligheter på världshuset",
+        "recap": "Karavanen parkerades i Daggerfords centrum. Gruppen begav sig till värdshuset – kortspel, tärning, barder i fullt sving. Sven i finare skjorta köpte stort öl och berättade om traditionen att fira halvvägs. Cedric fick en mycket rökig stark sprit (Haldan bekräftade med Monster Slayer-koll att den inte var förgiftad – 'smakade som prickkorv efter att starken släppt'). Frulam Mondath sippade diskret på vin utan att slappna av.",
+        "places": ["daggerford"],
+        "npcs": ["Sven the Hoper", "Frulam Mondath", "Cornwind"]
+      },
+      {
+        "title": "Jamna vid pokerbordet",
+        "recap": "Vid pokerspelet dök en okänd kvinna upp – inte från karavanen. Hon presenterade sig som Jamna, i enkel ledig rustning. Spelade mot Gråkapporna, Theron och Cornwind. När insatserna höjdes föreslog gruppen att göra bluffning svårare. Cedric kastade Zone of Truth över spelbordet.",
+        "places": ["daggerford"],
+        "npcs": ["Jamna"]
+      },
+      {
+        "title": "Frågorna under Zone of Truth",
+        "recap": "Jamna och Cornwind failade sin save. Haldan ställde försiktiga frågor runt borden: 'kallingar' (bara en feint), 'läskigaste personen ni känner' (Cornwind: 'det finns läskigare än Frulam'), och till slut Edricks namn. Jamna reagerade märkbart – noterat av gruppen. Cornwind skrattade bort det. 'Mirror of the Dead' nämndes också men DM:en förklarade att det är ett colloqualt uttryck för många dödsfällor. Jamna fuskade och vann rundan med 20.",
+        "places": ["daggerford"],
+        "npcs": ["Jamna", "Cornwind"]
+      },
+      {
+        "title": "Handslaget som avslöjade",
+        "recap": "När rundan var över skakade Cornwind hand med Theron och sedan Haldan – och stelnade till. Han hade sett en liknande protes förut. 'Där nere i Hästskoplatån-lägret. En jävla trevlig kille var inne i mitt tält. Han hade en sån hand.' Haldan är fortfarande maskerad som Gråkappa – Cornwind vet inte att det var samme man han just hälsade på. Men hans misstanke är tänd.",
+        "places": ["daggerford"],
+        "npcs": ["Cornwind"]
+      },
+      {
+        "title": "Jamna erbjuder följe",
+        "recap": "Jamna bad om ursäkt för Zone of Truth-situationen och frågade om att få följa med karavanen till Waterdeep. Hon vill själv gå med i Folkets vilja. Bekräftade att Edrick Vane är deras ledare – svår att nå, hon har bara träffat honom en gång, säger sig vara emot hierarki men talar själv med starkast röst. Gruppen accepterade men sökte igenom henne. Shortbow och kniv togs – kniven i stöveln behöll hon. Placerades i Svens vagn.",
+        "places": ["daggerford"],
+        "npcs": ["Jamna"]
+      },
+      {
+        "title": "Mot Waterdeep – och den röda manteln",
+        "recap": "Avresa från Daggerford i god stämning. Stenbelagd väg genom ljus bokskog med kustutsikt på vänstra sidan. Sven berättade för Cedric en lång historia om en tre kilos abborre och fingret han förlorade till linan. När karavanen stannade första etappen efter Daggerford dök en smal, rakryggad man upp – ut ur Frulams vagn. Djupröd mantel, uppfälld huva, ansikte dolt. Han pratade lågmält med Frulam och de rörde sig sedan bort tillsammans. Sessionen avslutades där.",
+        "places": ["daggerford"],
+        "npcs": ["Frulam Mondath", "Mannen i röd mantel"]
+      }
+    ]
   }
 ]
