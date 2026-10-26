@@ -40,8 +40,118 @@
     "name": "Waterdeep",
     "x": 1200,
     "y": 648,
+    "visited": true,
+    "icon": "🏛️",
+    "summary": "Faeruns största och rikaste stad – juvelen i Sword Coast vid foten av Mount Waterdeep. Gigantiska stadsmurar, försvarstorn, hamn full av fartyg. Gråkapporna nådde staden i session 19 efter karavan-resan från Baldur's Gate. Staden är uppdelad i sex distrikt. Kultens vagnar sammanstrålade vid ett specifikt magasin på Caravan Court där all last slussades in.",
+    "descriptions": [
+      {
+        "title": "STADEN &amp; MOUNT WATERDEEP",
+        "items": [
+          "<strong>Mount Waterdeep:</strong> Hög klippa som reser sig mot havet, synlig på långt håll.",
+          "<strong>Stadsmurarna:</strong> Enorma försvarstorn, nästan omöjliga att storma.",
+          "<strong>Hamnen:</strong> Fartyg från hela Sword Coast och längre bort.",
+          "<strong>Söderporten:</strong> Där karavaner från Baldur's Gate kommer in.",
+          "<strong>Sex distrikt:</strong> Castle, Trade, Dock, South, North, Sea Ward – var och ett med egen karaktär."
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Ankomsten till Waterdeep",
+        "preview": "Karavanen når Caravan Court...",
+        "detail": "Gråkapporna nådde Waterdeep efter karavan-resans sista 3-4 dagar. Mount Waterdeep syntes först, sen de höga stadsmurarna. In genom söderporten till Faeruns största stad. Sven stannade vid Caravan Court – lossade varorna och betalade Gråkapporna fullt för eskort-uppdraget. Kultens vagnar samlades vid ett annat magasin och all last slussades in.",
+        "session": 19
+      }
+    ]
+  },
+  {
+    "id": "caravan_court",
+    "name": "Caravan Court",
+    "x": 1200,
+    "y": 648,
+    "visited": true,
+    "parent": "waterdeep",
+    "icon": "📦",
+    "summary": "Stor kuldyrstensbelägen gårdsplan i Waterdeep där karavaner från Baldur's Gate och söderut avslutar sina resor. Omgiven av massiva magasin. Här parkerades Svens vagn vid ett magasin medan kultens vagnar slussades in vid ett annat. Gråkapporna fick sin betalning här – och såg kultens last försvinna in i ett specifikt magasin.",
+    "events": [
+      {
+        "title": "Kultens magasin",
+        "preview": "Vagnarna slussas in...",
+        "detail": "Alla Folkets viljas/Cult of the Dragons vagnar samlades vid ett specifikt magasin på Caravan Court. Last efter last slussades in. Vad som väntar innanför magasinet är nästa fråga – och vem som väntar där.",
+        "session": 19
+      },
+      {
+        "title": "Svens betalning",
+        "preview": "Pengarom för eskort-uppdraget...",
+        "detail": "Sven stannade vid sitt magasin, lossade porslinsvarorna med Gråkapporna hjälp och betalade dem fullt för eskort-uppdraget – en välfylld pengarom. 'Tack för resan och slitet.'",
+        "session": 19
+      }
+    ]
+  },
+  {
+    "id": "castle_ward",
+    "name": "Castle Ward",
+    "x": 1200,
+    "y": 648,
     "visited": false,
-    "summary": "Juvelen i Sword Coast vid foten av Mount Waterdeep.",
+    "parent": "waterdeep",
+    "icon": "🏰",
+    "summary": "Politikens högvård i Waterdeep. Där den styrande makten och myndigheter sitter. Också platsen för stadens magiska skola.",
+    "events": []
+  },
+  {
+    "id": "trade_ward",
+    "name": "Trade Ward",
+    "x": 1200,
+    "y": 648,
+    "visited": true,
+    "parent": "waterdeep",
+    "icon": "🛒",
+    "summary": "Där handel, hantverk och utrustning samordnas i Waterdeep. Caravan Court ligger här – det är distriktet Gråkapporna ankom till.",
+    "events": []
+  },
+  {
+    "id": "dock_ward",
+    "name": "Dock Ward",
+    "x": 1200,
+    "y": 648,
+    "visited": false,
+    "parent": "waterdeep",
+    "icon": "⚓",
+    "summary": "Waterdeeps hamn-distrikt. Lite ruffa kvarter där stadens mesta kriminalitet håller till. Här kan man få sin sjömans-tatuering om man önskar.",
+    "events": []
+  },
+  {
+    "id": "south_ward",
+    "name": "South Ward",
+    "x": 1200,
+    "y": 648,
+    "visited": true,
+    "parent": "waterdeep",
+    "icon": "🏘️",
+    "summary": "Genomfartsled upp mot stadens bostäder – mest medelklass. Gråkapporna passerade genom distriktet från söderporten på väg till Caravan Court.",
+    "events": []
+  },
+  {
+    "id": "north_ward",
+    "name": "North Ward",
+    "x": 1200,
+    "y": 648,
+    "visited": false,
+    "parent": "waterdeep",
+    "icon": "💎",
+    "summary": "Bostadskvarter för rikingarna i Waterdeep.",
+    "events": []
+  },
+  {
+    "id": "sea_ward",
+    "name": "Sea Ward",
+    "x": 1200,
+    "y": 648,
+    "visited": false,
+    "parent": "waterdeep",
+    "icon": "🌊",
+    "summary": "Distriktet för Waterdeeps magiska institutioner och tempel. Många av stadens heliga platser ligger här.",
     "events": []
   },
   {
@@ -101,7 +211,7 @@
       {
         "title": "Ankomsten till Daggerford",
         "preview": "Sista stopp innan Waterdeep...",
-        "detail": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig och passerade genom tätare landskap – byar, hus, Bowshot som rastställe. Sword Mountains skymtade i fjärran, Phandalin låg på andra sidan. Till slut Delimbyr-floden och Daggerford. Sven berättade traditionen att fira här – 'bara nerförsbacke till Waterdeep härifrån'.",
+        "detail": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig och passerade genom tätare landskap – byar, hus, Bowshot som rastställe. Mt Illefarn skymtade i fjärran. Till slut Delimbyr-floden och Daggerford. Sven berättade traditionen att fira här – 'bara nerförsbacke till Waterdeep härifrån'.",
         "session": 18
       }
     ]

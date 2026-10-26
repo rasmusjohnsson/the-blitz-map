@@ -151,29 +151,59 @@
   {
     "id": "jamna",
     "name": "Jamna",
-    "status": "friendly",
-    "role": "Resenär · misstänkt kopplad till Folkets vilja",
-    "desc": "En okänd kvinna i enkel ledig rustning som dök upp i Daggerfords värdshus där hon spelade poker mot Gråkapporna, Theron och Cornwind. Vann rundan efter att Zone of Truth hade kastats över bordet. Berättade om Edrick Vane och Folkets vilja – hon har läst deras pamfletter, hört dem tala i Waterdeep och vill själv gå med. Reagerade märkbart när Edricks namn nämndes i ett visst sammanhang. Erbjöd sig att följa karavanen till Waterdeep – gruppen accepterade men sökte igenom henne (hon behöll kniven i stöveln). Åker i Svens vagn.",
+    "status": "hostile",
+    "role": "Mördare &amp; tjuv · gnome rogue",
+    "desc": "En gnome-kvinna som dök upp i Daggerfords värdshus och lurade sig in i karavanen genom att spela charmerande resenär. Vann poker-rundan efter Zone of Truth genom att fuska. Berättade att hon ville gå med i Folkets vilja. I session 19 avslöjades hennes verkliga avsikt: hon mördade kultens vakt Oswald i dimman, inspekterade kult-vagnen och flydde. Hennes fotspår i Haldans storlek ledde direkt till gruppens Tiny Hut – ett försök att skylla på dem. Sven kände henne som 'en vilsen själ', men hon rörde sig som en tränad lönnmördare från första stund.",
     "events": [
       {
         "label": "Pokernatten i Daggerford",
         "text": "Mötte Gråkapporna i Daggerfords värdshus, spelade poker, fuskade och vann rundan med 20 efter att Zone of Truth hade castats över bordet. Berättade då om Folkets vilja och Edrick Vane. Erbjöd sig följa karavanen till Waterdeep – vill gå med i Folkets vilja själv.",
         "session": 18
+      },
+      {
+        "label": "Mordet och ramuppläggning",
+        "text": "I dimmig natt på väg till Waterdeep knivhögg Jamna kultens vakt Oswald med två djupa stötar och bröt upp hans lastlucka för att inspektera innehållet. Hennes små fotspår ledde sedan rakt till gruppens Tiny Hut – ett försök att få Cornwind att anklaga Gråkapporna. Flydde in i skogen. Gruppen bestämde sig för att låta henne löpa – de har ingen tid att jaga och misstänker att hon dyker upp igen.",
+        "session": 19
+      }
+    ]
+  },
+  {
+    "id": "oswald",
+    "name": "Oswald",
+    "status": "deceased",
+    "hidden": true,
+    "role": "Kultistvakt · före detta gårdsarbetare",
+    "desc": "En av kultens vakter som murdradse i dimman natten innan karavanen nådde Waterdeep. Oweyn såg valkarna på hans händer – han hade varit gårdsarbetare innan Folkets vilja. Två djupa stickhål i bröstkorgen från Jamnas kniv. Hans sista minnen (frambesvärjda genom Speak with Dead): 'Dimma, mörker. Strid, mörker, dimma.' Kände inte igen mördaren, visste inte om det var en människa. Mara skulle avlösa honom när hon hittade honom död.",
+    "events": [
+      {
+        "label": "Mördad i dimman",
+        "text": "Dog av två djupa knivstick från Jamna när hon bröt sig in i kultens vagn för att inspektera lasten. Oweyn kastade Speak with Dead på hans kropp med ett frö i hans hand som fokus – fröet blommade till en vit blomma efter sista frågan. Hans sista intryck: dimma, mörker, strid – ingen beskrivning av gärningsmannen. Mara var kvinnan som fann honom.",
+        "session": 19
       }
     ]
   },
   {
     "id": "rodmantel",
     "name": "Mannen i röd mantel",
-    "aliases": ["Röda manteln", "huvudmannen"],
+    "aliases": ["Röda manteln", "Red Wizard"],
     "status": "unknown",
-    "role": "Okänd · steg ut ur Frulams vagn",
-    "desc": "En smal, rakryggad man i djupröd mantel med uppfälld huva. Steg ut ur Frulams vagn under en rast på vägen till Waterdeep och pratade lågmält med henne. Ansiktet dolt. De rörde sig sedan bort tillsammans längre in i karavanen. Identitet okänd – men någon som Frulam Mondath reser med utan att gruppen fått syn på förut. Rezmir? Edrick? Modern? Allt är öppet.",
+    "role": "Red Wizard of Thay · reser med kulten",
+    "desc": "En smal, rakryggad man i djupröd mantel med uppfälld huva. Cedric kände igen klädnaden direkt – Red Wizards of Thay, en socialdarwinistisk magiker-organisation långt österut nordost om Sea of Fallen Stars. Red Wizards är ofta tatuerade över ansiktet och skadade på olika sätt enligt deras makt-system. Ansiktet dolt dittills men hans ingripande vid mordet avslöjade kall auktoritet – han lugnade Cornwind med en hand på axeln och fick både honom och Mara att gå. Han reser i egen fin resevagn med gardinerna fördragna (anslöt sig till karavanen efter Daggerford). Att en Red Wizard samarbetar med Cult of the Dragon är den största obesvarade frågan – för vad eller för vem reser han hit?",
     "events": [
       {
         "label": "Ut ur Frulams vagn",
         "text": "Dök upp när karavanen stannade på resans första etapp efter Daggerford. Steg ut ur Frulam Mondaths vagn, pratade lågmält med henne och rörde sig sen bort från gruppen tillsammans med henne. Första bekräftelsen på att någon reser dolt inne i Frulams vagn.",
         "session": 18
+      },
+      {
+        "label": "Red Wizard-identiteten",
+        "text": "Cedric kände igen den djupröda manteln direkt: Red Wizards of Thay. En socialdarwinistisk magiker-organisation långt österut, med ny elak ledare som pressat ut flyktingar. Att de dyker upp här utanför sitt område är ovanligt – att en samarbetar med Cult of the Dragon är ännu mer anmärkningsvärt. Noterat i Cedrics Kunskapens Vagn.",
+        "session": 19
+      },
+      {
+        "label": "Egen vagn och kall auktoritet",
+        "text": "En ny fin resevagn med dörrar, fönster och fördragna gardiner anslöt sig till karavanen efter Daggerford – där mannen i rött nu reser. När Cornwind var på väg att gå till våldshandling mot Haldan efter mordet steg Red Wizard-mannen in: 'Det är ingen mening att du skapar en sån scen för något sånt här trivialt.' En hand på Cornwinds axel och han lydde. Mara skickades också bort med en blick.",
+        "session": 19
       }
     ]
   },
@@ -237,6 +267,11 @@
         "label": "Daggerford-firandet och tre kilos abborren",
         "text": "I Daggerford pratade Sven om traditionen att fira efter träskmarkerna – 'bara nerförsbacke till Waterdeep härifrån'. Köpte ett stort öl, pratade med Cedric om fiske i en timme, inklusive den tre kilos abborre han fångat med en köttbit som lockbete. Visade finger-ärret han fått när linan skar sig djupt. Lät Jamna åka med i sin vagn.",
         "session": 18
+      },
+      {
+        "label": "Framme och fullgjord",
+        "text": "Höll sin del av avtalet hela vägen fram till Caravan Court i Waterdeep. Parkerade vid ett magasin och betalade Gråkapporna fullt för eskort-uppdraget med en välfylld pengarom. Hans vänskapliga avsked rymde ett äkta tack – han hade inte väntat sig så glada vakter mot träsken och drakäggsgrottor. Pratade om Jamna som en 'vilsen själ' snarare än en ondskefull människa – men han vet inte om mordet.",
+        "session": 19
       }
     ]
   },
@@ -368,6 +403,11 @@
         "label": "Igenkänd protes – men inte mannen",
         "text": "Efter pokernatten i Daggerford skakade Cornwind hand med Haldan och stelnade till. Han hade sett en liknande protes förut – i sitt tält nere i Hästskoplatån-lägret. Han vet inte att det var samma man han talade med då (Haldan är fortfarande maskerad som Gråkappa). Men hans misstanke växer – han håller nu extra öga på Haldan under resan.",
         "session": 18
+      },
+      {
+        "label": "Träpinnarna och mordraseriet",
+        "text": "Täljde passivt-aggressivt på en träpinne medan han stirrade på Haldan under uppbrottet från Daggerford. När Oswald mördades och spåren ledde till gruppens Tiny Hut sprang han fram i raseri: 'Jag visste det, fan!' – övertygad om att Haldan låg bakom. Han letade inte efter bevis utan efter en förevändning. Red Wizard-mannen fick lugna honom och leda honom bort från platsen. Han gick, men hans blick säger att han aldrig släpper tanken.",
+        "session": 19
       }
     ]
   },

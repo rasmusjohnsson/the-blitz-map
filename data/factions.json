@@ -89,6 +89,25 @@
     ]
   },
   {
+    "id": "red_wizards",
+    "name": "Red Wizards of Thay",
+    "aliases": ["Red Wizards", "Thay"],
+    "motto": "Makten åt den som tar den",
+    "tagline": "Socialdarwinistisk magiker-makt från öster",
+    "symbol": "🧙",
+    "status": "hostile",
+    "desc": "En socialdarwinistisk organisation av magiker från landet Thay, långt österut – nordost om Sea of Fallen Stars. Där betyder makt och magi det enda som räknas, och den starkare krossar den svagare utan omsvep.\n\nEn ny elak ledare har tagit makten över landet och kaos har skapat flyktingströmmar. Vissa stannar och dör, andra flyr. Red Wizards är ofta tatuerade över hela ansiktet och skadade på olika sätt – deras eget system kräver fysiska bevis på de prövningar de genomgått. De är kända för sina djuprödmantlar.\n\nDet är ovanligt att se dem utanför Thays gränser – och ännu mer ovanligt att en skulle samarbeta med Cult of the Dragon. I session 19 identifierades minst en Red Wizard som rese-följeslagare till Frulam Mondath i karavanen mot Waterdeep. Vad han vill är fortfarande dold.",
+    "npcs": ["Mannen i röd mantel"],
+    "places": [],
+    "events": [
+      {
+        "session": 19,
+        "title": "Red Wizard i karavanen",
+        "text": "Cedric identifierade mantelns färg och snitt – Red Wizards of Thay. En av dem reser med Cult of the Dragon-karavanen till Waterdeep i egen fin resevagn. Varför en Red Wizard samarbetar med drakkulten är den största nya mysteriet. Vad vill Thay här?"
+      }
+    ]
+  },
+  {
     "id": "cult_of_the_dragon",
     "name": "Cult of the Dragon",
     "aliases": ["Drakkulten", "CotD"],
@@ -144,6 +163,21 @@
         "session": 18,
         "title": "Mannen i röd mantel",
         "text": "På vägen efter Daggerford steg en okänd man i djupröd mantel ut ur Frulam Mondaths vagn och pratade lågmält med henne. Första tecknet på att någon högre upp i hierarkin reser dolt i karavanen. Rezmir? Edrick? Modern?"
+      },
+      {
+        "session": 19,
+        "title": "Red Wizard-samarbete bekräftat",
+        "text": "Mannen i röd mantel identifierades som Red Wizard of Thay. Cult of the Dragon samarbetar nu bevisligen med Thay. En Red Wizard reser hela vägen till Waterdeep med karavanen i egen fin resevagn – för vad eller för vem är fortfarande oklart."
+      },
+      {
+        "session": 19,
+        "title": "Oswald mördad – Jamna avslöjad",
+        "text": "Jamna – som smugit sig in i karavanen i Daggerford – mördade kultens vakt Oswald och inspekterade lastluckan på kult-vagnen innan hon flydde. Fotspåren lades upp som en ram för Gråkapporna. Mannen i röd mantel grep in och lugnade Cornwinds raseri innan det eskalerade. Lasten var orörd."
+      },
+      {
+        "session": 19,
+        "title": "Lasten framme i Waterdeep",
+        "text": "Karavanen nådde Caravan Court i Waterdeep. Kultens vagnar sammanstrålade vid ett specifikt magasin där all last slussades in. Destinationen är nu bekräftad – men vad som ska hända med guldet och vem som väntar innanför magasinet är nästa gåta."
       }
     ]
   },

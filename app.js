@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.18.0';
+const APP_VERSION='2.19.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -224,6 +224,73 @@ c.fillStyle='#e0c050';c.fillRect(7,13,1,1);
 c.fillStyle='#2a1808';c.fillRect(5,15,2,1);c.fillRect(9,15,2,1);
 // Blå sandaler (små toner)
 c.fillStyle='#3a5088';c.fillRect(5,15,1,1);c.fillRect(10,15,1,1);
+},
+jamna:()=>{
+// Jamna - gnome med svart fjädermössa, pointy alviska öron, strömmande rödbrunt hår,
+// rutig röd-svart kragparti/pauldroner, böjd klinga synlig
+// Svart hatt med brätte
+c.fillStyle='#1a1a1a';
+c.fillRect(3,1,10,2); // hatt-brätte (bredare)
+c.fillRect(5,0,6,1); // hatt-krona topp
+// Hatt-band gyllene
+c.fillStyle='#c0a030';c.fillRect(4,2,8,1);
+c.fillStyle='#e0c050';c.fillRect(6,2,1,1); // juvel/spänne
+// Fjäder (vit) stickande ut åt höger på hatten
+c.fillStyle='#e8e8e0';c.fillRect(11,0,1,1);c.fillRect(12,0,2,1);c.fillRect(13,1,2,1);
+c.fillStyle='#b0b0b0';c.fillRect(14,1,1,1); // skugga
+// Strömmande rödbrunt hår bakom hatten
+c.fillStyle='#8a4820';
+c.fillRect(2,3,2,5); // vänster hår-ström
+c.fillRect(12,3,2,5); // höger hår-ström
+c.fillStyle='#6a3818';
+c.fillRect(1,4,1,3); // yttre skugga
+c.fillRect(14,4,1,3);
+c.fillStyle='#a05828';
+c.fillRect(2,3,1,2);c.fillRect(13,4,1,1); // highlights
+// Spetsiga alviska öron (sticker ut genom håret)
+c.fillStyle='#f0d0b0';
+c.fillRect(3,5,1,2);c.fillRect(12,5,1,2); // öron
+c.fillStyle='#d8b088';c.fillRect(3,6,1,1);c.fillRect(12,6,1,1); // skugga
+// Face - ljus hud
+c.fillStyle='#f0d0b0';c.fillRect(4,4,8,4);
+c.fillStyle='#d8b088';c.fillRect(4,7,8,1); // haka-skugga
+// Pigga mörka ögon med liv
+c.fillStyle='#2a1a08';c.fillRect(5,5,1,1);c.fillRect(10,5,1,1);
+c.fillStyle='#4a2810';c.fillRect(5,5,1,1); // brun ton
+c.fillStyle='#000';c.fillRect(10,5,1,1);
+// Fräknar/kinder
+c.fillStyle='#c48060';c.fillRect(4,6,1,1);c.fillRect(11,6,1,1);
+// Lätt skälmaktigt leende med liten tand
+c.fillStyle='#8a3030';c.fillRect(6,7,3,1);
+c.fillStyle='#e8d8c0';c.fillRect(7,7,1,1); // tand
+// Rutigt röd-svart kragparti/pauldroner (axlar)
+c.fillStyle='#8a2010';c.fillRect(2,8,3,2); // vänster röd pauldron
+c.fillStyle='#1a1a1a';c.fillRect(2,8,1,1);c.fillRect(4,9,1,1); // svarta striper
+c.fillStyle='#a02818';c.fillRect(3,8,1,1); // highlight
+c.fillStyle='#8a2010';c.fillRect(11,8,3,2); // höger röd pauldron
+c.fillStyle='#1a1a1a';c.fillRect(13,8,1,1);c.fillRect(11,9,1,1); // svarta striper
+c.fillStyle='#a02818';c.fillRect(12,8,1,1); // highlight
+// Centrumkrage mörk
+c.fillStyle='#2a1808';c.fillRect(5,8,6,1);
+// Mörk läder-rustning
+c.fillStyle='#3a2010';c.fillRect(4,9,8,4);
+c.fillStyle='#5a3020';c.fillRect(5,10,6,1); // highlight
+// Dubbla gyllene bältesspännen (dess signatur)
+c.fillStyle='#c0a030';c.fillRect(5,11,2,1);c.fillRect(9,11,2,1);
+c.fillStyle='#e0c050';c.fillRect(5,11,1,1);c.fillRect(9,11,1,1);
+// Mörkt bälte under
+c.fillStyle='#1a0a08';c.fillRect(4,12,8,1);
+// Byxor mörka
+c.fillStyle='#2a1808';c.fillRect(4,13,8,1);
+// Höga bruna stövlar med mönster
+c.fillStyle='#6a3818';c.fillRect(4,14,3,2);c.fillRect(9,14,3,2);
+c.fillStyle='#4a2010';c.fillRect(4,15,3,1);c.fillRect(9,15,3,1); // skugga
+c.fillStyle='#8a5028';c.fillRect(5,14,1,1);c.fillRect(10,14,1,1); // highlight-mönster
+// Böjd klinga (scimitar) synlig över höger axel
+c.fillStyle='#5a3a1a';c.fillRect(15,3,1,1); // handtag-ände
+c.fillStyle='#8a8aa0';
+c.fillRect(14,4,1,1);c.fillRect(15,5,1,1);c.fillRect(15,6,1,1); // blå metalkurva
+c.fillStyle='#b0b0c0';c.fillRect(14,4,1,1); // highlight
 },
 frulam:()=>{
 // Frulam Mondath - svart kort hår, lila/guld-prästdräkt med drakögssigill, stav

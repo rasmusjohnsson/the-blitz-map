@@ -795,7 +795,7 @@
     "events": [
       {
         "title": "Ut ur träskmarkerna",
-        "recap": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig. Landskapet blev tätare – byar, hus, åkerlandskap. Vid Bowshot stannade de för att proviantera och vila hästarna. Sword Mountains skymtade i fjärran, Phandalin låg bortom. Till slut dök Delimbyr-floden upp och Sven pekade mot stadens taklinje: Daggerford.",
+        "recap": "Karavanen lämnade myconid-skogen och träskmarkerna bakom sig. Landskapet blev tätare – byar, hus, åkerlandskap. Vid Bowshot stannade de för att proviantera och vila hästarna. Mt Illefarn skymtade i fjärran. Till slut dök Delimbyr-floden upp och Sven pekade mot stadens taklinje: Daggerford.",
         "places": ["daggerford"],
         "npcs": ["Sven the Hoper"]
       },
@@ -834,6 +834,62 @@
         "recap": "Avresa från Daggerford i god stämning. Stenbelagd väg genom ljus bokskog med kustutsikt på vänstra sidan. Sven berättade för Cedric en lång historia om en tre kilos abborre och fingret han förlorade till linan. När karavanen stannade första etappen efter Daggerford dök en smal, rakryggad man upp – ut ur Frulams vagn. Djupröd mantel, uppfälld huva, ansikte dolt. Han pratade lågmält med Frulam och de rörde sig sedan bort tillsammans. Sessionen avslutades där.",
         "places": ["daggerford"],
         "npcs": ["Frulam Mondath", "Mannen i röd mantel"]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "label": "SESSION 19",
+    "title": "Mordet i dimman och ankomsten till Waterdeep",
+    "date": "2026-10-26",
+    "events": [
+      {
+        "title": "Red Wizard-identiteten",
+        "recap": "Cedric kände igen den djupröda manteln direkt – Red Wizards of Thay. En socialdarwinistisk magiker-organisation långt österut nordost om Sea of Fallen Stars. En ny elak ledare har tagit makten där, flyktingar strömmar ut. Att en Red Wizard reser med Cult of the Dragon-karavanen är anmärkningsvärt. Hela gruppen fick ny information att gnugga på.",
+        "places": ["daggerford"],
+        "npcs": ["Mannen i röd mantel"]
+      },
+      {
+        "title": "Täljandet och tystnaden",
+        "recap": "Gruppen diskuterade om de kunde snoka på Frulam och Red Wizard-mannen men beslutade att hålla sig på sin kant – deras avtal med Frulam innebär diskretion. Cornwind satt och täljde passivt-aggressivt på en träpinne medan han stirrade på Haldan. 'Jag kan inte gå nära,' sade Haldan. 'Jag tror han känner igen mig.' Gruppen tvekade också att skicka Jamna som avled – hon hade motiv att söka sig till kulten själv.",
+        "places": ["daggerford"],
+        "npcs": ["Cornwind", "Jamna"]
+      },
+      {
+        "title": "Dimman och mordet",
+        "recap": "En dimbank drev in från kusten. Dimmig, kall natt. Gruppen vaknade av skrik: 'Han är död!' En av kultens vakter – Oswald – låg mördad vid sin vagn med två djupa stickhål i bröstkorgen. Mara (kultisten som skulle avlösa honom) hade hittat honom. Lastluckan på vagnen var uppbruten men lasten orörd – någon hade inspekterat innehållet.",
+        "places": ["daggerford"],
+        "npcs": ["Mannen i röd mantel"]
+      },
+      {
+        "title": "Speak with Dead",
+        "recap": "Cedric föreslog att 'lyssna på jorden' – Cornwind skrattade åt det som skitsnack. Oweyn tog istället fram ett frö, placerade det i Oswalds hand och kastade Speak with Dead. Fröet pulserade och svällde för varje fråga. Oswald var en före detta gårdsarbetare (valkarna på händerna). Hans sista intryck: 'Dimma, mörker. Strid, mörker, dimma.' Kände inte igen gärningsmannen, visste inte om det var en människa. Fröet blommade till en vit blomma efter sista frågan.",
+        "places": ["daggerford"],
+        "npcs": []
+      },
+      {
+        "title": "Spåren till Tiny Hut",
+        "recap": "Cedric trackade med advantage – mindre fotspår än de övriga vagnarna. Ledde rakt mot gruppens Tiny Hut. Cornwind sprang fram i raseri: 'Jag visste det, fan!' Han var övertygad att Haldan låg bakom – inte efter bevis utan efter en förevändning. Red Wizard-mannen klev då fram, lade en hand på Cornwinds axel och sade lugnt: 'Det är ingen mening att du skapar en sån scen för något sånt här trivialt.' Cornwind lydde. Mara skickades också bort med en blick.",
+        "places": ["daggerford"],
+        "npcs": ["Cornwind", "Mannen i röd mantel"]
+      },
+      {
+        "title": "Jamna avslöjad – och lämnad",
+        "recap": "Spåren fortsatte in i skogen, ca en timme gamla. Gruppen insåg att det måste vara Jamna – små fotspår, hon hade kniv, och hon hade motiv (vagnen var inbruten, Folkets vilja intresserar henne). Theron pratade med Sven om henne: 'Mer vilsen själ än ondskefull.' Cedric och Theron gick in i Frulams tält och erbjöd att jaga mördaren. Frulam: 'Det är ert val – bara lasten når Waterdeep. Bli inte för nyfikna i våra angelägenheter.' Gruppen beslöt att låta Jamna löpa – ingen tid, inget rätt vapen att tracka med.",
+        "places": ["daggerford"],
+        "npcs": ["Jamna", "Frulam Mondath", "Sven the Hoper"]
+      },
+      {
+        "title": "De sista dagarna",
+        "recap": "En tyst balans mellan Gråkapporna och kulten de sista 3-4 dagarna. Alla höll sig på avstånd från varandra. Mount Waterdeep syntes så småningom – klippan reste sig mot havet. Höga stadsmurar, hamn full av fartyg. Söderporten öppnades.",
+        "places": ["waterdeep"],
+        "npcs": []
+      },
+      {
+        "title": "Caravan Court",
+        "recap": "In genom porten och upp till Caravan Court – kuldyrstensbelägen gårdsplan omgiven av magasin. Sven parkerade vid ett magasin, lossade porslinsvarorna med gruppens hjälp och betalade Gråkapporna fullt för eskort-uppdraget med en välfylld pengarom. 'Tack för resan och slitet.' Kultens vagnar samlades vid ett annat magasin – all last slussades in dit. Vad som väntar innanför är nästa fråga.",
+        "places": ["caravan_court"],
+        "npcs": ["Sven the Hoper"]
       }
     ]
   }

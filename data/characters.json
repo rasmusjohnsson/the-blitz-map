@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "På avstånd från Cornwind",
+        "text": "Jag höll avstånd till Cornwind hela sista etappen. Han satt och täljde på en träpinne och stirrade på mig med blicken av en som pusslar bakåt. Protesen gav mig bort men inte helt – han vet inte vem jag är ännu. När Oswald mördades och spåren ledde till vår Tiny Hut var det nästan skönt att han inte hade bevis att slå till med – bara anklagelser. Red Wizard-mannen fick lugna honom. Hade han inte varit där skulle jag behövt dra svärdet. Jamna avslöjad som mördare – jag borde ha läst henne bättre vid pokerbordet. Mina Monster Slayer-sinnen är tränade på drakar, inte på skurkar. Vi lät henne löpa. Hon kommer tillbaka. Fem dagar senare: Waterdeep.",
+        "session": 19
+      },
+      {
         "label": "Handen som gav mig bort",
         "text": "I Daggerford gick vi till värdshuset. Jag höll en öl i handen, lät de andra spela poker. När Cedric kastade Zone of Truth över bordet steg jag in och sköt frågor runt borden. Lätta till en början – 'kallingar' för att testa deras reaktion. Sedan Edrick Vane – och Jamna reagerade på hans namn, märkbart. Cornwind skrattade bort det. Han vet mer än han vill säga. När rundan var över skakade han hand med mig. Protesen – han kände igen den. 'Nere i Hästskoplatån-lägret, en jävla trevlig kille i mitt tält hade en sån hand.' Det var mig han pratade om. Han ser mig inte under masken. Än. Jag drar kappan tätare och håller avstånd nu.",
         "session": 18
@@ -143,6 +148,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Tyst gång till Waterdeep",
+        "text": "Pratade med Sven om Jamna. 'Vilsen själ', sa han. Jag tror att han tror det. Vi beslöt att inte jaga henne – inte för att hon förtjänar att gå fri, utan för att vårt uppdrag är större än ett mord nu. Watcher's Eye läste Cornwind som bomb redo att smälla. Red Wizard-mannen stängde fuseln med en hand på axeln – imponerande kall auktoritet. Vi gick in i Frulams tält med Cedric för att hålla fred. Hon lät oss välja men påminde: 'Bli inte för nyfikna.' De sista dagarna gick vi i tyst balans. När Mount Waterdeep steg ur havshorisonten tog jag ett djupt andetag. Bahamuts ljus bakom molnen. Vi är framme – och nu börjar nästa.",
+        "session": 19
+      },
+      {
         "label": "Pokerleende vid Zone of Truth",
         "text": "I Daggerfords värdshus satte jag mig vid pokerbordet. Jamna dök upp – okänd kvinna, enkel rustning, lugnt sinne. Watcher's Eye läser henne som förbehållsamt. Cornwind drack sig glad. När Cedric kastade Zone of Truth över bordet accepterade jag villkoret – jag har inget att dölja från detta bord. Jag förlorade rundan men vann observationer. Jamna reagerade när Edricks namn nämndes – Watcher's Eye var tydligt. När rundan var över skakade Cornwind min hand utan tecken. Men när han tog Haldans hand stelnade han. Protesen. Han minns den från Hästskoplatån. Han vet inte vem Haldan är ännu – men vi måste räkna med att han kan koppla snart. Order of the Gauntlet säger: rättvisa genom handling. Vi tar steget försiktigt.",
         "session": 18
@@ -266,6 +276,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Nävar i reserven",
+        "text": "Cornwind täljde pinnar och stirrade på Haldan hela sista etappen. När mordet kom och han sprang fram i raseri var jag beredd att bryta upp bråket med egna händer. Men Red Wizard-mannen hann först. Jag drog ändå ett steg framåt – tänkte: 'ta det, kom hit, jag står mellan dig och Haldan.' Han sänkte huvudet. Red Wizards skrämmer honom tydligen. Något att veta för framtiden. Jamna löpt. Runorna sjunger varning – hon kommer tillbaka. De sista dagarna satt vi tysta runt eldarna. Jag använde tiden för att vässa klingor och tänka. När Waterdeep kom var det som en annan värld. Jag har aldrig sett så många människor på en gång. Caravan Court. Pengarom från Sven. Vi är framme. Nästa fas.",
+        "session": 19
+      },
+      {
         "label": "Daggerfords firande",
         "text": "Daggerford var ett andningshål. Jag drack öl, lät axlarna slappna ner för första gången på länge. Vid pokerbordet gav jag Cornwind beröm när han vann en runda – 'du är för bra på bluff'. Han vårlade. Mannen får inte tillräckligt med beröm i sin organisation, det syntes direkt. Information. Jag höll min halvorksroll – legosoldat, grym, inte en tänkare. När Cedric kastade Zone of Truth lät jag Haldan ställa frågorna. Jag drack. När rundan slutade såg jag Cornwind stelna till över Haldans hand. Han kommer koppla. Vi måste röra oss försiktigt. Och sen – röda manteln ur Frulams vagn. Någon högre upp än henne reser dolt. Runorna säger: 'formen du väljer'. Idag valde jag beröm som vapen. Imorgon vet jag inte.",
         "session": 18
@@ -388,6 +403,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Speak with Dead och den vita blomman",
+        "text": "När vi hittade Oswald död föreslog Cedric att 'lyssna på jorden' – Cornwind skrattade. Jag förstod vad Cedric syftade på men valde min egen metod: Speak with Dead. Jag plockade fram ett frö ur min bältespung, placerade det i Oswalds kalla hand och mässade besvärjelsen. Fröet pulserade med varje fråga, svällde, började gro. Oswald var gårdsarbetare en gång – jag såg valkarna. Hans sista intryck: 'Dimma. Mörker. Strid, mörker, dimma.' Han kände inte igen gärningsmannen. Efter sista frågan spräckte fröet öppet och en vit blomma blommade ut i hans hand. 'Tack för dig. Resa väl.' Order of the Gauntlet svär att skydda de svaga. Oswald var en gårdsarbetare som hamnat i fel sällskap – han förtjänade avslut. När Cornwind rasade mot Haldan steg jag närmare för att backa Gothmog om det skulle brista. Red Wizard-mannen hann först. Vi lät Jamna löpa. Jag håller henne i mina böner.",
+        "session": 19
+      },
       {
         "label": "Söker Jamnas vapen",
         "text": "I Daggerfords värdshus satt jag med en öl och hade öga på de andra. Pokerspelet drog till sig uppmärksamhet men jag höll avstånd – 'vakten som inte dricker för mycket' är en bra legosoldatroll. När Jamna erbjöd sig följa med karavanen till Waterdeep insisterade jag på att söka igenom henne. Hon slog ut armarna – kortbåge på ryggen, kniv i stöveln. Jag tog shortbow och den synliga kniven. Order of the Gauntlet säger: stol tryckbart, lita försiktigt. Hon fick ändå följa med. Senare på vägen såg jag mannen i röd mantel stiga ur Frulams vagn. Smal, rakryggad, dolt ansikte. Jag drog svärdet en halv tum i skidan av instinkt. Vi är i mitten av något större än vi anat.",
@@ -516,6 +536,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Red Wizards och Caravan Court",
+        "text": "Jag identifierade manteln direkt när Haldan frågade: 'Red Wizards of Thay.' Jag berättade för gruppen vad jag kom ihåg om Thay – socialdarwinistisk magiker-makt, ny elak ledare, flyktingar som dör eller flyr. Ovanligt att se dem här utanför sitt område. Att en samarbetar med Cult of the Dragon är den intressantaste saken vi har sett på hela resan. Jag antecknade allt i Kunskapens Vagns anteckningsbok. När Oswald mördades föreslog jag Chauntea-ritualen 'lyssna på jorden' – Cornwind avfärdade. Oweyn tog istället fram Speak with Dead med ett frö, vackert utfört. Jag kastade Phantom Steed som alternativ för att jaga Jamna men vi beslöt att inte dela gruppen. Kunskapens Vagn fick dras av Phantom Steed-kraft som en test. Framme i Waterdeep: Mount Waterdeep, de höga murarna, Caravan Court. Jag känner staden från far Steves bokberättelser men ser den nu med egna ögon. Trade Ward är vi i. Det magasin som kulten slussar sin last till – där börjar nästa jakt.",
+        "session": 19
+      },
       {
         "label": "Flytande mord och Zone of Truth",
         "text": "Sven tryckte en 'flytande mord' i min hand – rökig stark sprit som smakade prickkorv när hettan släppt. Haldan kollade med Monster Slayer-sinne att den inte var förgiftad. Jag höll den i handen hela kvällen, drack små klunkar – nykter är lönsamt i den här karavanen. Vid pokerbordet övertalades jag att kasta Zone of Truth när insatserna höjdes – perfekt tillfälle, inget bättre forum. Jamna och Cornwind failade. Haldan drev frågorna; jag höll mitt poker-ansikte. När Edricks namn nämndes såg jag Jamnas mikrorörelse. Information. Sen upptäckten: Cornwind kände igen Haldans protes. 'En jävla trevlig kille i mitt tält nere i Hästskoplatån-lägret' – det var Haldan själv i session 6. Han vet inte än. När vi lämnade Daggerford nästa dag berättade Sven om sin tre kilos abborre i en timme – jag antecknade metodiken för framtiden. När karavanen stannade vid Frulams vagn såg jag honom: smal, rakryggad man i djupröd mantel. Jag kände magisk signatur från hans mantel. Kunskapens Vagn får ny forskningsnotis.",
