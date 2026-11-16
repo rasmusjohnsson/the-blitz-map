@@ -149,6 +149,26 @@
     "events": []
   },
   {
+    "id": "thor",
+    "name": "Thor Torssell",
+    "aliases": ["Thor", "Torssell"],
+    "status": "friendly",
+    "role": "Ung noble · mecenat med drömmar om ära",
+    "desc": "En ung, spenslig noble med långt glansigt brunt hår, dyr outfit, polerad breastplate och baskerhatt med röd boll ovanpå. Värjan sitter vid höften. Drömmer om 'ära och odödlighet' och vill ha en trofé – helst en levande hydra eller ett drakhuvud – att hänga över spiselkransen hemma. Anlitade Gråkapporna i Waterdeep: 500 guld i förskott, 1000 guld när han återvänder till Waterdeep med sin trofé. Återkom i egen hemsydd 'äventyrar-dräkt' med drak- och hydramönster och krona-mask – uppenbart en imitation av Gråkapporna.\n\nNaiv och lätt att imponera, men inte dum. Reser med sin häst Prinsess och ett tungt lastat bagage (tält med broderat TORCELL på ena sidan, kök, sovsäck). Blev djupt traumatiserad under trollnatten vid Sword Mountains men följer gruppen vidare.",
+    "events": [
+      {
+        "label": "Anlitad på torget",
+        "text": "Mötte Gråkapporna på ett litet torg i Waterdeep efter att tre råbarkade män skrattat åt honom och gått därifrån. Erbjöd 500 guld i förskott + 1000 guld vid återkomst med en trofé. Gruppen övertalade honom att sänka ambitionerna och de slog följe norrut under cover-story om att jaga en vit drake vid Phandalin.",
+        "session": 20
+      },
+      {
+        "label": "Trollnatten",
+        "text": "Satt i Gråkapporna-imitationen när trollen attackerade lägret vid södra foten av Sword Mountains. Gömde sig lipande i Tiny Hut medan Gråkapporna slog ner båda trollen. Fick ett avhugget trollhuvud av Gothmog som trofé – men ville ha något 'tuffare'. Blodet på hans sovsäck och det äckliga huvudet chockade honom djupt, men han är fortfarande på äventyr.",
+        "session": 20
+      }
+    ]
+  },
+  {
     "id": "jamna",
     "name": "Jamna",
     "status": "hostile",

@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Password Trace och Zephyr Strike",
+        "text": "Vi tog Thor Torssells uppdrag som cover – naiv ung noble som vill ha ett drakhuvud över spiselkransen. Perfekt förklädnad för att följa kult-konvojen norrut. 500 guld i förskott, 1000 vid trofé, lögn om vit drake vid Phandalin. Jag ledde hans häst Prinsess ut ur Waterdeep medan Cedric kastade Tiny Hut vid foten av Sword Mountains. På min vakt castade jag Password Trace på Gothmogs örhänge och viskade genom Therons ring medan han sov. När trollen cirklade lägret kastade jag en Light-sten och fick se dem: groteskt långa med trädgrens-armar och ruttna munnar. Zephyr Strike gav mig rörelse, pilarna fann mål. Theron brände med Searing Smite, Cedric med Fireball. Gothmog högg av ett huvud åt Thor. Vårt äventyrande cover höll första natten. Nu norrut mot där kulten går.",
+        "session": 20
+      },
+      {
         "label": "På avstånd från Cornwind",
         "text": "Jag höll avstånd till Cornwind hela sista etappen. Han satt och täljde på en träpinne och stirrade på mig med blicken av en som pusslar bakåt. Protesen gav mig bort men inte helt – han vet inte vem jag är ännu. När Oswald mördades och spåren ledde till vår Tiny Hut var det nästan skönt att han inte hade bevis att slå till med – bara anklagelser. Red Wizard-mannen fick lugna honom. Hade han inte varit där skulle jag behövt dra svärdet. Jamna avslöjad som mördare – jag borde ha läst henne bättre vid pokerbordet. Mina Monster Slayer-sinnen är tränade på drakar, inte på skurkar. Vi lät henne löpa. Hon kommer tillbaka. Fem dagar senare: Waterdeep.",
         "session": 19
@@ -148,6 +153,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Searing Smite och teleskopsvärdet",
+        "text": "Thor Torssell är en naiv ung noble – men hans guld räcker till vår vidare resa och lögnen om Phandalin ger oss cover. Han sov i vår Tiny Hut medan jag tog min första riktiga vila på länge. När trollen attackerade aktiverade jag teleskopsvärdet och brände med Searing Smite på second level – elden hade de svaghet mot enligt Cedrics Hunter Sense. Watcher's Eye läste deras rörelser. Ett försökte ta Prinsess men släppte henne. Båda föll. Gothmog högg av ett huvud åt Thor. Han lipade i chock när han förstod vad han hade bett om. Bahamut lär: den som drömmer om strid måste först förstå dess pris. Thor förstår det nu. Vi fortsätter norrut i morgon.",
+        "session": 20
+      },
+      {
         "label": "Tyst gång till Waterdeep",
         "text": "Pratade med Sven om Jamna. 'Vilsen själ', sa han. Jag tror att han tror det. Vi beslöt att inte jaga henne – inte för att hon förtjänar att gå fri, utan för att vårt uppdrag är större än ett mord nu. Watcher's Eye läste Cornwind som bomb redo att smälla. Red Wizard-mannen stängde fuseln med en hand på axeln – imponerande kall auktoritet. Vi gick in i Frulams tält med Cedric för att hålla fred. Hon lät oss välja men påminde: 'Bli inte för nyfikna.' De sista dagarna gick vi i tyst balans. När Mount Waterdeep steg ur havshorisonten tog jag ett djupt andetag. Bahamuts ljus bakom molnen. Vi är framme – och nu börjar nästa.",
         "session": 19
@@ -276,6 +286,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Polearm Master och trofé-handeln",
+        "text": "Thor Torssell. Ung noble, snorig bortskämd, men med guld. Han vill ha en trofé att hänga över spiselkransen. Fan, jag kan ge honom troféer. Vi drog norrut samma kväll. När trollen kom cirkulerande på min vakt kände jag doften av ruttet kött och visste – det är bara en typ av varelse som luktar så. Haldan castade Password Trace genom Therons ring, Cedric kom med Mind Spike och Hunter Sense som avslöjade deras svaghet. Polearm Master + Sentinel låste dem i min reach. Cedric gav mig Haste i andra vågen – dubbel speed, dubbel skada. En försökte lyfta Prinsess men släppte. Jag högg av det ena huvudet som trofé åt Thor. Runorna sjöng när huvudet föll. Han lipade. Men han har sin trofé nu. Och vi har vår cover-story. Nästa: Phandalin och den vita draken som inte finns.",
+        "session": 20
+      },
+      {
         "label": "Nävar i reserven",
         "text": "Cornwind täljde pinnar och stirrade på Haldan hela sista etappen. När mordet kom och han sprang fram i raseri var jag beredd att bryta upp bråket med egna händer. Men Red Wizard-mannen hann först. Jag drog ändå ett steg framåt – tänkte: 'ta det, kom hit, jag står mellan dig och Haldan.' Han sänkte huvudet. Red Wizards skrämmer honom tydligen. Något att veta för framtiden. Jamna löpt. Runorna sjunger varning – hon kommer tillbaka. De sista dagarna satt vi tysta runt eldarna. Jag använde tiden för att vässa klingor och tänka. När Waterdeep kom var det som en annan värld. Jag har aldrig sett så många människor på en gång. Caravan Court. Pengarom från Sven. Vi är framme. Nästa fas.",
         "session": 19
@@ -403,6 +418,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Vårda Thor som ett barn",
+        "text": "Thor Torssell är ung och naiv men hans guld räcker till våra behov. Jag förklarade för honom att äventyr inte är lek, att det är en död-nära sak. Han förstod inte riktigt då. När trollen attackerade och han satt lipande inne i Tiny Hut vid sidan av mig förstod han. Jag höll handen förbi hans mun när han ville skrika, viskade: 'ta det lugnt, vi är säkra här inne.' Han stirrade med skräck-sprängda ögon. Order of the Gauntlet svär att skydda de svaga – och här satt den svagaste jag sett länge, en noble som drömt om strid utan att veta vad det är. När Gothmog räckte fram trollhuvudet och han blev illamående försökte jag trösta: 'Ta det lugnt. Du ville ha ett äventyr, nu måste du också lära dig att sova för att orka fortsätta.' Han lyssnade. Han sov, till slut. Vi fortsätter norrut. Kultens arbetslags-konvoj går framför oss. Vi är nära.",
+        "session": 20
+      },
       {
         "label": "Speak with Dead och den vita blomman",
         "text": "När vi hittade Oswald död föreslog Cedric att 'lyssna på jorden' – Cornwind skrattade. Jag förstod vad Cedric syftade på men valde min egen metod: Speak with Dead. Jag plockade fram ett frö ur min bältespung, placerade det i Oswalds kalla hand och mässade besvärjelsen. Fröet pulserade med varje fråga, svällde, började gro. Oswald var gårdsarbetare en gång – jag såg valkarna. Hans sista intryck: 'Dimma. Mörker. Strid, mörker, dimma.' Han kände inte igen gärningsmannen. Efter sista frågan spräckte fröet öppet och en vit blomma blommade ut i hans hand. 'Tack för dig. Resa väl.' Order of the Gauntlet svär att skydda de svaga. Oswald var en gårdsarbetare som hamnat i fel sällskap – han förtjänade avslut. När Cornwind rasade mot Haldan steg jag närmare för att backa Gothmog om det skulle brista. Red Wizard-mannen hann först. Vi lät Jamna löpa. Jag håller henne i mina böner.",
@@ -536,6 +556,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Tiny Hut, Fireball och Mind Spike",
+        "text": "Thor Torssell är en gåva från ovan. Hans mecenat-guld, hans äventyrs-fantasier och hans Phandalin-cover ger oss precis det vi behöver. Jag kastade Tiny Hut vid vårt läger och han var lamslagen av imponation – en trevlig känsla. När trollen cirklade i mörkret kastade jag Mind Spike på den jag kunde hitta position på – 4 på hans saving throw tack vare min Portent-dy – och såg plötsligt hans exakta koordinater. Hunter Sense avslöjade regeneration och svaghet för eld och syra, vilket betydde Fireball. Jag tvekade inte: 26 skada på den ena, 13 på den andre, sen Haste på Gothmog som är en halvorksvant med polearm. Vi vann. Gothmog gav Thor en trofé som chockade honom djupt. Jag noterade allt i Kunskapens Vagn. Troll vid Sword Mountains, första förekomst av Shrek-typ varelser så här långt norrut. Kunskapens Vagn får nya anteckningar. Nästa fas: följa kulten mot Phandalin.",
+        "session": 20
+      },
       {
         "label": "Red Wizards och Caravan Court",
         "text": "Jag identifierade manteln direkt när Haldan frågade: 'Red Wizards of Thay.' Jag berättade för gruppen vad jag kom ihåg om Thay – socialdarwinistisk magiker-makt, ny elak ledare, flyktingar som dör eller flyr. Ovanligt att se dem här utanför sitt område. Att en samarbetar med Cult of the Dragon är den intressantaste saken vi har sett på hela resan. Jag antecknade allt i Kunskapens Vagns anteckningsbok. När Oswald mördades föreslog jag Chauntea-ritualen 'lyssna på jorden' – Cornwind avfärdade. Oweyn tog istället fram Speak with Dead med ett frö, vackert utfört. Jag kastade Phantom Steed som alternativ för att jaga Jamna men vi beslöt att inte dela gruppen. Kunskapens Vagn fick dras av Phantom Steed-kraft som en test. Framme i Waterdeep: Mount Waterdeep, de höga murarna, Caravan Court. Jag känner staden från far Steves bokberättelser men ser den nu med egna ögon. Trade Ward är vi i. Det magasin som kulten slussar sin last till – där börjar nästa jakt.",

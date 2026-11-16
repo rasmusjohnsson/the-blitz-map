@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.19.0';
+const APP_VERSION='2.20.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -224,6 +224,53 @@ c.fillStyle='#e0c050';c.fillRect(7,13,1,1);
 c.fillStyle='#2a1808';c.fillRect(5,15,2,1);c.fillRect(9,15,2,1);
 // Blå sandaler (små toner)
 c.fillStyle='#3a5088';c.fillRect(5,15,1,1);c.fillRect(10,15,1,1);
+},
+thor:()=>{
+// Thor Torssell - ung noble med basker-hatt med röd boll ovanpå, långt glansigt brunt hår, polerad breastplate, värja vid sidan
+// Röd boll ovanpå hatten
+c.fillStyle='#b02020';c.fillRect(7,0,2,1);
+c.fillStyle='#d03030';c.fillRect(7,0,1,1);
+// Basker-hatt - mörk
+c.fillStyle='#1a1a1a';c.fillRect(4,1,8,2);
+c.fillRect(3,2,10,1); // brätte
+c.fillStyle='#2a2a2a';c.fillRect(5,1,3,1); // highlight
+// Långt glansigt brunt hår
+c.fillStyle='#4a2810';c.fillRect(3,3,10,4);
+c.fillRect(2,4,1,3);c.fillRect(13,4,1,3); // sidor
+c.fillStyle='#6a3818';c.fillRect(4,3,2,1);c.fillRect(9,3,2,1); // highlights
+c.fillStyle='#8a4828';c.fillRect(5,3,1,1);c.fillRect(10,4,1,1); // glans
+// Face - ljus hud, spenslig
+c.fillStyle='#e8c89a';c.fillRect(5,4,6,4);
+c.fillStyle='#c89878';c.fillRect(5,7,6,1); // haka-skugga
+// Alerta blåa ögon
+c.fillStyle='#3a6a8a';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+c.fillStyle='#000';c.fillRect(6,5,1,1);
+c.fillStyle='#5a8aaa';c.fillRect(9,5,1,1);
+// Lätt leende
+c.fillStyle='#8a4040';c.fillRect(7,7,2,1);
+// Krage med guld
+c.fillStyle='#8a6830';c.fillRect(4,8,8,1);
+c.fillStyle='#c0a030';c.fillRect(5,8,6,1);
+// Polerad breastplate
+c.fillStyle='#8a8a9a';c.fillRect(3,9,10,4);
+c.fillStyle='#a0a0b0';c.fillRect(4,9,8,1);
+c.fillStyle='#6a6a7a';c.fillRect(3,12,10,1);
+// Guldekoration mittemot
+c.fillStyle='#c0a030';c.fillRect(7,10,2,2);
+c.fillStyle='#e0c050';c.fillRect(7,10,1,1);
+// Axel-pauldroner med guldkant
+c.fillStyle='#6a6a7a';c.fillRect(2,9,2,2);c.fillRect(12,9,2,2);
+c.fillStyle='#c0a030';c.fillRect(2,11,2,1);c.fillRect(12,11,2,1);
+// Byxor
+c.fillStyle='#4a3020';c.fillRect(4,13,8,2);
+c.fillStyle='#6a4830';c.fillRect(5,13,6,1);
+// Spetsiga stövlar med guldspänne
+c.fillStyle='#2a1808';c.fillRect(4,15,3,1);c.fillRect(9,15,3,1);
+c.fillStyle='#c0a030';c.fillRect(6,15,1,1);c.fillRect(11,15,1,1);
+// Värjans handtag vid höger höft
+c.fillStyle='#c0a030';c.fillRect(14,11,1,1);
+c.fillStyle='#5a3a1a';c.fillRect(14,12,1,1);
+c.fillStyle='#8a8aa0';c.fillRect(14,13,1,3);
 },
 jamna:()=>{
 // Jamna - gnome med svart fjädermössa, pointy alviska öron, strömmande rödbrunt hår,

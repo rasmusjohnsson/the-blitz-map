@@ -892,5 +892,67 @@
         "npcs": ["Sven the Hoper"]
       }
     ]
+  },
+  {
+    "id": 20,
+    "label": "SESSION 20",
+    "title": "Thor Torssell och trollnatten",
+    "date": "2026-11-16",
+    "events": [
+      {
+        "title": "Kultens nya förklädnad",
+        "recap": "Gråkapporna observerade hur kulten lastade om vagnarna vid Caravan Court – täckte lasten med presenningar och lade spadar och hackor ovanpå så det skulle se ut som ett arbetslag på väg att bygga väg norrut. En smart förklädnad som gruppen också övervägde att adoptera. Men eftersom både Frulam och Cornwind redan känner igen dem som Gråkappor hade ett byte av identitet väckt mer frågor än det hade löst. Gråkapporna förblir Gråkapporna.",
+        "places": ["caravan_court"],
+        "npcs": []
+      },
+      {
+        "title": "Thor Torssell på torget",
+        "recap": "På ett litet torg i Waterdeep såg gruppen hur tre råbarkade män skrattade åt en ung, spenslig noble med långt glansigt brunt hår, dyr outfit och en basker-hatt med röd boll ovanpå. De gick därifrån och lämnade honom där han sparkade i gruset. Gråkapporna gick fram och presenterade sig som 'professionella legosoldater'. Mannen hette Thor Torssell. Han drömde om ära och odödlighet och var villig att betala rejält för att få bevisa sig i strid.",
+        "places": ["trade_ward"],
+        "npcs": ["Thor Torssell"]
+      },
+      {
+        "title": "500 i förskott, 1000 vid trofé",
+        "recap": "Thor ville ha en trofé att hänga över spiselkransen hemma – helst en levande hydra eller ett drakhuvud. Erbjöd 500 guld i förskott och 1000 när de återvänder till Waterdeep med trofén. Gruppen övertalade honom att sänka ambitionerna och satte en cover-story: de ska norrut till Phandalin för att jaga en vit drake som påstås terrorisera byn. Perfekt förklädnad för att följa kult-konvojen samtidigt.",
+        "places": ["trade_ward"],
+        "npcs": ["Thor Torssell"]
+      },
+      {
+        "title": "Äventyrardräkten",
+        "recap": "Thor försvann och återkom i hemsydd grå klädnad med silvertrådar, dragon- och hydramönster över högra axeln och en mask formad som en krona – en uppenbart överdriven imitation av Gråkapporna. Han kom också med sin häst Prinsess, lastad tung med sovsäck, tält (broderat TORCELL på ena sidan), kök och proviant. Konvojen förväntades dra redan samma kväll. Gråkapporna satte igång norrut.",
+        "places": ["trade_ward"],
+        "npcs": ["Thor Torssell"]
+      },
+      {
+        "title": "The High Road norrut",
+        "recap": "Gruppen följde The High Road längs kusten norr om Waterdeep – förbi palats-liknande rikehem i norra distriktet och sedan ut på landsvägen. Mot eftermiddag skymtade de södra foten av Sword Mountains. Slog läger lite in från vägen med skydd från havsbrisen. Cedric kastade Tiny Hut. Thor fick sova inne i hyttan – säkrare än hans eget broderade tält.",
+        "places": ["north_ward"],
+        "npcs": ["Thor Torssell"]
+      },
+      {
+        "title": "Något cirklar lägret",
+        "recap": "Gothmog på första vakten hörde tunga, långsamma steg som rörde sig i halvcirkel runt lägret. Luktade ruttet kött, blod och träsk. Haldan castade Password Trace och viskade via Therons örhänge (Theron sov men ringen fungerade som transceiver). Gothmog scoutade med sin dubbla darkvision (120 fot via runa). Haldan kastade en Light-sten i mörkret – två troll materialiserades: groteskt långa, benig kropp, trädgrensarmar, salivande munnar. En av dem drog sig tillbaka och verkade försöka lura gruppen att tro att han var borta.",
+        "places": ["north_ward"],
+        "npcs": []
+      },
+      {
+        "title": "Trollnatten",
+        "recap": "De två trollen anföll lägret från olika håll. Gothmog låste med Polearm Master + Sentinel. Haldan kastade Zephyr Strike och sköt pilar från hyttkanten. Theron aktiverade sitt teleskopsvärd och brände med Searing Smite (second level). Cedric hjälpte med Mind Spike (hittade position), Hunter Sense (avslöjade regeneration och svaghet för eld och syra), Fireball (26/13 skada) och Haste på Gothmog. En troll försökte lyfta Prinsess men släppte henne. Båda trollen föll i eld och stål. Gothmog högg av ena huvudet som trofé till Thor.",
+        "places": ["north_ward"],
+        "npcs": []
+      },
+      {
+        "title": "Trofén och det broderade sovsäcken",
+        "recap": "Thor satt gråtande i Tiny Hut, djupt chockad. När Gothmog räckte fram det äckliga trollhuvudet blev han ännu mer upprörd – han ville ha en 'tuff' trofé, inte något grotesk. Blod på hans sovsäck. Gruppen tröstade honom med vuxenord: 'Du ville ha ett äventyr, nu är du mitt i ett. Och du måste lära dig att sova för att orka fortsätta.' Natten förflöt utan fler incidenter. Hästarna Prinsess och Lumen återställdes lugna.",
+        "places": ["north_ward"],
+        "npcs": ["Thor Torssell"]
+      },
+      {
+        "title": "Havsdimman och kult-konvojen",
+        "recap": "Morgonen kom med en havsdimma som drev in över landet. Gruppen bröt upp och återvände till kustvägen. En bit framme skymtade de Folkets viljas 'arbetslags'-konvoj med sina spadar och hackor, också på väg norrut. Thor förklarade för Prinsess att det är inget farligt – mer till hästen som till sig själv. Sessionen slutade med gruppen på väg vidare mot Phandalin-cover-storyn och kultens verkliga destination.",
+        "places": ["north_ward"],
+        "npcs": ["Thor Torssell"]
+      }
+    ]
   }
 ]
