@@ -16,6 +16,11 @@
     "backstory": "Född i Greenest men sökte sig tidigt till skogarna. Tränad av Emerald Enclave att jaga monster. Förlorade sitt team i en strid mot en drake – enda överlevaren. Räddade baby-Theron från ruinerna av en klan förstörd av den blå draken Verustraz. Hemlig lönnmördare för Enclaven.",
     "personalEvents": [
       {
+        "label": "Handskar över protesen, pilen i Cornwind",
+        "text": "Drog handskar över protesen innan vi körde in i Carnath Roadhouse – den är det enda som sticker ut mer än Theron som dragonborn. Bog Luck tog oss emot som en pragmatisk affärsman. Men Cornwind såg oss. 'Vad fan?! Hur kom ni så långt norrut?!' Draget i Cedric ur vagnen. När vi sattes i husarrest skickade jag upp Mok och avlyssnade: Bog ville inte döda oss (business), Cornwind ville. Vi flydde genom fönstret. Jag kastade Silence över gruppen innan avgången. Vid den försänkta vägen spännde vi rep i brösthöjd. Cedric lurade in Cornwind. Mina pilar och Snaring Strike fångade honom medan Cedrics Fireball sprängde honom. I hans ficka: dagboken. Azbara är hans namn. Slottet är nästa. Modern väntar.",
+        "session": 21
+      },
+      {
         "label": "Password Trace och Zephyr Strike",
         "text": "Vi tog Thor Torssells uppdrag som cover – naiv ung noble som vill ha ett drakhuvud över spiselkransen. Perfekt förklädnad för att följa kult-konvojen norrut. 500 guld i förskott, 1000 vid trofé, lögn om vit drake vid Phandalin. Jag ledde hans häst Prinsess ut ur Waterdeep medan Cedric kastade Tiny Hut vid foten av Sword Mountains. På min vakt castade jag Password Trace på Gothmogs örhänge och viskade genom Therons ring medan han sov. När trollen cirklade lägret kastade jag en Light-sten och fick se dem: groteskt långa med trädgrens-armar och ruttna munnar. Zephyr Strike gav mig rörelse, pilarna fann mål. Theron brände med Searing Smite, Cedric med Fireball. Gothmog högg av ett huvud åt Thor. Vårt äventyrande cover höll första natten. Nu norrut mot där kulten går.",
         "session": 20
@@ -153,6 +158,11 @@
     "backstory": "Lämnades som spädbarn vid Greenests portar efter att hans klan utplånades av draken Verustraz (alias Pyotr). Arbetade som stadsvakt och tränade sitt Watcher's Eye. Fann hopp i Bahamut och svor att skydda de svaga. Vapenbroder med Oweyn.",
     "personalEvents": [
       {
+        "label": "Teleskopsvärd och Protection",
+        "text": "Carnath Roadhouse. Bog Luck – stor half-orc arbetsledare, Watcher's Eye läste honom som business-driven, inte ondskefull. När Cornwind drog Cedric ur vagnen hoppade jag upp på taket och höll förhandlingarna i gång. Bog grep in och satte oss i husarrest. Vi flydde. I ambuschen stod jag redo vid trädet, teleskopsvärd aktiverat, Protection Fighting Style på för att skydda Cedric när pilarna kom. När Cornwind kastades av hästen av repet blev striden snabb. Cedric Fireball gjorde slutet. I dagboken – namnet **Azbara**. Nästa mål **ett slott**. Bahamut leder oss vidare. Order of the Gauntlet svär att skydda de svaga – och just nu är hela Sword Coast svag under kultens och Thays allians.",
+        "session": 21
+      },
+      {
         "label": "Searing Smite och teleskopsvärdet",
         "text": "Thor Torssell är en naiv ung noble – men hans guld räcker till vår vidare resa och lögnen om Phandalin ger oss cover. Han sov i vår Tiny Hut medan jag tog min första riktiga vila på länge. När trollen attackerade aktiverade jag teleskopsvärdet och brände med Searing Smite på second level – elden hade de svaghet mot enligt Cedrics Hunter Sense. Watcher's Eye läste deras rörelser. Ett försökte ta Prinsess men släppte henne. Båda föll. Gothmog högg av ett huvud åt Thor. Han lipade i chock när han förstod vad han hade bett om. Bahamut lär: den som drömmer om strid måste först förstå dess pris. Thor förstår det nu. Vi fortsätter norrut i morgon.",
         "session": 20
@@ -286,6 +296,11 @@
     "backstory": "Från Greenest, åkte till Baldur's Gate för att söka äventyr. Rekryterad av Order of the Gauntlet som squire under Theron. Har klarat sina prov. Vapenbroder med Theron.",
     "personalEvents": [
       {
+        "label": "Spegelhalvorken Bog Luck",
+        "text": "När Bog Luck steg ut ur värdshuset kändes det som att se sig själv i spegeln. Stor half-orc, battleaxe, pragmatisk röst. Han gav oss husrum för 1 silver och kunde ha dödat oss. Han gjorde det inte. Business, sa han. Jag respekterar det. I ambuschen sprang jag melee när kultisterna reste sig ur gyttjan – halberden slet i deras rustningar. När Cornwind fångades av Haldans Snaring Strike och brändes av Cedrics Fireball stod jag över hans aska. Runorna sjöng tyst. I hans ficka dagboken – en mobbad ung man som sökt makt för hämnd. Jag vet hur det är att söka vem man ska bli. Han valde fel väg. Nu vet vi Azbaras namn och att ett slott väntar.",
+        "session": 21
+      },
+      {
         "label": "Polearm Master och trofé-handeln",
         "text": "Thor Torssell. Ung noble, snorig bortskämd, men med guld. Han vill ha en trofé att hänga över spiselkransen. Fan, jag kan ge honom troféer. Vi drog norrut samma kväll. När trollen kom cirkulerande på min vakt kände jag doften av ruttet kött och visste – det är bara en typ av varelse som luktar så. Haldan castade Password Trace genom Therons ring, Cedric kom med Mind Spike och Hunter Sense som avslöjade deras svaghet. Polearm Master + Sentinel låste dem i min reach. Cedric gav mig Haste i andra vågen – dubbel speed, dubbel skada. En försökte lyfta Prinsess men släppte. Jag högg av det ena huvudet som trofé åt Thor. Runorna sjöng när huvudet föll. Han lipade. Men han har sin trofé nu. Och vi har vår cover-story. Nästa: Phandalin och den vita draken som inte finns.",
         "session": 20
@@ -418,6 +433,11 @@
     },
     "backstory": "Född i Greenest men försvann som barn in i Barovia. Blev soldat i Valakii. Vägrade utnyttja en gömd familj och flydde. The Vistani tog ett minne från honom som betalning. Hittades av Cedric nära Greenest.",
     "personalEvents": [
+      {
+        "label": "Stirrad genom husarrest-dörren",
+        "text": "Tog ett steg bakåt när Cornwind drog Cedric ur vagnen. Husarrest i ett rum utan lås är fortfarande arrest. Mok avlyssnade bråket utanför – Bog Luck vägrade att döda oss. Jag höll Thor Torssell lugn medan vi planerade flykten. Han satt på sängkanten och grät nästan igen. Via fönstret klättrade vi ut en i taget med Enlarge/Reduce. Vid ambuschen stod jag redo att ta skadet för Cedric när pilarna kom – bytte plats med honom, tog pilen i min sköld. Order of the Gauntlet svär att skydda de svaga. Idag var Cedric den svaga, imorgon någon annan. När vi hittade dagboken på Cornwind gjorde jag Watcher's Eye på sidorna – jag läste mellan raderna att han var en pojke som inte fick någon annan väg. Jag beklagar hans fall.",
+        "session": 21
+      },
       {
         "label": "Vårda Thor som ett barn",
         "text": "Thor Torssell är ung och naiv men hans guld räcker till våra behov. Jag förklarade för honom att äventyr inte är lek, att det är en död-nära sak. Han förstod inte riktigt då. När trollen attackerade och han satt lipande inne i Tiny Hut vid sidan av mig förstod han. Jag höll handen förbi hans mun när han ville skrika, viskade: 'ta det lugnt, vi är säkra här inne.' Han stirrade med skräck-sprängda ögon. Order of the Gauntlet svär att skydda de svaga – och här satt den svagaste jag sett länge, en noble som drömt om strid utan att veta vad det är. När Gothmog räckte fram trollhuvudet och han blev illamående försökte jag trösta: 'Ta det lugnt. Du ville ha ett äventyr, nu måste du också lära dig att sova för att orka fortsätta.' Han lyssnade. Han sov, till slut. Vi fortsätter norrut. Kultens arbetslags-konvoj går framför oss. Vi är nära.",
@@ -556,6 +576,11 @@
     },
     "backstory": "Född i Greenest. Hans far Steve byggde \"Kunskapens Vagn\" – ett rullande bibliotek. Reser mellan riken och studerar magi. Räddade Gothmog från Barovias dimma. Har en Codex-Golem.",
     "personalEvents": [
+      {
+        "label": "Reduce, Phantom Steed och Fireball",
+        "text": "Carnath Roadhouse är en vacker lek. Ett värdshus i träsket omvandlat till kultens bas för vägarbete. Jag förstod direkt att 'vägarbete' är deras cover-story här – som vårt 'Phandalin och draken' är för oss. När Cornwind drog mig ur vagnen och Bog satte oss i husarrest gjorde jag plan: Reduce på mig själv, Misty Step ut genom fönstret, Phantom Steed med Mage Hand för att locka fram Cornwind. Hånade honom med 'jag dödade Oswald!' Han svalde. Vid ambuschen Moonbeam på kultist-gruppen, Fireball när Haldan hade fångat Cornwind i Snaring Strike – maximum skada koncentrerad. Han dog som en övertänd fackla. I hans innerficka: dagboken. Jag läste varje sida med darrande händer. **Azbara**. **Modern**. **Ett slott**. Kunskapens Vagn får alla sidor transkribierade ikväll.",
+        "session": 21
+      },
       {
         "label": "Tiny Hut, Fireball och Mind Spike",
         "text": "Thor Torssell är en gåva från ovan. Hans mecenat-guld, hans äventyrs-fantasier och hans Phandalin-cover ger oss precis det vi behöver. Jag kastade Tiny Hut vid vårt läger och han var lamslagen av imponation – en trevlig känsla. När trollen cirklade i mörkret kastade jag Mind Spike på den jag kunde hitta position på – 4 på hans saving throw tack vare min Portent-dy – och såg plötsligt hans exakta koordinater. Hunter Sense avslöjade regeneration och svaghet för eld och syra, vilket betydde Fireball. Jag tvekade inte: 26 skada på den ena, 13 på den andre, sen Haste på Gothmog som är en halvorksvant med polearm. Vi vann. Gothmog gav Thor en trofé som chockade honom djupt. Jag noterade allt i Kunskapens Vagn. Troll vid Sword Mountains, första förekomst av Shrek-typ varelser så här långt norrut. Kunskapens Vagn får nya anteckningar. Nästa fas: följa kulten mot Phandalin.",

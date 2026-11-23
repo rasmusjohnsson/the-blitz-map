@@ -69,7 +69,7 @@ KORSREFERENSER:
 ===================================================================
 */
 const DATA_VERSION='1.0';
-const APP_VERSION='2.20.0';
+const APP_VERSION='2.21.0';
 // Data is loaded async from JSON files. These start empty and get populated on load.
 let characters=[], locations=[], npcsData=[], sessions=[], factions=[];
 async function loadData(){
@@ -339,6 +339,48 @@ c.fillStyle='#8a8aa0';
 c.fillRect(14,4,1,1);c.fillRect(15,5,1,1);c.fillRect(15,6,1,1); // blå metalkurva
 c.fillStyle='#b0b0c0';c.fillRect(14,4,1,1); // highlight
 },
+cornwind:()=>{
+// Cornwind - rufsigt brunt hår, gaunt ansikte, ärr över kinden, patchy stubble, mörkröd mantel - haunted/bitter uttryck (R.I.P.)
+// Rufsigt brunt hår - över huvudet och sidor
+c.fillStyle='#3a2010';c.fillRect(3,1,10,3);
+c.fillRect(2,2,1,4);c.fillRect(13,2,1,4); // sidor
+c.fillRect(4,0,8,1); // top wisps
+c.fillStyle='#5a3018';c.fillRect(5,1,2,1);c.fillRect(9,1,2,1); // highlights
+c.fillStyle='#2a1808';c.fillRect(4,3,1,1);c.fillRect(11,3,1,1); // skuggor
+// Gaunt blek hud
+c.fillStyle='#c48866';c.fillRect(5,3,6,5);
+c.fillStyle='#a06c48';c.fillRect(5,7,6,1); // haka-skugga
+// Insjunkna kinder
+c.fillStyle='#8a5838';c.fillRect(5,5,1,2);c.fillRect(10,5,1,2);
+// Hår faller runt ansiktet
+c.fillStyle='#3a2010';c.fillRect(4,4,1,3);c.fillRect(11,4,1,3);
+// Ärr diagonalt över kinden
+c.fillStyle='#8a4a3a';c.fillRect(9,4,1,1);c.fillRect(9,5,1,1);c.fillRect(10,6,1,1);
+// Mörka, hålögda ögon
+c.fillStyle='#1a0a04';c.fillRect(6,5,1,1);c.fillRect(9,5,1,1);
+// Mörka ögonringar under
+c.fillStyle='#6a4028';c.fillRect(6,6,1,1);c.fillRect(9,6,1,1);
+// Patchy stubble / skägg
+c.fillStyle='#2a1808';c.fillRect(5,7,1,1);c.fillRect(7,7,1,1);c.fillRect(10,7,1,1);
+c.fillStyle='#4a2810';c.fillRect(5,8,6,1);c.fillStyle='#3a1808';c.fillRect(6,8,1,1);c.fillRect(8,8,1,1);c.fillRect(10,8,1,1);
+// Bitter mun – nedåtvinklad, trött
+c.fillStyle='#6a2818';c.fillRect(7,7,2,1);
+// Mörkröd mantel/hatt
+c.fillStyle='#6a1818';c.fillRect(3,9,10,7);
+c.fillStyle='#8a2828';c.fillRect(4,10,8,1); // ljus-highlight
+c.fillStyle='#4a0a0a';c.fillRect(3,14,10,2); // skugga nedtill
+// Mantelns vänstra flik (där den vecks över axeln)
+c.fillStyle='#4a0a0a';c.fillRect(3,10,2,4);
+c.fillStyle='#6a1818';c.fillRect(3,10,1,3);
+// Läderrem/sele över bröstet
+c.fillStyle='#2a1008';c.fillRect(4,12,8,1);
+c.fillStyle='#4a2010';c.fillRect(4,12,8,1);
+// Metall-spänne i bältet
+c.fillStyle='#8a8aa0';c.fillRect(7,13,2,1);
+c.fillStyle='#c0c0d0';c.fillRect(7,13,1,1); // highlight
+// Mörk inre tröja under manteln
+c.fillStyle='#1a0808';c.fillRect(5,9,6,1);
+},
 frulam:()=>{
 // Frulam Mondath - svart kort hår, lila/guld-prästdräkt med drakögssigill, stav
 // Staff (vertical left edge)
@@ -488,6 +530,51 @@ const PIXEL_FONT={
 };
 function drawPixelString(c,str,sx,sy,color){c.fillStyle=color;let x=sx;str.split('').forEach(ch=>{const rows=PIXEL_FONT[ch]||PIXEL_FONT[' '];for(let r=0;r<5;r++){for(let i=0;i<3;i++){if(rows[r][i]==='1')c.fillRect(x+i,sy+r,1,1)}}x+=4})}
 const PIXEL_ART={
+  dagbok_cornwind:cv=>{
+    const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
+    // Mörk bakgrund (skuggigt bord)
+    c.fillStyle='#1a1a2e';c.fillRect(0,0,120,80);
+    // Dagbokens läderrygg (öppen uppslagen)
+    c.fillStyle='#3a1808';c.fillRect(8,6,104,68);
+    c.fillStyle='#2a0a04';c.fillRect(8,6,104,2); // top shadow
+    c.fillStyle='#4a2010';c.fillRect(9,7,102,2); // highlight
+    // Mitten-rygg (spine)
+    c.fillStyle='#1a0808';c.fillRect(58,6,4,68);
+    c.fillStyle='#2a0808';c.fillRect(59,6,2,68);
+    // Vänster sida (page)
+    c.fillStyle='#d4b878';c.fillRect(12,10,44,60);
+    c.fillStyle='#e0c890';c.fillRect(12,10,44,2);
+    c.fillStyle='#b89858';c.fillRect(12,68,44,2);
+    // Höger sida (page)
+    c.fillStyle='#d4b878';c.fillRect(64,10,44,60);
+    c.fillStyle='#e0c890';c.fillRect(64,10,44,2);
+    c.fillStyle='#b89858';c.fillRect(64,68,44,2);
+    // Vänstersidans text – rader av handskrift
+    c.fillStyle='#2a1a08';
+    c.fillRect(14,14,40,1);c.fillRect(14,18,38,1);c.fillRect(14,22,40,1);c.fillRect(14,26,35,1);
+    c.fillRect(14,32,40,1);c.fillRect(14,36,42,1);c.fillRect(14,40,38,1);c.fillRect(14,44,40,1);
+    c.fillRect(14,50,40,1);c.fillRect(14,54,32,1);c.fillRect(14,58,38,1);c.fillRect(14,62,28,1);
+    // Ink dabs vänster
+    c.fillStyle='#3a2010';c.fillRect(22,18,2,1);c.fillRect(38,36,2,1);c.fillRect(30,54,3,1);
+    // Högersidans text – mer rörig, aggressiv handskrift
+    c.fillStyle='#2a1a08';
+    c.fillRect(66,14,40,1);c.fillRect(66,18,36,1);c.fillRect(66,22,38,1);
+    c.fillRect(66,28,40,1);c.fillRect(66,32,34,1);c.fillRect(66,36,40,1);
+    // Blöt fläck / blodspill
+    c.fillStyle='#4a0a0a';c.fillRect(90,40,15,10);
+    c.fillStyle='#6a1818';c.fillRect(92,41,11,8);
+    c.fillStyle='#2a0505';c.fillRect(94,43,7,4);
+    // Mer text under blodet
+    c.fillStyle='#2a1a08';c.fillRect(66,52,38,1);c.fillRect(66,56,40,1);c.fillRect(66,60,32,1);
+    // Liten teckning (av moder) – fyrkant med figur
+    c.fillStyle='#3a2010';c.fillRect(17,27,4,4);
+    c.fillStyle='#5a3020';c.fillRect(18,28,2,2);
+    // Ark-hörn (slitet)
+    c.fillStyle='#b89858';c.fillRect(12,10,2,2);c.fillRect(54,10,2,2);c.fillRect(12,68,2,2);c.fillRect(54,68,2,2);
+    c.fillStyle='#b89858';c.fillRect(64,10,2,2);c.fillRect(106,10,2,2);c.fillRect(64,68,2,2);c.fillRect(106,68,2,2);
+    // Signatur/datum nere till höger
+    c.fillStyle='#8a2020';c.fillRect(96,64,8,2);
+  },
   brev_rezmir:cv=>{
     const c=cv.getContext('2d');cv.width=120;cv.height=80;c.imageSmoothingEnabled=false;
     // Cream paper - letter quality
@@ -608,7 +695,7 @@ const PIXEL_ART={
     c.fillRect(50,73,58,7);c.fillRect(45,75,5,5);c.fillRect(40,77,5,3);
   }
 };
-const PIXEL_ART_CAPTIONS={folkets_vilja:'PERGAMENT · "FOLKETS VILJA"',brev_rezmir:'BREV · TILL REZMIR',brand_anteckning:'HALVBRÄND ANTECKNING'};
+const PIXEL_ART_CAPTIONS={folkets_vilja:'PERGAMENT · "FOLKETS VILJA"',brev_rezmir:'BREV · TILL REZMIR',brand_anteckning:'HALVBRÄND ANTECKNING',dagbok_cornwind:'CORNWINDS DAGBOK'};
 function renderPixelArt(id){if(!PIXEL_ART[id])return'';const cap=PIXEL_ART_CAPTIONS[id]||'DOKUMENTFYND';return`<div class="pixel-art-wrap"><canvas class="pixel-art-canvas" data-art="${id}"></canvas><div class="pixel-art-caption">${cap}</div></div>`}
 // Hitta alla events med pixelArt (både i sessions och locations)
 function collectPixelArtFinds(){

@@ -149,6 +149,21 @@
     "events": []
   },
   {
+    "id": "bogluck",
+    "name": "Bog Luck",
+    "aliases": ["Boglach", "Bog"],
+    "status": "neutral",
+    "role": "Arbetsledare · Carnath Roadhouse",
+    "desc": "En stor, biffig half-orc med battleaxe vid sidan som leder vägarbete-projektet vid Carnath Roadhouse i Dödens Myr. Till utseendet inte helt olik Gothmog. Pragmatisk snarare än ondskefull – han bryr sig om business, inte ideologi, och vägrade att låta Cornwind döda Gråstensväktarna i träsket för att det var dåligt för vägprojektet. Tog 1 silver per person för husrum, satte gruppen i husarrest men utan lås på dörren.",
+    "events": [
+      {
+        "label": "Mötet och husarresten",
+        "text": "Tog emot Gråstensväktarna vid Carnath Roadhouse, tog 1 silver per person för husrum och satte dem i husarrest efter Cornwinds raseri. Lugnade Cornwind: 'Det här är inget vi träffar.' Argumenterade sen i enrum med Cornwind om att det var dåligt för businessen att döda gruppen i träsket – vägprojektet är stort pengar.",
+        "session": 21
+      }
+    ]
+  },
+  {
     "id": "thor",
     "name": "Thor Torssell",
     "aliases": ["Thor", "Torssell"],
@@ -165,6 +180,11 @@
         "label": "Trollnatten",
         "text": "Satt i Gråkapporna-imitationen när trollen attackerade lägret vid södra foten av Sword Mountains. Gömde sig lipande i Tiny Hut medan Gråkapporna slog ner båda trollen. Fick ett avhugget trollhuvud av Gothmog som trofé – men ville ha något 'tuffare'. Blodet på hans sovsäck och det äckliga huvudet chockade honom djupt, men han är fortfarande på äventyr.",
         "session": 20
+      },
+      {
+        "label": "'Två troll under bältet'",
+        "text": "Vid ankomsten till Carnath Roadhouse i Dödens Myr marknadsförde Thor Gråkapporna för Bog Luck: 'Den här mannen har två troll under bältet!' Peka på Gothmog. 'Har ni ett trollproblem så har ni rätt äventyr här framför er.' Betalade ironiskt mycket för husrummet. Hamnade sen i husarrest med gruppen och såg på med skräck när flykten planerades.",
+        "session": 21
       }
     ]
   },
@@ -204,8 +224,8 @@
   },
   {
     "id": "rodmantel",
-    "name": "Mannen i röd mantel",
-    "aliases": ["Röda manteln", "Red Wizard"],
+    "name": "Azbara",
+    "aliases": ["Mannen i röd mantel", "Röda manteln", "Red Wizard", "Azbara Jos"],
     "status": "unknown",
     "role": "Red Wizard of Thay · reser med kulten",
     "desc": "En smal, rakryggad man i djupröd mantel med uppfälld huva. Cedric kände igen klädnaden direkt – Red Wizards of Thay, en socialdarwinistisk magiker-organisation långt österut nordost om Sea of Fallen Stars. Red Wizards är ofta tatuerade över ansiktet och skadade på olika sätt enligt deras makt-system. Ansiktet dolt dittills men hans ingripande vid mordet avslöjade kall auktoritet – han lugnade Cornwind med en hand på axeln och fick både honom och Mara att gå. Han reser i egen fin resevagn med gardinerna fördragna (anslöt sig till karavanen efter Daggerford). Att en Red Wizard samarbetar med Cult of the Dragon är den största obesvarade frågan – för vad eller för vem reser han hit?",
@@ -224,6 +244,11 @@
         "label": "Egen vagn och kall auktoritet",
         "text": "En ny fin resevagn med dörrar, fönster och fördragna gardiner anslöt sig till karavanen efter Daggerford – där mannen i rött nu reser. När Cornwind var på väg att gå till våldshandling mot Haldan efter mordet steg Red Wizard-mannen in: 'Det är ingen mening att du skapar en sån scen för något sånt här trivialt.' En hand på Cornwinds axel och han lydde. Mara skickades också bort med en blick.",
         "session": 19
+      },
+      {
+        "label": "Namnet avslöjat: Azbara",
+        "text": "I Cornwinds dagbok dyker Red Wizard-mannens namn äntligen upp: **Azbara**. Frulam Mondath 'gör sig till för Thayanen och smörar', skriver Cornwind med bitterhet. Än mer oroande – Azbara ska snart få en kollega. Fler Red Wizards är på väg till Faerûns västkust. Vad vill Thay egentligen med Cult of the Dragon?",
+        "session": 21
       }
     ]
   },
@@ -400,9 +425,9 @@
   {
     "id": "cornwind",
     "name": "Cornwind",
-    "status": "hostile",
-    "role": "Kultledare – Folkets vilja",
-    "desc": "En ledare inom Folkets vilja som residerar i ett av tälten på Hästskoplatån. När infiltratörer dyker upp i kåpor är det Cornwind de hänvisas till. Pragmatisk och affärsinriktad – ger ut uppdrag, papper och jaktjobb till nykomlingar i kulten utan att ifrågasätta för mycket. Haldan och Theron lyckades förhandla till sig ett jaktjobb av honom och fick papper på att låna hästar.",
+    "status": "deceased",
+    "role": "Fallen kultist – mördad i träsket",
+    "desc": "En mobbad ung man från Phandalin som sökt sig till Folkets vilja för makt och hämnd. Enligt hans egen dagbok drevs han av vrede mot 'dom djävlarna' som plågat honom och av längtan efter att 'modern' skulle låta honom hämnas. Hans mamma och hem i Phandalin saknade han djupt.\n\nArbetade för Folkets vilja/Cult of the Dragon på Hästskoplatån och senare i karavanen norrut. Kände igen Haldans protes som 'han med handen' från Hästskoplatån-lägret. Dödades av Gråstensväktarna i en ambusch i Dödens Myr söder om Carnath Roadhouse – fångad i Snaring Strike och sprängd av Cedrics Fireball.",
     "events": [
       {
         "label": "Förhandlingen i tältet",
@@ -428,6 +453,11 @@
         "label": "Träpinnarna och mordraseriet",
         "text": "Täljde passivt-aggressivt på en träpinne medan han stirrade på Haldan under uppbrottet från Daggerford. När Oswald mördades och spåren ledde till gruppens Tiny Hut sprang han fram i raseri: 'Jag visste det, fan!' – övertygad om att Haldan låg bakom. Han letade inte efter bevis utan efter en förevändning. Red Wizard-mannen fick lugna honom och leda honom bort från platsen. Han gick, men hans blick säger att han aldrig släpper tanken.",
         "session": 19
+      },
+      {
+        "label": "Fall i träsket",
+        "text": "Kände igen Gråkapporna när de körde in i Carnath Roadhouse och exploderade i raseri. 'Vad fan?! Hur har ni kommit så långt norrut?!' Drog Cedric ur vagnen och krävde arrest för mordet på Oswald. När Bog Luck satte gruppen i husarrest försökte Cornwind övertyga honom att döda dem i träsket – han misslyckades. När Cedric red fram och hånade honom med 'jag dödade Oswald!' följde Cornwind i blind raseri rakt in i ambuschen. Fångad av Snaring Strike i brösthöjd-rep, sprängd av Cedrics Fireball. Dog med dagboken i innerfickan.",
+        "session": 21
       }
     ]
   },

@@ -954,5 +954,62 @@
         "npcs": ["Thor Torssell"]
       }
     ]
+  },
+  {
+    "id": 21,
+    "label": "SESSION 21",
+    "title": "Carnath Roadhouse och dagboken",
+    "date": "2026-11-23",
+    "events": [
+      {
+        "title": "Skuggning längs kusten",
+        "recap": "Gråkapporna höll avstånd till kult-karavanen i flera dagar. Haldan skickade upp Mok som identifierade alla: Cornwind i karavanen, Frulam Mondath och Azbara längre fram som ryttare. Vägen vred inåt och terrängen blev alltmer sumpig. Havsdimma varje morgon. Carnath Roadhouse-skylten dök upp vid en avtagsväg.",
+        "places": ["dodens_myr"],
+        "npcs": ["Mannen i röd mantel"]
+      },
+      {
+        "title": "Insikt om Dödens Myr",
+        "recap": "Cedric och Haldan förstod avtagsvägens betydelse – 'Mirror of the dead men', ett colloqualt uttryck för dödsfällor i blötmark. Gruppen insåg att Carnath Roadhouse är en operativ bas för vägarbete genom träsket, inte kultens slutmål. En lönsam front för kulten att gömma sitt arbete under.",
+        "places": ["dodens_myr"],
+        "npcs": []
+      },
+      {
+        "title": "Ankomsten till värdshuset",
+        "recap": "Haldan drog handskar över protesen. Gruppen körde in i Carnath Roadhouses innergård och möttes av en stor biffig half-orc – Bog Luck, arbetsledare. 1 silver per person för husrum. Thor betalade överdrivet och marknadsförde gruppen: 'Den här mannen har två troll under bältet!' Bog log försiktigt.",
+        "places": ["carnath_roadhouse"],
+        "npcs": ["Bog Luck", "Thor Torssell"]
+      },
+      {
+        "title": "Cornwinds raseri",
+        "recap": "När Gråkapporna körde ner till stallet såg Cornwind dem och exploderade. 'Vad fan?! Hur har ni kommit så långt norrut?!' Drog Cedric ur vagnen och krävde arrest för mordet på Oswald. 'Du vet för fan vem jag heter!' Bog klev in, lugnade Cornwind och placerade gruppen i husarrest i ett rum utan lås.",
+        "places": ["carnath_roadhouse"],
+        "npcs": ["Cornwind", "Bog Luck"]
+      },
+      {
+        "title": "Moks avlyssning",
+        "recap": "Genom det lilla fönstret skickade Haldan upp Mok och avlyssnade Bog och Cornwinds bråk utanför. Cornwind ville slakta gruppen i träsket. Bog vägrade – vägprojektet var stort pengar och han var 'representant för Fördrafer' här. 'Prata med Frulla', sa Bog. 'Hon är i slottet.' Kulten har en destination gruppen inte känner till.",
+        "places": ["carnath_roadhouse"],
+        "npcs": []
+      },
+      {
+        "title": "Flykten genom fönstret",
+        "recap": "Plan: Cedric castar Reduce, misty-stepar ut, summonar Phantom Steed, rider in och hånar Cornwind. Resten av gruppen krympts av Enlarge/Reduce och klättrar ut. Haldan castade Silence över gruppen innan avfärd. Cedric red fram förbi värdshuset och skrek: 'Det var jag som dödade Oswald!' Cornwind mounted up i blind raseri.",
+        "places": ["carnath_roadhouse", "dodens_myr"],
+        "npcs": []
+      },
+      {
+        "title": "Ambuschen i träsket",
+        "recap": "Haldan hade hittat en försänkt vägsträcka söder om värdshuset. Rep spänt i brösthöjd. Cornwind + 6 kultister red in. Tre hästar snubblade i gyttjan, Cornwind kastades av. Striden: Cedric Moonbeam + Fireball, Theron Teleskopsvärd + Protection Fighting Style, Haldan Zephyr Strike + Slayer's Prey + Snaring Strike på Cornwind, Gothmog melee. Alla kultister föll. Cornwind fångad av törnesträng, sprängd av Fireball.",
+        "places": ["dodens_myr"],
+        "npcs": ["Cornwind"]
+      },
+      {
+        "title": "Dagboken i innerfickan",
+        "recap": "I Cornwinds innerficka hittade Gråkapporna en dagbok. Fyra anteckningar avslöjade stora pusselbitar: han var en mobbad ung man från Phandalin som gått med i kulten för makt och hämnd, han kände igen Haldan 'han med handen' från Hästskoplatån och berättade för Frulam, Red Wizard-mannen heter **Azbara** och ska få en **kollega**, och kultens nästa mål är **ett slott** via lastning om i Carnath.",
+        "places": ["dodens_myr"],
+        "npcs": ["Cornwind", "Mannen i röd mantel"],
+        "pixelArt": "dagbok_cornwind"
+      }
+    ]
   }
 ]

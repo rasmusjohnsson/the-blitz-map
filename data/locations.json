@@ -783,17 +783,84 @@
   {
     "id": "dodens_myr",
     "name": "Dödens Myr",
-    "x": 1750,
-    "y": 1050,
-    "visited": false,
+    "aliases": ["Mere of Dead Men", "De döda männens myr"],
+    "x": 1150,
+    "y": 490,
+    "visited": true,
     "icon": "🐍",
-    "summary": "Nämnd i det halvbrända dokumentet i Frulam Mondaths rum – 'Dödens Myr...'. Position okänd, natur okänd. Möjligen en av transporternas mål, möjligen ett gömställe för 'skatten'. Gruppen har bara hört namnet.",
+    "summary": "Ett vidsträckt träskornås norr om Waterdeep, mellan kuststaden och Neverwinter. Känd som 'de döda männens myr' – många fartyg och karavaner har gått i kav här. Under session 21 blev platsen både destination och fälla för Gråstensväktarna: kultens karavan styrde in till **Carnath Roadhouse** som bas för vägarbete genom träsket. Här mördades Cornwind i en ambusch strax söder om värdshuset.",
+    "descriptions": [
+      {
+        "title": "TRÄSKETS NATUR",
+        "items": [
+          "<strong>Geografi:</strong> Mellan Waterdeep och Neverwinter, längs The High Road.",
+          "<strong>Rykte:</strong> 'Mirror of the dead men' – colloqualt uttryck för dödsfällor i blötmark.",
+          "<strong>Havsdimma:</strong> Driver in varje morgon från kusten, ligger som blöt filt.",
+          "<strong>Vägen:</strong> Sliten, ibland försänkt och difficult terrain där hästar halkar."
+        ]
+      }
+    ],
     "events": [
       {
         "title": "Namnet i det brända dokumentet",
         "preview": "Dödens Myr...",
         "detail": "Namnet dök upp i den halvbrända anteckningen från Frulam Mondaths rum. Ingen kontext, bara en fragment: 'Dödens Myr...'. Att spåra vad det är och var det ligger blir Gråstensväktarnas nästa uppgift.",
         "session": 9
+      }
+    ]
+  },
+  {
+    "id": "carnath_roadhouse",
+    "name": "Carnath Roadhouse",
+    "x": 1150,
+    "y": 490,
+    "visited": true,
+    "parent": "dodens_myr",
+    "icon": "🏚️",
+    "summary": "Ett befäst värdshus mitt i Dödens Myr, nu kultens bas för vägarbete genom träsket. Högstenmurar, nyreparerade takåsar, catwalks och flera våningar med rum. Boglach ('Bog Luck') är arbetsledare. Gråstensväktarna kom hit i session 21 och blev husarresterade efter att Cornwind känt igen dem – de flydde ut genom ett litet fönster, lockade Cornwind i ambusch i träsket söderut och dödade honom.",
+    "descriptions": [
+      {
+        "title": "VÄRDSHUSET &amp; VÄGPROJEKTET",
+        "items": [
+          "<strong>Byggnader:</strong> Befäst innergård, catwalks, matsal på ovanvåningen, husrum för arbetare.",
+          "<strong>Takåsar:</strong> Nyligen reparerade – balkar bytta, murverket nyputsat.",
+          "<strong>Vägprojekt:</strong> Återöppnande av en viktig handelsväg genom träsket. Mycket pengar.",
+          "<strong>Arbetsledare:</strong> Boglach – 'Bog Luck' – stor half-orc med battleaxe.",
+          "<strong>Kultens roll:</strong> Lastar om vagnar här innan vidare färd till slottet.",
+          "<strong>Pris:</strong> 1 silver per person för husrum."
+        ]
+      }
+    ],
+    "events": [
+      {
+        "title": "Cornwinds fall i träsket",
+        "preview": "Ambusch i försänkt väg...",
+        "detail": "Haldan hittade en försänkt väg-sträcka söder om värdshuset med difficult terrain. Gråkapporna spände ett rep i brösthöjd. Cornwind och 6 kultister red in – 3 hästar snubblade i gyttjan, Cornwind kastades av. Striden avslutades med Fireball ovanpå en Snaring Strike-fångad Cornwind. Alla kultister föll. I Cornwinds innerficka hittades hans dagbok.",
+        "session": 21
+      },
+      {
+        "title": "Flykten genom fönstret",
+        "preview": "Reduce + Phantom Steed + hån...",
+        "detail": "Cedric kastade Reduce på sig själv, misty-stepade ut genom det lilla stenstödda fönstret och summonade Phantom Steed. Red fram förbi värdshusporten och hånade Cornwind: 'Det var jag som dödade Oswald!' Cornwind sadlade om i raseri och red efter – rakt in i ambuschen. Resten av gruppen krympts av Enlarge/Reduce och klättrade ut genom samma fönster.",
+        "session": 21
+      },
+      {
+        "title": "Husarrest och Moks avlyssning",
+        "preview": "Bog placerar oss i ett rum...",
+        "detail": "Boglach lugnade Cornwind och placerade Gråstensväktarna i husarrest i ett litet rum utan lås, med husvärd utanför. Via Mok och fönstret avlyssnade gruppen Bog och Cornwinds bråk – Cornwind ville döda dem i träsket, Bog vägrade (dåligt för businessen). Frulam Mondath var redan 'i slottet' och 'representant Fördrafer för kulten' på plats var Bog.",
+        "session": 21
+      },
+      {
+        "title": "Cornwind känner igen oss",
+        "preview": "Vad fan?! säger han...",
+        "detail": "När Gråkapporna körde sin vagn ner till stallet såg Cornwind dem och exploderade i raseri. 'Vad fan?! Hur har ni kommit så långt norrut?!' Han drog Cedric från vagnen och krävde att gruppen skulle arresteras för mordet på Oswald – inte efter bevis, utan efter personligt behov av en förevändning. Boglach grep in.",
+        "session": 21
+      },
+      {
+        "title": "Ankomsten till värdshuset",
+        "preview": "Höga stenmurar, nylappade takåsar...",
+        "detail": "Haldan drog handskar över protesen innan inkörningen – han sticker ut mer med den än Theron som dragonborn. Gruppen red in i Carnath Roadhouses innergård och möttes av Boglach, bred half-orc arbetsledare. Betalade 1 silver per person för husrum. Thor Torssell överbetalade med bred gest och nämnde att gruppen 'har två troll under bältet'.",
+        "session": 21
       }
     ]
   },
